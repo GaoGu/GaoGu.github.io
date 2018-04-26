@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -45,6 +45,38 @@
 
 
 
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Damion:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
 
 
 
@@ -79,13 +111,16 @@
 
 
 
+<meta name="description" content="永远爱琪琪的鹏鹏">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Harper&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Harper&#39;s Blog">
+<meta property="og:description" content="永远爱琪琪的鹏鹏">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Harper&#39;s Blog">
+<meta name="twitter:description" content="永远爱琪琪的鹏鹏">
 
 
 
@@ -93,7 +128,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -121,7 +156,7 @@
 
 
 
-  <title>Hexo</title>
+  <title>Harper's Blog</title>
   
 
 
@@ -152,7 +187,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">Harper's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -244,11 +279,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Harper's Blog">
     </span>
 
     
@@ -338,6 +373,8 @@ cd &lt;folder&gt;
 npm install
 </code></pre><h1 id="编译生成博文"><a href="#编译生成博文" class="headerlink" title="编译生成博文"></a>编译生成博文</h1><pre><code>hexo generate
 </code></pre><h1 id="启动Hexo服务器"><a href="#启动Hexo服务器" class="headerlink" title="启动Hexo服务器"></a>启动Hexo服务器</h1><pre><code>hexo server
+</code></pre><p>调试</p>
+<pre><code>hexo server --debug    
 </code></pre><p>打开浏览器输入 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 便可以看到最原始的博客了</p>
 <h1 id="新建一篇博客文章"><a href="#新建一篇博客文章" class="headerlink" title="新建一篇博客文章"></a>新建一篇博客文章</h1><pre><code>hexo new &quot;开始blog，哈哈&quot;
 </code></pre><p>打开 Hexo 目录下的 source_posts 目录就可以看见创建的文章</p>
@@ -357,6 +394,9 @@ title: 分类测试
 categories:
 - 分类测试 
 ---
+</code></pre><p>主题展示分类图标，修改<code>主题配置文件</code></p>
+<pre><code>menu：
+    categories: /categories/ || th
 </code></pre>
           
         
@@ -410,11 +450,11 @@ categories:
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Harper's Blog">
     </span>
 
     
@@ -424,7 +464,7 @@ categories:
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/25/分类测试/" itemprop="url">分类测试</a></h1>
+                <a class="post-title-link" href="/2018/04/25/分类测试/" itemprop="url">JS</a></h1>
         
 
         <div class="post-meta">
@@ -561,11 +601,11 @@ private    transient    double    import    public
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Harper's Blog">
     </span>
 
     
@@ -739,8 +779,12 @@ private    transient    double    import    public
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Harper" />
+            
               <p class="site-author-name" itemprop="name">Harper</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">永远爱琪琪的鹏鹏</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -761,7 +805,7 @@ private    transient    double    import    public
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -818,7 +862,7 @@ private    transient    double    import    public
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
