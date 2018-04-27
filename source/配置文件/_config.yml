@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Harper's Blog
 subtitle:
-description:
+description: 永远爱琪琪的鹏鹏
 keywords:
 author: Harper
 language: zh-Hans
@@ -78,4 +78,6 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+ type: git
+ repository: https://github.com/GaoGu/GaoGu.github.io
+ branch: master

@@ -1,7 +1,7 @@
 ---
 title: 使用 Hexo 基于 GitHub Pages 搭建个人博客
 categories:
-- 分类测试 
+- hexo 
 ---
 # Hexo 安装
 	npm install hexo-cli -g	
@@ -13,6 +13,9 @@ categories:
 	hexo generate
 # 启动Hexo服务器
 	hexo server
+调试
+	
+	hexo server --debug	
 打开浏览器输入 http://localhost:4000/ 便可以看到最原始的博客了
 # 新建一篇博客文章
 	hexo new "开始blog，哈哈"
@@ -42,3 +45,8 @@ clone下来删了.git，防止和项目的.git冲突
 	categories:
 	- 分类测试 
 	---
+主题展示分类图标，修改`主题配置文件`
+
+	menu：
+		categories: /categories/ || th
+		
