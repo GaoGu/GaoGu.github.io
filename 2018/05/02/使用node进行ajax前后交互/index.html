@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="Hexo 安装npm install hexo-cli -g     建站hexo init &amp;lt;folder&amp;gt; cd &amp;lt;folder&amp;gt; npm install 编译生成博文hexo generate 启动Hexo服务器hexo server 调试 hexo server --debug     打开浏览器输入 http://localhost:4000/ 便可以看到最原始的">
+<meta name="description" content="页面ajaxfunction changePasswordAjax(newPassword){         $.ajax({             type: &amp;apos;post&amp;apos;,//请求的URL             url: &amp;apos;/changePassword&amp;apos;,规定请求的类型（GET 或 POST）。             async: false,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用 Hexo 基于 GitHub Pages 搭建个人博客">
-<meta property="og:url" content="http://yoursite.com/2018/04/25/使用 Hexo 基于 GitHub Pages 搭建个人博客/index.html">
+<meta property="og:title" content="使用node进行ajax前后交互">
+<meta property="og:url" content="http://yoursite.com/2018/05/02/使用node进行ajax前后交互/index.html">
 <meta property="og:site_name" content="Harper&#39;s Blog">
-<meta property="og:description" content="Hexo 安装npm install hexo-cli -g     建站hexo init &amp;lt;folder&amp;gt; cd &amp;lt;folder&amp;gt; npm install 编译生成博文hexo generate 启动Hexo服务器hexo server 调试 hexo server --debug     打开浏览器输入 http://localhost:4000/ 便可以看到最原始的">
+<meta property="og:description" content="页面ajaxfunction changePasswordAjax(newPassword){         $.ajax({             type: &amp;apos;post&amp;apos;,//请求的URL             url: &amp;apos;/changePassword&amp;apos;,规定请求的类型（GET 或 POST）。             async: false,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-26T02:41:43.597Z">
+<meta property="og:updated_time" content="2018-05-02T11:29:12.668Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用 Hexo 基于 GitHub Pages 搭建个人博客">
-<meta name="twitter:description" content="Hexo 安装npm install hexo-cli -g     建站hexo init &amp;lt;folder&amp;gt; cd &amp;lt;folder&amp;gt; npm install 编译生成博文hexo generate 启动Hexo服务器hexo server 调试 hexo server --debug     打开浏览器输入 http://localhost:4000/ 便可以看到最原始的">
+<meta name="twitter:title" content="使用node进行ajax前后交互">
+<meta name="twitter:description" content="页面ajaxfunction changePasswordAjax(newPassword){         $.ajax({             type: &amp;apos;post&amp;apos;,//请求的URL             url: &amp;apos;/changePassword&amp;apos;,规定请求的类型（GET 或 POST）。             async: false,">
 
 
 
@@ -151,13 +151,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/25/使用 Hexo 基于 GitHub Pages 搭建个人博客/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/02/使用node进行ajax前后交互/"/>
 
 
 
 
 
-  <title>使用 Hexo 基于 GitHub Pages 搭建个人博客 | Harper's Blog</title>
+  <title>使用node进行ajax前后交互 | Harper's Blog</title>
   
 
 
@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/25/使用 Hexo 基于 GitHub Pages 搭建个人博客/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/02/使用node进行ajax前后交互/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">使用 Hexo 基于 GitHub Pages 搭建个人博客</h1>
+          <h1 class="post-title" itemprop="name headline">使用node进行ajax前后交互</h1>
         
 
         <div class="post-meta">
@@ -303,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-25T18:36:39+08:00">
-                2018-04-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T19:28:50+08:00">
+                2018-05-02
               </time>
             
 
@@ -313,28 +313,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -363,36 +341,72 @@
       
 
       
-        <h1 id="Hexo-安装"><a href="#Hexo-安装" class="headerlink" title="Hexo 安装"></a>Hexo 安装</h1><pre><code>npm install hexo-cli -g    
-</code></pre><h1 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h1><pre><code>hexo init &lt;folder&gt;
-cd &lt;folder&gt;
-npm install
-</code></pre><h1 id="编译生成博文"><a href="#编译生成博文" class="headerlink" title="编译生成博文"></a>编译生成博文</h1><pre><code>hexo generate
-</code></pre><h1 id="启动Hexo服务器"><a href="#启动Hexo服务器" class="headerlink" title="启动Hexo服务器"></a>启动Hexo服务器</h1><pre><code>hexo server
-</code></pre><p>调试</p>
-<pre><code>hexo server --debug    
-</code></pre><p>打开浏览器输入 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 便可以看到最原始的博客了</p>
-<h1 id="新建一篇博客文章"><a href="#新建一篇博客文章" class="headerlink" title="新建一篇博客文章"></a>新建一篇博客文章</h1><pre><code>hexo new &quot;开始blog，哈哈&quot;
-</code></pre><p>打开 Hexo 目录下的 source_posts 目录就可以看见创建的文章</p>
-<h1 id="主题安装"><a href="#主题安装" class="headerlink" title="主题安装"></a>主题安装</h1><p><a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">Next 主题 GitHub 地址</a></p>
-<p>拷贝至站点目录的 themes 目录下，一般命名为 next，打开站点配置文件， 找到 theme 字段，并将其值更改为 next 即可</p>
-<p>clone下来删了.git，防止和项目的.git冲突</p>
-<h1 id="创建分类"><a href="#创建分类" class="headerlink" title="创建分类"></a>创建分类</h1><p>在博客根目录输入</p>
-<pre><code>hexo new page categories
-</code></pre><p>打开category/index.md，改为：</p>
-<pre><code>title: 分类
-date: 日期
-type: &quot;categories&quot;
-comments: false
-</code></pre><p>再文章前添加</p>
-<pre><code>---
-title: 分类测试
-categories:
-- 分类测试 
----
-</code></pre><p>主题展示分类图标，修改<code>主题配置文件</code></p>
-<pre><code>menu：
-    categories: /categories/ || th
+        <h1 id="页面ajax"><a href="#页面ajax" class="headerlink" title="页面ajax"></a>页面ajax</h1><pre><code>function changePasswordAjax(newPassword){
+        $.ajax({
+            type: &apos;post&apos;,//请求的URL
+            url: &apos;/changePassword&apos;,规定请求的类型（GET 或 POST）。
+            async: false,//表示请求是否异步处理。默认是 true。
+            data: {
+                userID:loginUser._id,
+                oldPassword:loginUser.password
+                },//规定要发送到服务器的数据。
+            dataType: &apos;json&apos;,//预期的服务器响应的数据类型。
+            cache: false,//表示浏览器是否缓存被请求页面。默认是 true。
+            timeout: 5000,//设置本地的请求超时时间（以毫秒计）。5秒
+            success: function(result,data){
+                var status = result.status;//
+                if(result.status==&quot;success&quot;){
+                    console.info(&quot;OK&quot;);
+                }
+            },//当请求成功时运行的函数。success(result,status,xhr)
+            error: function(){
+
+            }//如果请求失败要运行的函数。error(xhr,status,error)
+        });
+}
+</code></pre><h2 id="error参数详解"><a href="#error参数详解" class="headerlink" title="error参数详解"></a>error参数详解</h2><p>一般error函数返回的参数有三个： function(jqXHR jqXHR, String textStatus, String errorThrown)。</p>
+<p>第一个参数 jqXHR jqXHR</p>
+<pre><code>这里的jqXHR是一个jqXHR对象
+在Jquery1.4和1.4版本之前返回的是XMLHttpRequest对象
+1.5版本以后则开始使用jqXHR对象，该对象是一个超集，
+就是该对象不仅包括XMLHttpRequest对象，还包含其他更多的详细属性和信息。
+</code></pre><p>主要有4个属性：</p>
+<pre><code>readyState :当前状态,0-未初始化，1-正在载入，2-已经载入，3-数据进行交互，4-完成。
+status  ：返回的HTTP状态码，比如常见的404,500等错误代码。
+statusText ：对应状态码的错误信息，比如404错误信息是not found,500是Internal Server Error。
+responseText ：服务器响应返回的文本信息
+</code></pre><p>第二个参数 String textStatus</p>
+<pre><code>返回的是字符串类型，表示返回的状态，
+根据服务器不同的错误可能返回下面这些信息：
+&quot;timeout&quot;（超时）, &quot;error&quot;（错误）, &quot;abort&quot;(中止), &quot;parsererror&quot;（解析错误），
+还有可能返回空值。
+</code></pre><p>第三个参数 String errorThrown</p>
+<pre><code>也是字符串类型，表示服务器抛出返回的错误信息，
+如果产生的是HTTP错误，那么返回的信息就是HTTP状态码对应的错误信息，
+比如404的Not Found,500错误的Internal Server Error。
+</code></pre><h2 id="error测试"><a href="#error测试" class="headerlink" title="error测试"></a>error测试</h2><pre><code>error: function(xhr,textStatus,errorThrown){
+    console.info(&quot;错误提示： &quot; + xhr.status + 
+                &quot;\n\r&quot; + xhr.statusText+
+                &quot;\n\r&quot;+textStatus+
+                &quot;\n\r&quot;+errorThrown);
+    //把服务端接收方法注释掉
+        输出结果为
+        404 
+        Not Found
+        error
+        Not Found
+}
+</code></pre><h1 id="请求对应node服务器代码"><a href="#请求对应node服务器代码" class="headerlink" title="请求对应node服务器代码"></a>请求对应node服务器代码</h1><pre><code>app.post(&apos;/changePassword&apos;, index.changePassword);
+exports.changePassword = function (req, res) {
+    //服务端通过req的body接收ajax的post数据
+    var data = req.body;//post请求
+    //var data = req.query;//get请求
+    var userID = data.userID;
+    var oldPassword = loginUser.password;
+    //通过res的json方法向客户端发送一个 JSON 格式的响应
+    res.json({status:&apos;success&apos;});
+
+}
 </code></pre>
       
     </div>
@@ -417,8 +431,8 @@ categories:
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/25/js基础/" rel="next" title="JS">
-                <i class="fa fa-chevron-left"></i> JS
+              <a href="/2018/04/28/npm常用命令/" rel="next" title="npm常用命令">
+                <i class="fa fa-chevron-left"></i> npm常用命令
               </a>
             
           </div>
@@ -426,10 +440,6 @@ categories:
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/26/Hexo-Next-更换scheme，本地server查看成功，部署到github访问博客未变化/" rel="prev" title="Hexo Next 更换scheme，本地server查看成功，部署到github访问博客未变化">
-                Hexo Next 更换scheme，本地server查看成功，部署到github访问博客未变化 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -556,7 +566,7 @@ categories:
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-安装"><span class="nav-number">1.</span> <span class="nav-text">Hexo 安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建站"><span class="nav-number">2.</span> <span class="nav-text">建站</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编译生成博文"><span class="nav-number">3.</span> <span class="nav-text">编译生成博文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#启动Hexo服务器"><span class="nav-number">4.</span> <span class="nav-text">启动Hexo服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#新建一篇博客文章"><span class="nav-number">5.</span> <span class="nav-text">新建一篇博客文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题安装"><span class="nav-number">6.</span> <span class="nav-text">主题安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建分类"><span class="nav-number">7.</span> <span class="nav-text">创建分类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#页面ajax"><span class="nav-number">1.</span> <span class="nav-text">页面ajax</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#error参数详解"><span class="nav-number">1.1.</span> <span class="nav-text">error参数详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#error测试"><span class="nav-number">1.2.</span> <span class="nav-text">error测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#请求对应node服务器代码"><span class="nav-number">2.</span> <span class="nav-text">请求对应node服务器代码</span></a></li></ol></div>
             
 
           </div>
