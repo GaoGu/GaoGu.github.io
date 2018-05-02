@@ -353,13 +353,13 @@ switch后边的变量和case后边值的数据类型必须保持一致
     }
     while (false)
 
-### JavaScript Break 和 Continue 语句
+## JavaScript Break 和 Continue 语句
 
 break 语句可用于跳出循环
 
 continue 语句跳出循环后，会继续执行该循环之后的代码（如果有的话）
 
-#### JavaScript 标签
+### JavaScript 标签
 如需标记 JavaScript 语句，请在语句之前加上冒号：
 
 	label:
