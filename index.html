@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/02/使用node进行ajax前后交互/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/跳跳虎计划/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
@@ -293,7 +293,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/02/使用node进行ajax前后交互/" itemprop="url">使用node进行ajax前后交互</a></h1>
+                <a class="post-title-link" href="/2018/05/18/跳跳虎计划/" itemprop="url">未命名</a></h1>
         
 
         <div class="post-meta">
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T19:28:50+08:00">
-                2018-05-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T09:55:18+08:00">
+                2018-05-18
               </time>
             
 
@@ -345,73 +345,11 @@
       
         
           
-            <h1 id="页面ajax"><a href="#页面ajax" class="headerlink" title="页面ajax"></a>页面ajax</h1><pre><code>function changePasswordAjax(newPassword){
-        $.ajax({
-            type: &apos;post&apos;,//请求的URL
-            url: &apos;/changePassword&apos;,规定请求的类型（GET 或 POST）。
-            async: false,//表示请求是否异步处理。默认是 true。
-            data: {
-                userID:loginUser._id,
-                oldPassword:loginUser.password
-                },//规定要发送到服务器的数据。
-            dataType: &apos;json&apos;,//预期的服务器响应的数据类型。
-            cache: false,//表示浏览器是否缓存被请求页面。默认是 true。
-            timeout: 5000,//设置本地的请求超时时间（以毫秒计）。5秒
-            success: function(result,data){
-                var status = result.status;//
-                if(result.status==&quot;success&quot;){
-                    console.info(&quot;OK&quot;);
-                }
-            },//当请求成功时运行的函数。success(result,status,xhr)
-            error: function(){
-
-            }//如果请求失败要运行的函数。error(xhr,status,error)
-        });
-}
-</code></pre><h2 id="error参数详解"><a href="#error参数详解" class="headerlink" title="error参数详解"></a>error参数详解</h2><p>一般error函数返回的参数有三个： function(jqXHR jqXHR, String textStatus, String errorThrown)。</p>
-<p>第一个参数 jqXHR jqXHR</p>
-<pre><code>这里的jqXHR是一个jqXHR对象
-在Jquery1.4和1.4版本之前返回的是XMLHttpRequest对象
-1.5版本以后则开始使用jqXHR对象，该对象是一个超集，
-就是该对象不仅包括XMLHttpRequest对象，还包含其他更多的详细属性和信息。
-</code></pre><p>主要有4个属性：</p>
-<pre><code>readyState :当前状态,0-未初始化，1-正在载入，2-已经载入，3-数据进行交互，4-完成。
-status  ：返回的HTTP状态码，比如常见的404,500等错误代码。
-statusText ：对应状态码的错误信息，比如404错误信息是not found,500是Internal Server Error。
-responseText ：服务器响应返回的文本信息
-</code></pre><p>第二个参数 String textStatus</p>
-<pre><code>返回的是字符串类型，表示返回的状态，
-根据服务器不同的错误可能返回下面这些信息：
-&quot;timeout&quot;（超时）, &quot;error&quot;（错误）, &quot;abort&quot;(中止), &quot;parsererror&quot;（解析错误），
-还有可能返回空值。
-</code></pre><p>第三个参数 String errorThrown</p>
-<pre><code>也是字符串类型，表示服务器抛出返回的错误信息，
-如果产生的是HTTP错误，那么返回的信息就是HTTP状态码对应的错误信息，
-比如404的Not Found,500错误的Internal Server Error。
-</code></pre><h2 id="error测试"><a href="#error测试" class="headerlink" title="error测试"></a>error测试</h2><pre><code>error: function(xhr,textStatus,errorThrown){
-    console.info(&quot;错误提示： &quot; + xhr.status + 
-                &quot;\n\r&quot; + xhr.statusText+
-                &quot;\n\r&quot;+textStatus+
-                &quot;\n\r&quot;+errorThrown);
-    //把服务端接收方法注释掉
-        输出结果为
-        404 
-        Not Found
-        error
-        Not Found
-}
-</code></pre><h1 id="请求对应node服务器代码"><a href="#请求对应node服务器代码" class="headerlink" title="请求对应node服务器代码"></a>请求对应node服务器代码</h1><pre><code>app.post(&apos;/changePassword&apos;, index.changePassword);
-exports.changePassword = function (req, res) {
-    //服务端通过req的body接收ajax的post数据
-    var data = req.body;//post请求
-    //var data = req.query;//get请求
-    var userID = data.userID;
-    var oldPassword = loginUser.password;
-    //通过res的json方法向客户端发送一个 JSON 格式的响应
-    res.json({status:&apos;success&apos;});
-
-}
-</code></pre>
+            <h1 id="复习总结"><a href="#复习总结" class="headerlink" title="复习总结"></a>复习总结</h1><h2 id="js基础"><a href="#js基础" class="headerlink" title="js基础"></a>js基础</h2><p><a href="https://www.runoob.com/js/js-tutorial.html" target="_blank" rel="noopener">JavaScript 教程</a></p>
+<h2 id="js高级"><a href="#js高级" class="headerlink" title="js高级"></a>js高级</h2><h2 id="es6"><a href="#es6" class="headerlink" title="es6"></a>es6</h2><p><a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ECMAScript 6 入门</a></p>
+<h2 id="node实战"><a href="#node实战" class="headerlink" title="node实战"></a>node实战</h2><p>看node实战pdf</p>
+<h2 id="node深入"><a href="#node深入" class="headerlink" title="node深入"></a>node深入</h2><p>看node深入浅出</p>
+<h1 id="实战练习"><a href="#实战练习" class="headerlink" title="实战练习"></a>实战练习</h1><h1 id="面试题练习"><a href="#面试题练习" class="headerlink" title="面试题练习"></a>面试题练习</h1>
           
         
       
@@ -459,7 +397,7 @@ exports.changePassword = function (req, res) {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/npm常用命令/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/hexo/使用 Hexo 基于 GitHub Pages 搭建个人博客/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
@@ -478,7 +416,7 @@ exports.changePassword = function (req, res) {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/28/npm常用命令/" itemprop="url">npm常用命令</a></h1>
+                <a class="post-title-link" href="/2018/05/18/hexo/使用 Hexo 基于 GitHub Pages 搭建个人博客/" itemprop="url">使用 Hexo 基于 GitHub Pages 搭建个人博客</a></h1>
         
 
         <div class="post-meta">
@@ -490,695 +428,8 @@ exports.changePassword = function (req, res) {
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:55:38+08:00">
-                2018-04-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>#安装 install<br>npm install express<br>默认会安装express的最新版本，也可以通过在后面加版本号的方式安装指定版本，如npm install <a href="mailto:express@3.0.6" target="_blank" rel="noopener">express@3.0.6</a></p>
-<p>npm install <name> -g<br>将包安装到全局环境中</name></p>
-<p>但是代码中，直接通过require()的方式是没有办法调用全局安装的包的。全局的安装是供命令行使用的，就好像全局安装了vmarket后，就可以在命令行中直接运行vm命令</p>
-<p>npm install <name> –save<br>安装的同时，将信息写入package.json中项目路径中如果有package.json文件时，直接使用npm install方法就可以根据dependencies配置安装所有的依赖包，这样代码提交到github时，就不用提交node_modules这个文件夹了。</name></p>
-<p>2、npm view moduleNames：查看node模块的package.json文件夹<br>注意事项：如果想要查看package.json文件夹下某个标签的内容，可以使用$npm view moduleName labelName</p>
-<p>3、npm list：查看当前目录下已安装的node包<br>注意事项：Node模块搜索是从代码执行的当前目录开始的，搜索结果取决于当前使用的目录中的node_modules下的内容。$ npm list parseable=true可以目录的形式来展现当前安装的所有node包</p>
-<p>4、npm help：查看帮助命令</p>
-<p>5、npm view moudleName dependencies：查看包的依赖关系</p>
-<p>6、npm view moduleName repository.url：查看包的源文件地址</p>
-<p>7、npm view moduleName engines：查看包所依赖的Node的版本</p>
-<p>8、npm help folders：查看npm使用的所有文件夹</p>
-<p>9、npm rebuild moduleName：用于更改包内容后进行重建</p>
-<p>10、npm outdated：检查包是否已经过时，此命令会列出所有已经过时的包，可以及时进行包的更新</p>
-<p>11、npm update moduleName：更新node模块</p>
-<p>12、npm uninstall moudleName：卸载node模块</p>
-<p>13、一个npm包是包含了package.json的文件夹，package.json描述了这个文件夹的结构。访问npm的json文件夹的方法如下：<br>$ npm help json<br>此命令会以默认的方式打开一个网页，如果更改了默认打开程序则可能不会以网页的形式打开。</p>
-<p>14、发布一个npm包的时候，需要检验某个包名是否已存在<br>$ npm search packageName</p>
-<p>15、npm init：会引导你创建一个package.json文件，包括名称、版本、作者这些信息等</p>
-<p>16、npm root：查看当前包的安装路径<br>npm root -g：查看全局的包的安装路径</p>
-<p>17、npm -v：查看npm安装的版本</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/js数据类型/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Harper">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Harper's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/28/js数据类型/" itemprop="url">js数据类型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:23:44+08:00">
-                2018-04-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>在 JavaScript 中有 5 种不同的数据类型：</p>
-<pre><code>string
-number
-boolean
-object
-function
-</code></pre><p>3 种对象类型：</p>
-<pre><code>Object
-Date
-Array
-</code></pre><p>2 个不包含任何值的数据类型：</p>
-<pre><code>null
-undefined
-</code></pre><p>请注意</p>
-<pre><code>NaN 的数据类型是 number
-数组(Array)的数据类型是 object
-日期(Date)的数据类型为 object
-null 的数据类型是 object
-未定义变量的数据类型为 undefined
-</code></pre><p>JavaScript 拥有动态类型。这意味着相同的变量可用作不同的类型：</p>
-<pre><code>var x;               // x 为 undefined
-var x = 5;           // 现在 x 为数字
-var x = &quot;John&quot;;      // 现在 x 为字符串
-</code></pre><h2 id="1-简单数据类型"><a href="#1-简单数据类型" class="headerlink" title="1. 简单数据类型"></a>1. 简单数据类型</h2><h3 id="1-1-数字"><a href="#1-1-数字" class="headerlink" title="1.1 数字"></a>1.1 数字</h3><p>JavaScript 只有一种数字类型。数字可以带小数点，也可以不带：</p>
-<pre><code>var x1=34.00;      //使用小数点来写
-var x2=34;         //不使用小数点来写
-</code></pre><h3 id="1-2-字符串"><a href="#1-2-字符串" class="headerlink" title="1.2 字符串"></a>1.2 字符串</h3><p>字符串可以是引号中的任意文本。您可以使用单引号或双引号：</p>
-<pre><code>var carname=&quot;Volvo XC60&quot;;
-var carname=&apos;Volvo XC60&apos;;
-</code></pre><p>你可以使用索引位置来访问字符串中的每个字符：</p>
-<pre><code>var carname = carname[7];
-</code></pre><p>字符串的索引从 0 开始，这意味着第一个字符索引值为 [0],第二个为 [1], 以此类推。</p>
-<p>字符串长度</p>
-<p>可以使用内置属性 length 来计算字符串的长度：</p>
-<pre><code>var txt = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
-var sln = txt.length;
-</code></pre><h3 id="1-3-布尔"><a href="#1-3-布尔" class="headerlink" title="1.3 布尔"></a>1.3 布尔</h3><p>只有2个值一个是true, 一个是false.   实际运算中true=1,false=0</p>
-<pre><code>var x=true;
-var y=false;
-</code></pre><h3 id="1-4-undefined"><a href="#1-4-undefined" class="headerlink" title="1.4 undefined"></a>1.4 undefined</h3><p>在 JavaScript 中, undefined 是一个没有设置值的变量。</p>
-<p>typeof 一个没有值的变量会返回 undefined。</p>
-<p>你可以设置为 undefined 来清空对象:</p>
-<pre><code>var n;
-alert(n);
-</code></pre><p>变量在内存中是存在的</p>
-<h3 id="1-5-null"><a href="#1-5-null" class="headerlink" title="1.5 null"></a>1.5 null</h3><p>在 JavaScript 中 null 表示 “什么都没有”。</p>
-<p>null是一个只有一个值的特殊类型。表示一个空对象引用。</p>
-<p>你可以设置为 null 来清空对象:</p>
-<pre><code>var n = 1;
-n = null;
-alert(n);
-</code></pre><p>在内存中找不到这个变量</p>
-<h2 id="2-复杂数据类型"><a href="#2-复杂数据类型" class="headerlink" title="2. 复杂数据类型"></a>2. 复杂数据类型</h2><h3 id="2-1-JavaScript-数组"><a href="#2-1-JavaScript-数组" class="headerlink" title="2.1 JavaScript 数组"></a>2.1 JavaScript 数组</h3><p>创建名为 cars 的数组：</p>
-<pre><code>var cars=new Array();
-cars[0]=&quot;Saab&quot;;
-cars[1]=&quot;Volvo&quot;;
-cars[2]=&quot;BMW&quot;;
-</code></pre><p>或者 (condensed array):</p>
-<pre><code>var cars=new Array(&quot;Saab&quot;,&quot;Volvo&quot;,&quot;BMW&quot;);
-</code></pre><p>或者 (literal array):</p>
-<pre><code>var cars=[&quot;Saab&quot;,&quot;Volvo&quot;,&quot;BMW&quot;];
-</code></pre><h3 id="2-2-JavaScript-对象"><a href="#2-2-JavaScript-对象" class="headerlink" title="2.2 JavaScript 对象"></a>2.2 JavaScript 对象</h3><p>对象由花括号分隔。在括号内部，对象的属性以名称和值对的形式 (name : value) 来定义。属性由逗号分隔：</p>
-<pre><code>var person={
-    firstname : &quot;John&quot;,
-    lastname  : &quot;Doe&quot;,
-    id        :  5566
-};
-</code></pre><p>上面例子中的对象 (person) 有三个属性：firstname、lastname 以及 id。</p>
-<p>对象属性有两种寻址方式：</p>
-<pre><code>name=person.lastname;
-name=person[&quot;lastname&quot;];
-</code></pre><h3 id="2-3-对象方法属性的调用"><a href="#2-3-对象方法属性的调用" class="headerlink" title="2.3 对象方法属性的调用"></a>2.3 对象方法属性的调用</h3><pre><code>var person = {
-    firstName: &quot;John&quot;,
-    lastName : &quot;Doe&quot;,
-    id : 5566,
-    fullName : function() 
-    {
-       return this.firstName + &quot; &quot; + this.lastName;
-    }
-};
-</code></pre><p>person.fullName; //不加括号输出函数表达式 </p>
-<pre><code>function () { return this.firstName + &quot; &quot; + this.lastName; }
-</code></pre><p>person.fullName(); //加括号输出函数执行结果</p>
-<pre><code>John Doe
-</code></pre><h3 id="3-判断数据类型"><a href="#3-判断数据类型" class="headerlink" title="3.判断数据类型"></a>3.判断数据类型</h3><pre><code>typeof &quot;John&quot;                // 返回 string 
-typeof 3.14                  // 返回 number
-typeof false                 // 返回 boolean
-typeof [1,2,3,4]             // 返回 object
-typeof {name:&apos;John&apos;, age:34} // 返回 object
-</code></pre><p>在JavaScript中，数组是一种特殊的对象类型。 因此 typeof [1,2,3,4] 返回 object</p>
-<pre><code>typeof undefined             // undefined
-typeof null                  // object
-null === undefined           // false
-null == undefined            // true
-</code></pre><p>null 和 undefined 的值相等，但类型不等</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/房产/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Harper">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Harper's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/27/房产/" itemprop="url">房产</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-27T09:30:03+08:00">
-                2018-04-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/投资/" itemprop="url" rel="index">
-                    <span itemprop="name">投资</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1.规划是房价上涨的动因之一。大到国家战略规划，小至城市发展规划。国家战略规划是长期使命，因为涉及到一个国家的未来，那么有些城市作为战略落脚点会赶上百年难遇的机会。例如天字号工程“一带一路”下的两个起点，海南和西安。海南如果没有政策锁住楼市，必然会迎来历史上的第三波大涨，而西安为了能支撑起这个名号也在疯狂拦人打基础。</p>
-<p>而城市发展规划，目前来看就是所有城市的新区。而且是越小的城市，新区的房价相对越有潜力。因为城市化是任务，而改造旧城所花费的成本远大于建一个新城，地方政府会把所有资源倾斜于新城的建设，没有之一。</p>
-<p>2.规划利好都有波折性。因为大家不可能第一时间拿到一手信息，所以接收到信息的时候，也就迎来了哄抢的局面。但是哄抢之后发现人口没跟得上来，炒房客找不到接盘侠撑不住经济压力，就会降价抛售房源，房价一旦下跌又会带动非刚需购房者的下跌情绪，这叫做过分透支规划。这时候不妨等大家过分透支规划迎来“落空”再去上车。</p>
-<p>例如通州，前两年，规划消息散布，房价大涨，人口跟不上，房价下跌，人口不断聚集，房价再次上涨。又例如环京燕郊楼市，规划通州之期跟涨，现在又跌到低谷，所以这个时候正是上车的好时机。两年之后燕郊楼市必涨无疑。投资反人性，养成买跌不买涨的心态。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/Hexo-Next-更换scheme，本地server查看成功，部署到github访问博客未变化/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Harper">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Harper's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/26/Hexo-Next-更换scheme，本地server查看成功，部署到github访问博客未变化/" itemprop="url">Hexo Next 更换scheme，本地server查看成功，部署到github访问博客未变化</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T10:40:45+08:00">
-                2018-04-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>清理缓存</p>
-<pre><code>$ hexo clean
-</code></pre><p>重新部署</p>
-<p>Ctrl+F5刷新浏览器页面查看</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/25/使用 Hexo 基于 GitHub Pages 搭建个人博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Harper">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Harper's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/25/使用 Hexo 基于 GitHub Pages 搭建个人博客/" itemprop="url">使用 Hexo 基于 GitHub Pages 搭建个人博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-25T18:36:39+08:00">
-                2018-04-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T09:55:18+08:00">
+                2018-05-18
               </time>
             
 
@@ -1317,7 +568,7 @@ categories:
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/25/js基础/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/node学习资料/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
@@ -1336,7 +587,7 @@ categories:
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/25/js基础/" itemprop="url">JS</a></h1>
+                <a class="post-title-link" href="/2018/05/18/node学习资料/" itemprop="url">未命名</a></h1>
         
 
         <div class="post-meta">
@@ -1348,8 +599,8 @@ categories:
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-25T18:18:30+08:00">
-                2018-04-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T09:55:18+08:00">
+                2018-05-18
               </time>
             
 
@@ -1358,28 +609,6 @@ categories:
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -1410,280 +639,12 @@ categories:
       
         
           
-            <h1 id="JavaScript输出消息"><a href="#JavaScript输出消息" class="headerlink" title="JavaScript输出消息"></a>JavaScript输出消息</h1><h2 id="1-window的方法"><a href="#1-window的方法" class="headerlink" title="1.window的方法"></a>1.window的方法</h2><h3 id="1-1alert"><a href="#1-1alert" class="headerlink" title="1.1alert()"></a>1.1alert()</h3><p>显示带有一条指定消息和一个 确认 按钮的警告框，早期JS调试使用。</p>
-<h3 id="1-2confirm"><a href="#1-2confirm" class="headerlink" title="1.2confirm()"></a>1.2confirm()</h3><p>在页面弹出一个对话框, 常配合if判断使用。</p>
-<p>如果访问者点击”确定”，此方法返回true，否则返回false。</p>
-<pre><code>if(confirm(&quot;你好&quot;)){
-    alert(&quot;确定&quot;);
-}else{
-    alert(&quot;取消&quot;);
-}
-</code></pre><h3 id="1-3prompt"><a href="#1-3prompt" class="headerlink" title="1.3prompt()"></a>1.3prompt()</h3><p>prompt()方法用于显示可提示用户进行输入的对话框。<br>这个方法返回用户输入的字符串。</p>
-<h2 id="2-JavaScript-Console-对象"><a href="#2-JavaScript-Console-对象" class="headerlink" title="2.JavaScript Console 对象"></a>2.JavaScript Console 对象</h2><p>console.log()  </p>
-<p>将信息输入到控制台，用于js调试</p>
-<h2 id="3-HTML-DOM-Document-对象"><a href="#3-HTML-DOM-Document-对象" class="headerlink" title="3.HTML DOM Document 对象"></a>3.HTML DOM Document 对象</h2><p>document.write()<br>在页面输出消息</p>
-<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>在 JavaScript 中有 5 种不同的数据类型：</p>
-<pre><code>string
-number
-boolean
-object
-function
-</code></pre><p>3 种对象类型：</p>
-<pre><code>Object
-Date
-Array
-</code></pre><p>2 个不包含任何值的数据类型：</p>
-<pre><code>null
-undefined
-</code></pre><p>请注意</p>
-<pre><code>NaN 的数据类型是 number
-数组(Array)的数据类型是 object
-日期(Date)的数据类型为 object
-null 的数据类型是 object
-未定义变量的数据类型为 undefined
-</code></pre><p>JavaScript 拥有动态类型。这意味着相同的变量可用作不同的类型：</p>
-<pre><code>var x;               // x 为 undefined
-var x = 5;           // 现在 x 为数字
-var x = &quot;John&quot;;      // 现在 x 为字符串
-</code></pre><h2 id="1-简单数据类型"><a href="#1-简单数据类型" class="headerlink" title="1. 简单数据类型"></a>1. 简单数据类型</h2><h3 id="1-1-数字"><a href="#1-1-数字" class="headerlink" title="1.1 数字"></a>1.1 数字</h3><p>JavaScript 只有一种数字类型。数字可以带小数点，也可以不带：</p>
-<pre><code>var x1=34.00;      //使用小数点来写
-var x2=34;         //不使用小数点来写
-</code></pre><h3 id="1-2-字符串"><a href="#1-2-字符串" class="headerlink" title="1.2 字符串"></a>1.2 字符串</h3><p>字符串可以是引号中的任意文本。您可以使用单引号或双引号：</p>
-<pre><code>var carname=&quot;Volvo XC60&quot;;
-var carname=&apos;Volvo XC60&apos;;
-</code></pre><p>你可以使用索引位置来访问字符串中的每个字符：</p>
-<pre><code>var carname = carname[7];
-</code></pre><p>字符串的索引从 0 开始，这意味着第一个字符索引值为 [0],第二个为 [1], 以此类推。</p>
-<p>字符串长度</p>
-<p>可以使用内置属性 length 来计算字符串的长度：</p>
-<pre><code>var txt = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
-var sln = txt.length;
-</code></pre><h3 id="1-3-布尔"><a href="#1-3-布尔" class="headerlink" title="1.3 布尔"></a>1.3 布尔</h3><p>只有2个值一个是true, 一个是false.   实际运算中true=1,false=0</p>
-<pre><code>var x=true;
-var y=false;
-</code></pre><h3 id="1-4-undefined"><a href="#1-4-undefined" class="headerlink" title="1.4 undefined"></a>1.4 undefined</h3><p>在 JavaScript 中, undefined 是一个没有设置值的变量。</p>
-<p>typeof 一个没有值的变量会返回 undefined。</p>
-<p>你可以设置为 undefined 来清空对象:</p>
-<pre><code>var n;
-alert(n);
-</code></pre><p>变量在内存中是存在的</p>
-<h3 id="1-5-null"><a href="#1-5-null" class="headerlink" title="1.5 null"></a>1.5 null</h3><p>在 JavaScript 中 null 表示 “什么都没有”。</p>
-<p>null是一个只有一个值的特殊类型。表示一个空对象引用。</p>
-<p>你可以设置为 null 来清空对象:</p>
-<pre><code>var n = 1;
-n = null;
-alert(n);
-</code></pre><p>在内存中找不到这个变量</p>
-<h2 id="2-复杂数据类型"><a href="#2-复杂数据类型" class="headerlink" title="2. 复杂数据类型"></a>2. 复杂数据类型</h2><h3 id="2-1-JavaScript-数组"><a href="#2-1-JavaScript-数组" class="headerlink" title="2.1 JavaScript 数组"></a>2.1 JavaScript 数组</h3><p>创建名为 cars 的数组：</p>
-<pre><code>var cars=new Array();
-cars[0]=&quot;Saab&quot;;
-cars[1]=&quot;Volvo&quot;;
-cars[2]=&quot;BMW&quot;;
-</code></pre><p>或者 (condensed array):</p>
-<pre><code>var cars=new Array(&quot;Saab&quot;,&quot;Volvo&quot;,&quot;BMW&quot;);
-</code></pre><p>或者 (literal array):</p>
-<pre><code>var cars=[&quot;Saab&quot;,&quot;Volvo&quot;,&quot;BMW&quot;];
-</code></pre><h3 id="2-2-JavaScript-对象"><a href="#2-2-JavaScript-对象" class="headerlink" title="2.2 JavaScript 对象"></a>2.2 JavaScript 对象</h3><p>对象由花括号分隔。在括号内部，对象的属性以名称和值对的形式 (name : value) 来定义。属性由逗号分隔：</p>
-<pre><code>var person={
-    firstname : &quot;John&quot;,
-    lastname  : &quot;Doe&quot;,
-    id        :  5566
-};
-</code></pre><p>上面例子中的对象 (person) 有三个属性：firstname、lastname 以及 id。</p>
-<p>对象属性有两种寻址方式：</p>
-<pre><code>name=person.lastname;
-name=person[&quot;lastname&quot;];
-</code></pre><h3 id="2-3-对象方法属性的调用"><a href="#2-3-对象方法属性的调用" class="headerlink" title="2.3 对象方法属性的调用"></a>2.3 对象方法属性的调用</h3><pre><code>var person = {
-    firstName: &quot;John&quot;,
-    lastName : &quot;Doe&quot;,
-    id : 5566,
-    fullName : function() 
-    {
-       return this.firstName + &quot; &quot; + this.lastName;
-    }
-};
-</code></pre><p>person.fullName; //不加括号输出函数表达式 </p>
-<pre><code>function () { return this.firstName + &quot; &quot; + this.lastName; }
-</code></pre><p>person.fullName(); //加括号输出函数执行结果</p>
-<pre><code>John Doe
-</code></pre><h3 id="3-判断数据类型"><a href="#3-判断数据类型" class="headerlink" title="3.判断数据类型"></a>3.判断数据类型</h3><pre><code>typeof &quot;John&quot;                // 返回 string 
-typeof 3.14                  // 返回 number
-typeof false                 // 返回 boolean
-typeof [1,2,3,4]             // 返回 object
-typeof {name:&apos;John&apos;, age:34} // 返回 object
-</code></pre><p>在JavaScript中，数组是一种特殊的对象类型。 因此 typeof [1,2,3,4] 返回 object。</p>
-<pre><code>typeof undefined             // undefined
-typeof null                  // object
-null === undefined           // false
-null == undefined            // true
-</code></pre><p>null 和 undefined 的值相等，但类型不等：</p>
-<h1 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h1><h2 id="1-if…Else-语句"><a href="#1-if…Else-语句" class="headerlink" title="1. if…Else 语句"></a>1. if…Else 语句</h2><p>语法</p>
-<pre><code>if (condition1)
-{
-    当条件 1 为 true 时执行的代码
-}
-else if (condition2)
-{
-    当条件 2 为 true 时执行的代码
-}
-else
-{
-  当条件 1 和 条件 2 都不为 true 时执行的代码
-}
-</code></pre><p>例子</p>
-<pre><code>if (time&lt;10)
-{
-    document.write(&quot;&lt;b&gt;早上好&lt;/b&gt;&quot;);
-}
-else if (time&gt;=10 &amp;&amp; time&lt;16)
-{
-    document.write(&quot;&lt;b&gt;今天好&lt;/b&gt;&quot;);
-}
-else
-{
-    document.write(&quot;&lt;b&gt;晚上好!&lt;/b&gt;&quot;);
-}
-</code></pre><h2 id="2-switch-语句"><a href="#2-switch-语句" class="headerlink" title="2. switch 语句"></a>2. switch 语句</h2><p>语法</p>
-<pre><code>switch(n)
-{
-    case 1:
-        执行代码块 1
-        break;
-    case 2:
-        执行代码块 2
-        break;
-    default:
-        与 case 1 和 case 2 不同时执行的代码
-}
-</code></pre><p>例子</p>
-<pre><code>var d=new Date().getDay(); 
-switch (d) 
-{ 
-  case 0:x=&quot;今天是星期日&quot;; 
-  break; 
-  case 1:x=&quot;今天是星期一&quot;; 
-  break; 
-  case 2:x=&quot;今天是星期二&quot;; 
-  break; 
-  case 3:x=&quot;今天是星期三&quot;; 
-  break; 
-  case 4:x=&quot;今天是星期四&quot;; 
-  break; 
-  case 5:x=&quot;今天是星期五&quot;; 
-  break; 
-  case 6:x=&quot;今天是星期六&quot;; 
-  break; 
-  default:
-  x=&quot;期待周末&quot;;
-}
-</code></pre><p>swich的比较是绝对比较，值和数据类型都会比较</p>
-<p>switch后边的变量和case后边值的数据类型必须保持一致</p>
-<p>必须带break；如果没有，条件成立后，后面的所以语句顺序执行并且不进行判断</p>
-<pre><code>var a = &quot;nihao&quot;;
-var b = new String(&quot;nihao&quot;);
-switch (a){ 
-  case b:
-    x=&quot;==&quot;; 
-      break;  
-  default:
-      x=&quot;===&quot;;
-}
-console.info(x);
-</code></pre><h2 id="3-JavaScript-for-循环"><a href="#3-JavaScript-for-循环" class="headerlink" title="3.JavaScript for 循环"></a>3.JavaScript for 循环</h2><p>语法</p>
-<pre><code>for (语句 1; 语句 2; 语句 3) 
-{
-    被执行的代码块
-}
-语句 1 （代码块）开始前执行
-语句 2 定义运行循环（代码块）的条件
-语句 3 在循环（代码块）已被执行之后执行
-</code></pre><p>例子</p>
-<pre><code>cars=[&quot;BMW&quot;,&quot;Volvo&quot;,&quot;Saab&quot;,&quot;Ford&quot;];
-
-for (var i=0;i&lt;cars.length;i++){
-    document.write(cars[i] + &quot;&lt;br&gt;&quot;);
-}
-</code></pre><h3 id="3-1语句1"><a href="#3-1语句1" class="headerlink" title="3.1语句1"></a>3.1语句1</h3><p>通常我们会使用语句 1 初始化循环中所用的变量 (var i=0)。</p>
-<pre><code>for (var i=0,len=cars.length; i&lt;len; i++)
-{ 
-    document.write(cars[i] + &quot;&lt;br&gt;&quot;);
-}
-或者
-var i=2,len=cars.length;
-for (; i&lt;len; i++){
-    document.write(cars[i] + &quot;&lt;br&gt;&quot;);
-}
-</code></pre><h3 id="3-2-语句2"><a href="#3-2-语句2" class="headerlink" title="3.2 语句2"></a>3.2 语句2</h3><p>通常语句 2 用于评估初始变量的条件。</p>
-<p>如果您省略了语句 2，那么必须在循环内提供 break。</p>
-<p>否则循环就无法停下来。这样有可能令浏览器崩溃。</p>
-<pre><code>for (var i=0;;i++){
-    document.write(cars[i] + &quot;&lt;br&gt;&quot;);
-    if(i&gt;=cars.length-1){
-        break;
-    }
-}
-</code></pre><h3 id="3-3"><a href="#3-3" class="headerlink" title="3.3"></a>3.3</h3><p>通常语句 3 会增加初始变量的值。</p>
-<p>语句 3 也可以省略（比如当循环内部有相应的代码时）：</p>
-<pre><code>var i=0
-for (;;){
-    document.write(cars[i] + &quot;&lt;br&gt;&quot;);
-    if(i&gt;=cars.length-1){
-        break;
-    }
-    i++;
-}
-</code></pre><h2 id="4-For-In-循环"><a href="#4-For-In-循环" class="headerlink" title="4. For/In 循环"></a>4. For/In 循环</h2><pre><code>var person={fname:&quot;John&quot;,lname:&quot;Doe&quot;,age:25}; 
-
-for (x in person)  // x 为属性名
-{
-    document.write(person[x] + &quot;&lt;br&gt;&quot;);
-}
-</code></pre><h2 id="5-JavaScript-while-循环"><a href="#5-JavaScript-while-循环" class="headerlink" title="5.JavaScript while 循环"></a>5.JavaScript while 循环</h2><h3 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h3><p>语法</p>
-<pre><code>while (条件) 
-{
-    需要执行的代码
-}
-</code></pre><p>先判断条件，为真再执行代码</p>
-<p>例子</p>
-<pre><code>var i=0;
-while (i&lt;5)
-{
-    document.write(i + &quot;&lt;br&gt;&quot;);
-    i++;
-}
-</code></pre><h3 id="do-while-循环"><a href="#do-while-循环" class="headerlink" title="do/while 循环"></a>do/while 循环</h3><p>先执行一次，再进行循环</p>
-<p>语法</p>
-<pre><code>do
-{
-    需要执行的代码
-}
-while (条件);
-</code></pre><p>例子</p>
-<pre><code>do
-{
-    console.info(&quot;我就执行&quot;);
-}
-while (false)
-</code></pre><h2 id="JavaScript-Break-和-Continue-语句"><a href="#JavaScript-Break-和-Continue-语句" class="headerlink" title="JavaScript Break 和 Continue 语句"></a>JavaScript Break 和 Continue 语句</h2><p>break 语句可用于跳出循环</p>
-<p>continue 语句跳出循环后，会继续执行该循环之后的代码（如果有的话）</p>
-<h3 id="JavaScript-标签"><a href="#JavaScript-标签" class="headerlink" title="JavaScript 标签"></a>JavaScript 标签</h3><p>如需标记 JavaScript 语句，请在语句之前加上冒号：</p>
-<pre><code>label:
-statements
-</code></pre><p>continue 语句（带有或不带标签引用）只能用在循环中</p>
-<p>break 语句（不带标签引用），只能用在循环或 switch 中。</p>
-<p>通过标签引用，break 语句可用于跳出任何 JavaScript 代码块：</p>
-<pre><code>cars=[&quot;BMW&quot;,&quot;Volvo&quot;,&quot;Saab&quot;,&quot;Ford&quot;];
-list: 
-{
-    document.write(cars[0] + &quot;&lt;br&gt;&quot;); 
-    document.write(cars[1] + &quot;&lt;br&gt;&quot;); 
-    document.write(cars[2] + &quot;&lt;br&gt;&quot;); 
-    break list;
-    document.write(cars[3] + &quot;&lt;br&gt;&quot;); 
-    document.write(cars[4] + &quot;&lt;br&gt;&quot;); 
-    document.write(cars[5] + &quot;&lt;br&gt;&quot;); 
-}
-</code></pre><p><a href="https://www.runoob.com/js/js-type-conversion.html" target="_blank" rel="noopener">https://www.runoob.com/js/js-type-conversion.html</a></p>
+            <h2 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h2><h3 id="深入浅出nodejs读书笔记"><a href="#深入浅出nodejs读书笔记" class="headerlink" title="深入浅出nodejs读书笔记"></a><a href="https://www.jianshu.com/p/37d16a63fbb9" target="_blank" rel="noopener">深入浅出nodejs读书笔记</a></h3><h3 id="廖雪峰js教程"><a href="#廖雪峰js教程" class="headerlink" title="廖雪峰js教程 "></a><a href="https://www.liaoxuefeng.com/" target="_blank" rel="noopener">廖雪峰js教程 </a></h3><h3 id="一起学Node-js"><a href="#一起学Node-js" class="headerlink" title="一起学Node.js"></a><a href="https://cnodejs.org/topic/581b0c4ebb9452c9052e7acb" target="_blank" rel="noopener">一起学Node.js</a></h3><h3 id="狼叔：如何正确的学习Node-js"><a href="#狼叔：如何正确的学习Node-js" class="headerlink" title="狼叔：如何正确的学习Node.js"></a><a href="https://cnodejs.org/topic/5ab3166be7b166bb7b9eccf7" target="_blank" rel="noopener">狼叔：如何正确的学习Node.js</a></h3><h3 id="node原理讲解"><a href="#node原理讲解" class="headerlink" title="node原理讲解"></a><a href="https://yunnysunny.gitbooks.io/nodebook/content/" target="_blank" rel="noopener">node原理讲解</a></h3><p>##书籍</p>
+<p>###深入浅出node</p>
+<p>###node.js实战</p>
+<p>###node.js实战（双色）</p>
+<p>###了不起的Node.js</p>
+<p>###Node.js开发指南</p>
 
           
         
@@ -1732,7 +693,7 @@ list:
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/25/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/markdownPad2安装/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
@@ -1751,7 +712,7 @@ list:
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/25/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2018/05/18/markdownPad2安装/" itemprop="url">未命名</a></h1>
         
 
         <div class="post-meta">
@@ -1763,8 +724,8 @@ list:
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-25T15:37:10+08:00">
-                2018-04-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T09:55:18+08:00">
+                2018-05-18
               </time>
             
 
@@ -1773,28 +734,6 @@ list:
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -1825,15 +764,741 @@ list:
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <p>#MarkdownPad专业版汉化激活教程（含下载地址）<br><a href="https://jingyan.baidu.com/article/ea24bc39b985dfda63b33176.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/ea24bc39b985dfda63b33176.html</a></p>
+<p>#win10下MarkdownPad 2的html渲染出错解决<br><a href="https://www.jianshu.com/p/38415413ea46" target="_blank" rel="noopener">https://www.jianshu.com/p/38415413ea46</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/markdown/通过gh-pages创建静态网站/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/18/markdown/通过gh-pages创建静态网站/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T09:55:18+08:00">
+                2018-05-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>通过gh-pages创建静态网站</p>
+<p>创建一个新项目</p>
+<p>建立分支gh-pages</p>
+<p>在项目得settings –&gt; branches –&gt; Default branch 选择   gh-pages</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/markdown/node学习资料/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/18/markdown/node学习资料/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T09:55:18+08:00">
+                2018-05-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h2><h3 id="深入浅出nodejs读书笔记"><a href="#深入浅出nodejs读书笔记" class="headerlink" title="深入浅出nodejs读书笔记"></a><a href="https://www.jianshu.com/p/37d16a63fbb9" target="_blank" rel="noopener">深入浅出nodejs读书笔记</a></h3><h3 id="廖雪峰js教程"><a href="#廖雪峰js教程" class="headerlink" title="廖雪峰js教程 "></a><a href="https://www.liaoxuefeng.com/" target="_blank" rel="noopener">廖雪峰js教程 </a></h3><h3 id="一起学Node-js"><a href="#一起学Node-js" class="headerlink" title="一起学Node.js"></a><a href="https://cnodejs.org/topic/581b0c4ebb9452c9052e7acb" target="_blank" rel="noopener">一起学Node.js</a></h3><h3 id="狼叔：如何正确的学习Node-js"><a href="#狼叔：如何正确的学习Node-js" class="headerlink" title="狼叔：如何正确的学习Node.js"></a><a href="https://cnodejs.org/topic/5ab3166be7b166bb7b9eccf7" target="_blank" rel="noopener">狼叔：如何正确的学习Node.js</a></h3><h3 id="node原理讲解"><a href="#node原理讲解" class="headerlink" title="node原理讲解"></a><a href="https://yunnysunny.gitbooks.io/nodebook/content/" target="_blank" rel="noopener">node原理讲解</a></h3><p>##书籍</p>
+<p>###深入浅出node</p>
+<p>###node.js实战</p>
+<p>###node.js实战（双色）</p>
+<p>###了不起的Node.js</p>
+<p>###Node.js开发指南</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/markdown/跳跳虎计划/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/18/markdown/跳跳虎计划/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T09:55:18+08:00">
+                2018-05-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="复习总结"><a href="#复习总结" class="headerlink" title="复习总结"></a>复习总结</h1><h2 id="js基础"><a href="#js基础" class="headerlink" title="js基础"></a>js基础</h2><p><a href="https://www.runoob.com/js/js-tutorial.html" target="_blank" rel="noopener">JavaScript 教程</a></p>
+<p><a href="https://www.liaoxuefeng.com/" target="_blank" rel="noopener">廖雪峰js教程 </a></p>
+<h2 id="js高级"><a href="#js高级" class="headerlink" title="js高级"></a>js高级</h2><h2 id="es6"><a href="#es6" class="headerlink" title="es6"></a>es6</h2><p><a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ECMAScript 6 入门</a></p>
+<h2 id="node实战"><a href="#node实战" class="headerlink" title="node实战"></a>node实战</h2><p>看node实战pdf</p>
+<h2 id="node深入"><a href="#node深入" class="headerlink" title="node深入"></a>node深入</h2><p>看node深入浅出</p>
+<h1 id="实战练习"><a href="#实战练习" class="headerlink" title="实战练习"></a>实战练习</h1><h1 id="面试题练习"><a href="#面试题练习" class="headerlink" title="面试题练习"></a>面试题练习</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/markdown/markdownPad2安装/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/18/markdown/markdownPad2安装/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T09:55:18+08:00">
+                2018-05-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#MarkdownPad专业版汉化激活教程（含下载地址）<br><a href="https://jingyan.baidu.com/article/ea24bc39b985dfda63b33176.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/ea24bc39b985dfda63b33176.html</a></p>
+<p>#win10下MarkdownPad 2的html渲染出错解决<br><a href="https://www.jianshu.com/p/38415413ea46" target="_blank" rel="noopener">https://www.jianshu.com/p/38415413ea46</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/markdown/javascript时间戳和日期字符串相互转换/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/18/markdown/javascript时间戳和日期字符串相互转换/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T09:55:18+08:00">
+                2018-05-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>javascript时间戳和日期字符串相互转换<br><a href="https://www.cnblogs.com/yjf512/p/3796229.html" target="_blank" rel="noopener">https://www.cnblogs.com/yjf512/p/3796229.html</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/markdown/TCP UDP socket http webSocket 之间的关系/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/18/markdown/TCP UDP socket http webSocket 之间的关系/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T09:55:18+08:00">
+                2018-05-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://segmentfault.com/a/1190000014476924" target="_blank" rel="noopener">https://segmentfault.com/a/1190000014476924</a><br><a href="https://blog.csdn.net/u012439774/article/details/53634927" target="_blank" rel="noopener">https://blog.csdn.net/u012439774/article/details/53634927</a><br><a href="https://www.jianshu.com/p/42260a2575f8" target="_blank" rel="noopener">https://www.jianshu.com/p/42260a2575f8</a></p>
 
           
         
@@ -1872,6 +1537,10 @@ list:
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1919,7 +1588,7 @@ list:
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1930,7 +1599,7 @@ list:
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
