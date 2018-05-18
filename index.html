@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/node/TCP UDP socket http webSocket 之间的关系/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/node/Node学习（三）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
@@ -293,7 +293,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/11/node/TCP UDP socket http webSocket 之间的关系/" itemprop="url">TCP、UDP、socket、webSocket、http之间的关系</a></h1>
+                <a class="post-title-link" href="/2018/05/18/node/Node学习（三）/" itemprop="url">未命名</a></h1>
         
 
         <div class="post-meta">
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-11T15:35:12+08:00">
-                2018-05-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T11:28:17+08:00">
+                2018-05-18
               </time>
             
 
@@ -315,28 +315,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -367,7 +345,242 @@
       
         
           
-            <p><a href="https://segmentfault.com/a/1190000014476924" target="_blank" rel="noopener">https://segmentfault.com/a/1190000014476924</a><br><a href="https://blog.csdn.net/u012439774/article/details/53634927" target="_blank" rel="noopener">https://blog.csdn.net/u012439774/article/details/53634927</a><br><a href="https://www.jianshu.com/p/42260a2575f8" target="_blank" rel="noopener">https://www.jianshu.com/p/42260a2575f8</a></p>
+            <hr>
+<p>title:node学习（三）<br>date: 2018-04-28 09:55:38<br>categories:</p>
+<ul>
+<li>node  </li>
+</ul>
+<hr>
+<h1 id="2-模块系统"><a href="#2-模块系统" class="headerlink" title="2.模块系统"></a>2.模块系统</h1><p>##2.1模块的种类</p>
+<p>在Node.js中，模块分为两类：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">第一类，核心模块（原生模块），node自带，用名称直接可以加载。</span><br><span class="line">- 核心模块</span><br><span class="line">  + fs file system</span><br><span class="line">  + http</span><br><span class="line">  + os</span><br><span class="line">  + path</span><br><span class="line">  + querystring</span><br><span class="line">  + url</span><br><span class="line">  ...</span><br><span class="line">第二类，文件模块，用路径加载，有一种特殊的文件模块-----&gt;包，可以用名字。</span><br></pre></td></tr></table></figure></p>
+<p>module 是一个全局对象，它的作用是存储模块信息的,每一个js是一个模块，每一个模块里面都有一个module，module里面还存储了父子结构<br>直接给module.exports赋值，exports是无效，用属性的形式去赋值的时候二者都有效</p>
+<h2 id="2-2-优先从缓存加载"><a href="#2-2-优先从缓存加载" class="headerlink" title="2.2 优先从缓存加载"></a>2.2 优先从缓存加载</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">common.js规范-----&gt;加载后，再次加载时，去缓存中取module.exports</span><br></pre></td></tr></table></figure>
+<h2 id="2-3-require参数解析"><a href="#2-3-require参数解析" class="headerlink" title="2.3 require参数解析"></a>2.3 require参数解析</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">核心模块是Node.js原生提供的加载核心模块的时候，</span><br><span class="line">不需要传入路径，因为Node.js已经将核心模块的文件代码</span><br><span class="line">编译到了二进制的可执行文件中了</span><br><span class="line">在加载的过程中，原生的核心模块的优先级是是最高的</span><br></pre></td></tr></table></figure>
+<p><img src="./pic/image1.jpg" alt="Alt text"></p>
+<ul>
+<li><p>./或../开始的相对路径文件模块</p>
+<figure class="highlight plain"><figcaption><span>和 你要加载的模块的文件名拼接 ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 以/开始的绝对路径文件模块</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在Linux或者MAc的操作系统中，/表示系统的根路径</li>
+<li>在Windows中，/表示当前文件模块所属的根磁盘路径<br>不建议使用，了解<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 标识符中可以不包含扩展名</span><br><span class="line">  + Node会按照`.js、.node、.json`的次序补足扩展名，依次尝试</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>不包含扩展名的时候，Node.js会按照<br>  路径.js     以后自己在加载js文件模块的时候，就省略掉.js后缀就可以了<br>  路径.node   后缀为node的文件是c/c++写的一些扩展模块<br>  路径.json   如果是加载json文件模块，最好加上后缀.json，能稍微的提高一点加载的速度</p>
+<pre><code>.json文件最终Node.js也是通过fs读文件的形式读取出来的，然后通过JSON.parse()转换成一个对象
+</code></pre></li>
+</ul>
+<pre><code>Node.js会通过同步阻塞的方式看这个路径是否存在
+依次尝试，直到找到为止，
+如果找不到，报错
+</code></pre>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">  - require 加载包的时候</span><br><span class="line">``` </span><br><span class="line">   直接写包名，先在包内的node_modules,</span><br><span class="line">   目录下查找，去父级目录下的node_modules目录下查找，</span><br><span class="line">   依次向上查找，直到根目录。</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.infoq.com/cn/articles/nodejs-module-mechanism/" target="_blank" rel="noopener">参考文献</a></p>
+<h1 id="3-包"><a href="#3-包" class="headerlink" title="3.包"></a>3.包</h1><p>还有一种特殊的文件模块，其实就是包</p>
+<ul>
+<li>问题：你开的一个功能模块，还是以文件的形式散列的，你给别人使用的时候很麻烦。</li>
+<li>包的作用：在模块的基础上进一步组织JavaScript代码</li>
+</ul>
+<h2 id="3-1-包的组成"><a href="#3-1-包的组成" class="headerlink" title="3.1 包的组成"></a>3.1 包的组成</h2><ul>
+<li>包结构</li>
+<li>包描述文件package.json<ul>
+<li>描述你的当前的包的一些相关的信息<br>+dependencies <ul>
+<li>包名：“版本号” </li>
+<li><blockquote>
+<p>+版本号   下载大于某个版本号，npm会下最新版</p>
+</blockquote>
+</li>
+<li>&lt; +版本号   下载小于某个版本号，npm会下小于这个版本号最新版</li>
+<li>&lt;= 小于等于 一定会下你写的这个版本，除非没有你写的这个版本</li>
+<li><blockquote>
+<p>= 大于等于  下载最新版</p>
+</blockquote>
+</li>
+<li>*、” “、X  任意 npm会给你下最新版</li>
+<li>~ +版本号  会去下约等于这个版本的最新版，在大版本不变的情况下下一个比较新的版本</li>
+<li>^ +版本号  不跃迁版本下载，^2.1.0 npm会下载大版本不变，去下载2.x.x版本里的最近版</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>  <a href="http://blog.csdn.net/woxueliuyun/article/details/39294375" target="_blank" rel="noopener">参考文献 package.json全字段解析</a></p>
+<p>##<br>npm install -g fast-init</p>
+<h2 id="3-2-package-json"><a href="#3-2-package-json" class="headerlink" title="3.2 package.json"></a>3.2 package.json</h2><p>包的描述文件</p>
+<p>package.json文件内部就是一个JSON对象，该对象的每一个成员就是当前项目的一项设置，<br>比如name就是项目名称，version就是项目的版本号</p>
+<p>在模块的加载机制中，有一个main属性是非常重要的，它很大意义上决定了包要导出的模块位置</p>
+<h2 id="3-3"><a href="#3-3" class="headerlink" title="3.3"></a>3.3</h2><h1 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h1><ul>
+<li>基于Node.js开发的包的托管网站</li>
+<li>Node.js包管理工具</li>
+</ul>
+<p>npm :基于包的规范实现的一个包管理工具</p>
+<ul>
+<li>npm install 包名</li>
+</ul>
+<p>当执行npm install的时候，它会自动跑到npm的网站，然后找到该包的github地址，<br>找到之后，下载这个压缩包，然后在执行npm install的当前目录下找一个叫做node_modules目录<br>如果找到，直接解压这个压缩包，到node_modules目录下<br>如果找不到，则新建一个node_modules目录，解压到该目录</p>
+<ul>
+<li><p>npm install -g 包名<br> 表示全局安装<br> npm在安装的时候，在全局设置了一个安装目录，只要是全局安装就会把包安装到这个目录里面去<br> npm install -g 包名 只要是全局安装就是安装命令行工具</p>
+</li>
+<li><p>npm install 缩写 npm i</p>
+</li>
+</ul>
+<p>当执行npm install的时候，会自动在当前目录中查找package.json文件<br>如果找到，找里面的 dependencies 字段，安装该字段中所有依赖的项</p>
+<ul>
+<li>npm docs 包名<br>通风这个命令打开 包相对应的文档</li>
+<li><p>npm install –save 生产环境<br>npm i -S jquery@3.*<br>咱们以后在做项目的时候，先初始化一个package.json文件，<br>在安装第三方包依赖的时候，必须使用npm install –save express,添加依赖项到package.json文件中，<br>实际就是添加到dependencies字段中</p>
+</li>
+<li><p>npm install -save-dev 开发环境<br>npm i -D jquery@3.*<br>咱们以后在做项目的时候，先初始化一个package.json文件，<br>在安装第三方包依赖的时候，必须使用npm install –save express,添加依赖项到package.json文件中，<br>实际就是添加到devDependencies字段中</p>
+</li>
+</ul>
+<ul>
+<li>npm config set prefix  修改全局安装目录<br>不建议使用，建议去文件夹里面改 C:\Users\用户名  里面有一个 .npmrc文件<br>去里面改prefix = C:\dev\npm  （写你的路径）<br>去全局的环境变量path里把C:\dev\npm  路径加进去</li>
+</ul>
+<p><a href="https://docs.npmjs.com/" target="_blank" rel="noopener">参考文献 npm的命令</a></p>
+<h1 id="npm-这种东西的最终的目的就是：让你的开发模式工程化，都依靠工具来管理"><a href="#npm-这种东西的最终的目的就是：让你的开发模式工程化，都依靠工具来管理" class="headerlink" title="npm 这种东西的最终的目的就是：让你的开发模式工程化，都依靠工具来管理"></a>npm 这种东西的最终的目的就是：让你的开发模式工程化，都依靠工具来管理</h1><h1 id="nvm-npm-nrm"><a href="#nvm-npm-nrm" class="headerlink" title="nvm npm nrm"></a>nvm npm nrm</h1><h2 id="3m"><a href="#3m" class="headerlink" title="3m"></a>3m</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nvm node版本的管理工具</span><br><span class="line">npm node的包管理工具</span><br><span class="line">nrm npm的数据源管理工具</span><br><span class="line"></span><br><span class="line"> npm install -g nrm</span><br></pre></td></tr></table></figure>
+<p>#4.文件操作</p>
+<p>###4.1箭头函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">箭头函数就是一种语法糖</span><br><span class="line">语法糖是一种语法，用这种语法能尝到甜头，能是编程高效</span><br><span class="line">当函数体有一个参数有返回值的时候</span><br><span class="line"></span><br><span class="line">var foo=function(v)&#123; return v;&#125;</span><br><span class="line">var foo=v=&gt;v;</span><br><span class="line">当函数体没有参数有返回值的时候</span><br><span class="line"></span><br><span class="line">var foo=function()&#123; return v;&#125;</span><br><span class="line"></span><br><span class="line">var foo=()=&gt;v;</span><br><span class="line">当函数体有多个参数有返回值的时候</span><br><span class="line"></span><br><span class="line">var foo=function(v1,v2)&#123; return v1+v2;&#125;</span><br><span class="line">var foo=(v1,v2)=&gt;v1+v2;</span><br><span class="line">当函数体有多个参数没有返回值的时候</span><br><span class="line">var foo=function(v1,v2)&#123; </span><br><span class="line">  console.log(v1); console.log(v2);</span><br><span class="line">  &#125;</span><br><span class="line">var foo=(v1,v2)=&gt;&#123;</span><br><span class="line">  console.log(v1); console.log(v2);</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure></p>
+<p>###4.2文件读写</p>
+<ul>
+<li>fs.readFile() 读文件</li>
+</ul>
+<p>fs.readFile(file, [options], callback)<br>//file 读文件的路径<br>//options 用[]包裹的可选参数，object {“encoding”:”uft8”,”flag”:”r”}  string ‘utf8’<br>//callback function  callback函数里面有两个参数<br>//err表示错误对象，如果readFile发生错误了，在callback函数里面会回返回err，err对象里面存着错误信息<br>//如何读文件成功，err为null<br>//data就是读文件，读出来的内容。</p>
+<ul>
+<li>fs.access(path,[mode], callback) 用来判断文件是否存在<br>//path 判断路径是否正确（也可以判断文件）’./pic’<br>//mode一般不用，默认就可以了，用的话是用来判断文件是否可读可写可执行<br>//callback 只有一个参数err，错，文件有问题</li>
+</ul>
+<h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><ul>
+<li>vsc教程<a href="vsc教程">http://i5ting.github.io/vsc/</a></li>
+</ul>
+<p>#作业<br>2.npm 和package.json结合着连<br>npm init    初始化package.json<br>npm install   先配置package.json里的devDependencies dependencies字段<br>npm i -S +包名 npm install –save  不光能下载包，还能把依赖添加到package.json<br>npm i -D +包名 npm install –save-dev 不光能下载包，还能把依赖添加到package.json<br>npm docs 包名  查看包的相关文件 jquery、mongoose、http-poster<br>npm list 当前目录有什么包，检测node_modules里面有什么<br>npm install –g 包名  全局安装 cnpm、nrm<br>3.cnpm<br>4.nrm<br>安装目录npm install -g nrm<br>nrm ls 查看数据源<br>nrm test 测试你的网连那个npm的数据源快<br>nrm use 切换数据源<br>5.阅读参考文献 朴灵 require<br>阅读参考文献 package.json全字段解析<br>6.github自己玩玩</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/node/http协议总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/18/node/http协议总结/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T11:28:17+08:00">
+                2018-05-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#简介<br>    HTTP协议是基于TCP/IP通信协议从万维网服务器传输超文本到本地浏览器的传送协议</p>
+<p>#工作原理<br>    HTTP客户端通过URL向HTTP服务器发送所有请求<br>    Web服务器根据接收到的请求，向客户端发送响应信息<br>    HTTP默认端口号是80</p>
+<p>#HTTP三点注意事项</p>
+<ul>
+<li>HTTP是无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间。</li>
+<li>HTTP是媒体独立的：这意味着，只要客户端和服务器知道如何处理的数据内容，任何类型的数据都可以通过HTTP发送。客户端以及服务器指定使用适合的MIME-type内容类型。</li>
+<li>HTTP是无状态：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。<br>#HTTP消息结构<br>##客户端请求消息<br>请求行 请求头部 空行 请求数据<br>例：请求行 GET /hello.txt HTTP/1.1<pre><code>请求方法  URL  版本协议
+</code></pre><h2 id="服务端响应消息"><a href="#服务端响应消息" class="headerlink" title="服务端响应消息"></a>服务端响应消息</h2>状态行 消息报头 空行 响应正文<br>例： 响应报头 HTTP/1.1 200 OK<pre><code>版本协议 状态码及描述
+</code></pre></li>
+</ul>
+<p>参考：<br><a href="https://www.cnblogs.com/ulysses-you/p/7837173.html#_label1" target="_blank" rel="noopener">“HTTP协议结构”</a></p>
+<p><a href="http://blog.csdn.net/shouwang666666/article/details/70232053" target="_blank" rel="noopener">HTTP请求/响应报文结构</a></p>
+<p><a href="http://www.runoob.com/http/http-messages.html" target="_blank" rel="noopener">菜鸟教程</a></p>
 
           
         
@@ -561,7 +774,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/node/socket/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/node/TCP UDP socket http webSocket 之间的关系/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
@@ -580,7 +793,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/11/node/socket/" itemprop="url">socket</a></h1>
+                <a class="post-title-link" href="/2018/05/11/node/TCP UDP socket http webSocket 之间的关系/" itemprop="url">TCP、UDP、socket、webSocket、http之间的关系</a></h1>
         
 
         <div class="post-meta">
@@ -654,7 +867,8 @@
       
         
           
-            
+            <p><a href="https://segmentfault.com/a/1190000014476924" target="_blank" rel="noopener">https://segmentfault.com/a/1190000014476924</a><br><a href="https://blog.csdn.net/u012439774/article/details/53634927" target="_blank" rel="noopener">https://blog.csdn.net/u012439774/article/details/53634927</a><br><a href="https://www.jianshu.com/p/42260a2575f8" target="_blank" rel="noopener">https://www.jianshu.com/p/42260a2575f8</a></p>
+
           
         
       
@@ -909,7 +1123,7 @@ exports.changePassword = function (req, res) {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/node/npm常用命令/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/web/javascript/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
@@ -928,7 +1142,7 @@ exports.changePassword = function (req, res) {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/28/node/npm常用命令/" itemprop="url">npm常用命令</a></h1>
+                <a class="post-title-link" href="/2018/04/28/web/javascript/" itemprop="url">javascript</a></h1>
         
 
         <div class="post-meta">
@@ -963,8 +1177,8 @@ exports.changePassword = function (req, res) {
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
                   </a>
                 </span>
 
@@ -1002,966 +1216,202 @@ exports.changePassword = function (req, res) {
       
         
           
-            <p>#安装 install<br>npm install express<br>默认会安装express的最新版本，也可以通过在后面加版本号的方式安装指定版本，如npm install <a href="mailto:express@3.0.6" target="_blank" rel="noopener">express@3.0.6</a></p>
-<p>npm install <name> -g<br>将包安装到全局环境中</name></p>
-<p>但是代码中，直接通过require()的方式是没有办法调用全局安装的包的。全局的安装是供命令行使用的，就好像全局安装了vmarket后，就可以在命令行中直接运行vm命令</p>
-<p>npm install <name> –save<br>安装的同时，将信息写入package.json中项目路径中如果有package.json文件时，直接使用npm install方法就可以根据dependencies配置安装所有的依赖包，这样代码提交到github时，就不用提交node_modules这个文件夹了。</name></p>
-<p>2、npm view moduleNames：查看node模块的package.json文件夹<br>注意事项：如果想要查看package.json文件夹下某个标签的内容，可以使用$npm view moduleName labelName</p>
-<p>3、npm list：查看当前目录下已安装的node包<br>注意事项：Node模块搜索是从代码执行的当前目录开始的，搜索结果取决于当前使用的目录中的node_modules下的内容。$ npm list parseable=true可以目录的形式来展现当前安装的所有node包</p>
-<p>4、npm help：查看帮助命令</p>
-<p>5、npm view moudleName dependencies：查看包的依赖关系</p>
-<p>6、npm view moduleName repository.url：查看包的源文件地址</p>
-<p>7、npm view moduleName engines：查看包所依赖的Node的版本</p>
-<p>8、npm help folders：查看npm使用的所有文件夹</p>
-<p>9、npm rebuild moduleName：用于更改包内容后进行重建</p>
-<p>10、npm outdated：检查包是否已经过时，此命令会列出所有已经过时的包，可以及时进行包的更新</p>
-<p>11、npm update moduleName：更新node模块</p>
-<p>12、npm uninstall moudleName：卸载node模块</p>
-<p>13、一个npm包是包含了package.json的文件夹，package.json描述了这个文件夹的结构。访问npm的json文件夹的方法如下：<br>$ npm help json<br>此命令会以默认的方式打开一个网页，如果更改了默认打开程序则可能不会以网页的形式打开。</p>
-<p>14、发布一个npm包的时候，需要检验某个包名是否已存在<br>$ npm search packageName</p>
-<p>15、npm init：会引导你创建一个package.json文件，包括名称、版本、作者这些信息等</p>
-<p>16、npm root：查看当前包的安装路径<br>npm root -g：查看全局的包的安装路径</p>
-<p>17、npm -v：查看npm安装的版本</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/node/node学习资料/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Harper">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Harper's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/28/node/node学习资料/" itemprop="url">node学习资料</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:55:38+08:00">
-                2018-04-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h2><h3 id="深入浅出nodejs读书笔记"><a href="#深入浅出nodejs读书笔记" class="headerlink" title="深入浅出nodejs读书笔记"></a><a href="https://www.jianshu.com/p/37d16a63fbb9" target="_blank" rel="noopener">深入浅出nodejs读书笔记</a></h3><h3 id="廖雪峰js教程"><a href="#廖雪峰js教程" class="headerlink" title="廖雪峰js教程 "></a><a href="https://www.liaoxuefeng.com/" target="_blank" rel="noopener">廖雪峰js教程 </a></h3><h3 id="一起学Node-js"><a href="#一起学Node-js" class="headerlink" title="一起学Node.js"></a><a href="https://cnodejs.org/topic/581b0c4ebb9452c9052e7acb" target="_blank" rel="noopener">一起学Node.js</a></h3><h3 id="狼叔：如何正确的学习Node-js"><a href="#狼叔：如何正确的学习Node-js" class="headerlink" title="狼叔：如何正确的学习Node.js"></a><a href="https://cnodejs.org/topic/5ab3166be7b166bb7b9eccf7" target="_blank" rel="noopener">狼叔：如何正确的学习Node.js</a></h3><h3 id="node原理讲解"><a href="#node原理讲解" class="headerlink" title="node原理讲解"></a><a href="https://yunnysunny.gitbooks.io/nodebook/content/" target="_blank" rel="noopener">node原理讲解</a></h3><p>##书籍</p>
-<p>###深入浅出node</p>
-<p>###node.js实战</p>
-<p>###node.js实战（双色）</p>
-<p>###了不起的Node.js</p>
-<p>###Node.js开发指南</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/js/js数据类型/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Harper">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Harper's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/28/js/js数据类型/" itemprop="url">js数据类型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:23:44+08:00">
-                2018-04-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>在 JavaScript 中有 5 种不同的数据类型：</p>
-<pre><code>string
-number
-boolean
-object
-function
-</code></pre><p>3 种对象类型：</p>
-<pre><code>Object
-Date
-Array
-</code></pre><p>2 个不包含任何值的数据类型：</p>
-<pre><code>null
-undefined
-</code></pre><p>请注意</p>
-<pre><code>NaN 的数据类型是 number
-数组(Array)的数据类型是 object
-日期(Date)的数据类型为 object
-null 的数据类型是 object
-未定义变量的数据类型为 undefined
-</code></pre><p>JavaScript 拥有动态类型。这意味着相同的变量可用作不同的类型：</p>
-<pre><code>var x;               // x 为 undefined
-var x = 5;           // 现在 x 为数字
-var x = &quot;John&quot;;      // 现在 x 为字符串
-</code></pre><h2 id="1-简单数据类型"><a href="#1-简单数据类型" class="headerlink" title="1. 简单数据类型"></a>1. 简单数据类型</h2><h3 id="1-1-数字"><a href="#1-1-数字" class="headerlink" title="1.1 数字"></a>1.1 数字</h3><p>JavaScript 只有一种数字类型。数字可以带小数点，也可以不带：</p>
-<pre><code>var x1=34.00;      //使用小数点来写
-var x2=34;         //不使用小数点来写
-</code></pre><h3 id="1-2-字符串"><a href="#1-2-字符串" class="headerlink" title="1.2 字符串"></a>1.2 字符串</h3><p>字符串可以是引号中的任意文本。您可以使用单引号或双引号：</p>
-<pre><code>var carname=&quot;Volvo XC60&quot;;
-var carname=&apos;Volvo XC60&apos;;
-</code></pre><p>你可以使用索引位置来访问字符串中的每个字符：</p>
-<pre><code>var carname = carname[7];
-</code></pre><p>字符串的索引从 0 开始，这意味着第一个字符索引值为 [0],第二个为 [1], 以此类推。</p>
-<p>字符串长度</p>
-<p>可以使用内置属性 length 来计算字符串的长度：</p>
-<pre><code>var txt = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
-var sln = txt.length;
-</code></pre><h3 id="1-3-布尔"><a href="#1-3-布尔" class="headerlink" title="1.3 布尔"></a>1.3 布尔</h3><p>只有2个值一个是true, 一个是false.   实际运算中true=1,false=0</p>
-<pre><code>var x=true;
-var y=false;
-</code></pre><h3 id="1-4-undefined"><a href="#1-4-undefined" class="headerlink" title="1.4 undefined"></a>1.4 undefined</h3><p>在 JavaScript 中, undefined 是一个没有设置值的变量。</p>
-<p>typeof 一个没有值的变量会返回 undefined。</p>
-<p>你可以设置为 undefined 来清空对象:</p>
-<pre><code>var n;
-alert(n);
-</code></pre><p>变量在内存中是存在的</p>
-<h3 id="1-5-null"><a href="#1-5-null" class="headerlink" title="1.5 null"></a>1.5 null</h3><p>在 JavaScript 中 null 表示 “什么都没有”。</p>
-<p>null是一个只有一个值的特殊类型。表示一个空对象引用。</p>
-<p>你可以设置为 null 来清空对象:</p>
-<pre><code>var n = 1;
-n = null;
-alert(n);
-</code></pre><p>在内存中找不到这个变量</p>
-<h2 id="2-复杂数据类型"><a href="#2-复杂数据类型" class="headerlink" title="2. 复杂数据类型"></a>2. 复杂数据类型</h2><h3 id="2-1-JavaScript-数组"><a href="#2-1-JavaScript-数组" class="headerlink" title="2.1 JavaScript 数组"></a>2.1 JavaScript 数组</h3><p>创建名为 cars 的数组：</p>
-<pre><code>var cars=new Array();
-cars[0]=&quot;Saab&quot;;
-cars[1]=&quot;Volvo&quot;;
-cars[2]=&quot;BMW&quot;;
-</code></pre><p>或者 (condensed array):</p>
-<pre><code>var cars=new Array(&quot;Saab&quot;,&quot;Volvo&quot;,&quot;BMW&quot;);
-</code></pre><p>或者 (literal array):</p>
-<pre><code>var cars=[&quot;Saab&quot;,&quot;Volvo&quot;,&quot;BMW&quot;];
-</code></pre><h3 id="2-2-JavaScript-对象"><a href="#2-2-JavaScript-对象" class="headerlink" title="2.2 JavaScript 对象"></a>2.2 JavaScript 对象</h3><p>对象由花括号分隔。在括号内部，对象的属性以名称和值对的形式 (name : value) 来定义。属性由逗号分隔：</p>
-<pre><code>var person={
-    firstname : &quot;John&quot;,
-    lastname  : &quot;Doe&quot;,
-    id        :  5566
-};
-</code></pre><p>上面例子中的对象 (person) 有三个属性：firstname、lastname 以及 id。</p>
-<p>对象属性有两种寻址方式：</p>
-<pre><code>name=person.lastname;
-name=person[&quot;lastname&quot;];
-</code></pre><h3 id="2-3-对象方法属性的调用"><a href="#2-3-对象方法属性的调用" class="headerlink" title="2.3 对象方法属性的调用"></a>2.3 对象方法属性的调用</h3><pre><code>var person = {
-    firstName: &quot;John&quot;,
-    lastName : &quot;Doe&quot;,
-    id : 5566,
-    fullName : function() 
-    {
-       return this.firstName + &quot; &quot; + this.lastName;
-    }
-};
-</code></pre><p>person.fullName; //不加括号输出函数表达式 </p>
-<pre><code>function () { return this.firstName + &quot; &quot; + this.lastName; }
-</code></pre><p>person.fullName(); //加括号输出函数执行结果</p>
-<pre><code>John Doe
-</code></pre><h3 id="3-判断数据类型"><a href="#3-判断数据类型" class="headerlink" title="3.判断数据类型"></a>3.判断数据类型</h3><pre><code>typeof &quot;John&quot;                // 返回 string 
-typeof 3.14                  // 返回 number
-typeof false                 // 返回 boolean
-typeof [1,2,3,4]             // 返回 object
-typeof {name:&apos;John&apos;, age:34} // 返回 object
-</code></pre><p>在JavaScript中，数组是一种特殊的对象类型。 因此 typeof [1,2,3,4] 返回 object</p>
-<pre><code>typeof undefined             // undefined
-typeof null                  // object
-null === undefined           // false
-null == undefined            // true
-</code></pre><p>null 和 undefined 的值相等，但类型不等</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/js/javascript时间戳和日期字符串相互转换/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Harper">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Harper's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/28/js/javascript时间戳和日期字符串相互转换/" itemprop="url">javascript时间戳和日期字符串相互转换</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:23:44+08:00">
-                2018-04-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://www.cnblogs.com/yjf512/p/3796229.html" target="_blank" rel="noopener">https://www.cnblogs.com/yjf512/p/3796229.html</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/js/js基础/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Harper">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Harper's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/28/js/js基础/" itemprop="url">JS</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:23:44+08:00">
-                2018-04-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="JavaScript输出消息"><a href="#JavaScript输出消息" class="headerlink" title="JavaScript输出消息"></a>JavaScript输出消息</h1><h2 id="1-window的方法"><a href="#1-window的方法" class="headerlink" title="1.window的方法"></a>1.window的方法</h2><h3 id="1-1alert"><a href="#1-1alert" class="headerlink" title="1.1alert()"></a>1.1alert()</h3><p>显示带有一条指定消息和一个 确认 按钮的警告框，早期JS调试使用。</p>
-<h3 id="1-2confirm"><a href="#1-2confirm" class="headerlink" title="1.2confirm()"></a>1.2confirm()</h3><p>在页面弹出一个对话框, 常配合if判断使用。</p>
-<p>如果访问者点击”确定”，此方法返回true，否则返回false。</p>
-<pre><code>if(confirm(&quot;你好&quot;)){
-    alert(&quot;确定&quot;);
+            <h3 id="js组成部分"><a href="#js组成部分" class="headerlink" title="js组成部分"></a>js组成部分</h3><pre><code>JS  =  ECMAScript  +  DOM  +  BOM + 高级
+</code></pre><p>ECMAScript（前身为欧洲计算机制造商协会）</p>
+<pre><code>JavaScript的语法规范
+</code></pre><p>DOM（Document Object Model 的简称）</p>
+<pre><code>JavaScript操作网页上元素的API
+</code></pre><p>BOM（Browser Object Model 的简称）</p>
+<pre><code>JavaScript操作浏览器部分功能的API
+</code></pre><h3 id="弱类型脚本语言（解释型语言，解析执行与编译执行）"><a href="#弱类型脚本语言（解释型语言，解析执行与编译执行）" class="headerlink" title="弱类型脚本语言（解释型语言，解析执行与编译执行）"></a>弱类型脚本语言（解释型语言，解析执行与编译执行）</h3><p>解析执行与编译执行<br>编译执行：把代码编译成CPU认识的语言(文件)，然后整体的执行。<br>解析执行：一行一行解析，解析一行执行一行。</p>
+<p>弱类型脚本语言<br>脚本语言是：弥补编译语言的不足而存在的，作为补充语言，不用编译。<br>弱类型语言：简单理解定义一个变量，可以有多种数据类型。（var temp）</p>
+<h3 id="js书写位置"><a href="#js书写位置" class="headerlink" title="js书写位置"></a>js书写位置</h3><p>内嵌式</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    alert(&quot;hello&quot;);
+&lt;/script&gt;     
+</code></pre><p>外链式</p>
+<pre><code>&lt;script src=&quot;1.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>推荐将JS代码写在html结束标签后边<br>将多个JS文件合成为一个JS文件</p>
+<h3 id="输出消息的几种方式"><a href="#输出消息的几种方式" class="headerlink" title="输出消息的几种方式"></a>输出消息的几种方式</h3><pre><code>alert(&quot;hello&quot;);// 在页面弹出一个对话框，早期JS调试使用
+confirm(&quot;hello&quot;);//在页面弹出一个对话框, 常配合if判断使用
+console.log(&quot;hello&quot;);//将信息输入到控制台，用于js调试
+prompt(&quot;请输入银行卡号&quot;);//弹出对话框，用于接收用户输入的信息
+document.write(&quot;&lt;span&gt;hello&lt;/span&gt;&quot;);//在页面输出消息
+</code></pre><p>转义字符</p>
+<pre><code>\&quot;     转双引
+\&apos;    转单引
+\n    转换行    
+\r    转回车
+</code></pre><h3 id="js注释"><a href="#js注释" class="headerlink" title="js注释"></a>js注释</h3><pre><code>快捷键 ctrl+/
+单行注释 //
+多行注释 /*    */
+</code></pre><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>变量是用来存储数据的容器</p>
+<h3 id="变量的命名规范"><a href="#变量的命名规范" class="headerlink" title="变量的命名规范"></a>变量的命名规范</h3><pre><code>驼峰命名规则：getElementById/matherAndFather/aaaOrBbbAndCcc
+遵从规则：
+1.变量命名必须以字母或是下标符号”_”或者”$”为开头。
+2.变量名长度不能超过255个字符。
+3.变量名中不允许使用空格，首个字不能为数字。
+4.不用使用脚本语言中保留的关键字及保留符号作为变量名。
+5.变量名区分大小写。(javascript是区分大小写的语言)
+6.汉语可以作为变量名。但是不建议使用！！！（low）
+</code></pre><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="简单数据类型"><a href="#简单数据类型" class="headerlink" title="简单数据类型"></a>简单数据类型</h3><p>数字类型</p>
+<pre><code>Number  
+包含正数  负数  小数
+</code></pre><p>字符串</p>
+<pre><code>String
+凡是用双引号或者单引号引起的都是字符串
+</code></pre><p>布尔数据类型    </p>
+<pre><code>Boolean
+只有2个值一个是true, 一个是false.   实际运算中true=1,false=0
+</code></pre><p>undefined    </p>
+<pre><code>变量未初始化
+定义了变量，没有给变量赋值
+</code></pre><p>null  </p>
+<pre><code>变量未引用  值为空   object
+</code></pre><h3 id="复杂数据类型（引用类型）"><a href="#复杂数据类型（引用类型）" class="headerlink" title="复杂数据类型（引用类型）"></a>复杂数据类型（引用类型）</h3><p>object 对象<br>array  数组<br>Object、function、Array、Date、RegExp、Error.</p>
+<h3 id="判断数据类型"><a href="#判断数据类型" class="headerlink" title="判断数据类型"></a>判断数据类型</h3><p>typeof()</p>
+<h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><pre><code>&lt;  &gt;   &lt;=  &gt;=   ==  !=
+</code></pre><h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><p>加号 +</p>
+<pre><code>两个数字类型的变量相加，得到的是一个数字类型。
+一个数字类型和一个字符串相加，得到的是一个字符串。
+</code></pre><p>减号 -</p>
+<pre><code>两个数字类型的变量相减，得到的是一个数字类型。
+一个数字类型和一个数字字符串相减，得到的是一个数字类型。
+一个数字类型和一个非数字字符串相减，得到的是NaN,是一个数字类型。
+</code></pre><p>*<br>    同上<br>/ 除号</p>
+<pre><code> 两个数字类型的变量相除，得到的是一个数字类型。
+ 一个数字类型和一个数字字符串相除，得到的是一个数字类型。
+ 一个数字类型和一个非数字字符串相除，得到的是NaN,是一个数字类型。    
+0做为除数的时候，得到结果    Infinity （无限大），是一个数字类型。
+</code></pre><p>%  </p>
+<pre><code>取余数
+</code></pre><p>优先级</p>
+<pre><code>有()先计算()里边的
+</code></pre><h3 id="带操作的赋值运算"><a href="#带操作的赋值运算" class="headerlink" title="带操作的赋值运算"></a>带操作的赋值运算</h3><pre><code>运算符    示例        等价于
++=        a+=b    a=a+b
+-=        a-=b    a=a-b
+*=        a*=b    a=a*b
+/=        a/=b    a=a/b
+</code></pre><h3 id="Date-对象"><a href="#Date-对象" class="headerlink" title="Date()对象"></a>Date()对象</h3><p>Date对象用于处理日期和时间</p>
+<pre><code>var mydate = new Date();
+Date();返回完整当前时间
+mydate.getDay();返回当前是周几
+mydate.getMonth()+1;当前月份
+mydate.getFullYeat();当前年份
+mydate.getHours();小时
+mydate.getMinutes();分钟
+mydate.getSeconds();秒数
+</code></pre><h3 id="Math对象"><a href="#Math对象" class="headerlink" title="Math对象"></a>Math对象</h3><pre><code>Math.ceil(n1); //天花板函数 小数向上取整
+Math.floor(n1); //地板函数 小数向下去整
+Math.round(n1); //小数四舍五入
+Math.max(n1,n2); //去两个数的最大值
+Math.min(n1,n2); //两个数的最小值
+Math.pow(n1,n2);//返回n1的n2次方
+Math.random();//返回0-1之间的随机数
+</code></pre><h3 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h3><p>数字类型转字符串</p>
+<pre><code>String()
+toString()
+var n1 = 123;
+var n2 = String(n1);
+var n3 = n1.toString();
+</code></pre><p>字符串转数字类型<br>Number</p>
+<pre><code>var n = Number(n);
+数字类型字符串，转换后得到数字
+非数字字符串，转换后得到是NaN
+小数类型的字符串，转换后得到原数字
+</code></pre><p>parseInt</p>
+<pre><code>parseInt(n);
+★整数数字类型的字符串，转换之后得到的整数数字。
+★数字开头的字符串，转换之后得到的是前边的数字。
+★非数字开头的字符串，转换之后得到的是NaN。
+★小数类型的字符串，转换之后取整。
+</code></pre><p>parseFloat</p>
+<pre><code>★整数数字类型的字符串，转换之后得到的整数数字。
+★数字开头的字符串，转换之后得到的是前边的数字。
+★非数字开头的字符串，转换之后得到的是NaN。
+★小数类型的字符串，转换之后得到的是原数字。
+</code></pre><p>转布尔类型</p>
+<pre><code>var n1 = Boolean(n);
+★数字和字符串转完之后为true。
+★undefined、null、0转完之后为false.
+</code></pre><p>隐式数据类型转换</p>
+<pre><code>在运算过程中，程序自己进行的数据转换(程序员没有操作)
+</code></pre><h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>逻辑运算只有2个结果，一个为true,一个为false.<br>且&amp;&amp;</p>
+<pre><code>★两个表达式为true的时候，结果为true.
+</code></pre><p>或||</p>
+<pre><code>★只要有一个表达式为true,结果为true.
+</code></pre><p>非！</p>
+<pre><code>★和表达式相反的结果。
+</code></pre><h2 id="等号运算符"><a href="#等号运算符" class="headerlink" title="等号运算符"></a>等号运算符</h2><p>“=”赋值运算符<br>“==”只判断内容是否相同，不判断数据类型。<br>“===”不仅判断内容，还判断数据类型是否相同。<br>!=  只判断内容是否不相同，不判断数据类型。<br>!==不全等于  不仅判断内容是否不相同，还判断数据类型是否不相同。</p>
+<h3 id="变量的集体声明"><a href="#变量的集体声明" class="headerlink" title="变量的集体声明"></a>变量的集体声明</h3><p>var n1=1,n2=2,n3=3;n1+=n2;</p>
+<h3 id="if…else-条件判断"><a href="#if…else-条件判断" class="headerlink" title="if…else  条件判断"></a>if…else  条件判断</h3><pre><code>if(条件表达式){
+      如果条件表达式结果为true,执行该处代码。下边代码不执行。如果为false,执行下边代码。
+}else  if(条件表达式){
+    如果条件表达式结果为true,执行该处代码。下边代码不执行。如果为false,执行下边代码。
+}else  if(条件表达式){
+    如果条件表达式结果为true,执行该处代码。下边代码不执行。如果为false,执行下边代码。
 }else{
-    alert(&quot;取消&quot;);
+    如果上边条件表达式结果都为false,执行该处代码。
 }
-</code></pre><h3 id="1-3prompt"><a href="#1-3prompt" class="headerlink" title="1.3prompt()"></a>1.3prompt()</h3><p>prompt()方法用于显示可提示用户进行输入的对话框。<br>这个方法返回用户输入的字符串。</p>
-<h2 id="2-JavaScript-Console-对象"><a href="#2-JavaScript-Console-对象" class="headerlink" title="2.JavaScript Console 对象"></a>2.JavaScript Console 对象</h2><p>console.log()  </p>
-<p>将信息输入到控制台，用于js调试</p>
-<h2 id="3-HTML-DOM-Document-对象"><a href="#3-HTML-DOM-Document-对象" class="headerlink" title="3.HTML DOM Document 对象"></a>3.HTML DOM Document 对象</h2><p>document.write()<br>在页面输出消息</p>
-<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>在 JavaScript 中有 5 种不同的数据类型：</p>
-<pre><code>string
-number
-boolean
-object
-function
-</code></pre><p>3 种对象类型：</p>
-<pre><code>Object
-Date
-Array
-</code></pre><p>2 个不包含任何值的数据类型：</p>
-<pre><code>null
-undefined
-</code></pre><p>请注意</p>
-<pre><code>NaN 的数据类型是 number
-数组(Array)的数据类型是 object
-日期(Date)的数据类型为 object
-null 的数据类型是 object
-未定义变量的数据类型为 undefined
-</code></pre><p>JavaScript 拥有动态类型。这意味着相同的变量可用作不同的类型：</p>
-<pre><code>var x;               // x 为 undefined
-var x = 5;           // 现在 x 为数字
-var x = &quot;John&quot;;      // 现在 x 为字符串
-</code></pre><h2 id="1-简单数据类型"><a href="#1-简单数据类型" class="headerlink" title="1. 简单数据类型"></a>1. 简单数据类型</h2><h3 id="1-1-数字"><a href="#1-1-数字" class="headerlink" title="1.1 数字"></a>1.1 数字</h3><p>JavaScript 只有一种数字类型。数字可以带小数点，也可以不带：</p>
-<pre><code>var x1=34.00;      //使用小数点来写
-var x2=34;         //不使用小数点来写
-</code></pre><h3 id="1-2-字符串"><a href="#1-2-字符串" class="headerlink" title="1.2 字符串"></a>1.2 字符串</h3><p>字符串可以是引号中的任意文本。您可以使用单引号或双引号：</p>
-<pre><code>var carname=&quot;Volvo XC60&quot;;
-var carname=&apos;Volvo XC60&apos;;
-</code></pre><p>你可以使用索引位置来访问字符串中的每个字符：</p>
-<pre><code>var carname = carname[7];
-</code></pre><p>字符串的索引从 0 开始，这意味着第一个字符索引值为 [0],第二个为 [1], 以此类推。</p>
-<p>字符串长度</p>
-<p>可以使用内置属性 length 来计算字符串的长度：</p>
-<pre><code>var txt = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
-var sln = txt.length;
-</code></pre><h3 id="1-3-布尔"><a href="#1-3-布尔" class="headerlink" title="1.3 布尔"></a>1.3 布尔</h3><p>只有2个值一个是true, 一个是false.   实际运算中true=1,false=0</p>
-<pre><code>var x=true;
-var y=false;
-</code></pre><h3 id="1-4-undefined"><a href="#1-4-undefined" class="headerlink" title="1.4 undefined"></a>1.4 undefined</h3><p>在 JavaScript 中, undefined 是一个没有设置值的变量。</p>
-<p>typeof 一个没有值的变量会返回 undefined。</p>
-<p>你可以设置为 undefined 来清空对象:</p>
-<pre><code>var n;
-alert(n);
-</code></pre><p>变量在内存中是存在的</p>
-<h3 id="1-5-null"><a href="#1-5-null" class="headerlink" title="1.5 null"></a>1.5 null</h3><p>在 JavaScript 中 null 表示 “什么都没有”。</p>
-<p>null是一个只有一个值的特殊类型。表示一个空对象引用。</p>
-<p>你可以设置为 null 来清空对象:</p>
-<pre><code>var n = 1;
-n = null;
-alert(n);
-</code></pre><p>在内存中找不到这个变量</p>
-<h2 id="2-复杂数据类型"><a href="#2-复杂数据类型" class="headerlink" title="2. 复杂数据类型"></a>2. 复杂数据类型</h2><h3 id="2-1-JavaScript-数组"><a href="#2-1-JavaScript-数组" class="headerlink" title="2.1 JavaScript 数组"></a>2.1 JavaScript 数组</h3><p>创建名为 cars 的数组：</p>
-<pre><code>var cars=new Array();
-cars[0]=&quot;Saab&quot;;
-cars[1]=&quot;Volvo&quot;;
-cars[2]=&quot;BMW&quot;;
-</code></pre><p>或者 (condensed array):</p>
-<pre><code>var cars=new Array(&quot;Saab&quot;,&quot;Volvo&quot;,&quot;BMW&quot;);
-</code></pre><p>或者 (literal array):</p>
-<pre><code>var cars=[&quot;Saab&quot;,&quot;Volvo&quot;,&quot;BMW&quot;];
-</code></pre><h3 id="2-2-JavaScript-对象"><a href="#2-2-JavaScript-对象" class="headerlink" title="2.2 JavaScript 对象"></a>2.2 JavaScript 对象</h3><p>对象由花括号分隔。在括号内部，对象的属性以名称和值对的形式 (name : value) 来定义。属性由逗号分隔：</p>
-<pre><code>var person={
-    firstname : &quot;John&quot;,
-    lastname  : &quot;Doe&quot;,
-    id        :  5566
-};
-</code></pre><p>上面例子中的对象 (person) 有三个属性：firstname、lastname 以及 id。</p>
-<p>对象属性有两种寻址方式：</p>
-<pre><code>name=person.lastname;
-name=person[&quot;lastname&quot;];
-</code></pre><h3 id="2-3-对象方法属性的调用"><a href="#2-3-对象方法属性的调用" class="headerlink" title="2.3 对象方法属性的调用"></a>2.3 对象方法属性的调用</h3><pre><code>var person = {
-    firstName: &quot;John&quot;,
-    lastName : &quot;Doe&quot;,
-    id : 5566,
-    fullName : function() 
-    {
-       return this.firstName + &quot; &quot; + this.lastName;
-    }
-};
-</code></pre><p>person.fullName; //不加括号输出函数表达式 </p>
-<pre><code>function () { return this.firstName + &quot; &quot; + this.lastName; }
-</code></pre><p>person.fullName(); //加括号输出函数执行结果</p>
-<pre><code>John Doe
-</code></pre><h3 id="3-判断数据类型"><a href="#3-判断数据类型" class="headerlink" title="3.判断数据类型"></a>3.判断数据类型</h3><pre><code>typeof &quot;John&quot;                // 返回 string 
-typeof 3.14                  // 返回 number
-typeof false                 // 返回 boolean
-typeof [1,2,3,4]             // 返回 object
-typeof {name:&apos;John&apos;, age:34} // 返回 object
-</code></pre><p>在JavaScript中，数组是一种特殊的对象类型。 因此 typeof [1,2,3,4] 返回 object。</p>
-<pre><code>typeof undefined             // undefined
-typeof null                  // object
-null === undefined           // false
-null == undefined            // true
-</code></pre><p>null 和 undefined 的值相等，但类型不等：</p>
-<h1 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h1><h2 id="1-if…Else-语句"><a href="#1-if…Else-语句" class="headerlink" title="1. if…Else 语句"></a>1. if…Else 语句</h2><p>语法</p>
-<pre><code>if (condition1)
-{
-    当条件 1 为 true 时执行的代码
-}
-else if (condition2)
-{
-    当条件 2 为 true 时执行的代码
-}
-else
-{
-  当条件 1 和 条件 2 都不为 true 时执行的代码
-}
-</code></pre><p>例子</p>
-<pre><code>if (time&lt;10)
-{
-    document.write(&quot;&lt;b&gt;早上好&lt;/b&gt;&quot;);
-}
-else if (time&gt;=10 &amp;&amp; time&lt;16)
-{
-    document.write(&quot;&lt;b&gt;今天好&lt;/b&gt;&quot;);
-}
-else
-{
-    document.write(&quot;&lt;b&gt;晚上好!&lt;/b&gt;&quot;);
-}
-</code></pre><h2 id="2-switch-语句"><a href="#2-switch-语句" class="headerlink" title="2. switch 语句"></a>2. switch 语句</h2><p>语法</p>
-<pre><code>switch(n)
-{
+</code></pre><h3 id="三元表达式"><a href="#三元表达式" class="headerlink" title="三元表达式"></a>三元表达式</h3><pre><code>n1%2==0?alert(&quot;偶数&quot;):alert(&quot;奇数&quot;)；
+</code></pre><p>表达式?结果1：结果2；<br>如果表达式结果为true,执行结果1，如果表达式结果为false,执行结果2.</p>
+<h3 id="Switch"><a href="#Switch" class="headerlink" title="Switch"></a>Switch</h3><pre><code>Switch(变量){
     case 1:
-        执行代码块 1
-        break;
+    如果变量和1的值相同，执行该处代码
+    break;
+
     case 2:
-        执行代码块 2
-        break;
+    如果变量和2的值相同，执行该处代码
+    break;
+
+    case 3:
+    如果变量和3的值相同，执行该处代码
+    break;
+
     default:
-        与 case 1 和 case 2 不同时执行的代码
+    如果变量和以上的值都不相同，执行该处代码
+    break;
 }
-</code></pre><p>例子</p>
-<pre><code>var d=new Date().getDay(); 
-switch (d) 
-{ 
-  case 0:x=&quot;今天是星期日&quot;; 
-  break; 
-  case 1:x=&quot;今天是星期一&quot;; 
-  break; 
-  case 2:x=&quot;今天是星期二&quot;; 
-  break; 
-  case 3:x=&quot;今天是星期三&quot;; 
-  break; 
-  case 4:x=&quot;今天是星期四&quot;; 
-  break; 
-  case 5:x=&quot;今天是星期五&quot;; 
-  break; 
-  case 6:x=&quot;今天是星期六&quot;; 
-  break; 
-  default:
-  x=&quot;期待周末&quot;;
+</code></pre><p>switch后边的变量和case后边值的数据类型必须保持一致<br>对变量进行集体判断：<br>    Switch(变量){<br>        case 1:case 2:case 3:<br>        如果变量和1、2、3的值相同，执行该处代码<br>        break;</p>
+<pre><code>    default:
+    如果变量和以上的值都不相同，执行该处代码
+    break;
 }
-</code></pre><p>swich的比较是绝对比较，值和数据类型都会比较</p>
-<p>switch后边的变量和case后边值的数据类型必须保持一致</p>
-<p>必须带break；如果没有，条件成立后，后面的所以语句顺序执行并且不进行判断</p>
-<pre><code>var a = &quot;nihao&quot;;
-var b = new String(&quot;nihao&quot;);
-switch (a){ 
-  case b:
-    x=&quot;==&quot;; 
-      break;  
-  default:
-      x=&quot;===&quot;;
+</code></pre><h3 id="自增自减"><a href="#自增自减" class="headerlink" title="自增自减"></a>自增自减</h3><p>i++  ++i<br>在不参与运算的情况下，i++和++i都是在变量的基础加1<br>在参与运算的情况下，i++先赋值运算再加1，++i先自增，再赋值运算</p>
+<h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><pre><code>While(条件表达式){
+   只要条件表达式结果为true,循环一直执行，当条件表达式结果为false的时候，循环终止
 }
-console.info(x);
-</code></pre><h2 id="3-JavaScript-for-循环"><a href="#3-JavaScript-for-循环" class="headerlink" title="3.JavaScript for 循环"></a>3.JavaScript for 循环</h2><p>语法</p>
-<pre><code>for (语句 1; 语句 2; 语句 3) 
-{
-    被执行的代码块
+</code></pre><p>While循环语句需现在循环体外定义变量。</p>
+<h3 id="do-while"><a href="#do-while" class="headerlink" title="do while"></a>do while</h3><pre><code>Do{
+    循环体代码；首先执行该循环体代码一次。如果while后边的表达式结果为true,该循环体会一直循环。如果结果false,该循环终止。
+}while(条件表达式)
+</code></pre><p>do  while 比while循环多循环一次。</p>
+<h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><pre><code>for(定义变量;条件表达式;自增自减){
+    循环体代码
 }
-语句 1 （代码块）开始前执行
-语句 2 定义运行循环（代码块）的条件
-语句 3 在循环（代码块）已被执行之后执行
-</code></pre><p>例子</p>
-<pre><code>cars=[&quot;BMW&quot;,&quot;Volvo&quot;,&quot;Saab&quot;,&quot;Ford&quot;];
-
-for (var i=0;i&lt;cars.length;i++){
-    document.write(cars[i] + &quot;&lt;br&gt;&quot;);
+</code></pre><p>执行顺序:<br>◆首先定义变量<br>◆如果条件表达式结果为true的时候，执行for循环里的代码，如果为false，循环体代码终止执行。<br>◆先执行变量和条件表达式循环一次，再执行自增自减。</p>
+<h3 id="Break语句"><a href="#Break语句" class="headerlink" title="Break语句"></a>Break语句</h3><p>在循环体内，只要代码遇到break,程序立马结束当前循环。<br>当前循环指的是break语句所在的循环体。</p>
+<h3 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h3><p>Continue语句指的是跳出本次循环，该语句continue后面的代码不再执行,整个循环体继续循环。</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>数组定义</p>
+<pre><code>var ary = new Array();//通过创建对象方式创建数组
+var ary1 = [];//直接创建一个数组
+</code></pre><p>赋值</p>
+<pre><code>//数组中通过下标的方式进行赋值。下标从0开始。
+ary1[0] = 123;
+ary1[1] = 456;
+</code></pre><p>遍历</p>
+<pre><code>for(var i=0;i&lt;5;i++){
+    console.info(ary[i]);
 }
-</code></pre><h3 id="3-1语句1"><a href="#3-1语句1" class="headerlink" title="3.1语句1"></a>3.1语句1</h3><p>通常我们会使用语句 1 初始化循环中所用的变量 (var i=0)。</p>
-<pre><code>for (var i=0,len=cars.length; i&lt;len; i++)
-{ 
-    document.write(cars[i] + &quot;&lt;br&gt;&quot;);
+</code></pre><p>通过数组名.length获取数组长度（元素个数）</p>
+<pre><code>for(var i=0;i&lt;ary.length;i++){
+    console.info(ary[i]);
 }
-或者
-var i=2,len=cars.length;
-for (; i&lt;len; i++){
-    document.write(cars[i] + &quot;&lt;br&gt;&quot;);
-}
-</code></pre><h3 id="3-2-语句2"><a href="#3-2-语句2" class="headerlink" title="3.2 语句2"></a>3.2 语句2</h3><p>通常语句 2 用于评估初始变量的条件。</p>
-<p>如果您省略了语句 2，那么必须在循环内提供 break。</p>
-<p>否则循环就无法停下来。这样有可能令浏览器崩溃。</p>
-<pre><code>for (var i=0;;i++){
-    document.write(cars[i] + &quot;&lt;br&gt;&quot;);
-    if(i&gt;=cars.length-1){
-        break;
-    }
-}
-</code></pre><h3 id="3-3"><a href="#3-3" class="headerlink" title="3.3"></a>3.3</h3><p>通常语句 3 会增加初始变量的值。</p>
-<p>语句 3 也可以省略（比如当循环内部有相应的代码时）：</p>
-<pre><code>var i=0
-for (;;){
-    document.write(cars[i] + &quot;&lt;br&gt;&quot;);
-    if(i&gt;=cars.length-1){
-        break;
-    }
-    i++;
-}
-</code></pre><h2 id="4-For-In-循环"><a href="#4-For-In-循环" class="headerlink" title="4. For/In 循环"></a>4. For/In 循环</h2><pre><code>var person={fname:&quot;John&quot;,lname:&quot;Doe&quot;,age:25}; 
-
-for (x in person)  // x 为属性名
-{
-    document.write(person[x] + &quot;&lt;br&gt;&quot;);
-}
-</code></pre><h2 id="5-JavaScript-while-循环"><a href="#5-JavaScript-while-循环" class="headerlink" title="5.JavaScript while 循环"></a>5.JavaScript while 循环</h2><h3 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h3><p>语法</p>
-<pre><code>while (条件) 
-{
-    需要执行的代码
-}
-</code></pre><p>先判断条件，为真再执行代码</p>
-<p>例子</p>
-<pre><code>var i=0;
-while (i&lt;5)
-{
-    document.write(i + &quot;&lt;br&gt;&quot;);
-    i++;
-}
-</code></pre><h3 id="do-while-循环"><a href="#do-while-循环" class="headerlink" title="do/while 循环"></a>do/while 循环</h3><p>先执行一次，再进行循环</p>
-<p>语法</p>
-<pre><code>do
-{
-    需要执行的代码
-}
-while (条件);
-</code></pre><p>例子</p>
-<pre><code>do
-{
-    console.info(&quot;我就执行&quot;);
-}
-while (false)
-</code></pre><h2 id="JavaScript-Break-和-Continue-语句"><a href="#JavaScript-Break-和-Continue-语句" class="headerlink" title="JavaScript Break 和 Continue 语句"></a>JavaScript Break 和 Continue 语句</h2><p>break 语句可用于跳出循环</p>
-<p>continue 语句跳出循环后，会继续执行该循环之后的代码（如果有的话）</p>
-<h3 id="JavaScript-标签"><a href="#JavaScript-标签" class="headerlink" title="JavaScript 标签"></a>JavaScript 标签</h3><p>如需标记 JavaScript 语句，请在语句之前加上冒号：</p>
-<pre><code>label:
-statements
-</code></pre><p>continue 语句（带有或不带标签引用）只能用在循环中</p>
-<p>break 语句（不带标签引用），只能用在循环或 switch 中。</p>
-<p>通过标签引用，break 语句可用于跳出任何 JavaScript 代码块：</p>
-<pre><code>cars=[&quot;BMW&quot;,&quot;Volvo&quot;,&quot;Saab&quot;,&quot;Ford&quot;];
-list: 
-{
-    document.write(cars[0] + &quot;&lt;br&gt;&quot;); 
-    document.write(cars[1] + &quot;&lt;br&gt;&quot;); 
-    document.write(cars[2] + &quot;&lt;br&gt;&quot;); 
-    break list;
-    document.write(cars[3] + &quot;&lt;br&gt;&quot;); 
-    document.write(cars[4] + &quot;&lt;br&gt;&quot;); 
-    document.write(cars[5] + &quot;&lt;br&gt;&quot;); 
-}
-</code></pre><p><a href="https://www.runoob.com/js/js-type-conversion.html" target="_blank" rel="noopener">https://www.runoob.com/js/js-type-conversion.html</a></p>
+</code></pre><p>数组合并concat</p>
+<pre><code>var ary3 = ary1.concat(ary2);
+</code></pre><p>Join方法返回一个字符串数组</p>
+<pre><code>var ary2 = ary1.join(&quot;&amp;&quot;);
+</code></pre><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>通过 function  关键字<br>和自定义方法名 既可定义一个函数<br>    function test(){<br>        console.info(“hello”);<br>    }<br>方法的调用<br>    test();<br>自调用函数<br>(function(){alert(“hello”)})();</p>
 
           
         
@@ -2010,7 +1460,7 @@ list:
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/hexo/Hexo-Next-更换scheme，本地server查看成功，部署到github访问博客未变化/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/web/http协议总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
@@ -2029,7 +1479,7 @@ list:
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/26/hexo/Hexo-Next-更换scheme，本地server查看成功，部署到github访问博客未变化/" itemprop="url">Hexo Next 更换scheme，本地server查看成功，部署到github访问博客未变化</a></h1>
+                <a class="post-title-link" href="/2018/04/28/web/http协议总结/" itemprop="url">http协议总结</a></h1>
         
 
         <div class="post-meta">
@@ -2041,8 +1491,8 @@ list:
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T10:40:45+08:00">
-                2018-04-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:55:38+08:00">
+                2018-04-28
               </time>
             
 
@@ -2064,8 +1514,8 @@ list:
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
                   </a>
                 </span>
 
@@ -2103,11 +1553,844 @@ list:
       
         
           
-            <p>清理缓存</p>
-<pre><code>$ hexo clean
-</code></pre><p>重新部署</p>
-<p>Ctrl+F5刷新浏览器页面查看</p>
+            <p>#简介<br>    HTTP协议是基于TCP/IP通信协议从万维网服务器传输超文本到本地浏览器的传送协议</p>
+<p>#工作原理<br>    HTTP客户端通过URL向HTTP服务器发送所有请求<br>    Web服务器根据接收到的请求，向客户端发送响应信息<br>    HTTP默认端口号是80</p>
+<p>#HTTP三点注意事项</p>
+<ul>
+<li>HTTP是无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间。</li>
+<li>HTTP是媒体独立的：这意味着，只要客户端和服务器知道如何处理的数据内容，任何类型的数据都可以通过HTTP发送。客户端以及服务器指定使用适合的MIME-type内容类型。</li>
+<li>HTTP是无状态：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。<br>#HTTP消息结构<br>##客户端请求消息<br>请求行 请求头部 空行 请求数据<br>例：请求行 GET /hello.txt HTTP/1.1<pre><code>请求方法  URL  版本协议
+</code></pre><h2 id="服务端响应消息"><a href="#服务端响应消息" class="headerlink" title="服务端响应消息"></a>服务端响应消息</h2>状态行 消息报头 空行 响应正文<br>例： 响应报头 HTTP/1.1 200 OK<pre><code>版本协议 状态码及描述
+</code></pre></li>
+</ul>
+<p>参考：<br><a href="https://www.cnblogs.com/ulysses-you/p/7837173.html#_label1" target="_blank" rel="noopener">“HTTP协议结构”</a></p>
+<p><a href="http://blog.csdn.net/shouwang666666/article/details/70232053" target="_blank" rel="noopener">HTTP请求/响应报文结构</a></p>
+<p><a href="http://www.runoob.com/http/http-messages.html" target="_blank" rel="noopener">菜鸟教程</a></p>
 
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/web/css/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/28/web/css/" itemprop="url">css</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:55:38+08:00">
+                2018-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="css概念"><a href="#css概念" class="headerlink" title="css概念"></a>css概念</h3><p>css指层叠样式表(Cascading Style Sheets)(级联样式表)</p>
+<h3 id="书写位置"><a href="#书写位置" class="headerlink" title="书写位置"></a>书写位置</h3><p>内嵌式<br>★内嵌式写法，样式只作用于当前文件，没有真正实现结构表现分离。</p>
+<pre><code>&lt;head&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+
+    &lt;/style&gt;
+&lt;/head&gt;
+</code></pre><p>外链式<br>★外链式写法，作用范围是当前站点，谁调用谁生效，范围广，真正实现结构表现分离。</p>
+<pre><code>&lt;link rel=”stylesheet” href=”1.css”&gt;
+</code></pre><p>行内样式表<br>★行内样式表，作用范围仅限于当前标签，范围小，结构表现混在一起。</p>
+<pre><code>&lt;div style=&quot;color:red&quot;&gt;&lt;/div&gt;
+</code></pre><h2 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h2><h3 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h3><pre><code>div {
+    color:red;
+}
+</code></pre><h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><ul>
+<li>直接写颜色的名字</li>
+<li>十六进制<br>#000000 前两位代表红色 中间两位绿色，后面两位蓝色</li>
+<li><p>rgb</p>
+<pre><code>color:rgb(120,120,120);
+</code></pre></li>
+<li><p>rgba<br>A代表alpha，不透明度 值0-1</p>
+<pre><code>color:rgba(102,217,239,0.5);
+</code></pre><h3 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h3><p>  .自定义类名{属性：值;}<br>类选择器命名规则</p>
+</li>
+<li>不能用纯数字或者数字开头来定义类名</li>
+<li>不能使用特殊符号或者特殊符号开头（_）来定义类名</li>
+<li>不建议使用汉字来定义类名</li>
+<li><p>不推荐使用属性或者属性的值来定义类名</p>
+<h3 id="ID选择器"><a href="#ID选择器" class="headerlink" title="ID选择器"></a>ID选择器</h3><pre><code>#自定义id名｛属性：值;｝
+</code></pre><p>特点： 一个ID选择器在一个页面只能调用一次。如果使用2次或者2次以上，不符合w3c规范，JS调用会出问题。<br>一个标签只能调用一个ID选择器。<br>一个标签可以同时调用类选择器和ID选择器。</p>
+<h3 id="通配符选择器"><a href="#通配符选择器" class="headerlink" title="通配符选择器"></a>通配符选择器</h3><pre><code>*{属性：值;}
+</code></pre><p>特点：给所有的标签都使用相同的样式。<br>不推荐使用，增加浏览器和服务器负担。</p>
+<h2 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h2><p>概念：两个或者两个以上的基础选择器通过不同的方式连接在一起。</p>
+<h3 id="交集选择器"><a href="#交集选择器" class="headerlink" title="交集选择器"></a>交集选择器</h3><pre><code>标签+类（ID）选择器{属性：值；}
+div.box{}
+div#box{}
+</code></pre><h3 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h3><pre><code>选择器+空格+选择器{属性：值;}
+</code></pre><p>特点：无限制隔代。<br>只要能代表标签，标签、类选择器、ID选择器自由组合。</p>
+<h3 id="子选择器"><a href="#子选择器" class="headerlink" title="子选择器"></a>子选择器</h3><p>  选择器&gt;选择器{属性:值;}<br>  div&gt;span{}</p>
+<h3 id="并集选择器"><a href="#并集选择器" class="headerlink" title="并集选择器"></a>并集选择器</h3><p>  选择器，选择器，选择器{属性:值;}<br>  .box,#box,span,div{}</p>
+<h2 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h2></li>
+</ul>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><pre><code>div{
+    font-size:16px; //文字大小
+    font-weight:700; //值从100-900，文字粗细
+    font-family:微软雅黑; //字体
+    font-style:normal|italic; n默认值，it斜体
+    line-height;//行高
+}
+</code></pre><h3 id="字体的表达方式"><a href="#字体的表达方式" class="headerlink" title="字体的表达方式"></a>字体的表达方式</h3><p><img src="https://i.imgur.com/vKlZfEa.png" alt=""></p>
+<ul>
+<li><p>直接写中文</p>
+<pre><code>font-family:微软雅黑;
+</code></pre></li>
+<li><p>英文名称</p>
+<pre><code>font-family:microsoft yahei;
+</code></pre></li>
+<li><p>unicode 编码</p>
+<pre><code>font-family:\u5FAE\u8F6F\u96C5\u9ED1;
+</code></pre><p>escape(“微软雅黑”)<br>能得到<br>“%u5FAE%u8F6F%u96C5%u9ED1”<br><img src="https://i.imgur.com/x6DrWfe.png" alt=""></p>
+<h3 id="连写"><a href="#连写" class="headerlink" title="连写"></a>连写</h3><p>  font: font-style font-weight  font-size/line-height  font-family;<br>注意：font:后边写属性的值。一定按照书写顺序。<br>文本属性连写文字大小和字体为必写项。</p>
+<p>  Font:italic 700 16px/40px  微软雅黑;</p>
+</li>
+</ul>
+<h2 id="元素显示方式"><a href="#元素显示方式" class="headerlink" title="元素显示方式"></a>元素显示方式</h2><h3 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h3><p>典型：<code>div,h1-h6,p,ul,li</code><br>特点: </p>
+<pre><code>1. 独占一行
+2. 可以设置宽高
+2. 嵌套（包含）下，子块元素宽度（没有定义情况下）和父块元素宽度默认一致
+</code></pre><h3 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h3><p>典型:<code>span,a,strong,em,del,ins</code><br>特点：</p>
+<pre><code>1. 在一行上显示
+2. 不能直接设置宽高
+3. 元素的宽和高就是内容撑开的宽高
+</code></pre><h3 id="行内块元素"><a href="#行内块元素" class="headerlink" title="行内块元素"></a>行内块元素</h3><p>典型：<code>input img</code><br>特点:</p>
+<pre><code>1. 在一行显示
+2. 可以设置宽高
+</code></pre><h3 id="块元素、行内元素"><a href="#块元素、行内元素" class="headerlink" title="块元素、行内元素"></a>块元素、行内元素</h3><pre><code>//块转行
+div,p{
+    display:inline;
+}
+//行转块
+span{
+    display:block;
+}
+//块和行内转行内块
+div,a,span{
+    display:inline-block;
+}
+//行内块转块元素
+input{
+    display:block;
+}
+行内块转行内元素，经我测试不生效    
+</code></pre><h2 id="css三大特性"><a href="#css三大特性" class="headerlink" title="css三大特性"></a>css三大特性</h2><h3 id="层叠性"><a href="#层叠性" class="headerlink" title="层叠性"></a>层叠性</h3><p>当多个样式作用于同一个（同一类）标签时，样式发生了冲突，总是执行后边的代码(后边代码层叠前边的代码)。</p>
+<h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><pre><code>继承性发生的前提是包含（嵌套关系）
+
+文字的所有属性都可以继承。
+
+特殊情况：
+h系列不能继承文字大小。
+a标签不能继承文字颜色。
+</code></pre><h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><pre><code>默认样式
+0
+标签选择器
+1
+类选择器
+10
+id选择器
+100
+行内样式
+1000
+!important
+1000以上
+</code></pre><p>特点</p>
+<pre><code>继承的权重为0
+权重会叠加
+</code></pre><h3 id="链接伪类"><a href="#链接伪类" class="headerlink" title="链接伪类"></a>链接伪类</h3><pre><code>/*未访问的*/
+a:link{
+    color:red;
+}
+/*访问后的*/
+a:visited{
+    color:green;
+}
+/*鼠标滑过*/
+a:hover{
+    color:yellow;
+}
+/*选中的链接，正在点击的*/
+a:active{
+    color:pink;
+}
+</code></pre><p>注意： 在CSS定义中，a:hover 必须被置于 a:link 和 a:visited 之后，才是有效的。<br>注意： 在 CSS 定义中，a:active 必须被置于 a:hover 之后，才是有效的。</p>
+<pre><code>/*获取焦点时的样式*/
+input:focus{ 
+background-color:yellow;
+}
+</code></pre><h3 id="文本修饰"><a href="#文本修饰" class="headerlink" title="文本修饰"></a>文本修饰</h3><pre><code>text-decoration: 
+none  默认样式  
+underline 下划线   
+line-through 穿过文本的线
+</code></pre><h3 id="背景属性"><a href="#背景属性" class="headerlink" title="背景属性"></a>背景属性</h3><p>background-color 背景颜色<br>background-image 背景图片<br>background-repeat :    背景平铺</p>
+<pre><code>repeat 背景图像将向垂直和水平方向重复。这是默认
+no-repeat 不重复|repeat-x 水平重复|repeat-y 垂直重复
+</code></pre><p>background-position: 背景定位</p>
+<pre><code>left  |  right  |  center  |  top  | bottom 
+方位值只写一个的时候，另外一个值默认居中。
+20px 30px;
+写2个具体值的时候，第一个值代表水平方向，第二个值代表垂直方向。
+只写一个另一个默认50%，可以混合使用
+</code></pre><p>background-attachment:背景是否滚动</p>
+<pre><code>scroll 背景图片随页面的其余部分滚动。这是默认
+fixed 背景图像是固定的
+</code></pre><p>背景属性连写</p>
+<pre><code>background:red url(&quot;1.png&quot;) no-repeat 30px 40px scroll;
+</code></pre><p>连写的时候没有顺序要求，url为必写项。</p>
+<h2 id="行高"><a href="#行高" class="headerlink" title="行高"></a>行高</h2><pre><code>浏览器默认文字大小：16px
+行高=文字高度+上下边距
+行高=基线与基线之间的距离
+</code></pre><p><img src="https://i.imgur.com/MfRBzrL.png" alt=""><br>一行文字行高和父元素一致时，垂直居中显示</p>
+<h3 id="行高的单位"><a href="#行高的单位" class="headerlink" title="行高的单位"></a>行高的单位</h3><p>行高</p>
+<pre><code>line-height
+单位 2    2em    150%    40px
+</code></pre><p>文字大小</p>
+<pre><code>font-size
+</code></pre><p>只有一个元素</p>
+<pre><code>行高单位除了像素以外，行高都是与文字大小乘积。
+</code></pre><p>父元素和子元素时</p>
+<pre><code>不带单位时，子元素行高是和子元素文字大小相乘，em和%的子元素行高是和父元素文字大小相乘。
+子元素行高以像素为单位，就是定义的行高值。
+</code></pre><p>◆推荐行高使用像素为单位。</p>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><h3 id="边框-border"><a href="#边框-border" class="headerlink" title="边框 border"></a>边框 border</h3><p>border-top-style</p>
+<pre><code>solid 实线 dotted 点线 dashed 虚线
+</code></pre><p>border-top-color 边框颜色<br>border-top-width 边框粗细</p>
+<h3 id="边框属性连写"><a href="#边框属性连写" class="headerlink" title="边框属性连写"></a>边框属性连写</h3><p>没有顺序，style为必写项</p>
+<h3 id="边框合并-border-collapse"><a href="#边框合并-border-collapse" class="headerlink" title="边框合并 border-collapse"></a>边框合并 border-collapse</h3><h3 id="表单控件边框"><a href="#表单控件边框" class="headerlink" title="表单控件边框"></a>表单控件边框</h3><pre><code>outline-style:none   
+</code></pre><p>取消轮廓线</p>
+<pre><code>:focus 
+</code></pre><p>获取鼠标光标焦点</p>
+<pre><code>input:focus{}
+</code></pre><p>取消表单边框</p>
+<pre><code>border:0 none; 兼容性好
+</code></pre><p>label标签</p>
+<pre><code>&lt;label for=&quot;ID名&quot;&gt; 友好性好
+</code></pre><h3 id="内边距"><a href="#内边距" class="headerlink" title="内边距"></a>内边距</h3><pre><code>padding-left|right|top|bottom
+</code></pre><h4 id="padding连写"><a href="#padding连写" class="headerlink" title="padding连写"></a>padding连写</h4><p>padding:20px; 上下左右内边距都是20px<br>padding:20px 30px; 上下20px 左右30px<br>padding：20px 30px 40px; 上内边距为20px 左右内边距为30px 下内边距为40px<br>padding：20px 30px 40px 50px</p>
+<h4 id="盒子的宽度-定义的宽度-边框宽度-左右内边距"><a href="#盒子的宽度-定义的宽度-边框宽度-左右内边距" class="headerlink" title="盒子的宽度=定义的宽度+边框宽度+左右内边距"></a>盒子的宽度=定义的宽度+边框宽度+左右内边距</h4><h4 id="继承的盒子一般不会被撑大"><a href="#继承的盒子一般不会被撑大" class="headerlink" title="继承的盒子一般不会被撑大"></a>继承的盒子一般不会被撑大</h4><p>包含（嵌套）的盒子，如果子盒子没有定义宽度，给子盒子设置左右内边距，一般不会撑大盒子。</p>
+<h4 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h4><pre><code>margin-left|right|top|bottom
+</code></pre><h4 id="外边距连写"><a href="#外边距连写" class="headerlink" title="外边距连写"></a>外边距连写</h4><p>margin:20px; 上下左右20<br>margin:20px 30px; 上下20 左右30<br>margin:20px 30px 40px; 上20 左右30 下40<br>margin:20px 30px 40px 50px; 上20 右30 下40 左50</p>
+<h4 id="垂直方向外边距合并"><a href="#垂直方向外边距合并" class="headerlink" title="垂直方向外边距合并"></a>垂直方向外边距合并</h4><p>两个盒子垂直一个设置上外边距，一个设置下外边距，取的设置较大的值。</p>
+<h4 id="嵌套的盒子外边距塌陷"><a href="#嵌套的盒子外边距塌陷" class="headerlink" title="嵌套的盒子外边距塌陷"></a>嵌套的盒子外边距塌陷</h4><p>解决方法:</p>
+<pre><code>1 给父盒子设置边框
+2 给父盒子overflow:hidden;
+</code></pre><h4 id="行内元素-1"><a href="#行内元素-1" class="headerlink" title="行内元素"></a>行内元素</h4><p>行内元素可以定义左右的内外边距，上下会被忽略掉<br>行内块可以定义内外边距</p>
+<h4 id="文档流（标准流）"><a href="#文档流（标准流）" class="headerlink" title="文档流（标准流）"></a>文档流（标准流）</h4><p>元素自上而下，自左而右，块元素独占一行，行内元素在一行上显示，碰到父集元素的边框换行。</p>
+<h4 id="浮动布局"><a href="#浮动布局" class="headerlink" title="浮动布局"></a>浮动布局</h4><pre><code>float:  left   |   right
+</code></pre><p>特点：<br>★元素浮动之后不占据原来的位置（脱标）<br>★浮动的盒子在一行上显示<br>★行内元素浮动之后转换为行内块元素。（不推荐使用，转行内元素最好使用display: inline-block;）<br>浮动的作用:<br>◆文本绕图<br>◆制作导航<br>◆网页布局</p>
+<h4 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h4><p>当父盒子没有定义高度，嵌套的盒子浮动之后，下边的元素发生位置错误。<br>◆清除浮动不是不用浮动，清除浮动产生的不利影响。<br>◆清除浮动的方法<br>clear: left  |  right  | both<br>工作里用的最多的是clear:both;<br>★额外标签法<br> 在最后一个浮动元素后添加标签</p>
+<pre><code>&lt;div&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>★给父集元素使用overflow:hidden;    bfc<br>  如果有内容出了盒子，不能使用这个方法。</p>
+<pre><code>&lt;div style=&quot;overflow:hideen&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>★伪元素清除浮动  推荐使用</p>
+<pre><code>.clearfix:after{
+    content:&quot;.&quot;;
+    display:block;
+    height: 0;
+    line-height:0;
+    visbility:hidden;
+    clear:both;
+}
+/*兼容ie浏览器*/
+.clearfix{
+    zoom:1;
+}
+&lt;div class=&quot;clearfix&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h3 id="CSS初始化"><a href="#CSS初始化" class="headerlink" title="CSS初始化"></a>CSS初始化</h3><p>腾讯：</p>
+<pre><code>body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0} 
+body{font:12px&quot;宋体&quot;,&quot;Arial Narrow&quot;,HELVETICA;background:#fff;-webkit-text-size-adjust:100%;} 
+a{color:#2d374b;text-decoration:none} 
+a:hover{color:#cd0200;text-decoration:underline} 
+em{font-style:normal} 
+li{list-style:none} 
+img{border:0;vertical-align:middle} 
+table{border-collapse:collapse;border-spacing:0} 
+p{word-wrap:break-word} 
+</code></pre><p>新浪：</p>
+<pre><code>body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;} 
+body{background:#fff;color:#333;font-size:12px; margin-top:5px;font-family:&quot;SimSun&quot;,&quot;宋体&quot;,&quot;Arial Narrow&quot;;}
+ul,ol{list-style-type:none;} 
+select,input,img,select{vertical-align:middle;} 
+a{text-decoration:none;} 
+a:link{color:#009;} 
+a:visited{color:#800080;} 
+a:hover,a:active,a:focus{color:#c00;text-decoration:underline;} 
+</code></pre><p>淘宝：</p>
+<pre><code>body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; } 
+body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; } 
+h1, h2, h3, h4, h5, h6{ font-size:100%; } 
+address, cite, dfn, em, var { font-style:normal; } 
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; } 
+small{ font-size:12px; } 
+ul, ol { list-style:none; } 
+a { text-decoration:none; } 
+a:hover { text-decoration:underline; } 
+sup { vertical-align:text-top; } 
+sub{ vertical-align:text-bottom; } 
+legend { color:#000; } 
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; } 
+table { border-collapse:collapse; border-spacing:0; } 
+</code></pre><h4 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h4><pre><code>overflow:visible;
+</code></pre><p>默认值，内容不会被修剪，会呈现在元素框外<br>    overflow:hidden;<br>内容会被修剪，并且其余内容是不可见的<br>    overflow:scorll<br>内容会被修剪，但是浏览器会显示滚动条以便查看其余内容<br>    overflow:auto<br>如果内容被修剪，则浏览器会显示滚动条以便查看其余内容</p>
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><p>定位方向: left  | right  | top  | bottom</p>
+<h4 id="静态定位"><a href="#静态定位" class="headerlink" title="静态定位"></a>静态定位</h4><p>position:static;  默认值，就是文档流。</p>
+<h4 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h4><p>Position:absolute;<br>特点：<br>★元素使用绝对定位之后不占据原来的位置（脱标）<br>★元素使用绝对定位，位置是从浏览器出发。<br>★嵌套的盒子，父盒子没有使用定位，子盒子绝对定位，子盒子位置是从浏览器出发。<br>★嵌套的盒子，父盒子使用定位，子盒子绝对定位，子盒子位置是从父元素位置出发。<br>★给行内元素使用绝对定位之后，转换为行内块。（不推荐使用，推荐使用display:inline-block;）</p>
+<h4 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h4><p>Position: relative;<br>特点：<br>★位置从自身出发。<br>★还占据原来的位置。<br>★子绝父相（父元素相对定位，子元素绝对定位）<br>◆嵌套的盒子，父元素相对定位，子元素绝对定位，子元素从父元素出发设置自身位置。<br>★行内元素使用相对定位不能转行内块</p>
+<h4 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h4><p>Position:fixed;<br>特点：<br>★不占据原来的位置（脱标）<br>★位置从浏览器出发。<br>★会转化为行内块（不推荐，推荐使用display:inline-block;）</p>
+<h4 id="定位中的盒子居中显示"><a href="#定位中的盒子居中显示" class="headerlink" title="定位中的盒子居中显示"></a>定位中的盒子居中显示</h4><p>让标准流的盒子居中对齐：</p>
+<pre><code>margin:0 auto; 
+</code></pre><p>定位的盒子居中：先左右走父元素盒子的一半50%，在向左走子盒子的一半(margin-left:负值。)<br>    left: 50%;<br>    margin-left:-480px;</p>
+<h3 id="标签包含规范"><a href="#标签包含规范" class="headerlink" title="标签包含规范"></a>标签包含规范</h3><ol>
+<li>div可以包含所有的标签。</li>
+<li>p标签不能包含div h1等标签。</li>
+<li>h1可以包含p，div等标签。</li>
+<li>行内元素尽量包含行内元素，行内元素不要包含块元素。</li>
+</ol>
+<h3 id="规避脱标流"><a href="#规避脱标流" class="headerlink" title="规避脱标流"></a>规避脱标流</h3><ol>
+<li>尽量使用标准流。</li>
+<li>标准流解决不了的使用浮动。</li>
+<li>浮动解决不了的使用定位。</li>
+</ol>
+<pre><code>/*设置盒子左外边距为auto，将盒子冲到右边*/
+margin-left:auto;
+</code></pre><h3 id="图片和文字垂直居中对齐"><a href="#图片和文字垂直居中对齐" class="headerlink" title="图片和文字垂直居中对齐"></a>图片和文字垂直居中对齐</h3><pre><code>img{
+    /*图片与文字垂直居中对齐*/
+    vertical-align:middle;
+}
+</code></pre><p>vertical-align对inline-block最敏感。默认属性是:vertical-align:baseline;</p>
+<h3 id="Css可见性"><a href="#Css可见性" class="headerlink" title="Css可见性"></a>Css可见性</h3><pre><code>overflow:hidden;   溢出隐藏    
+visibility:hidden;   隐藏元素    隐藏之后还占据原来的位置。
+display:none;      隐藏元素    隐藏之后不占据原来的位置。
+Display:block;     元素可见
+Display:none  和display:block  常配合js使用。
+</code></pre><h3 id="css之内容移除（网页优化）"><a href="#css之内容移除（网页优化）" class="headerlink" title="css之内容移除（网页优化）"></a>css之内容移除（网页优化）</h3><p>text-indent</p>
+<pre><code>a{
+    display:inline-block;
+    text-indent:-5000em
+}
+</code></pre><p>将元素高度设置为0,使用内边距将盒子撑开，给盒子使用overflow:hidden;将文字隐藏。</p>
+<pre><code>.box{
+    height:0;
+    padding-top:100px;
+    overflow:hidden;
+}
+</code></pre><h3 id="Css精灵图"><a href="#Css精灵图" class="headerlink" title="Css精灵图"></a>Css精灵图</h3><h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><pre><code>input[type=text][class]{}
+</code></pre><h3 id="emmet快捷键："><a href="#emmet快捷键：" class="headerlink" title="emmet快捷键："></a>emmet快捷键：</h3><p>emmet是我们在sublime中的一个插件在这个插件中集成很多的快捷键。<br>html:</p>
+<p>####生成结构的快捷键：<br>！+ tab,可以生成html5的结构代码。</p>
+<p>####生成id名和类名<br>标签名.类名#id名+tab<br>没有标签名.类名+tab ==&gt;div</p>
+<p>####生成同级元素：<br>标签名+标签名+标签名 “+”tab</p>
+<p>####生成子类标签<br>标签名&gt;子标签名&gt;子标签名&gt;子标签名+tab<br>标签名&gt;子标签名&gt;子标签名&gt;子标签名^^子标签名+tab</p>
+<p>####带固定数量的标签:<br>            ul&gt;li*5+tab</p>
+<p>####带有序号名称<br>ul&gt;li.abc$*3 + tab</p>
+<p>####生成带有内容的标签：<br>ul&gt;li&gt;a{item}*5</p>
+<p>####css<br>        width:30px==&gt;w30+tab<br>  Height:30px==&gt;h30+tab<br>  Margin:30px==&gt;mg30+tab<br>Padding:30px==&gt; pd30+tab<br>Line-height:12px==&gt;lh12px+tab<br>Background==&gt;bg+tab</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/node/nvm安装和使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/28/node/nvm安装和使用/" itemprop="url">nvm的安装和使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:55:38+08:00">
+                2018-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##下载<br>下载 nvm 包 地址：<a href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="noopener">nvm-windows下载</a>，我们选择第一个：nvm-noinstall.zip 下载完成后解压到一个地方，比如: C:\dev\nvm 里面的文件列表是这样的：elevate.cmd、elevate.vbs、install.cmd、LICENSE、nvm.exe</p>
+<p>##安装<br>双击 install.cmd 然后会让你输入”压缩文件解压或拷贝到的一个绝对路径” 先不用管它，直接回车，成功后，会在C盘的根目录生成一个settings.txt的文本文件，把这个文件剪切到C:\dev\nvm目录中，然后我们把它的内容修改成这样：</p>
+<pre><code>root: C:\dev\nvm 
+path: C:\dev\nodejs 
+arch: 64 
+proxy: none 
+node_mirror: http://npm.taobao.org/mirrors/node/ 
+npm_mirror: https://npm.taobao.org/mirrors/npm/
+</code></pre><p>##配置环境变量<br>然后我们开始配置环境变量了，因为刚刚点击了install.cmd的文件，那么会在环境变量的系统变量中，生成两个环境变量：NVM_HOME 和 NVM_SYMLINK 我们开始修改这两个变量名的变量值：NVM_HOME的变量值为：C:\dev\nvm； NVM_SYMLINK的变量值为：C:\dev\nodejs</p>
+<p>我们还会发现，在Path中也会自动添加上C:\dev\nvm;或者是C:\dev\nodejs，如果有的话，把他们删掉，没有的话更好，我们自己来配置，在Path的最前面输入： ;%NVM_HOME%;%NVM_SYMLINK%;</p>
+<p>##测试是否成功<br>打开一个cmd窗口输入命令：nvm v ，那么我们会看到当前nvm的版本信息。然后我们可以安装nodejs了。</p>
+<p>继续输入命令：nvm install latest 如果网络畅通，我们会看到正在下载的提示，下载完成后 会让你use那个最新的node版本。</p>
+<p>如果你是第一次下载，在use之前，C:\dev目录下是没有nodejs这个文件夹的，在输入比如： nvm use 5.11.0 之后，你会发现，C:\dev目录下多了一个nodejs文件夹，这个文件夹不是单纯的文件夹，它是一个快捷方式，指向了 C:\dev\nvm 里的 v5.11.0 文件夹。</p>
+<p>同样的咱们可以下载其他版本的nodejs，这样通过命令:nvm use 版本号 比如：nvm use 5.11.0就可以轻松实现版本切换了。</p>
+<p>##备注<br>如果你的电脑系统是32 位的，那么在下载nodejs版本的时候，一定要指明 32 如： nvm install 5.11.0 32 这样在32位的电脑系统中，才可以使用，默认是64位的。</p>
+<p>##nvm常用命令</p>
+<pre><code>nvm install ## 安装指定版本，可模糊安装，如：安装v6.2.0，既可nvm install v6.2.0，又可nvm install 6.2
+nvm uninstall ## 删除已安装的指定版本，语法与install类似
+nvm use ## 切换使用指定的版本node
+nvm ls ## 列出所有安装的版本
+nvm ls-remote ## 列出所以远程服务器的版本（官方node version list）
+nvm current ## 显示当前的版本
+nvm alias ## 给不同的版本号添加别名
+nvm unalias ## 删除已定义的别名
+nvm reinstall-packages ## 在当前版本node环境下，重新全局安装指定版本号的npm包
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/node/模块化开发总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/28/node/模块化开发总结/" itemprop="url">模块化开发总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:55:38+08:00">
+                2018-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#什么是模块化开发<br>  开发效率高 一次编写多次使用<br>  方便维护了（维护的成本更低）模块之间有高耦合低内聚的特点</p>
+<p>#为什么要在 程序 中使用 模块化的开发方式<br>避免命名冲突，解决文件依赖</p>
+<p>#nodejs采用的CommonJS规范进行模块化开发<br>目前通行的js模块规范主要有两种：CommonJS和AMD。</p>
+<p>AMD 中文名是“异步模块定义”的意思。它是一个在浏览器端模块化开发的规范，<br>模块将被异步加载，模块加载不影响后面语句的运行。所有依赖某些模块的语句均放置在回调函数中。</p>
+<p>服务器端的规范是CommonJS，Node.js采用了这个规范。Node.JS首先采用了js模块化的概念<br>根据CommonJS规范，一个单独的文件就是一个模块。每一个模块都是一个单独的作用域，也就是说，在该模块内部定义的变量，无法被其他模块读取，除非定义为global对象的属性。</p>
+<p>#module.exports和exports的区别<br>module.exports才是真正的接口，最终返回给调用的是module.exports而不是exports。<br>exports仅仅是module.exports的一个地址引用,所有的exports收集到的属性和方法，都赋值给了Module.exports。</p>
+<p>相当于：a和b指向同一块内存，b是a的地址引用</p>
+<pre><code>var a = new Object();//a相当于module.exports
+var b = a; //b相当于exports
+</code></pre><p>例如<br>定义test.js</p>
+<pre><code>exports.test = ()=&gt;{
+    console.info(&quot;exports&quot;);
+}
+module.exports = ()=&gt;{
+    this.name=function(){
+        console.log(&quot; module.exports&quot;)
+    }
+}
+
+然后在另一个文件引入
+因为导出的文件中的函数变成了成员方法，所以要new一个对象，再调用成员方法。
+var test =new (require(&apos;./test&apos;))();
+test.name();
+</code></pre><p>nodejs只会导出module.exports的指向，new一个新对象之后，exports收集的test()方法也就消失了</p>
+<p>定义test.js</p>
+<pre><code>exports = ()=&gt;{
+    this.name=function(){
+        console.log(&quot; exports&quot;)
+    }
+}
+</code></pre><p>nodejs只会导出module.exports的指向，如果exports指向变了，那就仅仅是exports不在指向module.exports，<br>于是不会再被导出，在其他文件也无法调用它的方法</p>
+<p>1.最好别分别定义module.exports和exports</p>
+<p>2.NodeJs开发者建议导出对象用module.exports,导出多个方法和变量用exports</p>
+<p>#模块缓存<br>模块导入会缓存，写了多次导入，只会导一次。</p>
+<p>#模块加载require<br>加载模块使用require方法，该方法读取一个文件并执行，最后返回文件内部的module.exports对象<br>文件后缀可以省略</p>
+<p>##./或../开始的相对路径文件模块<br>    以”./“开头和以”../“开头表示以相对路径加载，而以”./“开头表示同级目录下文件<br>    var test = require(“./test”);<br>    在加载一个自己编写的模块的时候，最好使用<strong>dirname 和 你要加载的模块的文件名拼接<br>    var test = require(</strong>dirname+”/test”);</p>
+<p>##以/开始的绝对路径文件模块</p>
+<pre><code>* 在Linux或者MAc的操作系统中，/表示系统的根路径
+* 在Windows中，/表示当前文件模块所属的根磁盘路径
+ 不建议使用，了解
+</code></pre><h2 id="不包含扩展名的时候，Node-js会按照"><a href="#不包含扩展名的时候，Node-js会按照" class="headerlink" title="不包含扩展名的时候，Node.js会按照"></a>不包含扩展名的时候，Node.js会按照</h2><pre><code>路径.js     以后自己在加载js文件模块的时候，就省略掉.js后缀就可以了
+路径.node   后缀为node的文件是c/c++写的一些扩展模块
+路径.json   如果是加载json文件模块，最好加上后缀.json，能稍微的提高一点加载的速度
+              .json文件最终Node.js也是通过fs读文件的形式读取出来的，
+            然后通过JSON.parse()转换成一个对象
+
+
+Node.js会通过同步阻塞的方式看这个路径是否存在
+依次尝试，直到找到为止，
+如果找不到，报错
+</code></pre><h2 id="模块的种类"><a href="#模块的种类" class="headerlink" title="模块的种类"></a>模块的种类</h2><pre><code>第一类，核心模块（原生模块），node自带，用名称直接可以加载。
+- 核心模块
+  + fs file system
+  + http
+  + os
+  + path
+  + querystring
+  + url
+  ...
+第二类，文件模块，用路径加载，有一种特殊的文件模块-----&gt;包，可以用名字。
+</code></pre><h2 id="require-加载包的时候"><a href="#require-加载包的时候" class="headerlink" title="require 加载包的时候"></a>require 加载包的时候</h2><pre><code>var fs = require(&quot;fs&quot;);
+直接写包名，先在包内的node_modules,
+目录下查找，去父级目录下的node_modules目录下查找，
+依次向上查找，直到根目录。
+</code></pre>
           
         
       
@@ -2146,7 +2429,7 @@ list:
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2196,7 +2479,7 @@ list:
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2207,7 +2490,7 @@ list:
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Damion:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="title:node学习（三）date: 2018-04-28 09:55:38categories:  node     2.模块系统##2.1模块的种类 在Node.js中，模块分为两类：12345678910第一类，核心模块（原生模块），node自带，用名称直接可以加载。- 核心模块  + fs file system  + http  + os  + path  + querystrin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Harper&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/2018/05/18/node/Node学习（三）/index.html">
+<meta property="og:site_name" content="Harper&#39;s Blog">
+<meta property="og:description" content="title:node学习（三）date: 2018-04-28 09:55:38categories:  node     2.模块系统##2.1模块的种类 在Node.js中，模块分为两类：12345678910第一类，核心模块（原生模块），node自带，用名称直接可以加载。- 核心模块  + fs file system  + http  + os  + path  + querystrin">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/05/18/node/Node学习（三）/pic/image1.jpg">
+<meta property="og:updated_time" content="2018-05-18T05:46:11.425Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Harper&#39;s Blog">
+<meta name="twitter:description" content="title:node学习（三）date: 2018-04-28 09:55:38categories:  node     2.模块系统##2.1模块的种类 在Node.js中，模块分为两类：12345678910第一类，核心模块（原生模块），node自带，用名称直接可以加载。- 核心模块  + fs file system  + http  + os  + path  + querystrin">
+<meta name="twitter:image" content="http://yoursite.com/2018/05/18/node/Node学习（三）/pic/image1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/18/node/Node学习（三）/"/>
+
+
+
+
+
+  <title> | Harper's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Harper's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/node/Node学习（三）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T11:28:17+08:00">
+                2018-05-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>title:node学习（三）<br>date: 2018-04-28 09:55:38<br>categories:</p>
+<ul>
+<li>node  </li>
+</ul>
+<hr>
+<h1 id="2-模块系统"><a href="#2-模块系统" class="headerlink" title="2.模块系统"></a>2.模块系统</h1><p>##2.1模块的种类</p>
+<p>在Node.js中，模块分为两类：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">第一类，核心模块（原生模块），node自带，用名称直接可以加载。</span><br><span class="line">- 核心模块</span><br><span class="line">  + fs file system</span><br><span class="line">  + http</span><br><span class="line">  + os</span><br><span class="line">  + path</span><br><span class="line">  + querystring</span><br><span class="line">  + url</span><br><span class="line">  ...</span><br><span class="line">第二类，文件模块，用路径加载，有一种特殊的文件模块-----&gt;包，可以用名字。</span><br></pre></td></tr></table></figure></p>
+<p>module 是一个全局对象，它的作用是存储模块信息的,每一个js是一个模块，每一个模块里面都有一个module，module里面还存储了父子结构<br>直接给module.exports赋值，exports是无效，用属性的形式去赋值的时候二者都有效</p>
+<h2 id="2-2-优先从缓存加载"><a href="#2-2-优先从缓存加载" class="headerlink" title="2.2 优先从缓存加载"></a>2.2 优先从缓存加载</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">common.js规范-----&gt;加载后，再次加载时，去缓存中取module.exports</span><br></pre></td></tr></table></figure>
+<h2 id="2-3-require参数解析"><a href="#2-3-require参数解析" class="headerlink" title="2.3 require参数解析"></a>2.3 require参数解析</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">核心模块是Node.js原生提供的加载核心模块的时候，</span><br><span class="line">不需要传入路径，因为Node.js已经将核心模块的文件代码</span><br><span class="line">编译到了二进制的可执行文件中了</span><br><span class="line">在加载的过程中，原生的核心模块的优先级是是最高的</span><br></pre></td></tr></table></figure>
+<p><img src="./pic/image1.jpg" alt="Alt text"></p>
+<ul>
+<li><p>./或../开始的相对路径文件模块</p>
+<figure class="highlight plain"><figcaption><span>和 你要加载的模块的文件名拼接 ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 以/开始的绝对路径文件模块</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在Linux或者MAc的操作系统中，/表示系统的根路径</li>
+<li>在Windows中，/表示当前文件模块所属的根磁盘路径<br>不建议使用，了解<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 标识符中可以不包含扩展名</span><br><span class="line">  + Node会按照`.js、.node、.json`的次序补足扩展名，依次尝试</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>不包含扩展名的时候，Node.js会按照<br>  路径.js     以后自己在加载js文件模块的时候，就省略掉.js后缀就可以了<br>  路径.node   后缀为node的文件是c/c++写的一些扩展模块<br>  路径.json   如果是加载json文件模块，最好加上后缀.json，能稍微的提高一点加载的速度</p>
+<pre><code>.json文件最终Node.js也是通过fs读文件的形式读取出来的，然后通过JSON.parse()转换成一个对象
+</code></pre></li>
+</ul>
+<pre><code>Node.js会通过同步阻塞的方式看这个路径是否存在
+依次尝试，直到找到为止，
+如果找不到，报错
+</code></pre>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">  - require 加载包的时候</span><br><span class="line">``` </span><br><span class="line">   直接写包名，先在包内的node_modules,</span><br><span class="line">   目录下查找，去父级目录下的node_modules目录下查找，</span><br><span class="line">   依次向上查找，直到根目录。</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.infoq.com/cn/articles/nodejs-module-mechanism/" target="_blank" rel="noopener">参考文献</a></p>
+<h1 id="3-包"><a href="#3-包" class="headerlink" title="3.包"></a>3.包</h1><p>还有一种特殊的文件模块，其实就是包</p>
+<ul>
+<li>问题：你开的一个功能模块，还是以文件的形式散列的，你给别人使用的时候很麻烦。</li>
+<li>包的作用：在模块的基础上进一步组织JavaScript代码</li>
+</ul>
+<h2 id="3-1-包的组成"><a href="#3-1-包的组成" class="headerlink" title="3.1 包的组成"></a>3.1 包的组成</h2><ul>
+<li>包结构</li>
+<li>包描述文件package.json<ul>
+<li>描述你的当前的包的一些相关的信息<br>+dependencies <ul>
+<li>包名：“版本号” </li>
+<li><blockquote>
+<p>+版本号   下载大于某个版本号，npm会下最新版</p>
+</blockquote>
+</li>
+<li>&lt; +版本号   下载小于某个版本号，npm会下小于这个版本号最新版</li>
+<li>&lt;= 小于等于 一定会下你写的这个版本，除非没有你写的这个版本</li>
+<li><blockquote>
+<p>= 大于等于  下载最新版</p>
+</blockquote>
+</li>
+<li>*、” “、X  任意 npm会给你下最新版</li>
+<li>~ +版本号  会去下约等于这个版本的最新版，在大版本不变的情况下下一个比较新的版本</li>
+<li>^ +版本号  不跃迁版本下载，^2.1.0 npm会下载大版本不变，去下载2.x.x版本里的最近版</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>  <a href="http://blog.csdn.net/woxueliuyun/article/details/39294375" target="_blank" rel="noopener">参考文献 package.json全字段解析</a></p>
+<p>##<br>npm install -g fast-init</p>
+<h2 id="3-2-package-json"><a href="#3-2-package-json" class="headerlink" title="3.2 package.json"></a>3.2 package.json</h2><p>包的描述文件</p>
+<p>package.json文件内部就是一个JSON对象，该对象的每一个成员就是当前项目的一项设置，<br>比如name就是项目名称，version就是项目的版本号</p>
+<p>在模块的加载机制中，有一个main属性是非常重要的，它很大意义上决定了包要导出的模块位置</p>
+<h2 id="3-3"><a href="#3-3" class="headerlink" title="3.3"></a>3.3</h2><h1 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h1><ul>
+<li>基于Node.js开发的包的托管网站</li>
+<li>Node.js包管理工具</li>
+</ul>
+<p>npm :基于包的规范实现的一个包管理工具</p>
+<ul>
+<li>npm install 包名</li>
+</ul>
+<p>当执行npm install的时候，它会自动跑到npm的网站，然后找到该包的github地址，<br>找到之后，下载这个压缩包，然后在执行npm install的当前目录下找一个叫做node_modules目录<br>如果找到，直接解压这个压缩包，到node_modules目录下<br>如果找不到，则新建一个node_modules目录，解压到该目录</p>
+<ul>
+<li><p>npm install -g 包名<br> 表示全局安装<br> npm在安装的时候，在全局设置了一个安装目录，只要是全局安装就会把包安装到这个目录里面去<br> npm install -g 包名 只要是全局安装就是安装命令行工具</p>
+</li>
+<li><p>npm install 缩写 npm i</p>
+</li>
+</ul>
+<p>当执行npm install的时候，会自动在当前目录中查找package.json文件<br>如果找到，找里面的 dependencies 字段，安装该字段中所有依赖的项</p>
+<ul>
+<li>npm docs 包名<br>通风这个命令打开 包相对应的文档</li>
+<li><p>npm install –save 生产环境<br>npm i -S jquery@3.*<br>咱们以后在做项目的时候，先初始化一个package.json文件，<br>在安装第三方包依赖的时候，必须使用npm install –save express,添加依赖项到package.json文件中，<br>实际就是添加到dependencies字段中</p>
+</li>
+<li><p>npm install -save-dev 开发环境<br>npm i -D jquery@3.*<br>咱们以后在做项目的时候，先初始化一个package.json文件，<br>在安装第三方包依赖的时候，必须使用npm install –save express,添加依赖项到package.json文件中，<br>实际就是添加到devDependencies字段中</p>
+</li>
+</ul>
+<ul>
+<li>npm config set prefix  修改全局安装目录<br>不建议使用，建议去文件夹里面改 C:\Users\用户名  里面有一个 .npmrc文件<br>去里面改prefix = C:\dev\npm  （写你的路径）<br>去全局的环境变量path里把C:\dev\npm  路径加进去</li>
+</ul>
+<p><a href="https://docs.npmjs.com/" target="_blank" rel="noopener">参考文献 npm的命令</a></p>
+<h1 id="npm-这种东西的最终的目的就是：让你的开发模式工程化，都依靠工具来管理"><a href="#npm-这种东西的最终的目的就是：让你的开发模式工程化，都依靠工具来管理" class="headerlink" title="npm 这种东西的最终的目的就是：让你的开发模式工程化，都依靠工具来管理"></a>npm 这种东西的最终的目的就是：让你的开发模式工程化，都依靠工具来管理</h1><h1 id="nvm-npm-nrm"><a href="#nvm-npm-nrm" class="headerlink" title="nvm npm nrm"></a>nvm npm nrm</h1><h2 id="3m"><a href="#3m" class="headerlink" title="3m"></a>3m</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nvm node版本的管理工具</span><br><span class="line">npm node的包管理工具</span><br><span class="line">nrm npm的数据源管理工具</span><br><span class="line"></span><br><span class="line"> npm install -g nrm</span><br></pre></td></tr></table></figure>
+<p>#4.文件操作</p>
+<p>###4.1箭头函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">箭头函数就是一种语法糖</span><br><span class="line">语法糖是一种语法，用这种语法能尝到甜头，能是编程高效</span><br><span class="line">当函数体有一个参数有返回值的时候</span><br><span class="line"></span><br><span class="line">var foo=function(v)&#123; return v;&#125;</span><br><span class="line">var foo=v=&gt;v;</span><br><span class="line">当函数体没有参数有返回值的时候</span><br><span class="line"></span><br><span class="line">var foo=function()&#123; return v;&#125;</span><br><span class="line"></span><br><span class="line">var foo=()=&gt;v;</span><br><span class="line">当函数体有多个参数有返回值的时候</span><br><span class="line"></span><br><span class="line">var foo=function(v1,v2)&#123; return v1+v2;&#125;</span><br><span class="line">var foo=(v1,v2)=&gt;v1+v2;</span><br><span class="line">当函数体有多个参数没有返回值的时候</span><br><span class="line">var foo=function(v1,v2)&#123; </span><br><span class="line">  console.log(v1); console.log(v2);</span><br><span class="line">  &#125;</span><br><span class="line">var foo=(v1,v2)=&gt;&#123;</span><br><span class="line">  console.log(v1); console.log(v2);</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure></p>
+<p>###4.2文件读写</p>
+<ul>
+<li>fs.readFile() 读文件</li>
+</ul>
+<p>fs.readFile(file, [options], callback)<br>//file 读文件的路径<br>//options 用[]包裹的可选参数，object {“encoding”:”uft8”,”flag”:”r”}  string ‘utf8’<br>//callback function  callback函数里面有两个参数<br>//err表示错误对象，如果readFile发生错误了，在callback函数里面会回返回err，err对象里面存着错误信息<br>//如何读文件成功，err为null<br>//data就是读文件，读出来的内容。</p>
+<ul>
+<li>fs.access(path,[mode], callback) 用来判断文件是否存在<br>//path 判断路径是否正确（也可以判断文件）’./pic’<br>//mode一般不用，默认就可以了，用的话是用来判断文件是否可读可写可执行<br>//callback 只有一个参数err，错，文件有问题</li>
+</ul>
+<h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><ul>
+<li>vsc教程<a href="vsc教程">http://i5ting.github.io/vsc/</a></li>
+</ul>
+<p>#作业<br>2.npm 和package.json结合着连<br>npm init    初始化package.json<br>npm install   先配置package.json里的devDependencies dependencies字段<br>npm i -S +包名 npm install –save  不光能下载包，还能把依赖添加到package.json<br>npm i -D +包名 npm install –save-dev 不光能下载包，还能把依赖添加到package.json<br>npm docs 包名  查看包的相关文件 jquery、mongoose、http-poster<br>npm list 当前目录有什么包，检测node_modules里面有什么<br>npm install –g 包名  全局安装 cnpm、nrm<br>3.cnpm<br>4.nrm<br>安装目录npm install -g nrm<br>nrm ls 查看数据源<br>nrm test 测试你的网连那个npm的数据源快<br>nrm use 切换数据源<br>5.阅读参考文献 朴灵 require<br>阅读参考文献 package.json全字段解析<br>6.github自己玩玩</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/18/node/http协议总结/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Harper" />
+            
+              <p class="site-author-name" itemprop="name">Harper</p>
+              <p class="site-description motion-element" itemprop="description">永远爱琪琪的鹏鹏</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2-模块系统"><span class="nav-number">1.</span> <span class="nav-text">2.模块系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-优先从缓存加载"><span class="nav-number">1.1.</span> <span class="nav-text">2.2 优先从缓存加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-require参数解析"><span class="nav-number">1.2.</span> <span class="nav-text">2.3 require参数解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-包"><span class="nav-number">2.</span> <span class="nav-text">3.包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-包的组成"><span class="nav-number">2.1.</span> <span class="nav-text">3.1 包的组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-package-json"><span class="nav-number">2.2.</span> <span class="nav-text">3.2 package.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3"><span class="nav-number">2.3.</span> <span class="nav-text">3.3</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#npm"><span class="nav-number">3.</span> <span class="nav-text">npm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#npm-这种东西的最终的目的就是：让你的开发模式工程化，都依靠工具来管理"><span class="nav-number">4.</span> <span class="nav-text">npm 这种东西的最终的目的就是：让你的开发模式工程化，都依靠工具来管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nvm-npm-nrm"><span class="nav-number">5.</span> <span class="nav-text">nvm npm nrm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3m"><span class="nav-number">5.1.</span> <span class="nav-text">3m</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其它"><span class="nav-number">6.</span> <span class="nav-text">其它</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Harper</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

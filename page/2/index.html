@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/hexo/使用 Hexo 基于 GitHub Pages 搭建个人博客/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/node/node学习资料/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
@@ -293,7 +293,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/26/hexo/使用 Hexo 基于 GitHub Pages 搭建个人博客/" itemprop="url">使用 Hexo 基于 GitHub Pages 搭建个人博客</a></h1>
+                <a class="post-title-link" href="/2018/04/28/node/node学习资料/" itemprop="url">node学习资料</a></h1>
         
 
         <div class="post-meta">
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T10:40:45+08:00">
-                2018-04-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:55:38+08:00">
+                2018-04-28
               </time>
             
 
@@ -328,8 +328,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
                   </a>
                 </span>
 
@@ -367,36 +367,1556 @@
       
         
           
-            <h1 id="Hexo-安装"><a href="#Hexo-安装" class="headerlink" title="Hexo 安装"></a>Hexo 安装</h1><pre><code>npm install hexo-cli -g    
-</code></pre><h1 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h1><pre><code>hexo init &lt;folder&gt;
-cd &lt;folder&gt;
-npm install
-</code></pre><h1 id="编译生成博文"><a href="#编译生成博文" class="headerlink" title="编译生成博文"></a>编译生成博文</h1><pre><code>hexo generate
-</code></pre><h1 id="启动Hexo服务器"><a href="#启动Hexo服务器" class="headerlink" title="启动Hexo服务器"></a>启动Hexo服务器</h1><pre><code>hexo server
-</code></pre><p>调试</p>
-<pre><code>hexo server --debug    
-</code></pre><p>打开浏览器输入 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 便可以看到最原始的博客了</p>
-<h1 id="新建一篇博客文章"><a href="#新建一篇博客文章" class="headerlink" title="新建一篇博客文章"></a>新建一篇博客文章</h1><pre><code>hexo new &quot;开始blog，哈哈&quot;
-</code></pre><p>打开 Hexo 目录下的 source_posts 目录就可以看见创建的文章</p>
-<h1 id="主题安装"><a href="#主题安装" class="headerlink" title="主题安装"></a>主题安装</h1><p><a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">Next 主题 GitHub 地址</a></p>
-<p>拷贝至站点目录的 themes 目录下，一般命名为 next，打开站点配置文件， 找到 theme 字段，并将其值更改为 next 即可</p>
-<p>clone下来删了.git，防止和项目的.git冲突</p>
-<h1 id="创建分类"><a href="#创建分类" class="headerlink" title="创建分类"></a>创建分类</h1><p>在博客根目录输入</p>
-<pre><code>hexo new page categories
-</code></pre><p>打开category/index.md，改为：</p>
-<pre><code>title: 分类
-date: 日期
-type: &quot;categories&quot;
-comments: false
-</code></pre><p>再文章前添加</p>
-<pre><code>---
-title: 分类测试
-categories:
-- 分类测试 
----
-</code></pre><p>主题展示分类图标，修改<code>主题配置文件</code></p>
-<pre><code>menu：
-    categories: /categories/ || th
+            <h2 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h2><h3 id="深入浅出nodejs读书笔记"><a href="#深入浅出nodejs读书笔记" class="headerlink" title="深入浅出nodejs读书笔记"></a><a href="https://www.jianshu.com/p/37d16a63fbb9" target="_blank" rel="noopener">深入浅出nodejs读书笔记</a></h3><h3 id="廖雪峰js教程"><a href="#廖雪峰js教程" class="headerlink" title="廖雪峰js教程 "></a><a href="https://www.liaoxuefeng.com/" target="_blank" rel="noopener">廖雪峰js教程 </a></h3><h3 id="一起学Node-js"><a href="#一起学Node-js" class="headerlink" title="一起学Node.js"></a><a href="https://cnodejs.org/topic/581b0c4ebb9452c9052e7acb" target="_blank" rel="noopener">一起学Node.js</a></h3><h3 id="狼叔：如何正确的学习Node-js"><a href="#狼叔：如何正确的学习Node-js" class="headerlink" title="狼叔：如何正确的学习Node.js"></a><a href="https://cnodejs.org/topic/5ab3166be7b166bb7b9eccf7" target="_blank" rel="noopener">狼叔：如何正确的学习Node.js</a></h3><h3 id="node原理讲解"><a href="#node原理讲解" class="headerlink" title="node原理讲解"></a><a href="https://yunnysunny.gitbooks.io/nodebook/content/" target="_blank" rel="noopener">node原理讲解</a></h3><h3 id="https-github-com-sindresorhus-awesome-nodejs"><a href="#https-github-com-sindresorhus-awesome-nodejs" class="headerlink" title="https://github.com/sindresorhus/awesome-nodejs"></a><a href="https://github.com/sindresorhus/awesome-nodejs" target="_blank" rel="noopener">https://github.com/sindresorhus/awesome-nodejs</a></h3><h3 id="http-javascript-ruanyifeng-com-nodejs"><a href="#http-javascript-ruanyifeng-com-nodejs" class="headerlink" title="http://javascript.ruanyifeng.com/#nodejs"></a><a href="http://javascript.ruanyifeng.com/#nodejs" target="_blank" rel="noopener">http://javascript.ruanyifeng.com/#nodejs</a></h3><p>##书籍</p>
+<p>###深入浅出node</p>
+<p>###node.js实战</p>
+<p>###node.js实战（双色）</p>
+<p>###了不起的Node.js</p>
+<p>###Node.js开发指南</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/node/Node学习（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/28/node/Node学习（一）/" itemprop="url">Node学习（一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:55:38+08:00">
+                2018-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Node简介"><a href="#Node简介" class="headerlink" title="Node简介"></a>Node简介</h2><h3 id="客户端的JavaScript是怎样的"><a href="#客户端的JavaScript是怎样的" class="headerlink" title="客户端的JavaScript是怎样的"></a>客户端的JavaScript是怎样的</h3><ul>
+<li><p>什么是 JavaScript？</p>
+<ul>
+<li>脚本语言</li>
+<li>运行在浏览器中</li>
+<li>一般用来做客户端页面的交互（Interactive）</li>
+</ul>
+</li>
+<li><p>JavaScript 的运行环境？</p>
+<ul>
+<li>是不是运行在浏览器呢？</li>
+<li>不够严谨</li>
+<li>运行在浏览器内核中的 JS 引擎（engine）</li>
+</ul>
+</li>
+<li><p>浏览器中的 JavaScript 可以做什么？</p>
+<ul>
+<li>操作DOM（对DOM的增删改、注册事件）</li>
+<li>AJAX/跨域</li>
+<li>BOM（页面跳转、历史记录、console.log()、alert()）</li>
+<li>ECMAScript</li>
+</ul>
+</li>
+<li><p>浏览器中的 JavaScript 不可以做什么？</p>
+<ul>
+<li>文件操作（文件和文件夹的CRUD）</li>
+<li>没有办法操作系统信息</li>
+<li>由于运行环境特殊（我们写的代码是在不认识的人的浏览器中运行）</li>
+</ul>
+</li>
+<li><p>在开发人员能力相同的情况下编程语言的能力取决于什么？</p>
+<ul>
+<li>-语言本身？-</li>
+<li>语言本身只是提供定义变量，定义函数，定义类型，流程控制，循环结构之类的操作</li>
+<li>取决于运行该语言的平台（环境）</li>
+<li>对于JS来说，我们常说的JS实际是ES，大部分能力都是由浏览器的执行引擎决定</li>
+<li>BOM和DOM可以说是浏览器开放出来的接口</li>
+<li><p>比如：Cordova中提供JS调用摄像头，操作本地文件的API</p>
+</li>
+<li><p>Java既是语言也是平台</p>
+</li>
+<li>Java运行在Java虚拟机（跨操作系统）</li>
+<li><p>PHP既是语言也是平台（跨操作系统）</p>
+</li>
+<li><p>C#语言平台：.NET Framework（Windows）</p>
+</li>
+<li>C#可以运行在MONO这样的平台</li>
+<li>因为有人需要将C#运行在Linux平台，所有出现了MONO</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>JavaScript 只可以运行在浏览器中吗？<ul>
+<li>不是</li>
+<li>能运行在哪取决于，这个环境有没有特定平台</li>
+</ul>
+</li>
+</ul>
+<h3 id="什么是Node"><a href="#什么是Node" class="headerlink" title="什么是Node"></a>什么是Node</h3><ul>
+<li>Node 就是 JavaScript 语言在服务器端的运行环境</li>
+<li>所谓“运行环境（平台）”有两层意思：<ul>
+<li>首先，JavaScript 语言通过 Node 在服务器运行，在这个意义上，Node 有点像 JavaScript 虚拟机；</li>
+<li>其次，Node 提供大量工具库，使得 JavaScript 语言与操作系统互动（比如读写文件、新建子进程），在这个意义上， Node 又是 JavaScript 的工具库。</li>
+</ul>
+</li>
+</ul>
+<h3 id="为什么是JavaScript"><a href="#为什么是JavaScript" class="headerlink" title="为什么是JavaScript"></a>为什么是JavaScript</h3><h3 id="Node的实现结构"><a href="#Node的实现结构" class="headerlink" title="Node的实现结构"></a>Node的实现结构</h3><h3 id="Node在当下Web开发领域的应用"><a href="#Node在当下Web开发领域的应用" class="headerlink" title="Node在当下Web开发领域的应用"></a>Node在当下Web开发领域的应用</h3><h3 id="哪些公司在用"><a href="#哪些公司在用" class="headerlink" title="哪些公司在用"></a>哪些公司在用</h3><h3 id="重点理解"><a href="#重点理解" class="headerlink" title="重点理解"></a>重点理解</h3><ul>
+<li>Node是一个JavaScript的运行环境（平台），不是一门语言，也不是JavaScript的框架；</li>
+<li>Node的实现结构；</li>
+<li>Node可以用来开发服务端应用程序，Web系统；</li>
+<li>基于Node的前端工具集</li>
+</ul>
+<p>##什么是 Node ?<br>Node是一个JavaScript的运动环境（平台），不是一门语言，也不是JavaScript的框架；</p>
+<p>##相关链接<br><a href="https://github.com/sindresorhus/awesome-nodejs" target="_blank" rel="noopener">https://github.com/sindresorhus/awesome-nodejs</a><br><a href="http://javascript.ruanyifeng.com/#nodejs" target="_blank" rel="noopener">http://javascript.ruanyifeng.com/#nodejs</a></p>
+<hr>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><h3 id="安装包的方式安装"><a href="#安装包的方式安装" class="headerlink" title="安装包的方式安装"></a>安装包的方式安装</h3><ul>
+<li>安装包下载链接：<ul>
+<li>Mac OSX： <a href="http://npm.taobao.org/mirrors/node/v5.7.0/node-v5.7.0.pkg" target="_blank" rel="noopener">darwin</a></li>
+<li>Windows：<ul>
+<li><a href="http://npm.taobao.org/mirrors/node/v5.7.0/node-v5.7.0-x64.msi" target="_blank" rel="noopener">x64</a></li>
+<li><a href="http://npm.taobao.org/mirrors/node/v5.7.0/node-v5.7.0-x86.msi" target="_blank" rel="noopener">x86</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>安装操作：<ul>
+<li>一路<em>Next</em></li>
+</ul>
+</li>
+</ul>
+<h3 id="更新版本"><a href="#更新版本" class="headerlink" title="更新版本"></a>更新版本</h3><ul>
+<li>操作方式：<ul>
+<li>重新下载最新的安装包；</li>
+<li>覆盖安装即可；</li>
+</ul>
+</li>
+<li>问题：<ul>
+<li>以前版本安装的很多全局的工具包需要重新安装</li>
+<li>无法回滚到之前的版本</li>
+<li>无法在多个版本之间切换（很多时候我们要使用特定版本）</li>
+</ul>
+</li>
+</ul>
+<h3 id="NVM工具的使用"><a href="#NVM工具的使用" class="headerlink" title="NVM工具的使用"></a>NVM工具的使用</h3><blockquote>
+<p>Node Version Manager（Node版本管理工具）</p>
+</blockquote>
+<p>由于以后的开发工作可能会在多个Node版本中测试，而且Node的版本也比较多，所以需要这么款工具来管理</p>
+<h4 id="安装操作步骤"><a href="#安装操作步骤" class="headerlink" title="安装操作步骤"></a>安装操作步骤</h4><ol>
+<li>下载：<a href="https://github.com/coreybutler/nvm-windows/releases/download/1.1.0/nvm-noinstall.zip" target="_blank" rel="noopener">nvm-windows</a></li>
+<li>解压到一个全英文路径</li>
+<li><p>编辑解压目录下的<code>settings.txt</code>文件（不存在则新建）</p>
+<ul>
+<li><code>root 配置为当前 nvm.exe 所在目录</code></li>
+<li><code>path 配置为 node 快捷方式所在的目录</code></li>
+<li><code>arch 配置为当前操作系统的位数（32/64）</code></li>
+<li><code>proxy 不用配置</code></li>
+</ul>
+</li>
+<li><p>配置环境变量 可以通过 window+r  : sysdm.cpl</p>
+<ul>
+<li><code>NVM_HOME = D:\nvm</code></li>
+<li><code>NVM_SYMLINK = D:\nvm\nodejs</code></li>
+<li><code>PATH += %NVM_HOME%;%NVM_SYMLINK%;</code></li>
+<li>打开CMD通过<code>set [name]</code>命令查看环境变量是否配置成功</li>
+<li>PowerShell中是通过<code>dir env:[name]</code>命令</li>
+</ul>
+</li>
+<li><p>NVM使用说明：<br><a href="https://github.com/coreybutler/nvm-windows/" target="_blank" rel="noopener">https://github.com/coreybutler/nvm-windows/</a></p>
+<p>  nvm ls<br>  nvm  use 5.7.0<br>  node -v<br>  npm -v<br>  nvm  use 4.3.1</p>
+</li>
+</ol>
+<ol start="6">
+<li>NPM的目录之后使用再配置</li>
+</ol>
+<h3 id="配置Python环境"><a href="#配置Python环境" class="headerlink" title="配置Python环境"></a>配置Python环境</h3><blockquote>
+<p>Node中有些第三方的包是以C/C++源码的方式发布的，需要安装后编译<br>确保全局环境中可以使用python命令</p>
+</blockquote>
+<h3 id="环境变量的概念"><a href="#环境变量的概念" class="headerlink" title="环境变量的概念"></a>环境变量的概念</h3><blockquote>
+<p>环境变量就是操作系统提供的系统级别用于存储变量的地方</p>
+</blockquote>
+<ul>
+<li>Windows中环境变量分为系统变量和用户变量</li>
+<li>环境变量的变量名是不区分大小写的</li>
+<li>特殊值：<ul>
+<li>PATH 变量：只要添加到 PATH 变量中的路径，都可以在任何目录下搜索</li>
+</ul>
+</li>
+</ul>
+<h3 id="Windows下常用的命令行操作"><a href="#Windows下常用的命令行操作" class="headerlink" title="Windows下常用的命令行操作"></a>Windows下常用的命令行操作</h3><ul>
+<li>切换当前目录（change directory）：cd</li>
+<li>创建目录（make directory）：mkdir</li>
+<li>查看当前目录列表（directory）：dir<ul>
+<li>别名：ls（list）</li>
+</ul>
+</li>
+<li>清空当前控制台：cls<ul>
+<li>别名：clear</li>
+</ul>
+</li>
+<li>删除文件：del<ul>
+<li>别名：rm</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>注意：所有别名必须在新版本的 PowerShell 中使用</p>
+</blockquote>
+<hr>
+<h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><hr>
+<h2 id="事件驱动和非阻塞"><a href="#事件驱动和非阻塞" class="headerlink" title="事件驱动和非阻塞"></a>事件驱动和非阻塞</h2><hr>
+<h2 id="模块化开发"><a href="#模块化开发" class="headerlink" title="模块化开发"></a>模块化开发</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/node/核心模块/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/28/node/核心模块/" itemprop="url">node核心模块</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:55:38+08:00">
+                2018-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h2><p>核心模块和NPM、文件操作、文件流、网络操作</p>
+<h3 id="核心模块的意义"><a href="#核心模块的意义" class="headerlink" title="核心模块的意义"></a>核心模块的意义</h3><ul>
+<li>如果只是在服务器运行JavaScript代码，意义并不大，因为无法实现任何功能（读写文件，访问网络）。</li>
+<li>Node 的用处在于它本身还提供的一系列功能模块，用于与操作系统互动。</li>
+<li>这些核心的功能模块在 Node 中内置。</li>
+</ul>
+<h3 id="内置如下模块："><a href="#内置如下模块：" class="headerlink" title="内置如下模块："></a>内置如下模块：</h3><ul>
+<li><a href="http://nodejs.org/api/path.html" target="_blank" rel="noopener">path</a>：处理文件路径。</li>
+<li><a href="http://nodejs.org/api/fs.html" target="_blank" rel="noopener">fs</a>：操作文件系统。</li>
+<li><a href="http://nodejs.org/api/child_process.html" target="_blank" rel="noopener">child_process</a>：新建子进程。</li>
+<li><a href="http://nodejs.org/api/util.html" target="_blank" rel="noopener">util</a>：提供一系列实用小工具。</li>
+<li><a href="http://nodejs.org/api/http.html" target="_blank" rel="noopener">http</a>：提供HTTP服务器功能。</li>
+<li><a href="http://nodejs.org/api/url.html" target="_blank" rel="noopener">url</a>：用于解析URL。</li>
+<li><a href="http://nodejs.org/api/querystring.html" target="_blank" rel="noopener">querystring</a>：解析URL中的查询字符串。</li>
+<li><a href="http://nodejs.org/api/crypto.html" target="_blank" rel="noopener">crypto</a>：提供加密和解密功能。</li>
+<li><a href="https://nodejs.org/api/" target="_blank" rel="noopener">其他</a></li>
+</ul>
+<hr>
+<h2 id="Node-Package"><a href="#Node-Package" class="headerlink" title="Node Package"></a>Node Package</h2><blockquote>
+<p>由于Node是一套轻内核的平台，虽然提供了一系列的内置模块，但是不足以满足开发者的需求，于是乎出现了包（Package）的概念。与核心模块类似，就是将一些预先设计好的功能或者说API封装到一个文件夹，提供给开发者使用；</p>
+</blockquote>
+<h3 id="包的加载机制"><a href="#包的加载机制" class="headerlink" title="包的加载机制"></a>包的加载机制</h3><ul>
+<li>与内置模块相同，包的加载同样使用<code>require</code>方法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>加载机制也和内置模块加载机制相同</li>
+<li><p>加载注意事项：</p>
+<ul>
+<li>先在系统核心（优先级最高）的模块中找；</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="comment">// 永远加载内部核心模块fs</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>然后再到当前项目中 node_modules 目录中找；</li>
+</ul>
+<h3 id="如何管理好自己的包包"><a href="#如何管理好自己的包包" class="headerlink" title="如何管理好自己的包包"></a>如何管理好自己的包包</h3><ul>
+<li>由于<code>Node</code>本身并没有太多的功能性<code>API</code>，所以市面上涌现出大量的第三方人员开发出来的<code>Package</code><br><img src="./img/npm.png" alt="www.npmjs.com"></li>
+<li>包的生态圈一旦繁荣起来，就必须有工具去代替人脑或者文档的方式管理</li>
+<li>这时候<code>NPM</code>诞生了</li>
+</ul>
+<h3 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h3><ul>
+<li><p>随着时间的发展，NPM 出现了两层概念：</p>
+<ul>
+<li>一层含义是 Node 的开放式模块登记和管理系统，亦可以说是一个生态圈，一个社区</li>
+<li>另一层含义是 Node 默认的模块管理器，是一个命令行下的软件，用来安装和管理 Node 模块。</li>
+</ul>
+</li>
+<li><p>官方链接： <a href="https://www.npmjs.com/" target="_blank" rel="noopener">https://www.npmjs.com/</a></p>
+</li>
+<li>国内加速镜像： <a href="https://npm.taobao.org/" target="_blank" rel="noopener">https://npm.taobao.org/</a></li>
+</ul>
+<h3 id="安装NPM"><a href="#安装NPM" class="headerlink" title="安装NPM"></a>安装NPM</h3><ul>
+<li>NPM 不需要单独安装。默认在安装 Node 的时候，会连带一起安装 NPM。</li>
+<li>但是，Node 附带的 NPM 可能不是最新版本，最好用下面的命令，更新到最新版本。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install npm -g</span><br></pre></td></tr></table></figure>
+<ul>
+<li>默认安装到当前系统 Node 所在目录下。</li>
+<li>由于之前使用 NVM 的方式安装的 Node 所以需要重新配置 NPM 的全局目录</li>
+</ul>
+<h3 id="配置NPM的全局目录"><a href="#配置NPM的全局目录" class="headerlink" title="配置NPM的全局目录"></a>配置NPM的全局目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm config <span class="built_in">set</span> prefix [pathtonpm]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>将NPM目录配置到其他目录时，必须将该目录放到环境变量中，否则无法再全局使用</li>
+</ul>
+<h3 id="常用NPM命令"><a href="#常用NPM命令" class="headerlink" title="常用NPM命令"></a>常用NPM命令</h3><ul>
+<li><a href="https://docs.npmjs.com/" target="_blank" rel="noopener">https://docs.npmjs.com/</a></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">npm config [ls|list|<span class="built_in">set</span>|get] [name] [value]</span><br><span class="line">npm init [--yes|-y]</span><br><span class="line">npm search [name]</span><br><span class="line">npm info [name]</span><br><span class="line">npm install [--global|-g] [name]</span><br><span class="line">npm uninstall [--global|-g] [name]</span><br><span class="line">npm list [--global|-g]</span><br><span class="line">npm outdated [--global|-g]</span><br><span class="line">npm update [--global|-g] [name]</span><br><span class="line">npm run [task]</span><br><span class="line">npm cache [clean]</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="相关模块"><a href="#相关模块" class="headerlink" title="相关模块"></a>相关模块</h3><p>Node内核提供了很多与文件操作相关的模块，每个模块都提供了一些最基本的操作API，在NPM中也有社区提供的功能包</p>
+<h5 id="fs："><a href="#fs：" class="headerlink" title="fs："></a>fs：</h5><p>基础的文件操作 API</p>
+<h5 id="path："><a href="#path：" class="headerlink" title="path："></a>path：</h5><p>提供和路径相关的操作 API</p>
+<h5 id="readline："><a href="#readline：" class="headerlink" title="readline："></a>readline：</h5><p>用于读取大文本文件，一行一行读</p>
+<h5 id="fs-extra（第三方）："><a href="#fs-extra（第三方）：" class="headerlink" title="fs-extra（第三方）："></a>fs-extra（第三方）：</h5><p><a href="https://www.npmjs.com/package/fs-extra" target="_blank" rel="noopener">https://www.npmjs.com/package/fs-extra</a> </p>
+<h3 id="同步或异步调用"><a href="#同步或异步调用" class="headerlink" title="同步或异步调用"></a>同步或异步调用</h3><ul>
+<li>fs模块对文件的几乎所有操作都有同步和异步两种形式</li>
+<li>例如：readFile() 和 readFileSync()</li>
+<li>区别：<ul>
+<li>同步调用会阻塞代码的执行，异步则不会</li>
+<li>异步调用会将读取任务下达到任务队列，直到任务执行完成才会回调</li>
+<li>异常处理方面，同步必须使用 try catch 方式，异步可以通过回调函数的第一个参数</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.time(<span class="string">'sync'</span>);</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">var</span> data = fs.readFileSync(path.join(<span class="string">'C:\\Users\\iceStone\\Downloads'</span>, <span class="string">'H.mp4'</span>));</span><br><span class="line">  <span class="comment">// console.log(data);</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">  <span class="keyword">throw</span> error;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'sync'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'async'</span>);</span><br><span class="line">fs.readFile(path.join(<span class="string">'C:\\Users\\iceStone\\Downloads'</span>, <span class="string">'H.mp4'</span>), (error, data) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (error) <span class="keyword">throw</span> error;</span><br><span class="line">  <span class="comment">// console.log(data);</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'async'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="路径模块"><a href="#路径模块" class="headerlink" title="路径模块"></a>路径模块</h3><p>在文件操作的过程中，都必须使用物理路径（绝对路径），path模块提供了一系列与路径相关的 API</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'join用于拼接多个路径部分，并转化为正常格式'</span>);</span><br><span class="line"><span class="keyword">const</span> temp = path.join(__dirname, <span class="string">'..'</span>, <span class="string">'lyrics'</span>, <span class="string">'./友谊之光.lrc'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(temp);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'获取路径中的文件名'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(path.basename(temp));</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'获取路径中的文件名并排除扩展名'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(path.basename(temp, <span class="string">'.lrc'</span>));</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'获取不同操作系统的路径分隔符'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(process.platform + <span class="string">'的分隔符为 '</span> + path.delimiter);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'一般用于分割环境变量'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(process.env.PATH.split(path.delimiter));</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'获取一个路径中的目录部分'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(path.dirname(temp));</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'获取一个路径中最后的扩展名'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(path.extname(temp));</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'将一个路径解析成一个对象的形式'</span>);</span><br><span class="line"><span class="keyword">const</span> pathObject = path.parse(temp);</span><br><span class="line"><span class="built_in">console</span>.log(pathObject);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'将一个路径对象再转换为一个字符串的形式'</span>);</span><br><span class="line"><span class="comment">// pathObject.name = '我终于失去了你';</span></span><br><span class="line">pathObject.base = <span class="string">'我终于失去了你.lrc'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(pathObject);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(path.format(pathObject));</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'获取一个路径是不是绝对路径'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(path.isAbsolute(temp));</span><br><span class="line"><span class="built_in">console</span>.log(path.isAbsolute(<span class="string">'../lyrics/爱的代价.lrc'</span>));</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'将一个路径转换为当前系统默认的标准格式，并解析其中的./和../'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(path.normalize(<span class="string">'c:/develop/demo\\hello/../world/./a.txt'</span>));</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'获取第二个路径相对第一个路径的相对路径'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(path.relative(__dirname, temp));</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'以类似命令行cd命令的方式拼接路径'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(path.resolve(temp, <span class="string">'c:/'</span>, <span class="string">'./develop'</span>, <span class="string">'../application'</span>));</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'获取不同平台中路径的分隔符（默认）'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(path.sep);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'允许在任意平台下以WIN32的方法调用PATH对象'</span>);</span><br><span class="line"><span class="comment">// console.log(path.win32);</span></span><br><span class="line"><span class="built_in">console</span>.log(path === path.win32);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'===================================='</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'允许在任意平台下以POSIX的方法调用PATH对象'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(path === path.posix);</span><br></pre></td></tr></table></figure>
+<p>源码地址：<br><a href="https://github.com/nodejs/node/blob/master/lib/path.js" target="_blank" rel="noopener">https://github.com/nodejs/node/blob/master/lib/path.js</a></p>
+<h3 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h3><p>Node中文件读取的方式主要有：</p>
+<h4 id="fs-readFile-file-options-callback-error-data"><a href="#fs-readFile-file-options-callback-error-data" class="headerlink" title="fs.readFile(file[, options], callback(error, data))"></a>fs.readFile(file[, options], callback(error, data))</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fs.readFile(<span class="string">'c:\\demo\1.txt'</span>, <span class="string">'utf8'</span>, (err, data) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="fs-readFileSync-file-options"><a href="#fs-readFileSync-file-options" class="headerlink" title="fs.readFileSync(file[, options])"></a>fs.readFileSync(file[, options])</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> data = fs.readFileSync(<span class="string">'c:\\demo\1.txt'</span>, <span class="string">'utf8'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125; <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">  <span class="comment">// 文件不存在，或者权限错误</span></span><br><span class="line">  <span class="keyword">throw</span> e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="fs-createReadStream-path-options"><a href="#fs-createReadStream-path-options" class="headerlink" title="fs.createReadStream(path[, options])"></a>fs.createReadStream(path[, options])</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> stream = fs.createReadStream(<span class="string">'c:\\demo\1.txt'</span>);</span><br><span class="line"><span class="keyword">let</span> data = <span class="string">''</span></span><br><span class="line">stream.on(<span class="string">'data'</span>, (trunk) =&gt; &#123;</span><br><span class="line">  data += trunk;</span><br><span class="line">&#125;);</span><br><span class="line">stream.on(<span class="string">'end'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><em>由于Windows平台下默认文件编码是GBK，在Node中不支持，可以通过<a href="https://github.com/ashtuchkin/iconv-lite" target="_blank" rel="noopener">iconv-lite</a>解决</em></p>
+</blockquote>
+<h3 id="Readline模块逐行读取文本内容"><a href="#Readline模块逐行读取文本内容" class="headerlink" title="Readline模块逐行读取文本内容"></a>Readline模块逐行读取文本内容</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> readline = <span class="built_in">require</span>(<span class="string">'readline'</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> rl = readline.createInterface(&#123;</span><br><span class="line">  input: fs.createReadStream(<span class="string">'sample.txt'</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">rl.on(<span class="string">'line'</span>, (line) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Line from file:'</span>, line);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="文件写入"><a href="#文件写入" class="headerlink" title="文件写入"></a>文件写入</h3><p>Node中文件写入的方式主要有：</p>
+<h4 id="fs-writeFile-file-data-options-callback-error"><a href="#fs-writeFile-file-data-options-callback-error" class="headerlink" title="fs.writeFile(file, data[, options], callback(error))"></a>fs.writeFile(file, data[, options], callback(error))</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fs.writeFile(<span class="string">'c:\\demo\a.txt'</span>, <span class="keyword">new</span> <span class="built_in">Date</span>(), (error) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(error);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="fs-writeFileSync-file-data-options"><a href="#fs-writeFileSync-file-data-options" class="headerlink" title="fs.writeFileSync(file, data[, options])"></a>fs.writeFileSync(file, data[, options])</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  fs.writeFileSync(<span class="string">'c:\\demo\a.txt'</span>, <span class="keyword">new</span> <span class="built_in">Date</span>());</span><br><span class="line">&#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">  <span class="comment">// 文件夹不存在，或者权限错误</span></span><br><span class="line">  <span class="built_in">console</span>.log(error);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="fs-createWriteStream-path-option"><a href="#fs-createWriteStream-path-option" class="headerlink" title="fs.createWriteStream(path[,option])"></a>fs.createWriteStream(path[,option])</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> streamWriter = fs.createWriteStream(<span class="string">'c:\\demo\a.txt'</span>);</span><br><span class="line">setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  streamWriter.write(<span class="string">`<span class="subst">$&#123;<span class="keyword">new</span> <span class="built_in">Date</span>&#125;</span>\n`</span>, (error) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="文件写入-1"><a href="#文件写入-1" class="headerlink" title="文件写入"></a>文件写入</h3><h4 id="fs-appendFile-file-data-options-callback-err"><a href="#fs-appendFile-file-data-options-callback-err" class="headerlink" title="fs.appendFile(file,data[,options],callback(err))"></a>fs.appendFile(file,data[,options],callback(err))</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 相比较之前文件流的方式，这种方式不会占用文件资源，append完成就会释放</span></span><br><span class="line">setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  fs.appendFile(<span class="string">'c:\\demo\a.txt'</span>,<span class="string">`<span class="subst">$&#123;<span class="keyword">new</span> <span class="built_in">Date</span>&#125;</span>\n`</span>, (error) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="fs-appendFileSync-file-data-options"><a href="#fs-appendFileSync-file-data-options" class="headerlink" title="fs.appendFileSync(file,data[,options])"></a>fs.appendFileSync(file,data[,options])</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  fs.appendFileSync(<span class="string">'c:\\demo\a.txt'</span>,<span class="string">`<span class="subst">$&#123;<span class="keyword">new</span> <span class="built_in">Date</span>&#125;</span>\n`</span>);</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="其他常见文件操作"><a href="#其他常见文件操作" class="headerlink" title="其他常见文件操作"></a>其他常见文件操作</h3><h4 id="验证路径是否存在（过时的API）"><a href="#验证路径是否存在（过时的API）" class="headerlink" title="验证路径是否存在（过时的API）"></a>验证路径是否存在（过时的API）</h4><ul>
+<li>fs.exists(path,callback(exists))</li>
+<li>fs.existsSync(path) // =&gt; 返回布尔类型 exists</li>
+</ul>
+<h4 id="获取文件信息"><a href="#获取文件信息" class="headerlink" title="获取文件信息"></a>获取文件信息</h4><ul>
+<li>fs.stat(path,callback(err,stats))</li>
+<li>fs.statSync(path) // =&gt; 返回一个fs.Stats实例</li>
+</ul>
+<h4 id="移动文件或重命名文件或目录"><a href="#移动文件或重命名文件或目录" class="headerlink" title="移动文件或重命名文件或目录"></a>移动文件或重命名文件或目录</h4><blockquote>
+<p>与命令行相同，重命名操作也可以实现文件移动</p>
+</blockquote>
+<ul>
+<li>fs.rename(oldPath,newPath,callback)</li>
+<li>fs.renameSync(oldPath,newPath)</li>
+</ul>
+<h4 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h4><ul>
+<li>fs.unlink(path,callback(err))</li>
+<li>fs.unlinkSync(path)</li>
+</ul>
+<h3 id="其他常见文件夹操作"><a href="#其他常见文件夹操作" class="headerlink" title="其他常见文件夹操作"></a>其他常见文件夹操作</h3><h4 id="创建一个目录"><a href="#创建一个目录" class="headerlink" title="创建一个目录"></a>创建一个目录</h4><ul>
+<li>fs.mkdir(path[,model],callback)</li>
+<li>fs.mkdirSync(path[,model])</li>
+</ul>
+<h4 id="删除一个空目录"><a href="#删除一个空目录" class="headerlink" title="删除一个空目录"></a>删除一个空目录</h4><ul>
+<li>fs.rmdir(path,callback)</li>
+<li>fs.rmdirSync(path)</li>
+</ul>
+<h4 id="读取一个目录"><a href="#读取一个目录" class="headerlink" title="读取一个目录"></a>读取一个目录</h4><ul>
+<li>fs.readdir(path,callback(err,files))</li>
+<li>fs.readdirSync(path) // =&gt; 返回files</li>
+</ul>
+<h3 id="文件监视"><a href="#文件监视" class="headerlink" title="文件监视"></a>文件监视</h3><h4 id="利用文件监视实现自动-markdown-文件转换"><a href="#利用文件监视实现自动-markdown-文件转换" class="headerlink" title="利用文件监视实现自动 markdown 文件转换"></a>利用文件监视实现自动 markdown 文件转换</h4><ul>
+<li><p>相关链接：</p>
+<ol>
+<li><a href="https://github.com/chjj/marked" target="_blank" rel="noopener">https://github.com/chjj/marked</a></li>
+<li><a href="https://github.com/Browsersync/browser-sync" target="_blank" rel="noopener">https://github.com/Browsersync/browser-sync</a> </li>
+</ol>
+</li>
+<li><p>实现思路：</p>
+<ol>
+<li>利用<code>fs</code>模块的文件监视功能监视指定MD文件</li>
+<li>当文件发生变化后，借助<code>marked</code>包提供的<code>markdown</code> to <code>html</code>功能将改变后的MD文件转换为HTML</li>
+<li>再将得到的HTML替换到模版中</li>
+<li>最后利用BrowserSync模块实现浏览器自动刷新</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">var</span> marked = <span class="built_in">require</span>(<span class="string">'marked'</span>);</span><br><span class="line"><span class="keyword">var</span> bs = <span class="built_in">require</span>(<span class="string">'browser-sync'</span>).create();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> target = path.join(__dirname, process.argv[<span class="number">2</span>] || <span class="string">'./README.md'</span>);</span><br><span class="line"><span class="keyword">var</span> filename = path.basename(target, path.extname(target)) + <span class="string">'.html'</span>;</span><br><span class="line"><span class="keyword">var</span> targetHtml = path.join(path.dirname(target), filename);</span><br><span class="line"></span><br><span class="line">bs.init(&#123;</span><br><span class="line">  server: path.dirname(target),</span><br><span class="line">  index: filename,</span><br><span class="line">  notify: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">bs.reload(filename);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> template = <span class="string">`&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="string">&lt;html lang="en"&gt;</span></span><br><span class="line"><span class="string">&lt;head&gt;</span></span><br><span class="line"><span class="string">  &lt;meta charset="UTF-8"&gt;</span></span><br><span class="line"><span class="string">  &lt;title&gt;&lt;/title&gt;</span></span><br><span class="line"><span class="string">  &lt;style&gt;&#123;&#123;&#123;styles&#125;&#125;&#125;&lt;/style&gt;</span></span><br><span class="line"><span class="string">&lt;/head&gt;</span></span><br><span class="line"><span class="string">&lt;body&gt;</span></span><br><span class="line"><span class="string">  &lt;article class="markdown"&gt;</span></span><br><span class="line"><span class="string">    &#123;&#123;&#123;body&#125;&#125;&#125;</span></span><br><span class="line"><span class="string">  &lt;/article&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line">fs.readFile(path.join(__dirname, <span class="string">'./markdown.css'</span>), <span class="string">'utf8'</span>, (error, css) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (error) <span class="keyword">throw</span> error;</span><br><span class="line">  template = template.replace(<span class="string">'&#123;&#123;&#123;styles&#125;&#125;&#125;'</span>, css);</span><br><span class="line">  <span class="keyword">var</span> handler = <span class="function">(<span class="params">current, previous</span>) =&gt;</span> &#123;</span><br><span class="line">    fs.readFile(target, <span class="string">'utf8'</span>, (error, content) =&gt; &#123;</span><br><span class="line">      <span class="keyword">var</span> html = template.replace(<span class="string">'&#123;&#123;&#123;body&#125;&#125;&#125;'</span>, marked(content));</span><br><span class="line">      fs.writeFile(targetHtml, html, (error) =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span> (!error) &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">`updated@<span class="subst">$&#123;<span class="keyword">new</span> <span class="built_in">Date</span>()&#125;</span>`</span>);</span><br><span class="line">          bs.reload(filename);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">  handler();</span><br><span class="line">  fs.watchFile(target, &#123; <span class="attr">interval</span>: <span class="number">100</span> &#125;, handler);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="缓冲区处理"><a href="#缓冲区处理" class="headerlink" title="缓冲区处理"></a>缓冲区处理</h2><h3 id="什么是缓冲区"><a href="#什么是缓冲区" class="headerlink" title="什么是缓冲区"></a>什么是缓冲区</h3><ul>
+<li>缓冲区就是内存中操作数据的容器</li>
+<li>只是数据容器而已</li>
+<li>通过缓冲区可以很方便的操作二进制数据</li>
+<li>而且在大文件操作时必须有缓冲区</li>
+</ul>
+<h3 id="为什么要有缓冲区"><a href="#为什么要有缓冲区" class="headerlink" title="为什么要有缓冲区"></a>为什么要有缓冲区</h3><ul>
+<li>JavaScript是比较擅长处理字符串，但是早期的应用场景主要用于处理HTML文档，不会有太大篇幅的数据处理，也不会接触到二进制的数据。</li>
+<li>而在Node中操作数据、网络通信是没办法完全以字符串的方式操作的，简单来说</li>
+<li>所以在Node中引入了一个二进制的缓冲区的实现：Buffer</li>
+</ul>
+<hr>
+<h2 id="文件流"><a href="#文件流" class="headerlink" title="文件流"></a>文件流</h2><hr>
+<h2 id="网络操作"><a href="#网络操作" class="headerlink" title="网络操作"></a>网络操作</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/node/Node学习（二）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/28/node/Node学习（二）/" itemprop="url">Node学习（二）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:55:38+08:00">
+                2018-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##1.问题</p>
+<p>###1.前端、后端都是干什么的？<br>前端 做静态资源的<br>后端 操控服务器的硬件的</p>
+<p>###2.为什么学习node.js？<br>1.就业有市场<br>2.有商业用途<br>国内一些创业公司用用的比较多，功夫熊（做上门保健的，美甲、按摩）<br>国外的一些大公司都有使用：Facebook、Twitter、Google<br>国内的一些大公司：Alibaba（天猫所有的页面都是通过Node提供的服务）、Tencent、Baidu<br>3.本身技术是有价值<br>4.js开发</p>
+<p>###3.什么是JavaScript？<br>一门脚步语言 需要嵌入html执行</p>
+<p>###4.浏览器中的JavaScript可以做什么？<br>校验表单 操作dom 等等</p>
+<p>###5.浏览器中的JavaScript不可以做什么？<br>操作服务器硬件</p>
+<p>###6.浏览器与JavaScript是什么关系？<br>浏览器解析js，目的是为了让计算机能看懂js，看懂01010101，机器码、字节码<br>编译</p>
+<p>内核–&gt;js引擎</p>
+<p>引擎 1.转化  汽油柴油等等-&gt;转化-&gt;成动能<br>             模板+数据—&gt;页面<br>              js代码—&gt;机器码\字节码<br>     2.移植性<br>     js引擎套一个壳子，写js代码传给js引擎，操作硬件<br>     node.js  v8引擎去解析js</p>
+<p>###7.JavaScript只可以运行在浏览器中吗？</p>
+<p>##2.什么是 Node?<br>Node是一个JavaScript的运动环境（平台），不是一门语言，也不是JavaScript的框架；</p>
+<p>###1.<a href="">https://nodejs.org/en/</a></p>
+<p>###2.node是js运行环境基于v8引擎<br>特点用事件驱动、无阻塞的io模型<br>优势轻量、高效<br> Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine.<br> Node.js 是一个 构建于 谷歌的 Chrome 浏览器的 V8 引擎之上的一个 <code>JavaScript运行时</code> 环境</p>
+<pre><code>JavaScript runtime  JavaScript 运行时
+Chrome&apos;s V8 JavaScript engine Chrome 浏览器 V8 引擎
+</code></pre><p>Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.<br>Node.js的 事件驱动和非阻塞IO模型使得Node.js本身非常的轻量和高效</p>
+<pre><code>event-driven  事件驱动模型
+non-blocking I/O model  非阻塞IO模型  
+IO（input/output）输入与输出
+lightweight[ˈlaɪtweɪt]  轻量级
+    在软件开发行业中，轻量级标识褒义词
+    轻量级也就意味着 运行速度快
+    轻量级也就意味着有更好的 跨平台 特性（平台的差异性，兼容性）
+efficient[ɪˈfɪʃnt] 高效的
+</code></pre><p>Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.<br>Node.js 的npm包生态系统，是世界上 最大的 开源库 生态系统</p>
+<pre><code>package ecosystem npm  包生态系统 npm
+largest  最大的
+open source libraries 开源库
+    理论意义上 开源就表示有成熟的社区，开放源代码
+以前的 客户端中 JavaScript 库 散列在互联网的各个地方
+npm 就是 把大家经常使用的一些开源库 给 组织到了一起
+</code></pre><p>Node 是一个可以解析和执行 JavaScript 代码的 运行时环境</p>
+<p>Node.js 的作者</p>
+<pre><code>瑞恩.达尔
+</code></pre><p>###3.Node 的实现结构<br>1.V8 JavaScript 解析执行引擎   ECMAScript</p>
+<p>2.中间层 （提供了文件操作、网络操作登陆接口）更加接近操作系统的接口供开发人员使用</p>
+<p>3.硬件层</p>
+<p>##4.安装与配置</p>
+<p>###3m安装法 nvm npm nrm</p>
+<p>###nvm 安装和管理我们的 Node.js版本</p>
+<p>nvm的安装方式，node.js version manager 是一个node的版本管理工具<br>为了解决node版本切换问题<br>右键在此电脑上点击一下–》属性—》系统—》高级系统设置—》环境变量<br>控制面板—》系统—》高级系统设置—》环境变量<br>NVM_HOME—C:\dev\nvm<br>NVM_SYMLINK–C:\dev\nodejs<br>新建一个path     %NVM_HOME%;%NVM_SYMLINK%</p>
+<p>nvm 用法</p>
+<pre><code>查看版本号
+nvm list
+用哪个版本（已经下载过的版本）
+nvm use 版本号 
+nvm use 版本号 32
+下载相对应版本
+nvm install 版本号 
+nvm install 版本号 32
+</code></pre><p>nvm下载的是二进制版本</p>
+<p>##5.cmd控制台基本使用<br>允许用户可以在终端命令台中与操作系统交互，其实就是输入与输出</p>
+<h3 id="如何打开cmd"><a href="#如何打开cmd" class="headerlink" title="如何打开cmd"></a>如何打开cmd</h3><ol>
+<li>通过 按 window 键，输入 <code>cmd</code> 打开cmd程序</li>
+<li>通过 <code>win+r</code>  输入 <code>cmd</code>，敲回车就可以进入</li>
+</ol>
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><pre><code>cd（change directory）切换目录
+md（make directory）新建目录
+rd（remove directory）删除非空目录
+dir（directory）查看目录中的条目
+ren（rename）重命名文件
+del（delete）删除文件
+cls（clear screen）清屏
+</code></pre><h3 id="path-环境变量"><a href="#path-环境变量" class="headerlink" title="path 环境变量"></a>path 环境变量</h3><p>目的是为了在控制台中的任何目录都可以快速打开或者使用该可执行文件</p>
+<p>环境变量就是用来存储系统级别的变量</p>
+<ul>
+<li>添加环境变量<ul>
+<li>我的电脑 -&gt; 右键选择属性 -&gt; 高级系统设置 -&gt; 切换到<code>高级</code>面板 -&gt; 环境变量</li>
+<li>第一种方式：直接把可执行文件所属的目录 放到 PATH 环境变量中（如果没有PATH环境变量，自己新建）</li>
+<li>第二种方式：新建一个环境变量，变量名规范：逻辑名_HOME 变量值：该可执行文件所属的目录</li>
+<li>注意：无论是直接添加的路径还是引用的变量名，一定要用 英文的分号 区分开</li>
+<li>引用变量名的时候，变量名两边都是 <code>%</code></li>
+</ul>
+</li>
+</ul>
+<p><code>&gt; feiq</code><br>当你在控制台中输入一个程序的名字的时候，cmd 默认把它当成一个可执行文件去执行了，<br>优先找当前目录下是否有没有一个叫做feiq.exe 的可执行文件，如果有，直接执行打开<br>如果没有，cmd会进入 path 环境变量中 一个目录一个目录的挨着查找里面是否有该可执行文件</p>
+<h2 id="REPL-Read-eval-print-loop-运行环境"><a href="#REPL-Read-eval-print-loop-运行环境" class="headerlink" title="REPL(Read-eval-print-loop) 运行环境"></a>REPL(Read-eval-print-loop) 运行环境</h2><p>用来测试一下代码的，repl和chrome的控制台很像</p>
+<ul>
+<li>通过在控制台中输入 <code>node</code> 敲回车就可以计入 REPL 运行环境</li>
+<li>通过在REPL运行环境中 连续按两次 <code>Ctrl+C</code> 就可以退出 REPL 运行环境</li>
+</ul>
+<h2 id="执行js文件"><a href="#执行js文件" class="headerlink" title="执行js文件"></a>执行js文件</h2><p> 用node执行js文件，文件在当前目录下—-&gt;node +文件名<br> 如果不在当前目录下，node +文件路径的形式执行<br> 相对路径<br> ./当前路径<br> ../上级目录<br> 绝对路径执行js的方式<br> node c:\Users\cena\Desktop\code\01helloworld.js</p>
+<h2 id="Global"><a href="#Global" class="headerlink" title="Global"></a>Global</h2><p>global和window很像，都是全局对象</p>
+<h2 id="CONSOLE"><a href="#CONSOLE" class="headerlink" title="CONSOLE"></a>CONSOLE</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">断言 是用来测试用的</span><br><span class="line">断言就是假定一个条件，如果条件成立则不输出任何内容，如果条件不成立则报错还要输出想要输出的内容。</span><br><span class="line">console.assert(条件,条件不成立输出的内容);</span><br><span class="line">var foo=3;</span><br><span class="line">console.assert(foo==3,&quot;失败&quot;);</span><br><span class="line">time() timeEnd()成对出现，计算在两个方法中间的代码的运行时间，传入的参数要一致</span><br><span class="line">console.time(&apos;test&apos;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.timeEnd(&apos;test1&apos;);</span><br></pre></td></tr></table></figure>
+<h3 id="dirname-和-filename"><a href="#dirname-和-filename" class="headerlink" title="dirname 和 filename"></a><strong>dirname 和 </strong>filename</h3><p><strong>dirnamee 用来找到当前文件夹的路径
+</strong>filename 用来去到当前文件的路径<br>不知道代码要才哪使用的时候，用于灵活的写代码取路径的时候。<br>它们属于模块作用域，可以直接使用<br>它们两个用来获取路径的，一般用于操作文件路径的时候，才会用到</p>
+<h2 id="process"><a href="#process" class="headerlink" title="process"></a>process</h2><p>process 是一个全局可用对象，用来和我们现在启动中的node进行交互的<br>process.version取版本号<br>在控制台做标准输出<br>process.stdout.write(<code>123123</code>);<br>process.pid：当前进程的进程号。<br>process.version：Node的版本，比如v0.10.18。<br>process.platform：当前系统平台，比如Linux。<br>process.env：指向当前shell的环境变量，比如process.env.HOME。<br>process.stdout：指向标准输出。<br>process.stdin：指向标准输入。<br>process.stderr：指向标准错误。</p>
+<h2 id="模块系统"><a href="#模块系统" class="headerlink" title="模块系统"></a>模块系统</h2><h2 id="node-js模块化"><a href="#node-js模块化" class="headerlink" title="node.js模块化"></a>node.js模块化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">一个js文件在node里面我们就理解为一个模块</span><br><span class="line">require用来加载模块</span><br><span class="line">module.exports用来曝露属性和方法的，因为模块有封装性，需要打破封装性曝露方法和属性来</span><br><span class="line">exports是module.exports的别名，exports可以做的事情，module.exports都可以做，exports只能用.的形式曝露属性和方法</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/node/npm常用命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/28/node/npm常用命令/" itemprop="url">npm常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:55:38+08:00">
+                2018-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#安装 install<br>npm install express<br>默认会安装express的最新版本，也可以通过在后面加版本号的方式安装指定版本，如npm install <a href="mailto:express@3.0.6" target="_blank" rel="noopener">express@3.0.6</a></p>
+<p>npm install <name> -g<br>将包安装到全局环境中</name></p>
+<p>但是代码中，直接通过require()的方式是没有办法调用全局安装的包的。全局的安装是供命令行使用的，就好像全局安装了vmarket后，就可以在命令行中直接运行vm命令</p>
+<p>npm install <name> –save<br>安装的同时，将信息写入package.json中项目路径中如果有package.json文件时，直接使用npm install方法就可以根据dependencies配置安装所有的依赖包，这样代码提交到github时，就不用提交node_modules这个文件夹了。</name></p>
+<p>2、npm view moduleNames：查看node模块的package.json文件夹<br>注意事项：如果想要查看package.json文件夹下某个标签的内容，可以使用$npm view moduleName labelName</p>
+<p>3、npm list：查看当前目录下已安装的node包<br>注意事项：Node模块搜索是从代码执行的当前目录开始的，搜索结果取决于当前使用的目录中的node_modules下的内容。$ npm list parseable=true可以目录的形式来展现当前安装的所有node包</p>
+<p>4、npm help：查看帮助命令</p>
+<p>5、npm view moudleName dependencies：查看包的依赖关系</p>
+<p>6、npm view moduleName repository.url：查看包的源文件地址</p>
+<p>7、npm view moduleName engines：查看包所依赖的Node的版本</p>
+<p>8、npm help folders：查看npm使用的所有文件夹</p>
+<p>9、npm rebuild moduleName：用于更改包内容后进行重建</p>
+<p>10、npm outdated：检查包是否已经过时，此命令会列出所有已经过时的包，可以及时进行包的更新</p>
+<p>11、npm update moduleName：更新node模块</p>
+<p>12、npm uninstall moudleName：卸载node模块</p>
+<p>13、一个npm包是包含了package.json的文件夹，package.json描述了这个文件夹的结构。访问npm的json文件夹的方法如下：<br>$ npm help json<br>此命令会以默认的方式打开一个网页，如果更改了默认打开程序则可能不会以网页的形式打开。</p>
+<p>14、发布一个npm包的时候，需要检验某个包名是否已存在<br>$ npm search packageName</p>
+<p>15、npm init：会引导你创建一个package.json文件，包括名称、版本、作者这些信息等</p>
+<p>16、npm root：查看当前包的安装路径<br>npm root -g：查看全局的包的安装路径</p>
+<p>17、npm -v：查看npm安装的版本</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/web/html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/28/web/html/" itemprop="url">html</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:55:38+08:00">
+                2018-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><pre><code>Windows+e 我的电脑
+Windows+r 打开运行
+Alt+tab   切换软件
+Ctrl+tab  软件文档之间的切换
+F2          重命名
+</code></pre><h3 id="Web标准"><a href="#Web标准" class="headerlink" title="Web标准"></a>Web标准</h3><p>W3C组织（万维网联盟）</p>
+<pre><code>HTML    结构标准     相当于人的身体
+CSS         表现标准  相当于给人化妆，更漂亮
+Js        行为标准     相当于人在唱歌，更灵动
+</code></pre><h3 id="浏览器内核"><a href="#浏览器内核" class="headerlink" title="浏览器内核"></a>浏览器内核</h3><pre><code>IE            Chrome（谷歌）      Firefox（火狐）   Safari（苹果）
+Trident        Blink              Gecko               Webkit
+</code></pre><p>浏览器的内核是分为两个部分的，一是渲染引擎，另一个是JS引擎。<br>现在JS引擎比较独立，内核更加倾向于说渲染引擎。<br>渲染引擎决定了浏览器如何显示网页的内容以及页面的格式信息<br>兼容性出现问题的根本原因就是渲染引擎的不同</p>
+<h3 id="浏览器和服务器"><a href="#浏览器和服务器" class="headerlink" title="浏览器和服务器"></a>浏览器和服务器</h3><ol>
+<li>浏览器向服务器建发送请求（通过http协议），服务器返回响应报文</li>
+<li>http协议：超文本传输协议，也就是浏览器和服务器端的网页传输数据的约束和规范</li>
+<li><p>url协议：平时我们写的网址就是url协议，规定url地址的格式<br>协议规定格式：</p>
+<p> scheme://host.domain:port/path/filename<br> scheme        因特网服务类型。如http<br> host        域主机（http默认主机是www）<br> domain        因特网域名 如w3school.com.cn<br> :port         定义端口号（网页默认端口是：80）<br> path         网页所在服务器上的路径<br> filename     文件名称</p>
+</li>
+</ol>
+<h2 id="Html"><a href="#Html" class="headerlink" title="Html"></a>Html</h2><p>超文本标记语言</p>
+<h3 id="Html结构标准"><a href="#Html结构标准" class="headerlink" title="Html结构标准"></a>Html结构标准</h3><pre><code>&lt; !doctype html&gt;    声明文档类型那个
+&lt;html&gt;                根标签
+&lt;head&gt;                头标签
+&lt;title&gt;&lt;/title&gt;        标题标签
+&lt;/head&gt;
+&lt;body&gt;                主体标签
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>sublime快捷键使用： <a href="http://blog.csdn.netdetails/11530751" target="_blank" rel="noopener">http://blog.csdn.netdetails/11530751</a></p>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><h3 id="单标签"><a href="#单标签" class="headerlink" title="单标签"></a>单标签</h3><p>注释标签 <code>&lt;!-- 注释 --&gt;</code><br>换行标签 <code>&lt;br/&gt;</code><br>水平线标签 <code>&lt;hr/&gt;</code></p>
+<h3 id="双标签"><a href="#双标签" class="headerlink" title="双标签"></a>双标签</h3><p>段落标签 </p>
+<pre><code>&lt;p&gt;这是一个段落&lt;/p&gt;
+</code></pre><p>特点：上下自动生成空白行，<br>换行不会生成空白行</p>
+<p>标题标签<br>h1-h6<br>h1在一个页面只能出现一次</p>
+<pre><code>&lt;h1&gt;这是个h1&lt;/h1&gt;
+</code></pre><p>文本标签</p>
+<pre><code>&lt;font size=&quot;6&quot; color=&quot;red&quot;&gt;这是个文本&lt;/font&gt;
+</code></pre><h3 id="文本格式化标签"><a href="#文本格式化标签" class="headerlink" title="文本格式化标签"></a>文本格式化标签</h3><p>文本加粗标签</p>
+<pre><code>&lt;strong&gt;粗大&lt;/strong&gt;
+&lt;b&gt;&lt;/b&gt;
+</code></pre><p>文本倾斜标签</p>
+<pre><code>&lt;em&gt;&lt;/em&gt;
+&lt;i&gt;&lt;/i&gt;
+</code></pre><p>删除线标签</p>
+<pre><code>&lt;del&gt;&lt;/del&gt;
+&lt;s&gt;&lt;/s&gt;
+</code></pre><p>下划线标签</p>
+<pre><code>&lt;ins&gt;&lt;/ins&gt;
+&lt;u&gt;&lt;/u&gt;
+</code></pre><p>尽量使用<code>strong`</code>em<code>del</code>ins`,因为更有语义化</p>
+<h3 id="图片标签"><a href="#图片标签" class="headerlink" title="图片标签"></a>图片标签</h3><pre><code>&lt;img src=&quot;图片来源（必写属性）&quot;    alt=&quot;替换文本（图片不显示时显示的文本）&quot;    
+title=&quot;提示文本&quot;     width=&quot;图片宽度&quot;  height=&quot;图片高度&quot;&gt;
+</code></pre><p>图片没有定义宽高的时候，图片按照百分之百比例显示，如果只更改图片的宽度或者高度，图片等比例缩放。</p>
+<pre><code>相对路径
+src = &quot;../img.jpg&quot;
+绝对路径
+src = &quot;F:/imgs/img.jpg&quot;
+</code></pre><h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><pre><code>&lt;a  href = &quot;去往路径（必写属性）&quot;
+    title = &quot;提示文本 鼠标放在链接上提示的文字&quot;
+    target = &quot;_self&quot;&gt;
+    &quot;_self&quot; 默认值 在自身页面打开（关闭自身页面，打开链接页面）
+    &quot;_blank&quot; 打开新页面（自身页面不关闭，打开一个新的链接页面）
+&lt;/a&gt;
+</code></pre><p>锚链接</p>
+<ol>
+<li><p>先定义一个锚点</p>
+ <p id="md"></p></li>
+<li><p>超链接到锚点</p>
+<p> <a href="#md">回到顶部</a><br>空链接<br> <a href="#">空链</a><br>压缩文件下载 不推荐使用</p>
+<p> <a href="../../ppt.rar">压缩包</a><br>超链接优化写法</p>
+<p> <base target="_blank"> 让所有的超链接都在新窗口打开</p>
+<h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><p> 特殊字符 | 描述 | 字符代码</p>
+<ul>
+<li>| :-: | -:<br>| 空格符 | &nbsp;<br>&lt; | 小于号 | &lt;<blockquote>
+<p>   大于号    &gt;<br>&amp;    和号    &amp;<br>¥    人民币/日元    &yen;<br>©    版权    &copy;<br>®    注册商标    &reg;<br>×    乘号    &times;<br>÷    除号    &divide;    </p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><pre><code>&lt;ul&gt;
+    &lt;li&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p>type = “square”    小方块    “disc”  实心小圆圈    “circle” 空心小圆圈</p>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><pre><code>&lt;ol&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;    
+</code></pre><p>type=”1,a,A,i,I” type的值可以为1,a,A,i,I<br>start=”3”  决定了开始的位置。</p>
+<h3 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h3><pre><code>&lt;dl&gt;
+    &lt;dt&gt;小标题&lt;/dt&gt;
+    &lt;dd&gt;解释标题&lt;/dd&gt;
+    &lt;dd&gt;解释标题&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre><h2 id="音乐标签"><a href="#音乐标签" class="headerlink" title="音乐标签"></a>音乐标签</h2><pre><code>&lt;embed src=&quot;1.mp3&quot; hidden=&quot;true&quot;&gt;
+</code></pre><p>src 设置音乐路径 hidden 隐藏播放按钮 true隐藏 false显示</p>
+<h2 id="HTML5标签结构"><a href="#HTML5标签结构" class="headerlink" title="HTML5标签结构"></a>HTML5标签结构</h2><pre><code>!+tab 可以写成html5结构
+</code></pre><h2 id="字符编码"><a href="#字符编码" class="headerlink" title="字符编码"></a>字符编码</h2><pre><code>Ascll Ansi Unicode Gbk GB2321 Big5 utf-8（通用编码）
+&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+</code></pre><h2 id="meta"><a href="#meta" class="headerlink" title="meta"></a>meta</h2><pre><code>&lt;!-- 指定网页关键字 - 用于告诉搜索引擎网页内容相关关键词。 --&gt;
+&lt;meta name = &quot;keyworks&quot; content = &quot;HTML, HTML DOM, JavaScript&quot;&gt;
+&lt;!-- 指定页面描述。搜索索引擎可以使用这个描述作为搜索结果。 --&gt;
+&lt;meta name = &quot;description&quot; content = &quot;免费编程入门教程&quot;&gt;
+&lt;!--重定向--&gt;
+&lt;meta http-equiv=&quot;refresh&quot; content=&quot;1;http://www.baidu.com&quot;&gt;
+</code></pre><h2 id="link"><a href="#link" class="headerlink" title="link"></a>link</h2><pre><code>&lt;!-- 链接外部样式表 --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;1.css&quot;&gt;
+&lt;!--设置icon图标--&gt;
+&lt;link rel=&quot;icon&quot; href=&quot;favicon.ico&quot;&gt;
+</code></pre><h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><pre><code>&lt;table cellspacing=&quot;2&quot; cellpadding=&quot;2&quot;&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;        
+属性 
+cellspacing=&quot;2&quot; 单元格与单元格的距离
+cellpadding=&quot;2&quot; 单元格边距 内容距边框的距离
+align=&quot;left | center | right&quot;
+如果直接给表格用align=”center”  表格居中
+如果给tr或者td使用   ，tr或者td内容居中。
+</code></pre><h3 id="表格标准结构"><a href="#表格标准结构" class="headerlink" title="表格标准结构"></a>表格标准结构</h3><pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+</code></pre><h3 id="表头与单元格合并"><a href="#表头与单元格合并" class="headerlink" title="表头与单元格合并"></a>表头与单元格合并</h3><pre><code>&lt;table border=&quot;1&quot;&gt;
+    &lt;caption&gt;表头&lt;/caption&gt;
+        &lt;tr&gt;
+            &lt;td colspan=&quot;2&quot;&gt;111&lt;/td&gt;
+            &lt;!--&lt;td&gt;222&lt;/td&gt;--&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;111&lt;/td&gt;
+            &lt;td rowspan=&quot;2&quot;&gt;222&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;111&lt;/td&gt;
+            &lt;!--&lt;td&gt;222&lt;/td&gt;--&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+</code></pre><p>colspan=”2”  跨列数<br>rowspan=”2”  跨行数</p>
+<p><th>标题</th><br>用法和td一样，文字自动加粗水平居中对齐<br>td垂直对齐方式</p>
+<pre><code>&lt;td valign=&quot;bottom&quot;&gt;111&lt;/td&gt;
+</code></pre><p>valign=”top |middle| bottom”</p>
+<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><h3 id="表单域"><a href="#表单域" class="headerlink" title="表单域"></a>表单域</h3><pre><code>&lt;form action=&quot;1.php&quot; method=&quot;get&quot;&gt;
+</code></pre><p>属性action处理信息<br>method=”get|post”<br>get 通过地址栏提供信息，安全性差<br>post 通过1.php处理信息，安全性高</p>
+<h3 id="文本输入框"><a href="#文本输入框" class="headerlink" title="文本输入框"></a>文本输入框</h3><pre><code>用户名：&lt;input type=&quot;text&quot; maxlength=&quot;6&quot; readonly=&quot;readonly&quot; disabled=&quot;disabled&quot; name =&quot;username&quot; value=&quot;大前端&quot;&gt;
+</code></pre><h3 id="密码输入框"><a href="#密码输入框" class="headerlink" title="密码输入框"></a>密码输入框</h3><pre><code>密码: &lt;input type=&quot;password&quot; name=pwd&gt;
+</code></pre><h3 id="单选框"><a href="#单选框" class="headerlink" title="单选框"></a>单选框</h3><pre><code>&lt;input type = &quot;radio&quot; name = &quot;gender&quot; checked=&quot;checked&quot;&gt;男
+&lt;input type = &quot;radio&quot; name = &quot;gender&quot;&gt;女
+</code></pre><p>下拉列表</p>
+<pre><code>&lt;select multiple=&quot;multiple&quot;&gt;
+    &lt;option selected=&quot;selected&quot;&gt;1&lt;/option&gt;
+    &lt;option&gt;2&lt;/option&gt;
+    &lt;option&gt;3&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;optgroup label=&quot;分组名&quot;&gt;
+    &lt;option selected=&quot;selected&quot;&gt;1&lt;/option&gt;
+    &lt;option&gt;2&lt;/option&gt;
+    &lt;option&gt;3&lt;/option&gt;
+&lt;/optgroup&gt;
+</code></pre><p>多选款</p>
+<pre><code>&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt;喝酒
+&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt;喝酒
+&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt;喝酒
+</code></pre><p>多行文本<br>    <textarea cols="130" rows="10"><br>    cols字符长度<br>    rows输入行数<br>    </textarea><br>文件上传控件<br>    <input type="file"><br>文件提交按钮<br>    <input type="submit"><br>普通按钮<br>    <input type="button" value="普通按钮"><br>不能提交信息，配合js使用<br>图片按钮<br>    <input type="image" src="按钮.jpg"><br>图片按钮可实现信息提交功能</p>
+<h3 id="重置按钮"><a href="#重置按钮" class="headerlink" title="重置按钮"></a>重置按钮</h3><pre><code>&lt;input type=&quot;reset&quot;&gt;
+</code></pre><p>将信息重置到默认状态</p>
+<h3 id="表单信息分组"><a href="#表单信息分组" class="headerlink" title="表单信息分组"></a>表单信息分组</h3><pre><code>&lt;from action=&quot;1.php&quot; method=&quot;post&quot;&gt;
+    &lt;fieldset&gt;对表单信息分组
+        &lt;legend&gt;表单信息分组名称&lt;/legend&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+</code></pre><h3 id="hmlt5-补充表单控件"><a href="#hmlt5-补充表单控件" class="headerlink" title="hmlt5 补充表单控件"></a>hmlt5 补充表单控件</h3><pre><code>&lt;input type =&quot;url&quot;&gt;网址控件
+&lt;input type=&quot;date&quot;&gt;日期控件
+&lt;input type=&quot;time&quot;&gt;时间控件
+&lt;input type=&quot;email&quot;&gt;邮箱控件
+&lt;input type=&quot;number&quot; step=&quot;5&quot;&gt;数字控件
+&lt;input type=&quot;range&quot;&gt;滑块控件
+</code></pre><p>标签语义化<br>    好的语义化的网站标准就是去掉样式表文件之后，结构依然很清晰。<br>标签语义化概念：根据内容的结构化（内容语义化），选择合适的标签（代码语义化）</p>
+<p>-标签语义化意义：<br>       1:网页结构合理<br>          2:有利于seo:和搜索引擎建立良好沟通，有了良好的结构和语                            义你的网页内容自然容易被搜索引擎抓取；<br>          3:方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备）<br>          4:便于团队开发和维护</p>
+<p>1：尽可能少的使用无语义的标签div和span；</p>
+<p>2：在语义不明显时，既可以使用div或者p时，尽量用p, 因为p在默认情况下有上下间距，对兼容特殊终端有利；</p>
+<p>3：不要使用纯样式标签，如：b、font、u等，改用css设置。</p>
+<p>4：需要强调的文本，可以包含在strong或者em标签中strong默认样式是加粗（不要用b），em是斜体（不用i）；</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/js/递归/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/28/js/递归/" itemprop="url">递归</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:23:44+08:00">
+                2018-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#递归</p>
+<p>##例1<br>    1, 2, 3, 4, 5, …, 100 求和<br>首先假定递归函数已经写好, 假设是foo. 即foo(100)就是求1到100的和</p>
+<p>寻找递推关系. 就是n与n-1, 或n-2之间的关系:foo( n ) == n + foo( n - 1 )</p>
+<pre><code>var res = foo(100);
+var res = foo(99) + 100;
+</code></pre><p>将递推结构转换为递归体</p>
+<pre><code>function foo(n){
+    return n + foo( n - 1 );
+}
+</code></pre><p>将临界条件加到递归体中(求1的结果为1)</p>
+<pre><code>function foo( n ) {
+    if ( n == 1 ) return 1;
+    return n + foo( n - 1 );
+}
+</code></pre><p>fn(100)得到结果</p>
+<p>##例2<br>    求 1, 3, 5, 7, 9, … 第n项的结果与前n项和. 序号从0开始<br>先看求第n项</p>
+<p>1.首先假定递归函数已经写好, 假设是fn. 那么第n项就是fn(n)</p>
+<p>2.找递推关系:fn(n) == f(n-1) + 2</p>
+<p>3.递归体</p>
+<pre><code>function fn(n) {
+    return fn(n-1) + 2;
+}
+</code></pre><p>1.找临界条件</p>
+<pre><code>求 n -&gt; n-1
+
+求 n-1 -&gt; n-2
+
+...
+
+求 1 -&gt; 0
+
+求 第 0 项, 就是 1
+</code></pre><p>2.加入临界条件</p>
+<pre><code>function fn( n ) {
+    if ( n == 0 ) return 1;
+    return fn( n-1 ) + 2;
+}
+</code></pre><p>再看求前n项和</p>
+<p>1.假设已完成, sum( n ) 就是前 n 项和</p>
+<p>2.找递推关系: 前 n 项和 等于 第 n 项 + 前 n-1 项的和</p>
+<p>3.递归体</p>
+<pre><code>function sum( n ) {
+    return fn( n ) + sum( n - 1 );
+}
+</code></pre><p>1.找临界条件</p>
+<pre><code>n == 1结果为 1
+</code></pre><p>2.加入临界条件</p>
+<pre><code>function sum( n ) {
+    if (n == 0) return 1;
+    return fn(n) + sum(n - 1);
+}
 </code></pre>
           
         
@@ -445,7 +1965,7 @@ categories:
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/其他/markdownPad2安装/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/js/javascript时间戳和日期字符串相互转换/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
@@ -464,7 +1984,7 @@ categories:
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/26/其他/markdownPad2安装/" itemprop="url">markdownPad2安装</a></h1>
+                <a class="post-title-link" href="/2018/04/28/js/javascript时间戳和日期字符串相互转换/" itemprop="url">javascript时间戳和日期字符串相互转换</a></h1>
         
 
         <div class="post-meta">
@@ -476,8 +1996,8 @@ categories:
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T10:40:45+08:00">
-                2018-04-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:23:44+08:00">
+                2018-04-28
               </time>
             
 
@@ -499,8 +2019,8 @@ categories:
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/其他/" itemprop="url" rel="index">
-                    <span itemprop="name">其他</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -538,8 +2058,7 @@ categories:
       
         
           
-            <p>#MarkdownPad专业版汉化激活教程（含下载地址）<br><a href="https://jingyan.baidu.com/article/ea24bc39b985dfda63b33176.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/ea24bc39b985dfda63b33176.html</a></p>
-<p>#win10下MarkdownPad 2的html渲染出错解决<br><a href="https://www.jianshu.com/p/38415413ea46" target="_blank" rel="noopener">https://www.jianshu.com/p/38415413ea46</a></p>
+            <p><a href="https://www.cnblogs.com/yjf512/p/3796229.html" target="_blank" rel="noopener">https://www.cnblogs.com/yjf512/p/3796229.html</a></p>
 
           
         
@@ -588,7 +2107,7 @@ categories:
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/hexo/通过gh-pages创建静态网站/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/js/JavaScript RE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
@@ -607,7 +2126,7 @@ categories:
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/26/hexo/通过gh-pages创建静态网站/" itemprop="url">通过gh-pages创建静态网站</a></h1>
+                <a class="post-title-link" href="/2018/04/28/js/JavaScript RE/" itemprop="url">javascript 正则表达式</a></h1>
         
 
         <div class="post-meta">
@@ -619,8 +2138,8 @@ categories:
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T10:40:45+08:00">
-                2018-04-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:23:44+08:00">
+                2018-04-28
               </time>
             
 
@@ -642,8 +2161,8 @@ categories:
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -681,11 +2200,415 @@ categories:
       
         
           
-            <p>通过gh-pages创建静态网站</p>
-<p>创建一个新项目</p>
-<p>建立分支gh-pages</p>
-<p>在项目得settings –&gt; branches –&gt; Default branch 选择   gh-pages</p>
+            <h2 id="JavaScript-正则表达式"><a href="#JavaScript-正则表达式" class="headerlink" title="JavaScript 正则表达式"></a>JavaScript 正则表达式</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre><code>/正则表达式主体/修饰符(可选)
+</code></pre><h3 id="search"><a href="#search" class="headerlink" title="search()"></a>search()</h3><p>search() 方法 用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串，并返回子串的起始位置。</p>
+<p>使用字符串</p>
+<pre><code>var str = &quot;Visit Runoob!&quot;; 
+var n = str.search(&quot;Runoob&quot;);\\结果为6
+</code></pre><p>使用正则表达式</p>
+<pre><code>var str = &quot;Visit Runoob!&quot;; 
+var n = str.search(/Runoob/i);\\结果为6
+</code></pre><h3 id="replace"><a href="#replace" class="headerlink" title="replace()"></a>replace()</h3><p>replace() 方法 用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。</p>
+<p>使用字符串</p>
+<pre><code>var str = &quot;Visit Microsoft!&quot;; 
+var txt = str.replace(&quot;Microsoft&quot;,&quot;Runoob&quot;);\\txt为Visit Runoob!
+</code></pre><p>使用正则表达式</p>
+<pre><code>var str = &quot;Visit Microsoft!&quot;; 
+var txt = str.replace(/microsoft/i,&quot;Runoob&quot;);
+</code></pre><h2 id="正则表达式修饰符"><a href="#正则表达式修饰符" class="headerlink" title="正则表达式修饰符"></a>正则表达式修饰符</h2><table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i</td>
+<td>执行对大小写不敏感的匹配</td>
+</tr>
+<tr>
+<td>g</td>
+<td>执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）</td>
+</tr>
+<tr>
+<td>m</td>
+<td>执行多行匹配</td>
+</tr>
+</tbody>
+</table>
+<h2 id="正则表达式的模式"><a href="#正则表达式的模式" class="headerlink" title="正则表达式的模式"></a>正则表达式的模式</h2><p>方括号用于查找某个范围内的字符:</p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[abc]</td>
+<td>查找方括号之间的任何字符</td>
+</tr>
+<tr>
+<td>[0-9]</td>
+<td>查找任何从 0 至 9 的数字</td>
+</tr>
+<tr>
+<td>(x竖线y)</td>
+<td>查找任何以 竖线 分隔的选项</td>
+</tr>
+</tbody>
+</table>
+<p>元字符是拥有特殊含义的字符：<br>元字符|描述<br>-|-<br>\d|查找数字<br>\s|查找空白符<br>\b|匹配单词边界<br>\uxxxx|查找以十六进制数 xxxx 规定的 Unicode 字符</p>
+<p>量词：<br>量词|描述<br>-|-<br>n+|    匹配任何包含至少一个 n 的字符串。<br>n*|    匹配任何包含零个或多个 n 的字符串。<br>n?|    匹配任何包含零个或一个 n 的字符串。</p>
+<h3 id="RegExp-对象"><a href="#RegExp-对象" class="headerlink" title="RegExp 对象"></a>RegExp 对象</h3><p>在 JavaScript 中，RegExp 对象是一个预定义了属性和方法的正则表达式对象。</p>
+<h3 id="test"><a href="#test" class="headerlink" title="test()"></a>test()</h3><p>test() 方法是一个正则表达式方法。<br>test() 方法用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true，否则返回 false。</p>
+<pre><code>var patt = /e/;
+patt.test(&quot;The best things in life are free!&quot;);//输出true
+</code></pre><h3 id="exec"><a href="#exec" class="headerlink" title="exec()"></a>exec()</h3><p>exec() 方法是一个正则表达式方法。<br>exec() 方法用于检索字符串中的正则表达式的匹配。<br>该函数返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。</p>
 
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/web/正则表达式教程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/28/web/正则表达式教程/" itemprop="url">正则表达式教程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:23:44+08:00">
+                2018-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##正则表达式</p>
+<pre><code>正则表达式(Regular Expression)是一种文本模式
+包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为&quot;元字符&quot;）
+正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串
+</code></pre><h3 id="普通字符"><a href="#普通字符" class="headerlink" title="普通字符"></a>普通字符</h3><pre><code>普通字符包括没有显式指定为元字符的所有可打印和不可打印字符。
+这包括所有大写和小写字母、所有数字、所有标点符号和一些其他符号。
+</code></pre><h3 id="非打印字符"><a href="#非打印字符" class="headerlink" title="非打印字符"></a>非打印字符</h3><p>非打印字符也可以是正则表达式的组成部分。下表列出了表示非打印字符的转义序列：</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\cx</td>
+<td>匹配由x指明的控制字符。<br>例如， \cM 匹配一个 Control-M 或回车符。<br>x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 ‘c’ 字符。</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>匹配一个换页符。等价于\xz0c和\cL</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>匹配一个换行符。等价于 \x0a 和 \cJ。</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>匹配一个回车符。等价于 \x0d 和 \cM。</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>匹配一个制表符。等价于 \x09 和 \cI。</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>匹配一个垂直制表符。等价于 \x0b 和 \cK。</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任何非空白字符。等价于 [^ \f\n\r\t\v]。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h3><p>所谓特殊字符，就是一些有特殊含义的字符.<br>如果要配匹配特殊字符本身，则需要用\进行转义<br>例如要匹配 <code>$</code> 字符本身，请使用 <code>\$</code>。</p>
+<table>
+<thead>
+<tr>
+<th>特别字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>^</td>
+<td>匹配输入字符串的开始位置，除非在方括号表达式中使用，此时它表示不接受该字符集合</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配输入字符串的结尾位置。<br>如果设置了 RegExp 对象的 Multiline 属性，则 $ 也匹配 ‘\n’ 或 ‘\r’。</td>
+</tr>
+<tr>
+<td>()</td>
+<td>标记一个子表达式的开始和结束位置。子表达式可以获取供以后使用</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配前面的子表达式零次或多次</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前面的子表达式一次或多次</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配除换行符 \n 之外的任何单字符</td>
+</tr>
+<tr>
+<td>[</td>
+<td>标记一个中括号表达式的开始</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配前面的子表达式零次或一次，或指明一个非贪婪限定符</td>
+</tr>
+<tr>
+<td>\</td>
+<td>将下一个字符标记为特殊字符、原义字符、或向后引用、或八进制转义符<br>例如， ‘n’ 匹配字符 ‘n’。’\n’ 匹配换行符。序列 ‘\‘ 匹配 “\”，而 ‘(‘ 则匹配 “(“。</td>
+</tr>
+<tr>
+<td>{</td>
+<td>标记限定符表达式的开始</td>
+</tr>
+<tr>
+<td>竖线</td>
+<td>指明两项之间的一个选择</td>
+</tr>
+</tbody>
+</table>
+<p>竖线<code>|</code>指明两项之间的一个选择</p>
+<h3 id="限定符"><a href="#限定符" class="headerlink" title="限定符"></a>限定符</h3><p>限定符用来指定正则表达式的一个给定组件必须要出现多少次才能满足匹配。有 * 或 + 或 ? 或 {n} 或 {n,} 或 {n,m} 共6种。</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>匹配前面的子表达式零次或多次,* 等价于{0,}</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前面的子表达式一次或多次,+ 等价于 {1,}</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配前面的子表达式零次或一次, 等价于 {0,1}</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n 是一个非负整数。匹配确定的 n 次。</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>n 是一个非负整数。至少匹配n 次</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>m 和 n 均为非负整数，其中n &lt;= m。最少匹配 n 次且最多匹配 m 次。</td>
+</tr>
+</tbody>
+</table>
+<p>*和+限定符都是贪婪的，因为它们会尽可能多的匹配文字，只有在它们的后面加上一个?就可以实现非贪婪或最小匹配。</p>
+<h3 id="定位符"><a href="#定位符" class="headerlink" title="定位符"></a>定位符</h3><table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>^</td>
+<td>匹配输入字符串开始的位置。<br>如果设置了 RegExp 对象的 Multiline 属性，^ 还会与 \n 或 \r 之后的位置匹配</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配输入字符串结尾的位置。<br>如果设置了 RegExp 对象的 Multiline 属性，$ 还会与 \n 或 \r 之前的位置匹配</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配一个字边界，即字与空格间的位置</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>非字边界匹配</td>
+</tr>
+</tbody>
+</table>
+<p>注意：不能将限定符与定位符一起使用。由于在紧靠换行或者字边界的前面或后面不能有一个以上位置，因此不允许诸如 ^* 之类的表达式<br><code>/\bCha/</code>匹配单词 Chapter 的开头三个字符，因为这三个字符出现在字边界后面<br><code>/ter\b/</code>匹配单词 Chapter 中的字符串 ter，因为它出现在字边界的前面<br><code>/\Bapt/</code>匹配 Chapter 中的字符串 apt，但不匹配 aptitude 中的字符串 apt</p>
+<h3 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h3><p>用圆括号将所有选择项括起来，相邻的选择项之间用|分隔。但用圆括号会有一个副作用，使相关的匹配会被缓存，此时可用<code>?:</code>放在第一个选项前来消除这种副作用。<br>其中 <code>?:</code> 是非捕获元之一，还有两个非捕获元是 <code>?=</code> 和<code>?!</code>，这两个还有更多的含义，前者为正向预查，在任何开始匹配圆括号内的正则表达式模式的位置来匹配搜索字符串，后者为负向预查，在任何开始不匹配该正则表达式模式的位置来匹配搜索字符串。</p>
+<h3 id="反向引用"><a href="#反向引用" class="headerlink" title="反向引用"></a>反向引用</h3><p>对一个正则表达式模式或部分模式两边添加圆括号将导致相关匹配存储到一个临时缓冲区中，所捕获的每个子匹配都按照在正则表达式模式中从左到右出现的顺序存储。<br>缓冲区编号从 1 开始，最多可存储 99 个捕获的子表达式。<br>每个缓冲区都可以使用 \n 访问，其中 n 为一个标识特定缓冲区的一位或两位十进制数。<br>可以使用非捕获元字符 ?:、?= 或 ?! 来重写捕获，忽略对相关匹配的保存。</p>
+<p>查找文本中两个相同的相邻单词的匹配项    </p>
+<pre><code>var str = &quot;Is is the cost of of gasoline going up up&quot;;
+var patt1 = /\b([a-z]+) \1\b/ig;
+document.write(str.match(patt1));
+</code></pre><p>运行结果</p>
+<pre><code>Is is,of of,up up
+</code></pre><p>正则表达式后面的全局标记 g 指定将该表达式应用到输入字符串中能够查找到的尽可能多的匹配。<br>表达式的结尾处的不区分大小写 i 标记指定不区分大小写。</p>
+<p>反向引用还可以将通用资源指示符 (URI) 分解为其组件</p>
+<pre><code>var str = &quot;http://www.runoob.com:80/html/html-tutorial.html&quot;;
+var patt1 = /(\w+):\/\/([^/:]+)(:\d*)?([^# ]*)/;
+arr = str.match(patt1);
+for (var i = 0; i &lt; arr.length ; i++) {
+    document.write(arr[i]);
+    document.write(&quot;&lt;br&gt;&quot;);
+}
+</code></pre><p>运行结果</p>
+<pre><code>http://www.runoob.com:80/html/html-tutorial.html
+http
+www.runoob.com
+:80
+/html/html-tutorial.html
+</code></pre><p>##元字符</p>
+<h3 id="下表包含了元字符的完整列表以及它们在正则表达式上下文中的行为："><a href="#下表包含了元字符的完整列表以及它们在正则表达式上下文中的行为：" class="headerlink" title="下表包含了元字符的完整列表以及它们在正则表达式上下文中的行为："></a>下表包含了元字符的完整列表以及它们在正则表达式上下文中的行为：</h3><p><a href="http://www.runoob.com/regexp/regexp-metachar.html" target="_blank" rel="noopener">http://www.runoob.com/regexp/regexp-metachar.html</a></p>
+<p>##运算符优先级<br>运算符|描述<br>-|-<br>|转义字符<br>(), (?:), (?=), []|圆括号和方括号<br>*, +, ?, {n}, {n,}, {n,m}|限定符<br>^, $, \任何元字符、任何字符|定位点和序列（即：位置和顺序）<br>最后<br>|<br>替换，”或”操作<br>字符具有高于替换运算符的优先级，使得”m|food”匹配”m”或”food”。若要匹配”mood”或”food”，请使用括号创建子表达式，从而产生”(m|f)ood”。</p>
+<h2 id="字符簇"><a href="#字符簇" class="headerlink" title="字符簇"></a>字符簇</h2><pre><code>[a-z] //匹配所有的小写字母 
+[A-Z] //匹配所有的大写字母 
+[a-zA-Z] //匹配所有的字母 
+[0-9] //匹配所有的数字 
+[0-9\.\-] //匹配所有的数字，句号和减号 
+[ \f\r\t\n] //匹配所有的白字符
+</code></pre>
           
         
       
@@ -724,7 +2647,7 @@ categories:
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -774,7 +2697,7 @@ categories:
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -785,7 +2708,7 @@ categories:
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

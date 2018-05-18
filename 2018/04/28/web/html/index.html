@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Damion:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="常用快捷键Windows+e 我的电脑 Windows+r 打开运行 Alt+tab   切换软件 Ctrl+tab  软件文档之间的切换 F2          重命名 Web标准W3C组织（万维网联盟） HTML    结构标准     相当于人的身体 CSS         表现标准  相当于给人化妆，更漂亮 Js        行为标准     相当于人在唱歌，更灵动 浏览器内核IE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html">
+<meta property="og:url" content="http://yoursite.com/2018/04/28/web/html/index.html">
+<meta property="og:site_name" content="Harper&#39;s Blog">
+<meta property="og:description" content="常用快捷键Windows+e 我的电脑 Windows+r 打开运行 Alt+tab   切换软件 Ctrl+tab  软件文档之间的切换 F2          重命名 Web标准W3C组织（万维网联盟） HTML    结构标准     相当于人的身体 CSS         表现标准  相当于给人化妆，更漂亮 Js        行为标准     相当于人在唱歌，更灵动 浏览器内核IE">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-18T05:49:25.740Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html">
+<meta name="twitter:description" content="常用快捷键Windows+e 我的电脑 Windows+r 打开运行 Alt+tab   切换软件 Ctrl+tab  软件文档之间的切换 F2          重命名 Web标准W3C组织（万维网联盟） HTML    结构标准     相当于人的身体 CSS         表现标准  相当于给人化妆，更漂亮 Js        行为标准     相当于人在唱歌，更灵动 浏览器内核IE">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/28/web/html/"/>
+
+
+
+
+
+  <title>html | Harper's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Harper's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/web/html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">html</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:55:38+08:00">
+                2018-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><pre><code>Windows+e 我的电脑
+Windows+r 打开运行
+Alt+tab   切换软件
+Ctrl+tab  软件文档之间的切换
+F2          重命名
+</code></pre><h3 id="Web标准"><a href="#Web标准" class="headerlink" title="Web标准"></a>Web标准</h3><p>W3C组织（万维网联盟）</p>
+<pre><code>HTML    结构标准     相当于人的身体
+CSS         表现标准  相当于给人化妆，更漂亮
+Js        行为标准     相当于人在唱歌，更灵动
+</code></pre><h3 id="浏览器内核"><a href="#浏览器内核" class="headerlink" title="浏览器内核"></a>浏览器内核</h3><pre><code>IE            Chrome（谷歌）      Firefox（火狐）   Safari（苹果）
+Trident        Blink              Gecko               Webkit
+</code></pre><p>浏览器的内核是分为两个部分的，一是渲染引擎，另一个是JS引擎。<br>现在JS引擎比较独立，内核更加倾向于说渲染引擎。<br>渲染引擎决定了浏览器如何显示网页的内容以及页面的格式信息<br>兼容性出现问题的根本原因就是渲染引擎的不同</p>
+<h3 id="浏览器和服务器"><a href="#浏览器和服务器" class="headerlink" title="浏览器和服务器"></a>浏览器和服务器</h3><ol>
+<li>浏览器向服务器建发送请求（通过http协议），服务器返回响应报文</li>
+<li>http协议：超文本传输协议，也就是浏览器和服务器端的网页传输数据的约束和规范</li>
+<li><p>url协议：平时我们写的网址就是url协议，规定url地址的格式<br>协议规定格式：</p>
+<p> scheme://host.domain:port/path/filename<br> scheme        因特网服务类型。如http<br> host        域主机（http默认主机是www）<br> domain        因特网域名 如w3school.com.cn<br> :port         定义端口号（网页默认端口是：80）<br> path         网页所在服务器上的路径<br> filename     文件名称</p>
+</li>
+</ol>
+<h2 id="Html"><a href="#Html" class="headerlink" title="Html"></a>Html</h2><p>超文本标记语言</p>
+<h3 id="Html结构标准"><a href="#Html结构标准" class="headerlink" title="Html结构标准"></a>Html结构标准</h3><pre><code>&lt; !doctype html&gt;    声明文档类型那个
+&lt;html&gt;                根标签
+&lt;head&gt;                头标签
+&lt;title&gt;&lt;/title&gt;        标题标签
+&lt;/head&gt;
+&lt;body&gt;                主体标签
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>sublime快捷键使用： <a href="http://blog.csdn.netdetails/11530751" target="_blank" rel="noopener">http://blog.csdn.netdetails/11530751</a></p>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><h3 id="单标签"><a href="#单标签" class="headerlink" title="单标签"></a>单标签</h3><p>注释标签 <code>&lt;!-- 注释 --&gt;</code><br>换行标签 <code>&lt;br/&gt;</code><br>水平线标签 <code>&lt;hr/&gt;</code></p>
+<h3 id="双标签"><a href="#双标签" class="headerlink" title="双标签"></a>双标签</h3><p>段落标签 </p>
+<pre><code>&lt;p&gt;这是一个段落&lt;/p&gt;
+</code></pre><p>特点：上下自动生成空白行，<br>换行不会生成空白行</p>
+<p>标题标签<br>h1-h6<br>h1在一个页面只能出现一次</p>
+<pre><code>&lt;h1&gt;这是个h1&lt;/h1&gt;
+</code></pre><p>文本标签</p>
+<pre><code>&lt;font size=&quot;6&quot; color=&quot;red&quot;&gt;这是个文本&lt;/font&gt;
+</code></pre><h3 id="文本格式化标签"><a href="#文本格式化标签" class="headerlink" title="文本格式化标签"></a>文本格式化标签</h3><p>文本加粗标签</p>
+<pre><code>&lt;strong&gt;粗大&lt;/strong&gt;
+&lt;b&gt;&lt;/b&gt;
+</code></pre><p>文本倾斜标签</p>
+<pre><code>&lt;em&gt;&lt;/em&gt;
+&lt;i&gt;&lt;/i&gt;
+</code></pre><p>删除线标签</p>
+<pre><code>&lt;del&gt;&lt;/del&gt;
+&lt;s&gt;&lt;/s&gt;
+</code></pre><p>下划线标签</p>
+<pre><code>&lt;ins&gt;&lt;/ins&gt;
+&lt;u&gt;&lt;/u&gt;
+</code></pre><p>尽量使用<code>strong`</code>em<code>del</code>ins`,因为更有语义化</p>
+<h3 id="图片标签"><a href="#图片标签" class="headerlink" title="图片标签"></a>图片标签</h3><pre><code>&lt;img src=&quot;图片来源（必写属性）&quot;    alt=&quot;替换文本（图片不显示时显示的文本）&quot;    
+title=&quot;提示文本&quot;     width=&quot;图片宽度&quot;  height=&quot;图片高度&quot;&gt;
+</code></pre><p>图片没有定义宽高的时候，图片按照百分之百比例显示，如果只更改图片的宽度或者高度，图片等比例缩放。</p>
+<pre><code>相对路径
+src = &quot;../img.jpg&quot;
+绝对路径
+src = &quot;F:/imgs/img.jpg&quot;
+</code></pre><h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><pre><code>&lt;a  href = &quot;去往路径（必写属性）&quot;
+    title = &quot;提示文本 鼠标放在链接上提示的文字&quot;
+    target = &quot;_self&quot;&gt;
+    &quot;_self&quot; 默认值 在自身页面打开（关闭自身页面，打开链接页面）
+    &quot;_blank&quot; 打开新页面（自身页面不关闭，打开一个新的链接页面）
+&lt;/a&gt;
+</code></pre><p>锚链接</p>
+<ol>
+<li><p>先定义一个锚点</p>
+ <p id="md"></p></li>
+<li><p>超链接到锚点</p>
+<p> <a href="#md">回到顶部</a><br>空链接<br> <a href="#">空链</a><br>压缩文件下载 不推荐使用</p>
+<p> <a href="../../ppt.rar">压缩包</a><br>超链接优化写法</p>
+<p> <base target="_blank"> 让所有的超链接都在新窗口打开</p>
+<h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><p> 特殊字符 | 描述 | 字符代码</p>
+<ul>
+<li>| :-: | -:<br>| 空格符 | &nbsp;<br>&lt; | 小于号 | &lt;<blockquote>
+<p>   大于号    &gt;<br>&amp;    和号    &amp;<br>¥    人民币/日元    &yen;<br>©    版权    &copy;<br>®    注册商标    &reg;<br>×    乘号    &times;<br>÷    除号    &divide;    </p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><pre><code>&lt;ul&gt;
+    &lt;li&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p>type = “square”    小方块    “disc”  实心小圆圈    “circle” 空心小圆圈</p>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><pre><code>&lt;ol&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;    
+</code></pre><p>type=”1,a,A,i,I” type的值可以为1,a,A,i,I<br>start=”3”  决定了开始的位置。</p>
+<h3 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h3><pre><code>&lt;dl&gt;
+    &lt;dt&gt;小标题&lt;/dt&gt;
+    &lt;dd&gt;解释标题&lt;/dd&gt;
+    &lt;dd&gt;解释标题&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre><h2 id="音乐标签"><a href="#音乐标签" class="headerlink" title="音乐标签"></a>音乐标签</h2><pre><code>&lt;embed src=&quot;1.mp3&quot; hidden=&quot;true&quot;&gt;
+</code></pre><p>src 设置音乐路径 hidden 隐藏播放按钮 true隐藏 false显示</p>
+<h2 id="HTML5标签结构"><a href="#HTML5标签结构" class="headerlink" title="HTML5标签结构"></a>HTML5标签结构</h2><pre><code>!+tab 可以写成html5结构
+</code></pre><h2 id="字符编码"><a href="#字符编码" class="headerlink" title="字符编码"></a>字符编码</h2><pre><code>Ascll Ansi Unicode Gbk GB2321 Big5 utf-8（通用编码）
+&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+</code></pre><h2 id="meta"><a href="#meta" class="headerlink" title="meta"></a>meta</h2><pre><code>&lt;!-- 指定网页关键字 - 用于告诉搜索引擎网页内容相关关键词。 --&gt;
+&lt;meta name = &quot;keyworks&quot; content = &quot;HTML, HTML DOM, JavaScript&quot;&gt;
+&lt;!-- 指定页面描述。搜索索引擎可以使用这个描述作为搜索结果。 --&gt;
+&lt;meta name = &quot;description&quot; content = &quot;免费编程入门教程&quot;&gt;
+&lt;!--重定向--&gt;
+&lt;meta http-equiv=&quot;refresh&quot; content=&quot;1;http://www.baidu.com&quot;&gt;
+</code></pre><h2 id="link"><a href="#link" class="headerlink" title="link"></a>link</h2><pre><code>&lt;!-- 链接外部样式表 --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;1.css&quot;&gt;
+&lt;!--设置icon图标--&gt;
+&lt;link rel=&quot;icon&quot; href=&quot;favicon.ico&quot;&gt;
+</code></pre><h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><pre><code>&lt;table cellspacing=&quot;2&quot; cellpadding=&quot;2&quot;&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;        
+属性 
+cellspacing=&quot;2&quot; 单元格与单元格的距离
+cellpadding=&quot;2&quot; 单元格边距 内容距边框的距离
+align=&quot;left | center | right&quot;
+如果直接给表格用align=”center”  表格居中
+如果给tr或者td使用   ，tr或者td内容居中。
+</code></pre><h3 id="表格标准结构"><a href="#表格标准结构" class="headerlink" title="表格标准结构"></a>表格标准结构</h3><pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+</code></pre><h3 id="表头与单元格合并"><a href="#表头与单元格合并" class="headerlink" title="表头与单元格合并"></a>表头与单元格合并</h3><pre><code>&lt;table border=&quot;1&quot;&gt;
+    &lt;caption&gt;表头&lt;/caption&gt;
+        &lt;tr&gt;
+            &lt;td colspan=&quot;2&quot;&gt;111&lt;/td&gt;
+            &lt;!--&lt;td&gt;222&lt;/td&gt;--&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;111&lt;/td&gt;
+            &lt;td rowspan=&quot;2&quot;&gt;222&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;111&lt;/td&gt;
+            &lt;!--&lt;td&gt;222&lt;/td&gt;--&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+</code></pre><p>colspan=”2”  跨列数<br>rowspan=”2”  跨行数</p>
+<p><th>标题</th><br>用法和td一样，文字自动加粗水平居中对齐<br>td垂直对齐方式</p>
+<pre><code>&lt;td valign=&quot;bottom&quot;&gt;111&lt;/td&gt;
+</code></pre><p>valign=”top |middle| bottom”</p>
+<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><h3 id="表单域"><a href="#表单域" class="headerlink" title="表单域"></a>表单域</h3><pre><code>&lt;form action=&quot;1.php&quot; method=&quot;get&quot;&gt;
+</code></pre><p>属性action处理信息<br>method=”get|post”<br>get 通过地址栏提供信息，安全性差<br>post 通过1.php处理信息，安全性高</p>
+<h3 id="文本输入框"><a href="#文本输入框" class="headerlink" title="文本输入框"></a>文本输入框</h3><pre><code>用户名：&lt;input type=&quot;text&quot; maxlength=&quot;6&quot; readonly=&quot;readonly&quot; disabled=&quot;disabled&quot; name =&quot;username&quot; value=&quot;大前端&quot;&gt;
+</code></pre><h3 id="密码输入框"><a href="#密码输入框" class="headerlink" title="密码输入框"></a>密码输入框</h3><pre><code>密码: &lt;input type=&quot;password&quot; name=pwd&gt;
+</code></pre><h3 id="单选框"><a href="#单选框" class="headerlink" title="单选框"></a>单选框</h3><pre><code>&lt;input type = &quot;radio&quot; name = &quot;gender&quot; checked=&quot;checked&quot;&gt;男
+&lt;input type = &quot;radio&quot; name = &quot;gender&quot;&gt;女
+</code></pre><p>下拉列表</p>
+<pre><code>&lt;select multiple=&quot;multiple&quot;&gt;
+    &lt;option selected=&quot;selected&quot;&gt;1&lt;/option&gt;
+    &lt;option&gt;2&lt;/option&gt;
+    &lt;option&gt;3&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;optgroup label=&quot;分组名&quot;&gt;
+    &lt;option selected=&quot;selected&quot;&gt;1&lt;/option&gt;
+    &lt;option&gt;2&lt;/option&gt;
+    &lt;option&gt;3&lt;/option&gt;
+&lt;/optgroup&gt;
+</code></pre><p>多选款</p>
+<pre><code>&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt;喝酒
+&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt;喝酒
+&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt;喝酒
+</code></pre><p>多行文本<br>    <textarea cols="130" rows="10"><br>    cols字符长度<br>    rows输入行数<br>    </textarea><br>文件上传控件<br>    <input type="file"><br>文件提交按钮<br>    <input type="submit"><br>普通按钮<br>    <input type="button" value="普通按钮"><br>不能提交信息，配合js使用<br>图片按钮<br>    <input type="image" src="按钮.jpg"><br>图片按钮可实现信息提交功能</p>
+<h3 id="重置按钮"><a href="#重置按钮" class="headerlink" title="重置按钮"></a>重置按钮</h3><pre><code>&lt;input type=&quot;reset&quot;&gt;
+</code></pre><p>将信息重置到默认状态</p>
+<h3 id="表单信息分组"><a href="#表单信息分组" class="headerlink" title="表单信息分组"></a>表单信息分组</h3><pre><code>&lt;from action=&quot;1.php&quot; method=&quot;post&quot;&gt;
+    &lt;fieldset&gt;对表单信息分组
+        &lt;legend&gt;表单信息分组名称&lt;/legend&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+</code></pre><h3 id="hmlt5-补充表单控件"><a href="#hmlt5-补充表单控件" class="headerlink" title="hmlt5 补充表单控件"></a>hmlt5 补充表单控件</h3><pre><code>&lt;input type =&quot;url&quot;&gt;网址控件
+&lt;input type=&quot;date&quot;&gt;日期控件
+&lt;input type=&quot;time&quot;&gt;时间控件
+&lt;input type=&quot;email&quot;&gt;邮箱控件
+&lt;input type=&quot;number&quot; step=&quot;5&quot;&gt;数字控件
+&lt;input type=&quot;range&quot;&gt;滑块控件
+</code></pre><p>标签语义化<br>    好的语义化的网站标准就是去掉样式表文件之后，结构依然很清晰。<br>标签语义化概念：根据内容的结构化（内容语义化），选择合适的标签（代码语义化）</p>
+<p>-标签语义化意义：<br>       1:网页结构合理<br>          2:有利于seo:和搜索引擎建立良好沟通，有了良好的结构和语                            义你的网页内容自然容易被搜索引擎抓取；<br>          3:方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备）<br>          4:便于团队开发和维护</p>
+<p>1：尽可能少的使用无语义的标签div和span；</p>
+<p>2：在语义不明显时，既可以使用div或者p时，尽量用p, 因为p在默认情况下有上下间距，对兼容特殊终端有利；</p>
+<p>3：不要使用纯样式标签，如：b、font、u等，改用css设置。</p>
+<p>4：需要强调的文本，可以包含在strong或者em标签中strong默认样式是加粗（不要用b），em是斜体（不用i）；</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/28/js/递归/" rel="next" title="递归">
+                <i class="fa fa-chevron-left"></i> 递归
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/28/node/npm常用命令/" rel="prev" title="npm常用命令">
+                npm常用命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Harper" />
+            
+              <p class="site-author-name" itemprop="name">Harper</p>
+              <p class="site-description motion-element" itemprop="description">永远爱琪琪的鹏鹏</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用快捷键"><span class="nav-number">1.</span> <span class="nav-text">常用快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Web标准"><span class="nav-number">1.1.</span> <span class="nav-text">Web标准</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器内核"><span class="nav-number">1.2.</span> <span class="nav-text">浏览器内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器和服务器"><span class="nav-number">1.3.</span> <span class="nav-text">浏览器和服务器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html"><span class="nav-number">2.</span> <span class="nav-text">Html</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Html结构标准"><span class="nav-number">2.1.</span> <span class="nav-text">Html结构标准</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签"><span class="nav-number">3.</span> <span class="nav-text">标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单标签"><span class="nav-number">3.1.</span> <span class="nav-text">单标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双标签"><span class="nav-number">3.2.</span> <span class="nav-text">双标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本格式化标签"><span class="nav-number">3.3.</span> <span class="nav-text">文本格式化标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片标签"><span class="nav-number">3.4.</span> <span class="nav-text">图片标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#超链接"><span class="nav-number">3.5.</span> <span class="nav-text">超链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊字符"><span class="nav-number">4.</span> <span class="nav-text">特殊字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-number">5.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无序列表"><span class="nav-number">5.1.</span> <span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有序列表"><span class="nav-number">5.2.</span> <span class="nav-text">有序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义列表"><span class="nav-number">5.3.</span> <span class="nav-text">自定义列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#音乐标签"><span class="nav-number">6.</span> <span class="nav-text">音乐标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5标签结构"><span class="nav-number">7.</span> <span class="nav-text">HTML5标签结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符编码"><span class="nav-number">8.</span> <span class="nav-text">字符编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#meta"><span class="nav-number">9.</span> <span class="nav-text">meta</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#link"><span class="nav-number">10.</span> <span class="nav-text">link</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格"><span class="nav-number">11.</span> <span class="nav-text">表格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#表格标准结构"><span class="nav-number">11.1.</span> <span class="nav-text">表格标准结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表头与单元格合并"><span class="nav-number">11.2.</span> <span class="nav-text">表头与单元格合并</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表单"><span class="nav-number">12.</span> <span class="nav-text">表单</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#表单域"><span class="nav-number">12.1.</span> <span class="nav-text">表单域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本输入框"><span class="nav-number">12.2.</span> <span class="nav-text">文本输入框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#密码输入框"><span class="nav-number">12.3.</span> <span class="nav-text">密码输入框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单选框"><span class="nav-number">12.4.</span> <span class="nav-text">单选框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重置按钮"><span class="nav-number">12.5.</span> <span class="nav-text">重置按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单信息分组"><span class="nav-number">12.6.</span> <span class="nav-text">表单信息分组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hmlt5-补充表单控件"><span class="nav-number">12.7.</span> <span class="nav-text">hmlt5 补充表单控件</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Harper</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

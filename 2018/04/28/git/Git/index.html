@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Damion:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Git基础知识在Windows上安装Git从Git官网直接下载安装程序，然后按默认选项安装即可。安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！ 用户名和邮箱地址的作用用户名和邮箱地址是本地git客户端的一个变量，不随git库而改变。 每次commit都会用用户名和邮箱纪录。 github的contributions统计就是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git教程">
+<meta property="og:url" content="http://yoursite.com/2018/04/28/git/Git/index.html">
+<meta property="og:site_name" content="Harper&#39;s Blog">
+<meta property="og:description" content="Git基础知识在Windows上安装Git从Git官网直接下载安装程序，然后按默认选项安装即可。安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！ 用户名和邮箱地址的作用用户名和邮箱地址是本地git客户端的一个变量，不随git库而改变。 每次commit都会用用户名和邮箱纪录。 github的contributions统计就是">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-18T03:38:13.247Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git教程">
+<meta name="twitter:description" content="Git基础知识在Windows上安装Git从Git官网直接下载安装程序，然后按默认选项安装即可。安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！ 用户名和邮箱地址的作用用户名和邮箱地址是本地git客户端的一个变量，不随git库而改变。 每次commit都会用用户名和邮箱纪录。 github的contributions统计就是">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/28/git/Git/"/>
+
+
+
+
+
+  <title>git教程 | Harper's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Harper's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/git/Git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">git教程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:23:44+08:00">
+                2018-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Git基础知识"><a href="#Git基础知识" class="headerlink" title="Git基础知识"></a>Git基础知识</h2><h4 id="在Windows上安装Git"><a href="#在Windows上安装Git" class="headerlink" title="在Windows上安装Git"></a>在Windows上安装Git</h4><p>从Git官网直接下载安装程序，然后按默认选项安装即可。<br>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！</p>
+<h4 id="用户名和邮箱地址的作用"><a href="#用户名和邮箱地址的作用" class="headerlink" title="用户名和邮箱地址的作用"></a>用户名和邮箱地址的作用</h4><pre><code>用户名和邮箱地址是本地git客户端的一个变量，不随git库而改变。
+每次commit都会用用户名和邮箱纪录。
+github的contributions统计就是按邮箱来统计的。
+</code></pre><h4 id="修改用户名和邮箱地址："><a href="#修改用户名和邮箱地址：" class="headerlink" title="修改用户名和邮箱地址："></a>修改用户名和邮箱地址：</h4><pre><code>$ git config --global user.name &quot;username&quot;
+$ git config --global user.email &quot;email&quot;
+Git可以配置了一个全局的用户名和邮箱：
+</code></pre><h4 id="Git用户名邮箱的全局配置和单仓库配置"><a href="#Git用户名邮箱的全局配置和单仓库配置" class="headerlink" title="Git用户名邮箱的全局配置和单仓库配置"></a>Git用户名邮箱的全局配置和单仓库配置</h4><p>Git可以配置了一个全局的用户名和邮箱：</p>
+<pre><code>$ git config --global user.name &quot;xxxxx&quot;
+
+$ git config --global user.email &quot;xxxxx@xx.com&quot;
+
+$ git config --list
+</code></pre><p>但是你的项目可能是公司自己搭建的gitlab进行管理的，那就需要单独针对这个项目单独配置用户名和邮箱。</p>
+<p>在项目根目录下进行单独配置：</p>
+<pre><code>$ git config user.name &quot;gitlab&apos;s Name&quot;
+
+$ git config user.email &quot;gitlab@xx.com&quot;
+</code></pre><h4 id="查看用户名和邮箱地址："><a href="#查看用户名和邮箱地址：" class="headerlink" title="查看用户名和邮箱地址："></a>查看用户名和邮箱地址：</h4><pre><code>$ git config user.name
+$ git config user.email
+</code></pre><h4 id="查看git配置："><a href="#查看git配置：" class="headerlink" title="查看git配置："></a>查看git配置：</h4><pre><code>$ git config --list
+</code></pre><h4 id="git代理设置（一般用于公司内部网络）"><a href="#git代理设置（一般用于公司内部网络）" class="headerlink" title="git代理设置（一般用于公司内部网络）"></a>git代理设置（一般用于公司内部网络）</h4><pre><code>$ git config --global http.proxy ip:port
+git config --global http.proxy http://proxy.piccnet.com.cn:3128
+</code></pre><h4 id="查看代理："><a href="#查看代理：" class="headerlink" title="查看代理："></a>查看代理：</h4><pre><code>$ git config http.proxy
+</code></pre><h4 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h4><pre><code>$ git config --global --unset http.proxy
+$ git config --global --unset https.proxy
+</code></pre><h4 id="初始化一个Git仓库"><a href="#初始化一个Git仓库" class="headerlink" title="初始化一个Git仓库"></a>初始化一个Git仓库</h4><pre><code>$ git init
+</code></pre><h4 id="添加文件到Git仓库"><a href="#添加文件到Git仓库" class="headerlink" title="添加文件到Git仓库"></a>添加文件到Git仓库</h4><pre><code>$ git add &lt;file&gt;
+//注意，可反复多次使用，添加多个文件
+$ git commit -m &quot;wrote a file&quot;
+</code></pre><p>提交所有文件</p>
+<pre><code>git add . 
+</code></pre><p>如果你觉得 git add 提交缓存的流程太过繁琐，Git 也允许你用 -a 选项跳过这一步。命令格式如下：</p>
+<pre><code>git commit -a -m &quot;&quot;
+</code></pre><p>如果你没有设置 -m 选项，Git 会尝试为你打开一个编辑器以填写提交信息。 如果 Git 在你对它的配置中找不到相关信息，默认会打开 vim。屏幕会像这样：</p>
+<pre><code># Please enter the commit message for your changes. Lines starting
+# with &apos;#&apos; will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+#
+# modified:   hello.php
+#
+~
+~
+&quot;.git/COMMIT_EDITMSG&quot; 9L, 257C
+</code></pre><h4 id="查看工作区的状态"><a href="#查看工作区的状态" class="headerlink" title="查看工作区的状态"></a>查看工作区的状态</h4><pre><code>$ git status
+</code></pre><h4 id="查看修改内容"><a href="#查看修改内容" class="headerlink" title="查看修改内容"></a>查看修改内容</h4><pre><code>$ git diff
+</code></pre><h4 id="查看指定文件工作区和版本库里面最新版本的区别"><a href="#查看指定文件工作区和版本库里面最新版本的区别" class="headerlink" title="查看指定文件工作区和版本库里面最新版本的区别"></a>查看指定文件工作区和版本库里面最新版本的区别</h4><pre><code>$ git diff HEAD -- &lt;file&gt;
+</code></pre><h4 id="查看历史记录"><a href="#查看历史记录" class="headerlink" title="查看历史记录"></a>查看历史记录</h4><pre><code>$ git log
+</code></pre><h4 id="更漂亮的查看历史记录"><a href="#更漂亮的查看历史记录" class="headerlink" title="更漂亮的查看历史记录"></a>更漂亮的查看历史记录</h4><pre><code>$ git log --pretty=oneline
+3628164fb26d48395383f8f31179f24e0882e1e0 append GPL
+ea34578d5496d7dd233c827ed32a8cd576c5ee85 add distributed
+cb926e7ea50ad11b8f9e909c05226233bf755030 wrote a readme file
+</code></pre><p>3628164…882e1e0的是commit id（版本号）</p>
+<h4 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h4><pre><code>$ git reset --hard HEAD^
+</code></pre><p>上一个版本就是HEAD^，上上一个版本就是HEAD^^，<br>往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。</p>
+<h4 id="通过commit-id指定回到未来的某个版本："><a href="#通过commit-id指定回到未来的某个版本：" class="headerlink" title="通过commit id指定回到未来的某个版本："></a>通过<code>commit id</code>指定回到未来的某个版本：</h4><pre><code>$ git reset --hard 3628164
+</code></pre><h4 id="查看命令历史"><a href="#查看命令历史" class="headerlink" title="查看命令历史"></a>查看命令历史</h4><pre><code>$ git reflog
+</code></pre><h4 id="直接丢弃工作区的修改"><a href="#直接丢弃工作区的修改" class="headerlink" title="直接丢弃工作区的修改"></a>直接丢弃工作区的修改</h4><pre><code>$ git checkout -- &lt;file&gt;
+</code></pre><p>这里有两种情况：<br>一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；<br>一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。<br>总之，就是让这个文件回到最近一次git commit或git add时的状态。######</p>
+<h4 id="把暂存区的修改回退到工作区"><a href="#把暂存区的修改回退到工作区" class="headerlink" title="把暂存区的修改回退到工作区"></a>把暂存区的修改回退到工作区</h4><pre><code>$ git reset HEAD &lt;file&gt;
+</code></pre><h4 id="从版本库删除文件"><a href="#从版本库删除文件" class="headerlink" title="从版本库删除文件"></a>从版本库删除文件</h4><pre><code>$ git rm &lt;file&gt;
+$ git commit -m &quot;remove file&quot;
+</code></pre><h3 id="本地git连接github远程仓库"><a href="#本地git连接github远程仓库" class="headerlink" title="本地git连接github远程仓库"></a>本地git连接github远程仓库</h3><h4 id="创建SSH-Key"><a href="#创建SSH-Key" class="headerlink" title="创建SSH Key"></a>创建SSH Key</h4><pre><code>$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;
+</code></pre><p>在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，id_rsa.pub是公钥<br>登陆GitHub，打开“settings”，“SSH and GPG Keys”页面,然后点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容,点“Add Key”</p>
+<h4 id="验证与github远程库连接是否成功"><a href="#验证与github远程库连接是否成功" class="headerlink" title="验证与github远程库连接是否成功"></a>验证与github远程库连接是否成功</h4><pre><code>$ ssh -T git@github.com
+</code></pre><h4 id="查看具体信息"><a href="#查看具体信息" class="headerlink" title="查看具体信息"></a>查看具体信息</h4><pre><code>$ ssh -T -v git@github.com
+</code></pre><h4 id="把本地库的内容推送到远程"><a href="#把本地库的内容推送到远程" class="headerlink" title="把本地库的内容推送到远程"></a>把本地库的内容推送到远程</h4><p>在Github点击”New repository”按钮，创建一个新的仓库，在填入Repository name，其他保持默认设置，点击”Create repository”按钮，就成功地创建了一个新的Git仓库<br>把本地库的内容推送到远程</p>
+<pre><code>$ git remote add origin git@github.com:GaoGu/learngit.git
+$ git push -u origin master
+</code></pre><p>从现在起，只要本地作了提交，就可以通过命令：</p>
+<pre><code>$ git push origin master
+</code></pre><h4 id="从远程库克隆到本地"><a href="#从远程库克隆到本地" class="headerlink" title="从远程库克隆到本地"></a>从远程库克隆到本地</h4><p>在Github创建仓库时，勾选<code>Initialize this repository with a README</code>，这样GitHub会自动为我们创建一个README.md文件。<br>用命令git clone克隆一个本地库：</p>
+<pre><code>$ git clone git@github.com:GaoGu/gitskills.git
+</code></pre><h3 id="创建和合并分支"><a href="#创建和合并分支" class="headerlink" title="创建和合并分支"></a>创建和合并分支</h3><p>Git鼓励大量使用分支：</p>
+<h4 id="查看分支："><a href="#查看分支：" class="headerlink" title="查看分支："></a>查看分支：</h4><pre><code>git branch
+</code></pre><h4 id="创建分支："><a href="#创建分支：" class="headerlink" title="创建分支："></a>创建分支：</h4><pre><code>git branch &lt;name&gt;
+</code></pre><h4 id="切换分支："><a href="#切换分支：" class="headerlink" title="切换分支："></a>切换分支：</h4><pre><code>git checkout &lt;name&gt;
+</code></pre><h4 id="创建-切换分支："><a href="#创建-切换分支：" class="headerlink" title="创建+切换分支："></a>创建+切换分支：</h4><pre><code>git checkout -b &lt;name&gt;
+</code></pre><h4 id="合并某分支到当前分支："><a href="#合并某分支到当前分支：" class="headerlink" title="合并某分支到当前分支："></a>合并某分支到当前分支：</h4><pre><code>git merge &lt;name&gt;
+</code></pre><p>当当前分支和某分支有相同文件修改时<br>Git无法自动合并分支时会发生冲突，强行使用<code>git merge &lt;name&gt;</code>后<br>Git用<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;，=======，&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>标记出不同分支的内容<br>用<code>git log --graph</code>命令可以看到分支合并图</p>
+<pre><code>$ git log --graph --pretty=oneline --abbrev-commit
+</code></pre><p>通常，合并分支时，如果可能，Git会用<code>Fast forward</code>模式，但这种模式下，删除分支后，会丢掉分支信息。<br>使用<code>--no-ff</code>参数合并分支，表示禁用<code>Fast forward</code>模式</p>
+<pre><code>$ git merge --no-ff -m &quot;merge with no-ff&quot; &lt;name&gt;
+</code></pre><p>合并分支时，加上–no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并。</p>
+<h4 id="删除分支："><a href="#删除分支：" class="headerlink" title="删除分支："></a>删除分支：</h4><pre><code>$ git branch -d &lt;name&gt;
+</code></pre><p>强行删除<br>    $ git branch -D <name></name></p>
+<h4 id="stash功能"><a href="#stash功能" class="headerlink" title="stash功能"></a><code>stash</code>功能</h4><p>把当前工作现场“储藏”起来</p>
+<pre><code>$ git stash
+</code></pre><p>恢复现场</p>
+<pre><code>$ git stash apply
+</code></pre><p>但是恢复后，<code>stash</code>内容并不删除，你需要用<code>git stash drop</code>来删除<br>另一种方式是用<code>git stash pop</code>，恢复的同时把<code>stash</code>内容也删了</p>
+<pre><code>$ git stash pop
+</code></pre><p>查看<code>stash</code></p>
+<pre><code>$ git stash list
+stash@{0}: WIP on dev: 6224937 add merge
+</code></pre><p>可以多次<code>stash</code>,先用<code>git stash list</code>查看，然后恢复指定的<code>stash</code></p>
+<pre><code>$ git stash apply stash@{0}
+</code></pre><h4 id="查看远程库的信息"><a href="#查看远程库的信息" class="headerlink" title="查看远程库的信息"></a>查看远程库的信息</h4><pre><code>$ git remote
+$ git remote -v
+</code></pre><h4 id="推送分支"><a href="#推送分支" class="headerlink" title="推送分支"></a>推送分支</h4><pre><code>$ git push origin &lt;branch-name&gt;
+</code></pre><p>如果推送失败，先用<code>git pull</code>抓取远程的新提交,如果有冲突，要先处理冲突</p>
+<h4 id="创建远程origin的分支到本地"><a href="#创建远程origin的分支到本地" class="headerlink" title="创建远程origin的分支到本地"></a>创建远程origin的分支到本地</h4><pre><code>$ git checkout -b &lt;branch-name&gt; origin/&lt;branch-name&gt;
+</code></pre><h4 id="建立本地分支和远程分支的关联"><a href="#建立本地分支和远程分支的关联" class="headerlink" title="建立本地分支和远程分支的关联"></a>建立本地分支和远程分支的关联</h4><pre><code>$ git branch --set-upstream &lt;branch-name&gt; origin/&lt;branch-name&gt;
+</code></pre><h4 id="创建标签"><a href="#创建标签" class="headerlink" title="创建标签"></a>创建标签</h4><pre><code>$ git tag &lt;tagname&gt;
+</code></pre><p>给历史提交,<code>commit id</code>为<code>6224937</code>打标签</p>
+<pre><code>$ git tag &lt;tagname&gt; 6224937
+</code></pre><p>查看标签</p>
+<pre><code>$ git tag 
+</code></pre><p>创建带有说明的标签，用-a指定标签名，-m指定说明文字：</p>
+<pre><code>$ git tag -a &lt;tagname&gt; -m &quot;this is tag&quot; &lt;commit id&gt;
+</code></pre><p>通过-s用私钥签名一个标签</p>
+<pre><code>$ git tag -s &lt;tagname&gt; -m &quot;this is tag&quot; &lt;commit id&gt;
+</code></pre><p>签名采用PGP签名，因此，必须首先安装gpg（GnuPG），如果没有找到gpg，或者没有gpg密钥对，就会报错：</p>
+<pre><code>gpg: signing failed: secret key not available
+error: gpg failed to sign the data
+error: unable to sign the tag
+</code></pre><p>如果报错，请参考GnuPG帮助文档配置Key。</p>
+<h4 id="查看说明文字或PGP签名"><a href="#查看说明文字或PGP签名" class="headerlink" title="查看说明文字或PGP签名"></a>查看说明文字或PGP签名</h4><pre><code>$ git show &lt;tagname&gt;
+</code></pre><h4 id="删除标签"><a href="#删除标签" class="headerlink" title="删除标签"></a>删除标签</h4><pre><code>$ git tag -d &lt;tagname&gt;
+</code></pre><h4 id="推送某个标签到远程"><a href="#推送某个标签到远程" class="headerlink" title="推送某个标签到远程"></a>推送某个标签到远程</h4><pre><code>$ git push origin &lt;tagname&gt;
+</code></pre><p>推送全部尚未推送到远程的本地标签</p>
+<pre><code>$ git push origin --tags
+</code></pre><h4 id="删除远程标签"><a href="#删除远程标签" class="headerlink" title="删除远程标签"></a>删除远程标签</h4><pre><code>$ git tag -d &lt;tagname&gt;
+$ git push origin :refs/tags/&lt;tagname&gt;
+</code></pre><h4 id="使用GitHub"><a href="#使用GitHub" class="headerlink" title="使用GitHub"></a>使用GitHub</h4><p>在GitHub上，可以任意Fork开源仓库；</p>
+<p>自己拥有Fork后的仓库的读写权限；</p>
+<p>可以推送pull request给官方仓库来贡献代码。</p>
+<h4 id="自定义Git"><a href="#自定义Git" class="headerlink" title="自定义Git"></a>自定义Git</h4><p>让Git显示颜色</p>
+<pre><code>$ git config --global color.ui true
+</code></pre><h4 id="lock"><a href="#lock" class="headerlink" title="lock"></a>lock</h4><p>fatal: Unable to create ‘E:/workspaceGit/Git/.git/index.lock’: File exists.<br>解决方法<br>rm -f  /.git/index.lock<br>或者手动找到E:/workspaceGit/Git/.git/index.lock文件并删除</p>
+<h4 id="忽略特殊文件"><a href="#忽略特殊文件" class="headerlink" title="忽略特殊文件"></a>忽略特殊文件</h4><p>Git工作区的根目录下创建一个特殊的.gitignore文件<br>然后把要忽略的文件名填进去</p>
+<pre><code># Dependency directory
+node_modules
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/28/js/js基础/" rel="next" title="JS">
+                <i class="fa fa-chevron-left"></i> JS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/28/web/正则表达式教程/" rel="prev" title="正则表达式教程">
+                正则表达式教程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Harper" />
+            
+              <p class="site-author-name" itemprop="name">Harper</p>
+              <p class="site-description motion-element" itemprop="description">永远爱琪琪的鹏鹏</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git基础知识"><span class="nav-number">1.</span> <span class="nav-text">Git基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在Windows上安装Git"><span class="nav-number">1.0.1.</span> <span class="nav-text">在Windows上安装Git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户名和邮箱地址的作用"><span class="nav-number">1.0.2.</span> <span class="nav-text">用户名和邮箱地址的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改用户名和邮箱地址："><span class="nav-number">1.0.3.</span> <span class="nav-text">修改用户名和邮箱地址：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Git用户名邮箱的全局配置和单仓库配置"><span class="nav-number">1.0.4.</span> <span class="nav-text">Git用户名邮箱的全局配置和单仓库配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看用户名和邮箱地址："><span class="nav-number">1.0.5.</span> <span class="nav-text">查看用户名和邮箱地址：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看git配置："><span class="nav-number">1.0.6.</span> <span class="nav-text">查看git配置：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git代理设置（一般用于公司内部网络）"><span class="nav-number">1.0.7.</span> <span class="nav-text">git代理设置（一般用于公司内部网络）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看代理："><span class="nav-number">1.0.8.</span> <span class="nav-text">查看代理：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#取消代理"><span class="nav-number">1.0.9.</span> <span class="nav-text">取消代理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化一个Git仓库"><span class="nav-number">1.0.10.</span> <span class="nav-text">初始化一个Git仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加文件到Git仓库"><span class="nav-number">1.0.11.</span> <span class="nav-text">添加文件到Git仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看工作区的状态"><span class="nav-number">1.0.12.</span> <span class="nav-text">查看工作区的状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看修改内容"><span class="nav-number">1.0.13.</span> <span class="nav-text">查看修改内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看指定文件工作区和版本库里面最新版本的区别"><span class="nav-number">1.0.14.</span> <span class="nav-text">查看指定文件工作区和版本库里面最新版本的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看历史记录"><span class="nav-number">1.0.15.</span> <span class="nav-text">查看历史记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更漂亮的查看历史记录"><span class="nav-number">1.0.16.</span> <span class="nav-text">更漂亮的查看历史记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#版本回退"><span class="nav-number">1.0.17.</span> <span class="nav-text">版本回退</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过commit-id指定回到未来的某个版本："><span class="nav-number">1.0.18.</span> <span class="nav-text">通过commit id指定回到未来的某个版本：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看命令历史"><span class="nav-number">1.0.19.</span> <span class="nav-text">查看命令历史</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#直接丢弃工作区的修改"><span class="nav-number">1.0.20.</span> <span class="nav-text">直接丢弃工作区的修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#把暂存区的修改回退到工作区"><span class="nav-number">1.0.21.</span> <span class="nav-text">把暂存区的修改回退到工作区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从版本库删除文件"><span class="nav-number">1.0.22.</span> <span class="nav-text">从版本库删除文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地git连接github远程仓库"><span class="nav-number">1.1.</span> <span class="nav-text">本地git连接github远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建SSH-Key"><span class="nav-number">1.1.1.</span> <span class="nav-text">创建SSH Key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验证与github远程库连接是否成功"><span class="nav-number">1.1.2.</span> <span class="nav-text">验证与github远程库连接是否成功</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看具体信息"><span class="nav-number">1.1.3.</span> <span class="nav-text">查看具体信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#把本地库的内容推送到远程"><span class="nav-number">1.1.4.</span> <span class="nav-text">把本地库的内容推送到远程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从远程库克隆到本地"><span class="nav-number">1.1.5.</span> <span class="nav-text">从远程库克隆到本地</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建和合并分支"><span class="nav-number">1.2.</span> <span class="nav-text">创建和合并分支</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看分支："><span class="nav-number">1.2.1.</span> <span class="nav-text">查看分支：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建分支："><span class="nav-number">1.2.2.</span> <span class="nav-text">创建分支：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切换分支："><span class="nav-number">1.2.3.</span> <span class="nav-text">切换分支：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建-切换分支："><span class="nav-number">1.2.4.</span> <span class="nav-text">创建+切换分支：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合并某分支到当前分支："><span class="nav-number">1.2.5.</span> <span class="nav-text">合并某分支到当前分支：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除分支："><span class="nav-number">1.2.6.</span> <span class="nav-text">删除分支：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#stash功能"><span class="nav-number">1.2.7.</span> <span class="nav-text">stash功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看远程库的信息"><span class="nav-number">1.2.8.</span> <span class="nav-text">查看远程库的信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推送分支"><span class="nav-number">1.2.9.</span> <span class="nav-text">推送分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建远程origin的分支到本地"><span class="nav-number">1.2.10.</span> <span class="nav-text">创建远程origin的分支到本地</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立本地分支和远程分支的关联"><span class="nav-number">1.2.11.</span> <span class="nav-text">建立本地分支和远程分支的关联</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建标签"><span class="nav-number">1.2.12.</span> <span class="nav-text">创建标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看说明文字或PGP签名"><span class="nav-number">1.2.13.</span> <span class="nav-text">查看说明文字或PGP签名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除标签"><span class="nav-number">1.2.14.</span> <span class="nav-text">删除标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推送某个标签到远程"><span class="nav-number">1.2.15.</span> <span class="nav-text">推送某个标签到远程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除远程标签"><span class="nav-number">1.2.16.</span> <span class="nav-text">删除远程标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用GitHub"><span class="nav-number">1.2.17.</span> <span class="nav-text">使用GitHub</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义Git"><span class="nav-number">1.2.18.</span> <span class="nav-text">自定义Git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lock"><span class="nav-number">1.2.19.</span> <span class="nav-text">lock</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#忽略特殊文件"><span class="nav-number">1.2.20.</span> <span class="nav-text">忽略特殊文件</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Harper</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
