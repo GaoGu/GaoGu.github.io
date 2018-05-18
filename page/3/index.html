@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/git/Git/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/js/JavaScript RE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
@@ -293,7 +293,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/28/git/Git/" itemprop="url">git教程</a></h1>
+                <a class="post-title-link" href="/2018/04/28/js/JavaScript RE/" itemprop="url">javascript 正则表达式</a></h1>
         
 
         <div class="post-meta">
@@ -328,8 +328,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -367,142 +367,74 @@
       
         
           
-            <h2 id="Git基础知识"><a href="#Git基础知识" class="headerlink" title="Git基础知识"></a>Git基础知识</h2><h4 id="在Windows上安装Git"><a href="#在Windows上安装Git" class="headerlink" title="在Windows上安装Git"></a>在Windows上安装Git</h4><p>从Git官网直接下载安装程序，然后按默认选项安装即可。<br>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！</p>
-<h4 id="用户名和邮箱地址的作用"><a href="#用户名和邮箱地址的作用" class="headerlink" title="用户名和邮箱地址的作用"></a>用户名和邮箱地址的作用</h4><pre><code>用户名和邮箱地址是本地git客户端的一个变量，不随git库而改变。
-每次commit都会用用户名和邮箱纪录。
-github的contributions统计就是按邮箱来统计的。
-</code></pre><h4 id="修改用户名和邮箱地址："><a href="#修改用户名和邮箱地址：" class="headerlink" title="修改用户名和邮箱地址："></a>修改用户名和邮箱地址：</h4><pre><code>$ git config --global user.name &quot;username&quot;
-$ git config --global user.email &quot;email&quot;
-Git可以配置了一个全局的用户名和邮箱：
-</code></pre><h4 id="Git用户名邮箱的全局配置和单仓库配置"><a href="#Git用户名邮箱的全局配置和单仓库配置" class="headerlink" title="Git用户名邮箱的全局配置和单仓库配置"></a>Git用户名邮箱的全局配置和单仓库配置</h4><p>Git可以配置了一个全局的用户名和邮箱：</p>
-<pre><code>$ git config --global user.name &quot;xxxxx&quot;
+            <h2 id="JavaScript-正则表达式"><a href="#JavaScript-正则表达式" class="headerlink" title="JavaScript 正则表达式"></a>JavaScript 正则表达式</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre><code>/正则表达式主体/修饰符(可选)
+</code></pre><h3 id="search"><a href="#search" class="headerlink" title="search()"></a>search()</h3><p>search() 方法 用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串，并返回子串的起始位置。</p>
+<p>使用字符串</p>
+<pre><code>var str = &quot;Visit Runoob!&quot;; 
+var n = str.search(&quot;Runoob&quot;);\\结果为6
+</code></pre><p>使用正则表达式</p>
+<pre><code>var str = &quot;Visit Runoob!&quot;; 
+var n = str.search(/Runoob/i);\\结果为6
+</code></pre><h3 id="replace"><a href="#replace" class="headerlink" title="replace()"></a>replace()</h3><p>replace() 方法 用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。</p>
+<p>使用字符串</p>
+<pre><code>var str = &quot;Visit Microsoft!&quot;; 
+var txt = str.replace(&quot;Microsoft&quot;,&quot;Runoob&quot;);\\txt为Visit Runoob!
+</code></pre><p>使用正则表达式</p>
+<pre><code>var str = &quot;Visit Microsoft!&quot;; 
+var txt = str.replace(/microsoft/i,&quot;Runoob&quot;);
+</code></pre><h2 id="正则表达式修饰符"><a href="#正则表达式修饰符" class="headerlink" title="正则表达式修饰符"></a>正则表达式修饰符</h2><table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i</td>
+<td>执行对大小写不敏感的匹配</td>
+</tr>
+<tr>
+<td>g</td>
+<td>执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）</td>
+</tr>
+<tr>
+<td>m</td>
+<td>执行多行匹配</td>
+</tr>
+</tbody>
+</table>
+<h2 id="正则表达式的模式"><a href="#正则表达式的模式" class="headerlink" title="正则表达式的模式"></a>正则表达式的模式</h2><p>方括号用于查找某个范围内的字符:</p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[abc]</td>
+<td>查找方括号之间的任何字符</td>
+</tr>
+<tr>
+<td>[0-9]</td>
+<td>查找任何从 0 至 9 的数字</td>
+</tr>
+<tr>
+<td>(x竖线y)</td>
+<td>查找任何以 竖线 分隔的选项</td>
+</tr>
+</tbody>
+</table>
+<p>元字符是拥有特殊含义的字符：<br>元字符|描述<br>-|-<br>\d|查找数字<br>\s|查找空白符<br>\b|匹配单词边界<br>\uxxxx|查找以十六进制数 xxxx 规定的 Unicode 字符</p>
+<p>量词：<br>量词|描述<br>-|-<br>n+|    匹配任何包含至少一个 n 的字符串。<br>n*|    匹配任何包含零个或多个 n 的字符串。<br>n?|    匹配任何包含零个或一个 n 的字符串。</p>
+<h3 id="RegExp-对象"><a href="#RegExp-对象" class="headerlink" title="RegExp 对象"></a>RegExp 对象</h3><p>在 JavaScript 中，RegExp 对象是一个预定义了属性和方法的正则表达式对象。</p>
+<h3 id="test"><a href="#test" class="headerlink" title="test()"></a>test()</h3><p>test() 方法是一个正则表达式方法。<br>test() 方法用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true，否则返回 false。</p>
+<pre><code>var patt = /e/;
+patt.test(&quot;The best things in life are free!&quot;);//输出true
+</code></pre><h3 id="exec"><a href="#exec" class="headerlink" title="exec()"></a>exec()</h3><p>exec() 方法是一个正则表达式方法。<br>exec() 方法用于检索字符串中的正则表达式的匹配。<br>该函数返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。</p>
 
-$ git config --global user.email &quot;xxxxx@xx.com&quot;
-
-$ git config --list
-</code></pre><p>但是你的项目可能是公司自己搭建的gitlab进行管理的，那就需要单独针对这个项目单独配置用户名和邮箱。</p>
-<p>在项目根目录下进行单独配置：</p>
-<pre><code>$ git config user.name &quot;gitlab&apos;s Name&quot;
-
-$ git config user.email &quot;gitlab@xx.com&quot;
-</code></pre><h4 id="查看用户名和邮箱地址："><a href="#查看用户名和邮箱地址：" class="headerlink" title="查看用户名和邮箱地址："></a>查看用户名和邮箱地址：</h4><pre><code>$ git config user.name
-$ git config user.email
-</code></pre><h4 id="查看git配置："><a href="#查看git配置：" class="headerlink" title="查看git配置："></a>查看git配置：</h4><pre><code>$ git config --list
-</code></pre><h4 id="git代理设置（一般用于公司内部网络）"><a href="#git代理设置（一般用于公司内部网络）" class="headerlink" title="git代理设置（一般用于公司内部网络）"></a>git代理设置（一般用于公司内部网络）</h4><pre><code>$ git config --global http.proxy ip:port
-git config --global http.proxy http://proxy.piccnet.com.cn:3128
-</code></pre><h4 id="查看代理："><a href="#查看代理：" class="headerlink" title="查看代理："></a>查看代理：</h4><pre><code>$ git config http.proxy
-</code></pre><h4 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h4><pre><code>$ git config --global --unset http.proxy
-$ git config --global --unset https.proxy
-</code></pre><h4 id="初始化一个Git仓库"><a href="#初始化一个Git仓库" class="headerlink" title="初始化一个Git仓库"></a>初始化一个Git仓库</h4><pre><code>$ git init
-</code></pre><h4 id="添加文件到Git仓库"><a href="#添加文件到Git仓库" class="headerlink" title="添加文件到Git仓库"></a>添加文件到Git仓库</h4><pre><code>$ git add &lt;file&gt;
-//注意，可反复多次使用，添加多个文件
-$ git commit -m &quot;wrote a file&quot;
-</code></pre><p>提交所有文件</p>
-<pre><code>git add . 
-</code></pre><p>如果你觉得 git add 提交缓存的流程太过繁琐，Git 也允许你用 -a 选项跳过这一步。命令格式如下：</p>
-<pre><code>git commit -a -m &quot;&quot;
-</code></pre><p>如果你没有设置 -m 选项，Git 会尝试为你打开一个编辑器以填写提交信息。 如果 Git 在你对它的配置中找不到相关信息，默认会打开 vim。屏幕会像这样：</p>
-<pre><code># Please enter the commit message for your changes. Lines starting
-# with &apos;#&apos; will be ignored, and an empty message aborts the commit.
-# On branch master
-# Changes to be committed:
-#   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
-#
-# modified:   hello.php
-#
-~
-~
-&quot;.git/COMMIT_EDITMSG&quot; 9L, 257C
-</code></pre><h4 id="查看工作区的状态"><a href="#查看工作区的状态" class="headerlink" title="查看工作区的状态"></a>查看工作区的状态</h4><pre><code>$ git status
-</code></pre><h4 id="查看修改内容"><a href="#查看修改内容" class="headerlink" title="查看修改内容"></a>查看修改内容</h4><pre><code>$ git diff
-</code></pre><h4 id="查看指定文件工作区和版本库里面最新版本的区别"><a href="#查看指定文件工作区和版本库里面最新版本的区别" class="headerlink" title="查看指定文件工作区和版本库里面最新版本的区别"></a>查看指定文件工作区和版本库里面最新版本的区别</h4><pre><code>$ git diff HEAD -- &lt;file&gt;
-</code></pre><h4 id="查看历史记录"><a href="#查看历史记录" class="headerlink" title="查看历史记录"></a>查看历史记录</h4><pre><code>$ git log
-</code></pre><h4 id="更漂亮的查看历史记录"><a href="#更漂亮的查看历史记录" class="headerlink" title="更漂亮的查看历史记录"></a>更漂亮的查看历史记录</h4><pre><code>$ git log --pretty=oneline
-3628164fb26d48395383f8f31179f24e0882e1e0 append GPL
-ea34578d5496d7dd233c827ed32a8cd576c5ee85 add distributed
-cb926e7ea50ad11b8f9e909c05226233bf755030 wrote a readme file
-</code></pre><p>3628164…882e1e0的是commit id（版本号）</p>
-<h4 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h4><pre><code>$ git reset --hard HEAD^
-</code></pre><p>上一个版本就是HEAD^，上上一个版本就是HEAD^^，<br>往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。</p>
-<h4 id="通过commit-id指定回到未来的某个版本："><a href="#通过commit-id指定回到未来的某个版本：" class="headerlink" title="通过commit id指定回到未来的某个版本："></a>通过<code>commit id</code>指定回到未来的某个版本：</h4><pre><code>$ git reset --hard 3628164
-</code></pre><h4 id="查看命令历史"><a href="#查看命令历史" class="headerlink" title="查看命令历史"></a>查看命令历史</h4><pre><code>$ git reflog
-</code></pre><h4 id="直接丢弃工作区的修改"><a href="#直接丢弃工作区的修改" class="headerlink" title="直接丢弃工作区的修改"></a>直接丢弃工作区的修改</h4><pre><code>$ git checkout -- &lt;file&gt;
-</code></pre><p>这里有两种情况：<br>一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；<br>一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。<br>总之，就是让这个文件回到最近一次git commit或git add时的状态。######</p>
-<h4 id="把暂存区的修改回退到工作区"><a href="#把暂存区的修改回退到工作区" class="headerlink" title="把暂存区的修改回退到工作区"></a>把暂存区的修改回退到工作区</h4><pre><code>$ git reset HEAD &lt;file&gt;
-</code></pre><h4 id="从版本库删除文件"><a href="#从版本库删除文件" class="headerlink" title="从版本库删除文件"></a>从版本库删除文件</h4><pre><code>$ git rm &lt;file&gt;
-$ git commit -m &quot;remove file&quot;
-</code></pre><h3 id="本地git连接github远程仓库"><a href="#本地git连接github远程仓库" class="headerlink" title="本地git连接github远程仓库"></a>本地git连接github远程仓库</h3><h4 id="创建SSH-Key"><a href="#创建SSH-Key" class="headerlink" title="创建SSH Key"></a>创建SSH Key</h4><pre><code>$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;
-</code></pre><p>在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，id_rsa.pub是公钥<br>登陆GitHub，打开“settings”，“SSH and GPG Keys”页面,然后点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容,点“Add Key”</p>
-<h4 id="验证与github远程库连接是否成功"><a href="#验证与github远程库连接是否成功" class="headerlink" title="验证与github远程库连接是否成功"></a>验证与github远程库连接是否成功</h4><pre><code>$ ssh -T git@github.com
-</code></pre><h4 id="查看具体信息"><a href="#查看具体信息" class="headerlink" title="查看具体信息"></a>查看具体信息</h4><pre><code>$ ssh -T -v git@github.com
-</code></pre><h4 id="把本地库的内容推送到远程"><a href="#把本地库的内容推送到远程" class="headerlink" title="把本地库的内容推送到远程"></a>把本地库的内容推送到远程</h4><p>在Github点击”New repository”按钮，创建一个新的仓库，在填入Repository name，其他保持默认设置，点击”Create repository”按钮，就成功地创建了一个新的Git仓库<br>把本地库的内容推送到远程</p>
-<pre><code>$ git remote add origin git@github.com:GaoGu/learngit.git
-$ git push -u origin master
-</code></pre><p>从现在起，只要本地作了提交，就可以通过命令：</p>
-<pre><code>$ git push origin master
-</code></pre><h4 id="从远程库克隆到本地"><a href="#从远程库克隆到本地" class="headerlink" title="从远程库克隆到本地"></a>从远程库克隆到本地</h4><p>在Github创建仓库时，勾选<code>Initialize this repository with a README</code>，这样GitHub会自动为我们创建一个README.md文件。<br>用命令git clone克隆一个本地库：</p>
-<pre><code>$ git clone git@github.com:GaoGu/gitskills.git
-</code></pre><h3 id="创建和合并分支"><a href="#创建和合并分支" class="headerlink" title="创建和合并分支"></a>创建和合并分支</h3><p>Git鼓励大量使用分支：</p>
-<h4 id="查看分支："><a href="#查看分支：" class="headerlink" title="查看分支："></a>查看分支：</h4><pre><code>git branch
-</code></pre><h4 id="创建分支："><a href="#创建分支：" class="headerlink" title="创建分支："></a>创建分支：</h4><pre><code>git branch &lt;name&gt;
-</code></pre><h4 id="切换分支："><a href="#切换分支：" class="headerlink" title="切换分支："></a>切换分支：</h4><pre><code>git checkout &lt;name&gt;
-</code></pre><h4 id="创建-切换分支："><a href="#创建-切换分支：" class="headerlink" title="创建+切换分支："></a>创建+切换分支：</h4><pre><code>git checkout -b &lt;name&gt;
-</code></pre><h4 id="合并某分支到当前分支："><a href="#合并某分支到当前分支：" class="headerlink" title="合并某分支到当前分支："></a>合并某分支到当前分支：</h4><pre><code>git merge &lt;name&gt;
-</code></pre><p>当当前分支和某分支有相同文件修改时<br>Git无法自动合并分支时会发生冲突，强行使用<code>git merge &lt;name&gt;</code>后<br>Git用<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;，=======，&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>标记出不同分支的内容<br>用<code>git log --graph</code>命令可以看到分支合并图</p>
-<pre><code>$ git log --graph --pretty=oneline --abbrev-commit
-</code></pre><p>通常，合并分支时，如果可能，Git会用<code>Fast forward</code>模式，但这种模式下，删除分支后，会丢掉分支信息。<br>使用<code>--no-ff</code>参数合并分支，表示禁用<code>Fast forward</code>模式</p>
-<pre><code>$ git merge --no-ff -m &quot;merge with no-ff&quot; &lt;name&gt;
-</code></pre><p>合并分支时，加上–no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并。</p>
-<h4 id="删除分支："><a href="#删除分支：" class="headerlink" title="删除分支："></a>删除分支：</h4><pre><code>$ git branch -d &lt;name&gt;
-</code></pre><p>强行删除<br>    $ git branch -D <name></name></p>
-<h4 id="stash功能"><a href="#stash功能" class="headerlink" title="stash功能"></a><code>stash</code>功能</h4><p>把当前工作现场“储藏”起来</p>
-<pre><code>$ git stash
-</code></pre><p>恢复现场</p>
-<pre><code>$ git stash apply
-</code></pre><p>但是恢复后，<code>stash</code>内容并不删除，你需要用<code>git stash drop</code>来删除<br>另一种方式是用<code>git stash pop</code>，恢复的同时把<code>stash</code>内容也删了</p>
-<pre><code>$ git stash pop
-</code></pre><p>查看<code>stash</code></p>
-<pre><code>$ git stash list
-stash@{0}: WIP on dev: 6224937 add merge
-</code></pre><p>可以多次<code>stash</code>,先用<code>git stash list</code>查看，然后恢复指定的<code>stash</code></p>
-<pre><code>$ git stash apply stash@{0}
-</code></pre><h4 id="查看远程库的信息"><a href="#查看远程库的信息" class="headerlink" title="查看远程库的信息"></a>查看远程库的信息</h4><pre><code>$ git remote
-$ git remote -v
-</code></pre><h4 id="推送分支"><a href="#推送分支" class="headerlink" title="推送分支"></a>推送分支</h4><pre><code>$ git push origin &lt;branch-name&gt;
-</code></pre><p>如果推送失败，先用<code>git pull</code>抓取远程的新提交,如果有冲突，要先处理冲突</p>
-<h4 id="创建远程origin的分支到本地"><a href="#创建远程origin的分支到本地" class="headerlink" title="创建远程origin的分支到本地"></a>创建远程origin的分支到本地</h4><pre><code>$ git checkout -b &lt;branch-name&gt; origin/&lt;branch-name&gt;
-</code></pre><h4 id="建立本地分支和远程分支的关联"><a href="#建立本地分支和远程分支的关联" class="headerlink" title="建立本地分支和远程分支的关联"></a>建立本地分支和远程分支的关联</h4><pre><code>$ git branch --set-upstream &lt;branch-name&gt; origin/&lt;branch-name&gt;
-</code></pre><h4 id="创建标签"><a href="#创建标签" class="headerlink" title="创建标签"></a>创建标签</h4><pre><code>$ git tag &lt;tagname&gt;
-</code></pre><p>给历史提交,<code>commit id</code>为<code>6224937</code>打标签</p>
-<pre><code>$ git tag &lt;tagname&gt; 6224937
-</code></pre><p>查看标签</p>
-<pre><code>$ git tag 
-</code></pre><p>创建带有说明的标签，用-a指定标签名，-m指定说明文字：</p>
-<pre><code>$ git tag -a &lt;tagname&gt; -m &quot;this is tag&quot; &lt;commit id&gt;
-</code></pre><p>通过-s用私钥签名一个标签</p>
-<pre><code>$ git tag -s &lt;tagname&gt; -m &quot;this is tag&quot; &lt;commit id&gt;
-</code></pre><p>签名采用PGP签名，因此，必须首先安装gpg（GnuPG），如果没有找到gpg，或者没有gpg密钥对，就会报错：</p>
-<pre><code>gpg: signing failed: secret key not available
-error: gpg failed to sign the data
-error: unable to sign the tag
-</code></pre><p>如果报错，请参考GnuPG帮助文档配置Key。</p>
-<h4 id="查看说明文字或PGP签名"><a href="#查看说明文字或PGP签名" class="headerlink" title="查看说明文字或PGP签名"></a>查看说明文字或PGP签名</h4><pre><code>$ git show &lt;tagname&gt;
-</code></pre><h4 id="删除标签"><a href="#删除标签" class="headerlink" title="删除标签"></a>删除标签</h4><pre><code>$ git tag -d &lt;tagname&gt;
-</code></pre><h4 id="推送某个标签到远程"><a href="#推送某个标签到远程" class="headerlink" title="推送某个标签到远程"></a>推送某个标签到远程</h4><pre><code>$ git push origin &lt;tagname&gt;
-</code></pre><p>推送全部尚未推送到远程的本地标签</p>
-<pre><code>$ git push origin --tags
-</code></pre><h4 id="删除远程标签"><a href="#删除远程标签" class="headerlink" title="删除远程标签"></a>删除远程标签</h4><pre><code>$ git tag -d &lt;tagname&gt;
-$ git push origin :refs/tags/&lt;tagname&gt;
-</code></pre><h4 id="使用GitHub"><a href="#使用GitHub" class="headerlink" title="使用GitHub"></a>使用GitHub</h4><p>在GitHub上，可以任意Fork开源仓库；</p>
-<p>自己拥有Fork后的仓库的读写权限；</p>
-<p>可以推送pull request给官方仓库来贡献代码。</p>
-<h4 id="自定义Git"><a href="#自定义Git" class="headerlink" title="自定义Git"></a>自定义Git</h4><p>让Git显示颜色</p>
-<pre><code>$ git config --global color.ui true
-</code></pre><h4 id="lock"><a href="#lock" class="headerlink" title="lock"></a>lock</h4><p>fatal: Unable to create ‘E:/workspaceGit/Git/.git/index.lock’: File exists.<br>解决方法<br>rm -f  /.git/index.lock<br>或者手动找到E:/workspaceGit/Git/.git/index.lock文件并删除</p>
-<h4 id="忽略特殊文件"><a href="#忽略特殊文件" class="headerlink" title="忽略特殊文件"></a>忽略特殊文件</h4><p>Git工作区的根目录下创建一个特殊的.gitignore文件<br>然后把要忽略的文件名填进去</p>
-<pre><code># Dependency directory
-node_modules
-</code></pre>
           
         
       
@@ -965,7 +897,7 @@ list:
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/js/js数据类型/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/hexo/使用 Hexo 基于 GitHub Pages 搭建个人博客/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
@@ -984,7 +916,7 @@ list:
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/28/js/js数据类型/" itemprop="url">js数据类型</a></h1>
+                <a class="post-title-link" href="/2018/04/26/hexo/使用 Hexo 基于 GitHub Pages 搭建个人博客/" itemprop="url">使用 Hexo 基于 GitHub Pages 搭建个人博客</a></h1>
         
 
         <div class="post-meta">
@@ -996,8 +928,8 @@ list:
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:23:44+08:00">
-                2018-04-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T10:40:45+08:00">
+                2018-04-26
               </time>
             
 
@@ -1019,8 +951,8 @@ list:
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
                   </a>
                 </span>
 
@@ -1058,101 +990,181 @@ list:
       
         
           
-            <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>在 JavaScript 中有 5 种不同的数据类型：</p>
-<pre><code>string
-number
-boolean
-object
-function
-</code></pre><p>3 种对象类型：</p>
-<pre><code>Object
-Date
-Array
-</code></pre><p>2 个不包含任何值的数据类型：</p>
-<pre><code>null
-undefined
-</code></pre><p>请注意</p>
-<pre><code>NaN 的数据类型是 number
-数组(Array)的数据类型是 object
-日期(Date)的数据类型为 object
-null 的数据类型是 object
-未定义变量的数据类型为 undefined
-</code></pre><p>JavaScript 拥有动态类型。这意味着相同的变量可用作不同的类型：</p>
-<pre><code>var x;               // x 为 undefined
-var x = 5;           // 现在 x 为数字
-var x = &quot;John&quot;;      // 现在 x 为字符串
-</code></pre><h2 id="1-简单数据类型"><a href="#1-简单数据类型" class="headerlink" title="1. 简单数据类型"></a>1. 简单数据类型</h2><h3 id="1-1-数字"><a href="#1-1-数字" class="headerlink" title="1.1 数字"></a>1.1 数字</h3><p>JavaScript 只有一种数字类型。数字可以带小数点，也可以不带：</p>
-<pre><code>var x1=34.00;      //使用小数点来写
-var x2=34;         //不使用小数点来写
-</code></pre><h3 id="1-2-字符串"><a href="#1-2-字符串" class="headerlink" title="1.2 字符串"></a>1.2 字符串</h3><p>字符串可以是引号中的任意文本。您可以使用单引号或双引号：</p>
-<pre><code>var carname=&quot;Volvo XC60&quot;;
-var carname=&apos;Volvo XC60&apos;;
-</code></pre><p>你可以使用索引位置来访问字符串中的每个字符：</p>
-<pre><code>var carname = carname[7];
-</code></pre><p>字符串的索引从 0 开始，这意味着第一个字符索引值为 [0],第二个为 [1], 以此类推。</p>
-<p>字符串长度</p>
-<p>可以使用内置属性 length 来计算字符串的长度：</p>
-<pre><code>var txt = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
-var sln = txt.length;
-</code></pre><h3 id="1-3-布尔"><a href="#1-3-布尔" class="headerlink" title="1.3 布尔"></a>1.3 布尔</h3><p>只有2个值一个是true, 一个是false.   实际运算中true=1,false=0</p>
-<pre><code>var x=true;
-var y=false;
-</code></pre><h3 id="1-4-undefined"><a href="#1-4-undefined" class="headerlink" title="1.4 undefined"></a>1.4 undefined</h3><p>在 JavaScript 中, undefined 是一个没有设置值的变量。</p>
-<p>typeof 一个没有值的变量会返回 undefined。</p>
-<p>你可以设置为 undefined 来清空对象:</p>
-<pre><code>var n;
-alert(n);
-</code></pre><p>变量在内存中是存在的</p>
-<h3 id="1-5-null"><a href="#1-5-null" class="headerlink" title="1.5 null"></a>1.5 null</h3><p>在 JavaScript 中 null 表示 “什么都没有”。</p>
-<p>null是一个只有一个值的特殊类型。表示一个空对象引用。</p>
-<p>你可以设置为 null 来清空对象:</p>
-<pre><code>var n = 1;
-n = null;
-alert(n);
-</code></pre><p>在内存中找不到这个变量</p>
-<h2 id="2-复杂数据类型"><a href="#2-复杂数据类型" class="headerlink" title="2. 复杂数据类型"></a>2. 复杂数据类型</h2><h3 id="2-1-JavaScript-数组"><a href="#2-1-JavaScript-数组" class="headerlink" title="2.1 JavaScript 数组"></a>2.1 JavaScript 数组</h3><p>创建名为 cars 的数组：</p>
-<pre><code>var cars=new Array();
-cars[0]=&quot;Saab&quot;;
-cars[1]=&quot;Volvo&quot;;
-cars[2]=&quot;BMW&quot;;
-</code></pre><p>或者 (condensed array):</p>
-<pre><code>var cars=new Array(&quot;Saab&quot;,&quot;Volvo&quot;,&quot;BMW&quot;);
-</code></pre><p>或者 (literal array):</p>
-<pre><code>var cars=[&quot;Saab&quot;,&quot;Volvo&quot;,&quot;BMW&quot;];
-</code></pre><h3 id="2-2-JavaScript-对象"><a href="#2-2-JavaScript-对象" class="headerlink" title="2.2 JavaScript 对象"></a>2.2 JavaScript 对象</h3><p>对象由花括号分隔。在括号内部，对象的属性以名称和值对的形式 (name : value) 来定义。属性由逗号分隔：</p>
-<pre><code>var person={
-    firstname : &quot;John&quot;,
-    lastname  : &quot;Doe&quot;,
-    id        :  5566
-};
-</code></pre><p>上面例子中的对象 (person) 有三个属性：firstname、lastname 以及 id。</p>
-<p>对象属性有两种寻址方式：</p>
-<pre><code>name=person.lastname;
-name=person[&quot;lastname&quot;];
-</code></pre><h3 id="2-3-对象方法属性的调用"><a href="#2-3-对象方法属性的调用" class="headerlink" title="2.3 对象方法属性的调用"></a>2.3 对象方法属性的调用</h3><pre><code>var person = {
-    firstName: &quot;John&quot;,
-    lastName : &quot;Doe&quot;,
-    id : 5566,
-    fullName : function() 
-    {
-       return this.firstName + &quot; &quot; + this.lastName;
-    }
-};
-</code></pre><p>person.fullName; //不加括号输出函数表达式 </p>
-<pre><code>function () { return this.firstName + &quot; &quot; + this.lastName; }
-</code></pre><p>person.fullName(); //加括号输出函数执行结果</p>
-<pre><code>John Doe
-</code></pre><h3 id="3-判断数据类型"><a href="#3-判断数据类型" class="headerlink" title="3.判断数据类型"></a>3.判断数据类型</h3><pre><code>typeof &quot;John&quot;                // 返回 string 
-typeof 3.14                  // 返回 number
-typeof false                 // 返回 boolean
-typeof [1,2,3,4]             // 返回 object
-typeof {name:&apos;John&apos;, age:34} // 返回 object
-</code></pre><p>在JavaScript中，数组是一种特殊的对象类型。 因此 typeof [1,2,3,4] 返回 object</p>
-<pre><code>typeof undefined             // undefined
-typeof null                  // object
-null === undefined           // false
-null == undefined            // true
-</code></pre><p>null 和 undefined 的值相等，但类型不等</p>
+            <h1 id="Hexo-安装"><a href="#Hexo-安装" class="headerlink" title="Hexo 安装"></a>Hexo 安装</h1><pre><code>npm install hexo-cli -g    
+</code></pre><h1 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h1><pre><code>hexo init &lt;folder&gt;
+cd &lt;folder&gt;
+npm install
+</code></pre><h1 id="编译生成博文"><a href="#编译生成博文" class="headerlink" title="编译生成博文"></a>编译生成博文</h1><pre><code>hexo generate
+</code></pre><h1 id="启动Hexo服务器"><a href="#启动Hexo服务器" class="headerlink" title="启动Hexo服务器"></a>启动Hexo服务器</h1><pre><code>hexo server
+</code></pre><p>调试</p>
+<pre><code>hexo server --debug    
+</code></pre><p>打开浏览器输入 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 便可以看到最原始的博客了</p>
+<h1 id="新建一篇博客文章"><a href="#新建一篇博客文章" class="headerlink" title="新建一篇博客文章"></a>新建一篇博客文章</h1><pre><code>hexo new &quot;开始blog，哈哈&quot;
+</code></pre><p>打开 Hexo 目录下的 source_posts 目录就可以看见创建的文章</p>
+<h1 id="主题安装"><a href="#主题安装" class="headerlink" title="主题安装"></a>主题安装</h1><p><a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">Next 主题 GitHub 地址</a></p>
+<p>拷贝至站点目录的 themes 目录下，一般命名为 next，打开站点配置文件， 找到 theme 字段，并将其值更改为 next 即可</p>
+<p>clone下来删了.git，防止和项目的.git冲突</p>
+<h1 id="创建分类"><a href="#创建分类" class="headerlink" title="创建分类"></a>创建分类</h1><p>在博客根目录输入</p>
+<pre><code>hexo new page categories
+</code></pre><p>打开category/index.md，改为：</p>
+<pre><code>title: 分类
+date: 日期
+type: &quot;categories&quot;
+comments: false
+</code></pre><p>再文章前添加</p>
+<pre><code>---
+title: 分类测试
+categories:
+- 分类测试 
+---
+</code></pre><p>主题展示分类图标，修改<code>主题配置文件</code></p>
+<pre><code>menu：
+    categories: /categories/ || th
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/hexo/通过gh-pages创建静态网站/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/26/hexo/通过gh-pages创建静态网站/" itemprop="url">通过gh-pages创建静态网站</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T10:40:45+08:00">
+                2018-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>通过gh-pages创建静态网站</p>
+<p>创建一个新项目</p>
+<p>建立分支gh-pages</p>
+<p>在项目得settings –&gt; branches –&gt; Default branch 选择   gh-pages</p>
 
           
         
@@ -1476,322 +1488,6 @@ null == undefined            // true
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/hexo/使用 Hexo 基于 GitHub Pages 搭建个人博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Harper">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Harper's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/26/hexo/使用 Hexo 基于 GitHub Pages 搭建个人博客/" itemprop="url">使用 Hexo 基于 GitHub Pages 搭建个人博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T10:40:45+08:00">
-                2018-04-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Hexo-安装"><a href="#Hexo-安装" class="headerlink" title="Hexo 安装"></a>Hexo 安装</h1><pre><code>npm install hexo-cli -g    
-</code></pre><h1 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h1><pre><code>hexo init &lt;folder&gt;
-cd &lt;folder&gt;
-npm install
-</code></pre><h1 id="编译生成博文"><a href="#编译生成博文" class="headerlink" title="编译生成博文"></a>编译生成博文</h1><pre><code>hexo generate
-</code></pre><h1 id="启动Hexo服务器"><a href="#启动Hexo服务器" class="headerlink" title="启动Hexo服务器"></a>启动Hexo服务器</h1><pre><code>hexo server
-</code></pre><p>调试</p>
-<pre><code>hexo server --debug    
-</code></pre><p>打开浏览器输入 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 便可以看到最原始的博客了</p>
-<h1 id="新建一篇博客文章"><a href="#新建一篇博客文章" class="headerlink" title="新建一篇博客文章"></a>新建一篇博客文章</h1><pre><code>hexo new &quot;开始blog，哈哈&quot;
-</code></pre><p>打开 Hexo 目录下的 source_posts 目录就可以看见创建的文章</p>
-<h1 id="主题安装"><a href="#主题安装" class="headerlink" title="主题安装"></a>主题安装</h1><p><a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">Next 主题 GitHub 地址</a></p>
-<p>拷贝至站点目录的 themes 目录下，一般命名为 next，打开站点配置文件， 找到 theme 字段，并将其值更改为 next 即可</p>
-<p>clone下来删了.git，防止和项目的.git冲突</p>
-<h1 id="创建分类"><a href="#创建分类" class="headerlink" title="创建分类"></a>创建分类</h1><p>在博客根目录输入</p>
-<pre><code>hexo new page categories
-</code></pre><p>打开category/index.md，改为：</p>
-<pre><code>title: 分类
-date: 日期
-type: &quot;categories&quot;
-comments: false
-</code></pre><p>再文章前添加</p>
-<pre><code>---
-title: 分类测试
-categories:
-- 分类测试 
----
-</code></pre><p>主题展示分类图标，修改<code>主题配置文件</code></p>
-<pre><code>menu：
-    categories: /categories/ || th
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/hexo/通过gh-pages创建静态网站/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Harper">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Harper's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/26/hexo/通过gh-pages创建静态网站/" itemprop="url">通过gh-pages创建静态网站</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T10:40:45+08:00">
-                2018-04-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>通过gh-pages创建静态网站</p>
-<p>创建一个新项目</p>
-<p>建立分支gh-pages</p>
-<p>在项目得settings –&gt; branches –&gt; Default branch 选择   gh-pages</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1846,7 +1542,7 @@ categories:
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

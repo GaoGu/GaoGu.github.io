@@ -421,6 +421,459 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/web/css/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/28/web/css/" itemprop="url">css</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:55:38+08:00">
+                2018-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="css概念"><a href="#css概念" class="headerlink" title="css概念"></a>css概念</h3><p>css指层叠样式表(Cascading Style Sheets)(级联样式表)</p>
+<h3 id="书写位置"><a href="#书写位置" class="headerlink" title="书写位置"></a>书写位置</h3><p>内嵌式<br>★内嵌式写法，样式只作用于当前文件，没有真正实现结构表现分离。</p>
+<pre><code>&lt;head&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+
+    &lt;/style&gt;
+&lt;/head&gt;
+</code></pre><p>外链式<br>★外链式写法，作用范围是当前站点，谁调用谁生效，范围广，真正实现结构表现分离。</p>
+<pre><code>&lt;link rel=”stylesheet” href=”1.css”&gt;
+</code></pre><p>行内样式表<br>★行内样式表，作用范围仅限于当前标签，范围小，结构表现混在一起。</p>
+<pre><code>&lt;div style=&quot;color:red&quot;&gt;&lt;/div&gt;
+</code></pre><h2 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h2><h3 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h3><pre><code>div {
+    color:red;
+}
+</code></pre><h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><ul>
+<li>直接写颜色的名字</li>
+<li>十六进制<br>#000000 前两位代表红色 中间两位绿色，后面两位蓝色</li>
+<li><p>rgb</p>
+<pre><code>color:rgb(120,120,120);
+</code></pre></li>
+<li><p>rgba<br>A代表alpha，不透明度 值0-1</p>
+<pre><code>color:rgba(102,217,239,0.5);
+</code></pre><h3 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h3><p>  .自定义类名{属性：值;}<br>类选择器命名规则</p>
+</li>
+<li>不能用纯数字或者数字开头来定义类名</li>
+<li>不能使用特殊符号或者特殊符号开头（_）来定义类名</li>
+<li>不建议使用汉字来定义类名</li>
+<li><p>不推荐使用属性或者属性的值来定义类名</p>
+<h3 id="ID选择器"><a href="#ID选择器" class="headerlink" title="ID选择器"></a>ID选择器</h3><pre><code>#自定义id名｛属性：值;｝
+</code></pre><p>特点： 一个ID选择器在一个页面只能调用一次。如果使用2次或者2次以上，不符合w3c规范，JS调用会出问题。<br>一个标签只能调用一个ID选择器。<br>一个标签可以同时调用类选择器和ID选择器。</p>
+<h3 id="通配符选择器"><a href="#通配符选择器" class="headerlink" title="通配符选择器"></a>通配符选择器</h3><pre><code>*{属性：值;}
+</code></pre><p>特点：给所有的标签都使用相同的样式。<br>不推荐使用，增加浏览器和服务器负担。</p>
+<h2 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h2><p>概念：两个或者两个以上的基础选择器通过不同的方式连接在一起。</p>
+<h3 id="交集选择器"><a href="#交集选择器" class="headerlink" title="交集选择器"></a>交集选择器</h3><pre><code>标签+类（ID）选择器{属性：值；}
+div.box{}
+div#box{}
+</code></pre><h3 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h3><pre><code>选择器+空格+选择器{属性：值;}
+</code></pre><p>特点：无限制隔代。<br>只要能代表标签，标签、类选择器、ID选择器自由组合。</p>
+<h3 id="子选择器"><a href="#子选择器" class="headerlink" title="子选择器"></a>子选择器</h3><p>  选择器&gt;选择器{属性:值;}<br>  div&gt;span{}</p>
+<h3 id="并集选择器"><a href="#并集选择器" class="headerlink" title="并集选择器"></a>并集选择器</h3><p>  选择器，选择器，选择器{属性:值;}<br>  .box,#box,span,div{}</p>
+<h2 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h2></li>
+</ul>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><pre><code>div{
+    font-size:16px; //文字大小
+    font-weight:700; //值从100-900，文字粗细
+    font-family:微软雅黑; //字体
+    font-style:normal|italic; n默认值，it斜体
+    line-height;//行高
+}
+</code></pre><h3 id="字体的表达方式"><a href="#字体的表达方式" class="headerlink" title="字体的表达方式"></a>字体的表达方式</h3><p><img src="https://i.imgur.com/vKlZfEa.png" alt=""></p>
+<ul>
+<li><p>直接写中文</p>
+<pre><code>font-family:微软雅黑;
+</code></pre></li>
+<li><p>英文名称</p>
+<pre><code>font-family:microsoft yahei;
+</code></pre></li>
+<li><p>unicode 编码</p>
+<pre><code>font-family:\u5FAE\u8F6F\u96C5\u9ED1;
+</code></pre><p>escape(“微软雅黑”)<br>能得到<br>“%u5FAE%u8F6F%u96C5%u9ED1”<br><img src="https://i.imgur.com/x6DrWfe.png" alt=""></p>
+<h3 id="连写"><a href="#连写" class="headerlink" title="连写"></a>连写</h3><p>  font: font-style font-weight  font-size/line-height  font-family;<br>注意：font:后边写属性的值。一定按照书写顺序。<br>文本属性连写文字大小和字体为必写项。</p>
+<p>  Font:italic 700 16px/40px  微软雅黑;</p>
+</li>
+</ul>
+<h2 id="元素显示方式"><a href="#元素显示方式" class="headerlink" title="元素显示方式"></a>元素显示方式</h2><h3 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h3><p>典型：<code>div,h1-h6,p,ul,li</code><br>特点: </p>
+<pre><code>1. 独占一行
+2. 可以设置宽高
+2. 嵌套（包含）下，子块元素宽度（没有定义情况下）和父块元素宽度默认一致
+</code></pre><h3 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h3><p>典型:<code>span,a,strong,em,del,ins</code><br>特点：</p>
+<pre><code>1. 在一行上显示
+2. 不能直接设置宽高
+3. 元素的宽和高就是内容撑开的宽高
+</code></pre><h3 id="行内块元素"><a href="#行内块元素" class="headerlink" title="行内块元素"></a>行内块元素</h3><p>典型：<code>input img</code><br>特点:</p>
+<pre><code>1. 在一行显示
+2. 可以设置宽高
+</code></pre><h3 id="块元素、行内元素"><a href="#块元素、行内元素" class="headerlink" title="块元素、行内元素"></a>块元素、行内元素</h3><pre><code>//块转行
+div,p{
+    display:inline;
+}
+//行转块
+span{
+    display:block;
+}
+//块和行内转行内块
+div,a,span{
+    display:inline-block;
+}
+//行内块转块元素
+input{
+    display:block;
+}
+行内块转行内元素，经我测试不生效    
+</code></pre><h2 id="css三大特性"><a href="#css三大特性" class="headerlink" title="css三大特性"></a>css三大特性</h2><h3 id="层叠性"><a href="#层叠性" class="headerlink" title="层叠性"></a>层叠性</h3><p>当多个样式作用于同一个（同一类）标签时，样式发生了冲突，总是执行后边的代码(后边代码层叠前边的代码)。</p>
+<h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><pre><code>继承性发生的前提是包含（嵌套关系）
+
+文字的所有属性都可以继承。
+
+特殊情况：
+h系列不能继承文字大小。
+a标签不能继承文字颜色。
+</code></pre><h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><pre><code>默认样式
+0
+标签选择器
+1
+类选择器
+10
+id选择器
+100
+行内样式
+1000
+!important
+1000以上
+</code></pre><p>特点</p>
+<pre><code>继承的权重为0
+权重会叠加
+</code></pre><h3 id="链接伪类"><a href="#链接伪类" class="headerlink" title="链接伪类"></a>链接伪类</h3><pre><code>/*未访问的*/
+a:link{
+    color:red;
+}
+/*访问后的*/
+a:visited{
+    color:green;
+}
+/*鼠标滑过*/
+a:hover{
+    color:yellow;
+}
+/*选中的链接，正在点击的*/
+a:active{
+    color:pink;
+}
+</code></pre><p>注意： 在CSS定义中，a:hover 必须被置于 a:link 和 a:visited 之后，才是有效的。<br>注意： 在 CSS 定义中，a:active 必须被置于 a:hover 之后，才是有效的。</p>
+<pre><code>/*获取焦点时的样式*/
+input:focus{ 
+background-color:yellow;
+}
+</code></pre><h3 id="文本修饰"><a href="#文本修饰" class="headerlink" title="文本修饰"></a>文本修饰</h3><pre><code>text-decoration: 
+none  默认样式  
+underline 下划线   
+line-through 穿过文本的线
+</code></pre><h3 id="背景属性"><a href="#背景属性" class="headerlink" title="背景属性"></a>背景属性</h3><p>background-color 背景颜色<br>background-image 背景图片<br>background-repeat :    背景平铺</p>
+<pre><code>repeat 背景图像将向垂直和水平方向重复。这是默认
+no-repeat 不重复|repeat-x 水平重复|repeat-y 垂直重复
+</code></pre><p>background-position: 背景定位</p>
+<pre><code>left  |  right  |  center  |  top  | bottom 
+方位值只写一个的时候，另外一个值默认居中。
+20px 30px;
+写2个具体值的时候，第一个值代表水平方向，第二个值代表垂直方向。
+只写一个另一个默认50%，可以混合使用
+</code></pre><p>background-attachment:背景是否滚动</p>
+<pre><code>scroll 背景图片随页面的其余部分滚动。这是默认
+fixed 背景图像是固定的
+</code></pre><p>背景属性连写</p>
+<pre><code>background:red url(&quot;1.png&quot;) no-repeat 30px 40px scroll;
+</code></pre><p>连写的时候没有顺序要求，url为必写项。</p>
+<h2 id="行高"><a href="#行高" class="headerlink" title="行高"></a>行高</h2><pre><code>浏览器默认文字大小：16px
+行高=文字高度+上下边距
+行高=基线与基线之间的距离
+</code></pre><p><img src="https://i.imgur.com/MfRBzrL.png" alt=""><br>一行文字行高和父元素一致时，垂直居中显示</p>
+<h3 id="行高的单位"><a href="#行高的单位" class="headerlink" title="行高的单位"></a>行高的单位</h3><p>行高</p>
+<pre><code>line-height
+单位 2    2em    150%    40px
+</code></pre><p>文字大小</p>
+<pre><code>font-size
+</code></pre><p>只有一个元素</p>
+<pre><code>行高单位除了像素以外，行高都是与文字大小乘积。
+</code></pre><p>父元素和子元素时</p>
+<pre><code>不带单位时，子元素行高是和子元素文字大小相乘，em和%的子元素行高是和父元素文字大小相乘。
+子元素行高以像素为单位，就是定义的行高值。
+</code></pre><p>◆推荐行高使用像素为单位。</p>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><h3 id="边框-border"><a href="#边框-border" class="headerlink" title="边框 border"></a>边框 border</h3><p>border-top-style</p>
+<pre><code>solid 实线 dotted 点线 dashed 虚线
+</code></pre><p>border-top-color 边框颜色<br>border-top-width 边框粗细</p>
+<h3 id="边框属性连写"><a href="#边框属性连写" class="headerlink" title="边框属性连写"></a>边框属性连写</h3><p>没有顺序，style为必写项</p>
+<h3 id="边框合并-border-collapse"><a href="#边框合并-border-collapse" class="headerlink" title="边框合并 border-collapse"></a>边框合并 border-collapse</h3><h3 id="表单控件边框"><a href="#表单控件边框" class="headerlink" title="表单控件边框"></a>表单控件边框</h3><pre><code>outline-style:none   
+</code></pre><p>取消轮廓线</p>
+<pre><code>:focus 
+</code></pre><p>获取鼠标光标焦点</p>
+<pre><code>input:focus{}
+</code></pre><p>取消表单边框</p>
+<pre><code>border:0 none; 兼容性好
+</code></pre><p>label标签</p>
+<pre><code>&lt;label for=&quot;ID名&quot;&gt; 友好性好
+</code></pre><h3 id="内边距"><a href="#内边距" class="headerlink" title="内边距"></a>内边距</h3><pre><code>padding-left|right|top|bottom
+</code></pre><h4 id="padding连写"><a href="#padding连写" class="headerlink" title="padding连写"></a>padding连写</h4><p>padding:20px; 上下左右内边距都是20px<br>padding:20px 30px; 上下20px 左右30px<br>padding：20px 30px 40px; 上内边距为20px 左右内边距为30px 下内边距为40px<br>padding：20px 30px 40px 50px</p>
+<h4 id="盒子的宽度-定义的宽度-边框宽度-左右内边距"><a href="#盒子的宽度-定义的宽度-边框宽度-左右内边距" class="headerlink" title="盒子的宽度=定义的宽度+边框宽度+左右内边距"></a>盒子的宽度=定义的宽度+边框宽度+左右内边距</h4><h4 id="继承的盒子一般不会被撑大"><a href="#继承的盒子一般不会被撑大" class="headerlink" title="继承的盒子一般不会被撑大"></a>继承的盒子一般不会被撑大</h4><p>包含（嵌套）的盒子，如果子盒子没有定义宽度，给子盒子设置左右内边距，一般不会撑大盒子。</p>
+<h4 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h4><pre><code>margin-left|right|top|bottom
+</code></pre><h4 id="外边距连写"><a href="#外边距连写" class="headerlink" title="外边距连写"></a>外边距连写</h4><p>margin:20px; 上下左右20<br>margin:20px 30px; 上下20 左右30<br>margin:20px 30px 40px; 上20 左右30 下40<br>margin:20px 30px 40px 50px; 上20 右30 下40 左50</p>
+<h4 id="垂直方向外边距合并"><a href="#垂直方向外边距合并" class="headerlink" title="垂直方向外边距合并"></a>垂直方向外边距合并</h4><p>两个盒子垂直一个设置上外边距，一个设置下外边距，取的设置较大的值。</p>
+<h4 id="嵌套的盒子外边距塌陷"><a href="#嵌套的盒子外边距塌陷" class="headerlink" title="嵌套的盒子外边距塌陷"></a>嵌套的盒子外边距塌陷</h4><p>解决方法:</p>
+<pre><code>1 给父盒子设置边框
+2 给父盒子overflow:hidden;
+</code></pre><h4 id="行内元素-1"><a href="#行内元素-1" class="headerlink" title="行内元素"></a>行内元素</h4><p>行内元素可以定义左右的内外边距，上下会被忽略掉<br>行内块可以定义内外边距</p>
+<h4 id="文档流（标准流）"><a href="#文档流（标准流）" class="headerlink" title="文档流（标准流）"></a>文档流（标准流）</h4><p>元素自上而下，自左而右，块元素独占一行，行内元素在一行上显示，碰到父集元素的边框换行。</p>
+<h4 id="浮动布局"><a href="#浮动布局" class="headerlink" title="浮动布局"></a>浮动布局</h4><pre><code>float:  left   |   right
+</code></pre><p>特点：<br>★元素浮动之后不占据原来的位置（脱标）<br>★浮动的盒子在一行上显示<br>★行内元素浮动之后转换为行内块元素。（不推荐使用，转行内元素最好使用display: inline-block;）<br>浮动的作用:<br>◆文本绕图<br>◆制作导航<br>◆网页布局</p>
+<h4 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h4><p>当父盒子没有定义高度，嵌套的盒子浮动之后，下边的元素发生位置错误。<br>◆清除浮动不是不用浮动，清除浮动产生的不利影响。<br>◆清除浮动的方法<br>clear: left  |  right  | both<br>工作里用的最多的是clear:both;<br>★额外标签法<br> 在最后一个浮动元素后添加标签</p>
+<pre><code>&lt;div&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>★给父集元素使用overflow:hidden;    bfc<br>  如果有内容出了盒子，不能使用这个方法。</p>
+<pre><code>&lt;div style=&quot;overflow:hideen&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>★伪元素清除浮动  推荐使用</p>
+<pre><code>.clearfix:after{
+    content:&quot;.&quot;;
+    display:block;
+    height: 0;
+    line-height:0;
+    visbility:hidden;
+    clear:both;
+}
+/*兼容ie浏览器*/
+.clearfix{
+    zoom:1;
+}
+&lt;div class=&quot;clearfix&quot;&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h3 id="CSS初始化"><a href="#CSS初始化" class="headerlink" title="CSS初始化"></a>CSS初始化</h3><p>腾讯：</p>
+<pre><code>body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0} 
+body{font:12px&quot;宋体&quot;,&quot;Arial Narrow&quot;,HELVETICA;background:#fff;-webkit-text-size-adjust:100%;} 
+a{color:#2d374b;text-decoration:none} 
+a:hover{color:#cd0200;text-decoration:underline} 
+em{font-style:normal} 
+li{list-style:none} 
+img{border:0;vertical-align:middle} 
+table{border-collapse:collapse;border-spacing:0} 
+p{word-wrap:break-word} 
+</code></pre><p>新浪：</p>
+<pre><code>body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;} 
+body{background:#fff;color:#333;font-size:12px; margin-top:5px;font-family:&quot;SimSun&quot;,&quot;宋体&quot;,&quot;Arial Narrow&quot;;}
+ul,ol{list-style-type:none;} 
+select,input,img,select{vertical-align:middle;} 
+a{text-decoration:none;} 
+a:link{color:#009;} 
+a:visited{color:#800080;} 
+a:hover,a:active,a:focus{color:#c00;text-decoration:underline;} 
+</code></pre><p>淘宝：</p>
+<pre><code>body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; } 
+body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; } 
+h1, h2, h3, h4, h5, h6{ font-size:100%; } 
+address, cite, dfn, em, var { font-style:normal; } 
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; } 
+small{ font-size:12px; } 
+ul, ol { list-style:none; } 
+a { text-decoration:none; } 
+a:hover { text-decoration:underline; } 
+sup { vertical-align:text-top; } 
+sub{ vertical-align:text-bottom; } 
+legend { color:#000; } 
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; } 
+table { border-collapse:collapse; border-spacing:0; } 
+</code></pre><h4 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h4><pre><code>overflow:visible;
+</code></pre><p>默认值，内容不会被修剪，会呈现在元素框外<br>    overflow:hidden;<br>内容会被修剪，并且其余内容是不可见的<br>    overflow:scorll<br>内容会被修剪，但是浏览器会显示滚动条以便查看其余内容<br>    overflow:auto<br>如果内容被修剪，则浏览器会显示滚动条以便查看其余内容</p>
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><p>定位方向: left  | right  | top  | bottom</p>
+<h4 id="静态定位"><a href="#静态定位" class="headerlink" title="静态定位"></a>静态定位</h4><p>position:static;  默认值，就是文档流。</p>
+<h4 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h4><p>Position:absolute;<br>特点：<br>★元素使用绝对定位之后不占据原来的位置（脱标）<br>★元素使用绝对定位，位置是从浏览器出发。<br>★嵌套的盒子，父盒子没有使用定位，子盒子绝对定位，子盒子位置是从浏览器出发。<br>★嵌套的盒子，父盒子使用定位，子盒子绝对定位，子盒子位置是从父元素位置出发。<br>★给行内元素使用绝对定位之后，转换为行内块。（不推荐使用，推荐使用display:inline-block;）</p>
+<h4 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h4><p>Position: relative;<br>特点：<br>★位置从自身出发。<br>★还占据原来的位置。<br>★子绝父相（父元素相对定位，子元素绝对定位）<br>◆嵌套的盒子，父元素相对定位，子元素绝对定位，子元素从父元素出发设置自身位置。<br>★行内元素使用相对定位不能转行内块</p>
+<h4 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h4><p>Position:fixed;<br>特点：<br>★不占据原来的位置（脱标）<br>★位置从浏览器出发。<br>★会转化为行内块（不推荐，推荐使用display:inline-block;）</p>
+<h4 id="定位中的盒子居中显示"><a href="#定位中的盒子居中显示" class="headerlink" title="定位中的盒子居中显示"></a>定位中的盒子居中显示</h4><p>让标准流的盒子居中对齐：</p>
+<pre><code>margin:0 auto; 
+</code></pre><p>定位的盒子居中：先左右走父元素盒子的一半50%，在向左走子盒子的一半(margin-left:负值。)<br>    left: 50%;<br>    margin-left:-480px;</p>
+<h3 id="标签包含规范"><a href="#标签包含规范" class="headerlink" title="标签包含规范"></a>标签包含规范</h3><ol>
+<li>div可以包含所有的标签。</li>
+<li>p标签不能包含div h1等标签。</li>
+<li>h1可以包含p，div等标签。</li>
+<li>行内元素尽量包含行内元素，行内元素不要包含块元素。</li>
+</ol>
+<h3 id="规避脱标流"><a href="#规避脱标流" class="headerlink" title="规避脱标流"></a>规避脱标流</h3><ol>
+<li>尽量使用标准流。</li>
+<li>标准流解决不了的使用浮动。</li>
+<li>浮动解决不了的使用定位。</li>
+</ol>
+<pre><code>/*设置盒子左外边距为auto，将盒子冲到右边*/
+margin-left:auto;
+</code></pre><h3 id="图片和文字垂直居中对齐"><a href="#图片和文字垂直居中对齐" class="headerlink" title="图片和文字垂直居中对齐"></a>图片和文字垂直居中对齐</h3><pre><code>img{
+    /*图片与文字垂直居中对齐*/
+    vertical-align:middle;
+}
+</code></pre><p>vertical-align对inline-block最敏感。默认属性是:vertical-align:baseline;</p>
+<h3 id="Css可见性"><a href="#Css可见性" class="headerlink" title="Css可见性"></a>Css可见性</h3><pre><code>overflow:hidden;   溢出隐藏    
+visibility:hidden;   隐藏元素    隐藏之后还占据原来的位置。
+display:none;      隐藏元素    隐藏之后不占据原来的位置。
+Display:block;     元素可见
+Display:none  和display:block  常配合js使用。
+</code></pre><h3 id="css之内容移除（网页优化）"><a href="#css之内容移除（网页优化）" class="headerlink" title="css之内容移除（网页优化）"></a>css之内容移除（网页优化）</h3><p>text-indent</p>
+<pre><code>a{
+    display:inline-block;
+    text-indent:-5000em
+}
+</code></pre><p>将元素高度设置为0,使用内边距将盒子撑开，给盒子使用overflow:hidden;将文字隐藏。</p>
+<pre><code>.box{
+    height:0;
+    padding-top:100px;
+    overflow:hidden;
+}
+</code></pre><h3 id="Css精灵图"><a href="#Css精灵图" class="headerlink" title="Css精灵图"></a>Css精灵图</h3><h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><pre><code>input[type=text][class]{}
+</code></pre><h3 id="emmet快捷键："><a href="#emmet快捷键：" class="headerlink" title="emmet快捷键："></a>emmet快捷键：</h3><p>emmet是我们在sublime中的一个插件在这个插件中集成很多的快捷键。<br>html:</p>
+<p>####生成结构的快捷键：<br>！+ tab,可以生成html5的结构代码。</p>
+<p>####生成id名和类名<br>标签名.类名#id名+tab<br>没有标签名.类名+tab ==&gt;div</p>
+<p>####生成同级元素：<br>标签名+标签名+标签名 “+”tab</p>
+<p>####生成子类标签<br>标签名&gt;子标签名&gt;子标签名&gt;子标签名+tab<br>标签名&gt;子标签名&gt;子标签名&gt;子标签名^^子标签名+tab</p>
+<p>####带固定数量的标签:<br>            ul&gt;li*5+tab</p>
+<p>####带有序号名称<br>ul&gt;li.abc$*3 + tab</p>
+<p>####生成带有内容的标签：<br>ul&gt;li&gt;a{item}*5</p>
+<p>####css<br>        width:30px==&gt;w30+tab<br>  Height:30px==&gt;h30+tab<br>  Margin:30px==&gt;mg30+tab<br>Padding:30px==&gt; pd30+tab<br>Line-height:12px==&gt;lh12px+tab<br>Background==&gt;bg+tab</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/node/Node学习（一）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1268,7 +1721,7 @@ cls（clear screen）清屏
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/node/npm常用命令/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/git/Git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
@@ -1287,7 +1740,7 @@ cls（clear screen）清屏
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/28/node/npm常用命令/" itemprop="url">npm常用命令</a></h1>
+                <a class="post-title-link" href="/2018/04/28/git/Git/" itemprop="url">git教程</a></h1>
         
 
         <div class="post-meta">
@@ -1299,7 +1752,7 @@ cls（clear screen）清屏
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:55:38+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:23:44+08:00">
                 2018-04-28
               </time>
             
@@ -1322,8 +1775,8 @@ cls（clear screen）清屏
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
                   </a>
                 </span>
 
@@ -1361,371 +1814,142 @@ cls（clear screen）清屏
       
         
           
-            <p>#安装 install<br>npm install express<br>默认会安装express的最新版本，也可以通过在后面加版本号的方式安装指定版本，如npm install <a href="mailto:express@3.0.6" target="_blank" rel="noopener">express@3.0.6</a></p>
-<p>npm install <name> -g<br>将包安装到全局环境中</name></p>
-<p>但是代码中，直接通过require()的方式是没有办法调用全局安装的包的。全局的安装是供命令行使用的，就好像全局安装了vmarket后，就可以在命令行中直接运行vm命令</p>
-<p>npm install <name> –save<br>安装的同时，将信息写入package.json中项目路径中如果有package.json文件时，直接使用npm install方法就可以根据dependencies配置安装所有的依赖包，这样代码提交到github时，就不用提交node_modules这个文件夹了。</name></p>
-<p>2、npm view moduleNames：查看node模块的package.json文件夹<br>注意事项：如果想要查看package.json文件夹下某个标签的内容，可以使用$npm view moduleName labelName</p>
-<p>3、npm list：查看当前目录下已安装的node包<br>注意事项：Node模块搜索是从代码执行的当前目录开始的，搜索结果取决于当前使用的目录中的node_modules下的内容。$ npm list parseable=true可以目录的形式来展现当前安装的所有node包</p>
-<p>4、npm help：查看帮助命令</p>
-<p>5、npm view moudleName dependencies：查看包的依赖关系</p>
-<p>6、npm view moduleName repository.url：查看包的源文件地址</p>
-<p>7、npm view moduleName engines：查看包所依赖的Node的版本</p>
-<p>8、npm help folders：查看npm使用的所有文件夹</p>
-<p>9、npm rebuild moduleName：用于更改包内容后进行重建</p>
-<p>10、npm outdated：检查包是否已经过时，此命令会列出所有已经过时的包，可以及时进行包的更新</p>
-<p>11、npm update moduleName：更新node模块</p>
-<p>12、npm uninstall moudleName：卸载node模块</p>
-<p>13、一个npm包是包含了package.json的文件夹，package.json描述了这个文件夹的结构。访问npm的json文件夹的方法如下：<br>$ npm help json<br>此命令会以默认的方式打开一个网页，如果更改了默认打开程序则可能不会以网页的形式打开。</p>
-<p>14、发布一个npm包的时候，需要检验某个包名是否已存在<br>$ npm search packageName</p>
-<p>15、npm init：会引导你创建一个package.json文件，包括名称、版本、作者这些信息等</p>
-<p>16、npm root：查看当前包的安装路径<br>npm root -g：查看全局的包的安装路径</p>
-<p>17、npm -v：查看npm安装的版本</p>
+            <h2 id="Git基础知识"><a href="#Git基础知识" class="headerlink" title="Git基础知识"></a>Git基础知识</h2><h4 id="在Windows上安装Git"><a href="#在Windows上安装Git" class="headerlink" title="在Windows上安装Git"></a>在Windows上安装Git</h4><p>从Git官网直接下载安装程序，然后按默认选项安装即可。<br>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！</p>
+<h4 id="用户名和邮箱地址的作用"><a href="#用户名和邮箱地址的作用" class="headerlink" title="用户名和邮箱地址的作用"></a>用户名和邮箱地址的作用</h4><pre><code>用户名和邮箱地址是本地git客户端的一个变量，不随git库而改变。
+每次commit都会用用户名和邮箱纪录。
+github的contributions统计就是按邮箱来统计的。
+</code></pre><h4 id="修改用户名和邮箱地址："><a href="#修改用户名和邮箱地址：" class="headerlink" title="修改用户名和邮箱地址："></a>修改用户名和邮箱地址：</h4><pre><code>$ git config --global user.name &quot;username&quot;
+$ git config --global user.email &quot;email&quot;
+Git可以配置了一个全局的用户名和邮箱：
+</code></pre><h4 id="Git用户名邮箱的全局配置和单仓库配置"><a href="#Git用户名邮箱的全局配置和单仓库配置" class="headerlink" title="Git用户名邮箱的全局配置和单仓库配置"></a>Git用户名邮箱的全局配置和单仓库配置</h4><p>Git可以配置了一个全局的用户名和邮箱：</p>
+<pre><code>$ git config --global user.name &quot;xxxxx&quot;
 
-          
-        
-      
-    </div>
-    
-    
-    
+$ git config --global user.email &quot;xxxxx@xx.com&quot;
 
-    
+$ git config --list
+</code></pre><p>但是你的项目可能是公司自己搭建的gitlab进行管理的，那就需要单独针对这个项目单独配置用户名和邮箱。</p>
+<p>在项目根目录下进行单独配置：</p>
+<pre><code>$ git config user.name &quot;gitlab&apos;s Name&quot;
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/web/html/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Harper">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Harper's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/28/web/html/" itemprop="url">html</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:55:38+08:00">
-                2018-04-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web/" itemprop="url" rel="index">
-                    <span itemprop="name">web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><pre><code>Windows+e 我的电脑
-Windows+r 打开运行
-Alt+tab   切换软件
-Ctrl+tab  软件文档之间的切换
-F2          重命名
-</code></pre><h3 id="Web标准"><a href="#Web标准" class="headerlink" title="Web标准"></a>Web标准</h3><p>W3C组织（万维网联盟）</p>
-<pre><code>HTML    结构标准     相当于人的身体
-CSS         表现标准  相当于给人化妆，更漂亮
-Js        行为标准     相当于人在唱歌，更灵动
-</code></pre><h3 id="浏览器内核"><a href="#浏览器内核" class="headerlink" title="浏览器内核"></a>浏览器内核</h3><pre><code>IE            Chrome（谷歌）      Firefox（火狐）   Safari（苹果）
-Trident        Blink              Gecko               Webkit
-</code></pre><p>浏览器的内核是分为两个部分的，一是渲染引擎，另一个是JS引擎。<br>现在JS引擎比较独立，内核更加倾向于说渲染引擎。<br>渲染引擎决定了浏览器如何显示网页的内容以及页面的格式信息<br>兼容性出现问题的根本原因就是渲染引擎的不同</p>
-<h3 id="浏览器和服务器"><a href="#浏览器和服务器" class="headerlink" title="浏览器和服务器"></a>浏览器和服务器</h3><ol>
-<li>浏览器向服务器建发送请求（通过http协议），服务器返回响应报文</li>
-<li>http协议：超文本传输协议，也就是浏览器和服务器端的网页传输数据的约束和规范</li>
-<li><p>url协议：平时我们写的网址就是url协议，规定url地址的格式<br>协议规定格式：</p>
-<p> scheme://host.domain:port/path/filename<br> scheme        因特网服务类型。如http<br> host        域主机（http默认主机是www）<br> domain        因特网域名 如w3school.com.cn<br> :port         定义端口号（网页默认端口是：80）<br> path         网页所在服务器上的路径<br> filename     文件名称</p>
-</li>
-</ol>
-<h2 id="Html"><a href="#Html" class="headerlink" title="Html"></a>Html</h2><p>超文本标记语言</p>
-<h3 id="Html结构标准"><a href="#Html结构标准" class="headerlink" title="Html结构标准"></a>Html结构标准</h3><pre><code>&lt; !doctype html&gt;    声明文档类型那个
-&lt;html&gt;                根标签
-&lt;head&gt;                头标签
-&lt;title&gt;&lt;/title&gt;        标题标签
-&lt;/head&gt;
-&lt;body&gt;                主体标签
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>sublime快捷键使用： <a href="http://blog.csdn.netdetails/11530751" target="_blank" rel="noopener">http://blog.csdn.netdetails/11530751</a></p>
-<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><h3 id="单标签"><a href="#单标签" class="headerlink" title="单标签"></a>单标签</h3><p>注释标签 <code>&lt;!-- 注释 --&gt;</code><br>换行标签 <code>&lt;br/&gt;</code><br>水平线标签 <code>&lt;hr/&gt;</code></p>
-<h3 id="双标签"><a href="#双标签" class="headerlink" title="双标签"></a>双标签</h3><p>段落标签 </p>
-<pre><code>&lt;p&gt;这是一个段落&lt;/p&gt;
-</code></pre><p>特点：上下自动生成空白行，<br>换行不会生成空白行</p>
-<p>标题标签<br>h1-h6<br>h1在一个页面只能出现一次</p>
-<pre><code>&lt;h1&gt;这是个h1&lt;/h1&gt;
-</code></pre><p>文本标签</p>
-<pre><code>&lt;font size=&quot;6&quot; color=&quot;red&quot;&gt;这是个文本&lt;/font&gt;
-</code></pre><h3 id="文本格式化标签"><a href="#文本格式化标签" class="headerlink" title="文本格式化标签"></a>文本格式化标签</h3><p>文本加粗标签</p>
-<pre><code>&lt;strong&gt;粗大&lt;/strong&gt;
-&lt;b&gt;&lt;/b&gt;
-</code></pre><p>文本倾斜标签</p>
-<pre><code>&lt;em&gt;&lt;/em&gt;
-&lt;i&gt;&lt;/i&gt;
-</code></pre><p>删除线标签</p>
-<pre><code>&lt;del&gt;&lt;/del&gt;
-&lt;s&gt;&lt;/s&gt;
-</code></pre><p>下划线标签</p>
-<pre><code>&lt;ins&gt;&lt;/ins&gt;
-&lt;u&gt;&lt;/u&gt;
-</code></pre><p>尽量使用<code>strong`</code>em<code>del</code>ins`,因为更有语义化</p>
-<h3 id="图片标签"><a href="#图片标签" class="headerlink" title="图片标签"></a>图片标签</h3><pre><code>&lt;img src=&quot;图片来源（必写属性）&quot;    alt=&quot;替换文本（图片不显示时显示的文本）&quot;    
-title=&quot;提示文本&quot;     width=&quot;图片宽度&quot;  height=&quot;图片高度&quot;&gt;
-</code></pre><p>图片没有定义宽高的时候，图片按照百分之百比例显示，如果只更改图片的宽度或者高度，图片等比例缩放。</p>
-<pre><code>相对路径
-src = &quot;../img.jpg&quot;
-绝对路径
-src = &quot;F:/imgs/img.jpg&quot;
-</code></pre><h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><pre><code>&lt;a  href = &quot;去往路径（必写属性）&quot;
-    title = &quot;提示文本 鼠标放在链接上提示的文字&quot;
-    target = &quot;_self&quot;&gt;
-    &quot;_self&quot; 默认值 在自身页面打开（关闭自身页面，打开链接页面）
-    &quot;_blank&quot; 打开新页面（自身页面不关闭，打开一个新的链接页面）
-&lt;/a&gt;
-</code></pre><p>锚链接</p>
-<ol>
-<li><p>先定义一个锚点</p>
- <p id="md"></p></li>
-<li><p>超链接到锚点</p>
-<p> <a href="#md">回到顶部</a><br>空链接<br> <a href="#">空链</a><br>压缩文件下载 不推荐使用</p>
-<p> <a href="../../ppt.rar">压缩包</a><br>超链接优化写法</p>
-<p> <base target="_blank"> 让所有的超链接都在新窗口打开</p>
-<h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><p> 特殊字符 | 描述 | 字符代码</p>
-<ul>
-<li>| :-: | -:<br>| 空格符 | &nbsp;<br>&lt; | 小于号 | &lt;<blockquote>
-<p>   大于号    &gt;<br>&amp;    和号    &amp;<br>¥    人民币/日元    &yen;<br>©    版权    &copy;<br>®    注册商标    &reg;<br>×    乘号    &times;<br>÷    除号    &divide;    </p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><pre><code>&lt;ul&gt;
-    &lt;li&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-</code></pre><p>type = “square”    小方块    “disc”  实心小圆圈    “circle” 空心小圆圈</p>
-<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><pre><code>&lt;ol&gt;
-    &lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;    
-</code></pre><p>type=”1,a,A,i,I” type的值可以为1,a,A,i,I<br>start=”3”  决定了开始的位置。</p>
-<h3 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h3><pre><code>&lt;dl&gt;
-    &lt;dt&gt;小标题&lt;/dt&gt;
-    &lt;dd&gt;解释标题&lt;/dd&gt;
-    &lt;dd&gt;解释标题&lt;/dd&gt;
-&lt;/dl&gt;
-</code></pre><h2 id="音乐标签"><a href="#音乐标签" class="headerlink" title="音乐标签"></a>音乐标签</h2><pre><code>&lt;embed src=&quot;1.mp3&quot; hidden=&quot;true&quot;&gt;
-</code></pre><p>src 设置音乐路径 hidden 隐藏播放按钮 true隐藏 false显示</p>
-<h2 id="HTML5标签结构"><a href="#HTML5标签结构" class="headerlink" title="HTML5标签结构"></a>HTML5标签结构</h2><pre><code>!+tab 可以写成html5结构
-</code></pre><h2 id="字符编码"><a href="#字符编码" class="headerlink" title="字符编码"></a>字符编码</h2><pre><code>Ascll Ansi Unicode Gbk GB2321 Big5 utf-8（通用编码）
-&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
-&lt;meta charset=&quot;UTF-8&quot;&gt;
-</code></pre><h2 id="meta"><a href="#meta" class="headerlink" title="meta"></a>meta</h2><pre><code>&lt;!-- 指定网页关键字 - 用于告诉搜索引擎网页内容相关关键词。 --&gt;
-&lt;meta name = &quot;keyworks&quot; content = &quot;HTML, HTML DOM, JavaScript&quot;&gt;
-&lt;!-- 指定页面描述。搜索索引擎可以使用这个描述作为搜索结果。 --&gt;
-&lt;meta name = &quot;description&quot; content = &quot;免费编程入门教程&quot;&gt;
-&lt;!--重定向--&gt;
-&lt;meta http-equiv=&quot;refresh&quot; content=&quot;1;http://www.baidu.com&quot;&gt;
-</code></pre><h2 id="link"><a href="#link" class="headerlink" title="link"></a>link</h2><pre><code>&lt;!-- 链接外部样式表 --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;1.css&quot;&gt;
-&lt;!--设置icon图标--&gt;
-&lt;link rel=&quot;icon&quot; href=&quot;favicon.ico&quot;&gt;
-</code></pre><h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><pre><code>&lt;table cellspacing=&quot;2&quot; cellpadding=&quot;2&quot;&gt;
-    &lt;tr&gt;
-        &lt;td&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;        
-属性 
-cellspacing=&quot;2&quot; 单元格与单元格的距离
-cellpadding=&quot;2&quot; 单元格边距 内容距边框的距离
-align=&quot;left | center | right&quot;
-如果直接给表格用align=”center”  表格居中
-如果给tr或者td使用   ，tr或者td内容居中。
-</code></pre><h3 id="表格标准结构"><a href="#表格标准结构" class="headerlink" title="表格标准结构"></a>表格标准结构</h3><pre><code>&lt;table&gt;
-    &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;td&gt;&lt;/td&gt;
-            &lt;td&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td&gt;&lt;/td&gt;
-            &lt;td&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
-    &lt;tfoot&gt;
-        &lt;tr&gt;
-            &lt;td&gt;&lt;/td&gt;
-            &lt;td&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tfoot&gt;
-&lt;/table&gt;
-</code></pre><h3 id="表头与单元格合并"><a href="#表头与单元格合并" class="headerlink" title="表头与单元格合并"></a>表头与单元格合并</h3><pre><code>&lt;table border=&quot;1&quot;&gt;
-    &lt;caption&gt;表头&lt;/caption&gt;
-        &lt;tr&gt;
-            &lt;td colspan=&quot;2&quot;&gt;111&lt;/td&gt;
-            &lt;!--&lt;td&gt;222&lt;/td&gt;--&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;111&lt;/td&gt;
-            &lt;td rowspan=&quot;2&quot;&gt;222&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;111&lt;/td&gt;
-            &lt;!--&lt;td&gt;222&lt;/td&gt;--&gt;
-        &lt;/tr&gt;
-    &lt;/tfoot&gt;
-&lt;/table&gt;
-</code></pre><p>colspan=”2”  跨列数<br>rowspan=”2”  跨行数</p>
-<p><th>标题</th><br>用法和td一样，文字自动加粗水平居中对齐<br>td垂直对齐方式</p>
-<pre><code>&lt;td valign=&quot;bottom&quot;&gt;111&lt;/td&gt;
-</code></pre><p>valign=”top |middle| bottom”</p>
-<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><h3 id="表单域"><a href="#表单域" class="headerlink" title="表单域"></a>表单域</h3><pre><code>&lt;form action=&quot;1.php&quot; method=&quot;get&quot;&gt;
-</code></pre><p>属性action处理信息<br>method=”get|post”<br>get 通过地址栏提供信息，安全性差<br>post 通过1.php处理信息，安全性高</p>
-<h3 id="文本输入框"><a href="#文本输入框" class="headerlink" title="文本输入框"></a>文本输入框</h3><pre><code>用户名：&lt;input type=&quot;text&quot; maxlength=&quot;6&quot; readonly=&quot;readonly&quot; disabled=&quot;disabled&quot; name =&quot;username&quot; value=&quot;大前端&quot;&gt;
-</code></pre><h3 id="密码输入框"><a href="#密码输入框" class="headerlink" title="密码输入框"></a>密码输入框</h3><pre><code>密码: &lt;input type=&quot;password&quot; name=pwd&gt;
-</code></pre><h3 id="单选框"><a href="#单选框" class="headerlink" title="单选框"></a>单选框</h3><pre><code>&lt;input type = &quot;radio&quot; name = &quot;gender&quot; checked=&quot;checked&quot;&gt;男
-&lt;input type = &quot;radio&quot; name = &quot;gender&quot;&gt;女
-</code></pre><p>下拉列表</p>
-<pre><code>&lt;select multiple=&quot;multiple&quot;&gt;
-    &lt;option selected=&quot;selected&quot;&gt;1&lt;/option&gt;
-    &lt;option&gt;2&lt;/option&gt;
-    &lt;option&gt;3&lt;/option&gt;
-&lt;/select&gt;
-
-&lt;optgroup label=&quot;分组名&quot;&gt;
-    &lt;option selected=&quot;selected&quot;&gt;1&lt;/option&gt;
-    &lt;option&gt;2&lt;/option&gt;
-    &lt;option&gt;3&lt;/option&gt;
-&lt;/optgroup&gt;
-</code></pre><p>多选款</p>
-<pre><code>&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt;喝酒
-&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt;喝酒
-&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt;喝酒
-</code></pre><p>多行文本<br>    <textarea cols="130" rows="10"><br>    cols字符长度<br>    rows输入行数<br>    </textarea><br>文件上传控件<br>    <input type="file"><br>文件提交按钮<br>    <input type="submit"><br>普通按钮<br>    <input type="button" value="普通按钮"><br>不能提交信息，配合js使用<br>图片按钮<br>    <input type="image" src="按钮.jpg"><br>图片按钮可实现信息提交功能</p>
-<h3 id="重置按钮"><a href="#重置按钮" class="headerlink" title="重置按钮"></a>重置按钮</h3><pre><code>&lt;input type=&quot;reset&quot;&gt;
-</code></pre><p>将信息重置到默认状态</p>
-<h3 id="表单信息分组"><a href="#表单信息分组" class="headerlink" title="表单信息分组"></a>表单信息分组</h3><pre><code>&lt;from action=&quot;1.php&quot; method=&quot;post&quot;&gt;
-    &lt;fieldset&gt;对表单信息分组
-        &lt;legend&gt;表单信息分组名称&lt;/legend&gt;
-    &lt;/fieldset&gt;
-&lt;/form&gt;
-</code></pre><h3 id="hmlt5-补充表单控件"><a href="#hmlt5-补充表单控件" class="headerlink" title="hmlt5 补充表单控件"></a>hmlt5 补充表单控件</h3><pre><code>&lt;input type =&quot;url&quot;&gt;网址控件
-&lt;input type=&quot;date&quot;&gt;日期控件
-&lt;input type=&quot;time&quot;&gt;时间控件
-&lt;input type=&quot;email&quot;&gt;邮箱控件
-&lt;input type=&quot;number&quot; step=&quot;5&quot;&gt;数字控件
-&lt;input type=&quot;range&quot;&gt;滑块控件
-</code></pre><p>标签语义化<br>    好的语义化的网站标准就是去掉样式表文件之后，结构依然很清晰。<br>标签语义化概念：根据内容的结构化（内容语义化），选择合适的标签（代码语义化）</p>
-<p>-标签语义化意义：<br>       1:网页结构合理<br>          2:有利于seo:和搜索引擎建立良好沟通，有了良好的结构和语                            义你的网页内容自然容易被搜索引擎抓取；<br>          3:方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备）<br>          4:便于团队开发和维护</p>
-<p>1：尽可能少的使用无语义的标签div和span；</p>
-<p>2：在语义不明显时，既可以使用div或者p时，尽量用p, 因为p在默认情况下有上下间距，对兼容特殊终端有利；</p>
-<p>3：不要使用纯样式标签，如：b、font、u等，改用css设置。</p>
-<p>4：需要强调的文本，可以包含在strong或者em标签中strong默认样式是加粗（不要用b），em是斜体（不用i）；</p>
-
+$ git config user.email &quot;gitlab@xx.com&quot;
+</code></pre><h4 id="查看用户名和邮箱地址："><a href="#查看用户名和邮箱地址：" class="headerlink" title="查看用户名和邮箱地址："></a>查看用户名和邮箱地址：</h4><pre><code>$ git config user.name
+$ git config user.email
+</code></pre><h4 id="查看git配置："><a href="#查看git配置：" class="headerlink" title="查看git配置："></a>查看git配置：</h4><pre><code>$ git config --list
+</code></pre><h4 id="git代理设置（一般用于公司内部网络）"><a href="#git代理设置（一般用于公司内部网络）" class="headerlink" title="git代理设置（一般用于公司内部网络）"></a>git代理设置（一般用于公司内部网络）</h4><pre><code>$ git config --global http.proxy ip:port
+git config --global http.proxy http://proxy.piccnet.com.cn:3128
+</code></pre><h4 id="查看代理："><a href="#查看代理：" class="headerlink" title="查看代理："></a>查看代理：</h4><pre><code>$ git config http.proxy
+</code></pre><h4 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h4><pre><code>$ git config --global --unset http.proxy
+$ git config --global --unset https.proxy
+</code></pre><h4 id="初始化一个Git仓库"><a href="#初始化一个Git仓库" class="headerlink" title="初始化一个Git仓库"></a>初始化一个Git仓库</h4><pre><code>$ git init
+</code></pre><h4 id="添加文件到Git仓库"><a href="#添加文件到Git仓库" class="headerlink" title="添加文件到Git仓库"></a>添加文件到Git仓库</h4><pre><code>$ git add &lt;file&gt;
+//注意，可反复多次使用，添加多个文件
+$ git commit -m &quot;wrote a file&quot;
+</code></pre><p>提交所有文件</p>
+<pre><code>git add . 
+</code></pre><p>如果你觉得 git add 提交缓存的流程太过繁琐，Git 也允许你用 -a 选项跳过这一步。命令格式如下：</p>
+<pre><code>git commit -a -m &quot;&quot;
+</code></pre><p>如果你没有设置 -m 选项，Git 会尝试为你打开一个编辑器以填写提交信息。 如果 Git 在你对它的配置中找不到相关信息，默认会打开 vim。屏幕会像这样：</p>
+<pre><code># Please enter the commit message for your changes. Lines starting
+# with &apos;#&apos; will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+#
+# modified:   hello.php
+#
+~
+~
+&quot;.git/COMMIT_EDITMSG&quot; 9L, 257C
+</code></pre><h4 id="查看工作区的状态"><a href="#查看工作区的状态" class="headerlink" title="查看工作区的状态"></a>查看工作区的状态</h4><pre><code>$ git status
+</code></pre><h4 id="查看修改内容"><a href="#查看修改内容" class="headerlink" title="查看修改内容"></a>查看修改内容</h4><pre><code>$ git diff
+</code></pre><h4 id="查看指定文件工作区和版本库里面最新版本的区别"><a href="#查看指定文件工作区和版本库里面最新版本的区别" class="headerlink" title="查看指定文件工作区和版本库里面最新版本的区别"></a>查看指定文件工作区和版本库里面最新版本的区别</h4><pre><code>$ git diff HEAD -- &lt;file&gt;
+</code></pre><h4 id="查看历史记录"><a href="#查看历史记录" class="headerlink" title="查看历史记录"></a>查看历史记录</h4><pre><code>$ git log
+</code></pre><h4 id="更漂亮的查看历史记录"><a href="#更漂亮的查看历史记录" class="headerlink" title="更漂亮的查看历史记录"></a>更漂亮的查看历史记录</h4><pre><code>$ git log --pretty=oneline
+3628164fb26d48395383f8f31179f24e0882e1e0 append GPL
+ea34578d5496d7dd233c827ed32a8cd576c5ee85 add distributed
+cb926e7ea50ad11b8f9e909c05226233bf755030 wrote a readme file
+</code></pre><p>3628164…882e1e0的是commit id（版本号）</p>
+<h4 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h4><pre><code>$ git reset --hard HEAD^
+</code></pre><p>上一个版本就是HEAD^，上上一个版本就是HEAD^^，<br>往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。</p>
+<h4 id="通过commit-id指定回到未来的某个版本："><a href="#通过commit-id指定回到未来的某个版本：" class="headerlink" title="通过commit id指定回到未来的某个版本："></a>通过<code>commit id</code>指定回到未来的某个版本：</h4><pre><code>$ git reset --hard 3628164
+</code></pre><h4 id="查看命令历史"><a href="#查看命令历史" class="headerlink" title="查看命令历史"></a>查看命令历史</h4><pre><code>$ git reflog
+</code></pre><h4 id="直接丢弃工作区的修改"><a href="#直接丢弃工作区的修改" class="headerlink" title="直接丢弃工作区的修改"></a>直接丢弃工作区的修改</h4><pre><code>$ git checkout -- &lt;file&gt;
+</code></pre><p>这里有两种情况：<br>一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；<br>一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。<br>总之，就是让这个文件回到最近一次git commit或git add时的状态。######</p>
+<h4 id="把暂存区的修改回退到工作区"><a href="#把暂存区的修改回退到工作区" class="headerlink" title="把暂存区的修改回退到工作区"></a>把暂存区的修改回退到工作区</h4><pre><code>$ git reset HEAD &lt;file&gt;
+</code></pre><h4 id="从版本库删除文件"><a href="#从版本库删除文件" class="headerlink" title="从版本库删除文件"></a>从版本库删除文件</h4><pre><code>$ git rm &lt;file&gt;
+$ git commit -m &quot;remove file&quot;
+</code></pre><h3 id="本地git连接github远程仓库"><a href="#本地git连接github远程仓库" class="headerlink" title="本地git连接github远程仓库"></a>本地git连接github远程仓库</h3><h4 id="创建SSH-Key"><a href="#创建SSH-Key" class="headerlink" title="创建SSH Key"></a>创建SSH Key</h4><pre><code>$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;
+</code></pre><p>在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，id_rsa.pub是公钥<br>登陆GitHub，打开“settings”，“SSH and GPG Keys”页面,然后点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容,点“Add Key”</p>
+<h4 id="验证与github远程库连接是否成功"><a href="#验证与github远程库连接是否成功" class="headerlink" title="验证与github远程库连接是否成功"></a>验证与github远程库连接是否成功</h4><pre><code>$ ssh -T git@github.com
+</code></pre><h4 id="查看具体信息"><a href="#查看具体信息" class="headerlink" title="查看具体信息"></a>查看具体信息</h4><pre><code>$ ssh -T -v git@github.com
+</code></pre><h4 id="把本地库的内容推送到远程"><a href="#把本地库的内容推送到远程" class="headerlink" title="把本地库的内容推送到远程"></a>把本地库的内容推送到远程</h4><p>在Github点击”New repository”按钮，创建一个新的仓库，在填入Repository name，其他保持默认设置，点击”Create repository”按钮，就成功地创建了一个新的Git仓库<br>把本地库的内容推送到远程</p>
+<pre><code>$ git remote add origin git@github.com:GaoGu/learngit.git
+$ git push -u origin master
+</code></pre><p>从现在起，只要本地作了提交，就可以通过命令：</p>
+<pre><code>$ git push origin master
+</code></pre><h4 id="从远程库克隆到本地"><a href="#从远程库克隆到本地" class="headerlink" title="从远程库克隆到本地"></a>从远程库克隆到本地</h4><p>在Github创建仓库时，勾选<code>Initialize this repository with a README</code>，这样GitHub会自动为我们创建一个README.md文件。<br>用命令git clone克隆一个本地库：</p>
+<pre><code>$ git clone git@github.com:GaoGu/gitskills.git
+</code></pre><h3 id="创建和合并分支"><a href="#创建和合并分支" class="headerlink" title="创建和合并分支"></a>创建和合并分支</h3><p>Git鼓励大量使用分支：</p>
+<h4 id="查看分支："><a href="#查看分支：" class="headerlink" title="查看分支："></a>查看分支：</h4><pre><code>git branch
+</code></pre><h4 id="创建分支："><a href="#创建分支：" class="headerlink" title="创建分支："></a>创建分支：</h4><pre><code>git branch &lt;name&gt;
+</code></pre><h4 id="切换分支："><a href="#切换分支：" class="headerlink" title="切换分支："></a>切换分支：</h4><pre><code>git checkout &lt;name&gt;
+</code></pre><h4 id="创建-切换分支："><a href="#创建-切换分支：" class="headerlink" title="创建+切换分支："></a>创建+切换分支：</h4><pre><code>git checkout -b &lt;name&gt;
+</code></pre><h4 id="合并某分支到当前分支："><a href="#合并某分支到当前分支：" class="headerlink" title="合并某分支到当前分支："></a>合并某分支到当前分支：</h4><pre><code>git merge &lt;name&gt;
+</code></pre><p>当当前分支和某分支有相同文件修改时<br>Git无法自动合并分支时会发生冲突，强行使用<code>git merge &lt;name&gt;</code>后<br>Git用<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;，=======，&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>标记出不同分支的内容<br>用<code>git log --graph</code>命令可以看到分支合并图</p>
+<pre><code>$ git log --graph --pretty=oneline --abbrev-commit
+</code></pre><p>通常，合并分支时，如果可能，Git会用<code>Fast forward</code>模式，但这种模式下，删除分支后，会丢掉分支信息。<br>使用<code>--no-ff</code>参数合并分支，表示禁用<code>Fast forward</code>模式</p>
+<pre><code>$ git merge --no-ff -m &quot;merge with no-ff&quot; &lt;name&gt;
+</code></pre><p>合并分支时，加上–no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并。</p>
+<h4 id="删除分支："><a href="#删除分支：" class="headerlink" title="删除分支："></a>删除分支：</h4><pre><code>$ git branch -d &lt;name&gt;
+</code></pre><p>强行删除<br>    $ git branch -D <name></name></p>
+<h4 id="stash功能"><a href="#stash功能" class="headerlink" title="stash功能"></a><code>stash</code>功能</h4><p>把当前工作现场“储藏”起来</p>
+<pre><code>$ git stash
+</code></pre><p>恢复现场</p>
+<pre><code>$ git stash apply
+</code></pre><p>但是恢复后，<code>stash</code>内容并不删除，你需要用<code>git stash drop</code>来删除<br>另一种方式是用<code>git stash pop</code>，恢复的同时把<code>stash</code>内容也删了</p>
+<pre><code>$ git stash pop
+</code></pre><p>查看<code>stash</code></p>
+<pre><code>$ git stash list
+stash@{0}: WIP on dev: 6224937 add merge
+</code></pre><p>可以多次<code>stash</code>,先用<code>git stash list</code>查看，然后恢复指定的<code>stash</code></p>
+<pre><code>$ git stash apply stash@{0}
+</code></pre><h4 id="查看远程库的信息"><a href="#查看远程库的信息" class="headerlink" title="查看远程库的信息"></a>查看远程库的信息</h4><pre><code>$ git remote
+$ git remote -v
+</code></pre><h4 id="推送分支"><a href="#推送分支" class="headerlink" title="推送分支"></a>推送分支</h4><pre><code>$ git push origin &lt;branch-name&gt;
+</code></pre><p>如果推送失败，先用<code>git pull</code>抓取远程的新提交,如果有冲突，要先处理冲突</p>
+<h4 id="创建远程origin的分支到本地"><a href="#创建远程origin的分支到本地" class="headerlink" title="创建远程origin的分支到本地"></a>创建远程origin的分支到本地</h4><pre><code>$ git checkout -b &lt;branch-name&gt; origin/&lt;branch-name&gt;
+</code></pre><h4 id="建立本地分支和远程分支的关联"><a href="#建立本地分支和远程分支的关联" class="headerlink" title="建立本地分支和远程分支的关联"></a>建立本地分支和远程分支的关联</h4><pre><code>$ git branch --set-upstream &lt;branch-name&gt; origin/&lt;branch-name&gt;
+</code></pre><h4 id="创建标签"><a href="#创建标签" class="headerlink" title="创建标签"></a>创建标签</h4><pre><code>$ git tag &lt;tagname&gt;
+</code></pre><p>给历史提交,<code>commit id</code>为<code>6224937</code>打标签</p>
+<pre><code>$ git tag &lt;tagname&gt; 6224937
+</code></pre><p>查看标签</p>
+<pre><code>$ git tag 
+</code></pre><p>创建带有说明的标签，用-a指定标签名，-m指定说明文字：</p>
+<pre><code>$ git tag -a &lt;tagname&gt; -m &quot;this is tag&quot; &lt;commit id&gt;
+</code></pre><p>通过-s用私钥签名一个标签</p>
+<pre><code>$ git tag -s &lt;tagname&gt; -m &quot;this is tag&quot; &lt;commit id&gt;
+</code></pre><p>签名采用PGP签名，因此，必须首先安装gpg（GnuPG），如果没有找到gpg，或者没有gpg密钥对，就会报错：</p>
+<pre><code>gpg: signing failed: secret key not available
+error: gpg failed to sign the data
+error: unable to sign the tag
+</code></pre><p>如果报错，请参考GnuPG帮助文档配置Key。</p>
+<h4 id="查看说明文字或PGP签名"><a href="#查看说明文字或PGP签名" class="headerlink" title="查看说明文字或PGP签名"></a>查看说明文字或PGP签名</h4><pre><code>$ git show &lt;tagname&gt;
+</code></pre><h4 id="删除标签"><a href="#删除标签" class="headerlink" title="删除标签"></a>删除标签</h4><pre><code>$ git tag -d &lt;tagname&gt;
+</code></pre><h4 id="推送某个标签到远程"><a href="#推送某个标签到远程" class="headerlink" title="推送某个标签到远程"></a>推送某个标签到远程</h4><pre><code>$ git push origin &lt;tagname&gt;
+</code></pre><p>推送全部尚未推送到远程的本地标签</p>
+<pre><code>$ git push origin --tags
+</code></pre><h4 id="删除远程标签"><a href="#删除远程标签" class="headerlink" title="删除远程标签"></a>删除远程标签</h4><pre><code>$ git tag -d &lt;tagname&gt;
+$ git push origin :refs/tags/&lt;tagname&gt;
+</code></pre><h4 id="使用GitHub"><a href="#使用GitHub" class="headerlink" title="使用GitHub"></a>使用GitHub</h4><p>在GitHub上，可以任意Fork开源仓库；</p>
+<p>自己拥有Fork后的仓库的读写权限；</p>
+<p>可以推送pull request给官方仓库来贡献代码。</p>
+<h4 id="自定义Git"><a href="#自定义Git" class="headerlink" title="自定义Git"></a>自定义Git</h4><p>让Git显示颜色</p>
+<pre><code>$ git config --global color.ui true
+</code></pre><h4 id="lock"><a href="#lock" class="headerlink" title="lock"></a>lock</h4><p>fatal: Unable to create ‘E:/workspaceGit/Git/.git/index.lock’: File exists.<br>解决方法<br>rm -f  /.git/index.lock<br>或者手动找到E:/workspaceGit/Git/.git/index.lock文件并删除</p>
+<h4 id="忽略特殊文件"><a href="#忽略特殊文件" class="headerlink" title="忽略特殊文件"></a>忽略特殊文件</h4><p>Git工作区的根目录下创建一个特殊的.gitignore文件<br>然后把要忽略的文件名填进去</p>
+<pre><code># Dependency directory
+node_modules
+</code></pre>
           
         
       
@@ -1918,356 +2142,6 @@ var res = foo(99) + 100;
     return fn(n) + sum(n - 1);
 }
 </code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/js/javascript时间戳和日期字符串相互转换/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Harper">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Harper's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/28/js/javascript时间戳和日期字符串相互转换/" itemprop="url">javascript时间戳和日期字符串相互转换</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:23:44+08:00">
-                2018-04-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://www.cnblogs.com/yjf512/p/3796229.html" target="_blank" rel="noopener">https://www.cnblogs.com/yjf512/p/3796229.html</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/js/JavaScript RE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Harper">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Harper's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/28/js/JavaScript RE/" itemprop="url">javascript 正则表达式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:23:44+08:00">
-                2018-04-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="JavaScript-正则表达式"><a href="#JavaScript-正则表达式" class="headerlink" title="JavaScript 正则表达式"></a>JavaScript 正则表达式</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre><code>/正则表达式主体/修饰符(可选)
-</code></pre><h3 id="search"><a href="#search" class="headerlink" title="search()"></a>search()</h3><p>search() 方法 用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串，并返回子串的起始位置。</p>
-<p>使用字符串</p>
-<pre><code>var str = &quot;Visit Runoob!&quot;; 
-var n = str.search(&quot;Runoob&quot;);\\结果为6
-</code></pre><p>使用正则表达式</p>
-<pre><code>var str = &quot;Visit Runoob!&quot;; 
-var n = str.search(/Runoob/i);\\结果为6
-</code></pre><h3 id="replace"><a href="#replace" class="headerlink" title="replace()"></a>replace()</h3><p>replace() 方法 用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。</p>
-<p>使用字符串</p>
-<pre><code>var str = &quot;Visit Microsoft!&quot;; 
-var txt = str.replace(&quot;Microsoft&quot;,&quot;Runoob&quot;);\\txt为Visit Runoob!
-</code></pre><p>使用正则表达式</p>
-<pre><code>var str = &quot;Visit Microsoft!&quot;; 
-var txt = str.replace(/microsoft/i,&quot;Runoob&quot;);
-</code></pre><h2 id="正则表达式修饰符"><a href="#正则表达式修饰符" class="headerlink" title="正则表达式修饰符"></a>正则表达式修饰符</h2><table>
-<thead>
-<tr>
-<th>修饰符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>i</td>
-<td>执行对大小写不敏感的匹配</td>
-</tr>
-<tr>
-<td>g</td>
-<td>执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）</td>
-</tr>
-<tr>
-<td>m</td>
-<td>执行多行匹配</td>
-</tr>
-</tbody>
-</table>
-<h2 id="正则表达式的模式"><a href="#正则表达式的模式" class="headerlink" title="正则表达式的模式"></a>正则表达式的模式</h2><p>方括号用于查找某个范围内的字符:</p>
-<table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>[abc]</td>
-<td>查找方括号之间的任何字符</td>
-</tr>
-<tr>
-<td>[0-9]</td>
-<td>查找任何从 0 至 9 的数字</td>
-</tr>
-<tr>
-<td>(x竖线y)</td>
-<td>查找任何以 竖线 分隔的选项</td>
-</tr>
-</tbody>
-</table>
-<p>元字符是拥有特殊含义的字符：<br>元字符|描述<br>-|-<br>\d|查找数字<br>\s|查找空白符<br>\b|匹配单词边界<br>\uxxxx|查找以十六进制数 xxxx 规定的 Unicode 字符</p>
-<p>量词：<br>量词|描述<br>-|-<br>n+|    匹配任何包含至少一个 n 的字符串。<br>n*|    匹配任何包含零个或多个 n 的字符串。<br>n?|    匹配任何包含零个或一个 n 的字符串。</p>
-<h3 id="RegExp-对象"><a href="#RegExp-对象" class="headerlink" title="RegExp 对象"></a>RegExp 对象</h3><p>在 JavaScript 中，RegExp 对象是一个预定义了属性和方法的正则表达式对象。</p>
-<h3 id="test"><a href="#test" class="headerlink" title="test()"></a>test()</h3><p>test() 方法是一个正则表达式方法。<br>test() 方法用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true，否则返回 false。</p>
-<pre><code>var patt = /e/;
-patt.test(&quot;The best things in life are free!&quot;);//输出true
-</code></pre><h3 id="exec"><a href="#exec" class="headerlink" title="exec()"></a>exec()</h3><p>exec() 方法是一个正则表达式方法。<br>exec() 方法用于检索字符串中的正则表达式的匹配。<br>该函数返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。</p>
-
           
         
       
@@ -2643,6 +2517,384 @@ www.runoob.com
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/js/javascript时间戳和日期字符串相互转换/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/28/js/javascript时间戳和日期字符串相互转换/" itemprop="url">javascript时间戳和日期字符串相互转换</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:23:44+08:00">
+                2018-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://www.cnblogs.com/yjf512/p/3796229.html" target="_blank" rel="noopener">https://www.cnblogs.com/yjf512/p/3796229.html</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/js/js数据类型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Harper">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Harper's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/28/js/js数据类型/" itemprop="url">js数据类型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:23:44+08:00">
+                2018-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>在 JavaScript 中有 5 种不同的数据类型：</p>
+<pre><code>string
+number
+boolean
+object
+function
+</code></pre><p>3 种对象类型：</p>
+<pre><code>Object
+Date
+Array
+</code></pre><p>2 个不包含任何值的数据类型：</p>
+<pre><code>null
+undefined
+</code></pre><p>请注意</p>
+<pre><code>NaN 的数据类型是 number
+数组(Array)的数据类型是 object
+日期(Date)的数据类型为 object
+null 的数据类型是 object
+未定义变量的数据类型为 undefined
+</code></pre><p>JavaScript 拥有动态类型。这意味着相同的变量可用作不同的类型：</p>
+<pre><code>var x;               // x 为 undefined
+var x = 5;           // 现在 x 为数字
+var x = &quot;John&quot;;      // 现在 x 为字符串
+</code></pre><h2 id="1-简单数据类型"><a href="#1-简单数据类型" class="headerlink" title="1. 简单数据类型"></a>1. 简单数据类型</h2><h3 id="1-1-数字"><a href="#1-1-数字" class="headerlink" title="1.1 数字"></a>1.1 数字</h3><p>JavaScript 只有一种数字类型。数字可以带小数点，也可以不带：</p>
+<pre><code>var x1=34.00;      //使用小数点来写
+var x2=34;         //不使用小数点来写
+</code></pre><h3 id="1-2-字符串"><a href="#1-2-字符串" class="headerlink" title="1.2 字符串"></a>1.2 字符串</h3><p>字符串可以是引号中的任意文本。您可以使用单引号或双引号：</p>
+<pre><code>var carname=&quot;Volvo XC60&quot;;
+var carname=&apos;Volvo XC60&apos;;
+</code></pre><p>你可以使用索引位置来访问字符串中的每个字符：</p>
+<pre><code>var carname = carname[7];
+</code></pre><p>字符串的索引从 0 开始，这意味着第一个字符索引值为 [0],第二个为 [1], 以此类推。</p>
+<p>字符串长度</p>
+<p>可以使用内置属性 length 来计算字符串的长度：</p>
+<pre><code>var txt = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+var sln = txt.length;
+</code></pre><h3 id="1-3-布尔"><a href="#1-3-布尔" class="headerlink" title="1.3 布尔"></a>1.3 布尔</h3><p>只有2个值一个是true, 一个是false.   实际运算中true=1,false=0</p>
+<pre><code>var x=true;
+var y=false;
+</code></pre><h3 id="1-4-undefined"><a href="#1-4-undefined" class="headerlink" title="1.4 undefined"></a>1.4 undefined</h3><p>在 JavaScript 中, undefined 是一个没有设置值的变量。</p>
+<p>typeof 一个没有值的变量会返回 undefined。</p>
+<p>你可以设置为 undefined 来清空对象:</p>
+<pre><code>var n;
+alert(n);
+</code></pre><p>变量在内存中是存在的</p>
+<h3 id="1-5-null"><a href="#1-5-null" class="headerlink" title="1.5 null"></a>1.5 null</h3><p>在 JavaScript 中 null 表示 “什么都没有”。</p>
+<p>null是一个只有一个值的特殊类型。表示一个空对象引用。</p>
+<p>你可以设置为 null 来清空对象:</p>
+<pre><code>var n = 1;
+n = null;
+alert(n);
+</code></pre><p>在内存中找不到这个变量</p>
+<h2 id="2-复杂数据类型"><a href="#2-复杂数据类型" class="headerlink" title="2. 复杂数据类型"></a>2. 复杂数据类型</h2><h3 id="2-1-JavaScript-数组"><a href="#2-1-JavaScript-数组" class="headerlink" title="2.1 JavaScript 数组"></a>2.1 JavaScript 数组</h3><p>创建名为 cars 的数组：</p>
+<pre><code>var cars=new Array();
+cars[0]=&quot;Saab&quot;;
+cars[1]=&quot;Volvo&quot;;
+cars[2]=&quot;BMW&quot;;
+</code></pre><p>或者 (condensed array):</p>
+<pre><code>var cars=new Array(&quot;Saab&quot;,&quot;Volvo&quot;,&quot;BMW&quot;);
+</code></pre><p>或者 (literal array):</p>
+<pre><code>var cars=[&quot;Saab&quot;,&quot;Volvo&quot;,&quot;BMW&quot;];
+</code></pre><h3 id="2-2-JavaScript-对象"><a href="#2-2-JavaScript-对象" class="headerlink" title="2.2 JavaScript 对象"></a>2.2 JavaScript 对象</h3><p>对象由花括号分隔。在括号内部，对象的属性以名称和值对的形式 (name : value) 来定义。属性由逗号分隔：</p>
+<pre><code>var person={
+    firstname : &quot;John&quot;,
+    lastname  : &quot;Doe&quot;,
+    id        :  5566
+};
+</code></pre><p>上面例子中的对象 (person) 有三个属性：firstname、lastname 以及 id。</p>
+<p>对象属性有两种寻址方式：</p>
+<pre><code>name=person.lastname;
+name=person[&quot;lastname&quot;];
+</code></pre><h3 id="2-3-对象方法属性的调用"><a href="#2-3-对象方法属性的调用" class="headerlink" title="2.3 对象方法属性的调用"></a>2.3 对象方法属性的调用</h3><pre><code>var person = {
+    firstName: &quot;John&quot;,
+    lastName : &quot;Doe&quot;,
+    id : 5566,
+    fullName : function() 
+    {
+       return this.firstName + &quot; &quot; + this.lastName;
+    }
+};
+</code></pre><p>person.fullName; //不加括号输出函数表达式 </p>
+<pre><code>function () { return this.firstName + &quot; &quot; + this.lastName; }
+</code></pre><p>person.fullName(); //加括号输出函数执行结果</p>
+<pre><code>John Doe
+</code></pre><h3 id="3-判断数据类型"><a href="#3-判断数据类型" class="headerlink" title="3.判断数据类型"></a>3.判断数据类型</h3><pre><code>typeof &quot;John&quot;                // 返回 string 
+typeof 3.14                  // 返回 number
+typeof false                 // 返回 boolean
+typeof [1,2,3,4]             // 返回 object
+typeof {name:&apos;John&apos;, age:34} // 返回 object
+</code></pre><p>在JavaScript中，数组是一种特殊的对象类型。 因此 typeof [1,2,3,4] 返回 object</p>
+<pre><code>typeof undefined             // undefined
+typeof null                  // object
+null === undefined           // false
+null == undefined            // true
+</code></pre><p>null 和 undefined 的值相等，但类型不等</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -2697,7 +2949,7 @@ www.runoob.com
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
