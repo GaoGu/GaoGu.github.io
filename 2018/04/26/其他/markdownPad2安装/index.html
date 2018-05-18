@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="页面ajaxfunction changePasswordAjax(newPassword){         $.ajax({             type: &amp;apos;post&amp;apos;,//请求的URL             url: &amp;apos;/changePassword&amp;apos;,规定请求的类型（GET 或 POST）。             async: false,">
+<meta name="description" content="#MarkdownPad专业版汉化激活教程（含下载地址）https://jingyan.baidu.com/article/ea24bc39b985dfda63b33176.html #win10下MarkdownPad 2的html渲染出错解决https://www.jianshu.com/p/38415413ea46">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用node进行ajax前后交互">
-<meta property="og:url" content="http://yoursite.com/2018/05/02/使用node进行ajax前后交互/index.html">
+<meta property="og:title" content="markdownPad2安装">
+<meta property="og:url" content="http://yoursite.com/2018/04/26/其他/markdownPad2安装/index.html">
 <meta property="og:site_name" content="Harper&#39;s Blog">
-<meta property="og:description" content="页面ajaxfunction changePasswordAjax(newPassword){         $.ajax({             type: &amp;apos;post&amp;apos;,//请求的URL             url: &amp;apos;/changePassword&amp;apos;,规定请求的类型（GET 或 POST）。             async: false,">
+<meta property="og:description" content="#MarkdownPad专业版汉化激活教程（含下载地址）https://jingyan.baidu.com/article/ea24bc39b985dfda63b33176.html #win10下MarkdownPad 2的html渲染出错解决https://www.jianshu.com/p/38415413ea46">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-18T02:16:35.301Z">
+<meta property="og:updated_time" content="2018-05-18T03:09:25.601Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用node进行ajax前后交互">
-<meta name="twitter:description" content="页面ajaxfunction changePasswordAjax(newPassword){         $.ajax({             type: &amp;apos;post&amp;apos;,//请求的URL             url: &amp;apos;/changePassword&amp;apos;,规定请求的类型（GET 或 POST）。             async: false,">
+<meta name="twitter:title" content="markdownPad2安装">
+<meta name="twitter:description" content="#MarkdownPad专业版汉化激活教程（含下载地址）https://jingyan.baidu.com/article/ea24bc39b985dfda63b33176.html #win10下MarkdownPad 2的html渲染出错解决https://www.jianshu.com/p/38415413ea46">
 
 
 
@@ -151,13 +151,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/02/使用node进行ajax前后交互/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/26/其他/markdownPad2安装/"/>
 
 
 
 
 
-  <title>使用node进行ajax前后交互 | Harper's Blog</title>
+  <title>markdownPad2安装 | Harper's Blog</title>
   
 
 
@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/02/使用node进行ajax前后交互/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/其他/markdownPad2安装/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">使用node进行ajax前后交互</h1>
+          <h1 class="post-title" itemprop="name headline">markdownPad2安装</h1>
         
 
         <div class="post-meta">
@@ -303,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T19:28:50+08:00">
-                2018-05-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T10:40:45+08:00">
+                2018-04-26
               </time>
             
 
@@ -313,6 +313,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/其他/" itemprop="url" rel="index">
+                    <span itemprop="name">其他</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -341,73 +363,9 @@
       
 
       
-        <h1 id="页面ajax"><a href="#页面ajax" class="headerlink" title="页面ajax"></a>页面ajax</h1><pre><code>function changePasswordAjax(newPassword){
-        $.ajax({
-            type: &apos;post&apos;,//请求的URL
-            url: &apos;/changePassword&apos;,规定请求的类型（GET 或 POST）。
-            async: false,//表示请求是否异步处理。默认是 true。
-            data: {
-                userID:loginUser._id,
-                oldPassword:loginUser.password
-                },//规定要发送到服务器的数据。
-            dataType: &apos;json&apos;,//预期的服务器响应的数据类型。
-            cache: false,//表示浏览器是否缓存被请求页面。默认是 true。
-            timeout: 5000,//设置本地的请求超时时间（以毫秒计）。5秒
-            success: function(result,data){
-                var status = result.status;//
-                if(result.status==&quot;success&quot;){
-                    console.info(&quot;OK&quot;);
-                }
-            },//当请求成功时运行的函数。success(result,status,xhr)
-            error: function(){
+        <p>#MarkdownPad专业版汉化激活教程（含下载地址）<br><a href="https://jingyan.baidu.com/article/ea24bc39b985dfda63b33176.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/ea24bc39b985dfda63b33176.html</a></p>
+<p>#win10下MarkdownPad 2的html渲染出错解决<br><a href="https://www.jianshu.com/p/38415413ea46" target="_blank" rel="noopener">https://www.jianshu.com/p/38415413ea46</a></p>
 
-            }//如果请求失败要运行的函数。error(xhr,status,error)
-        });
-}
-</code></pre><h2 id="error参数详解"><a href="#error参数详解" class="headerlink" title="error参数详解"></a>error参数详解</h2><p>一般error函数返回的参数有三个： function(jqXHR jqXHR, String textStatus, String errorThrown)。</p>
-<p>第一个参数 jqXHR jqXHR</p>
-<pre><code>这里的jqXHR是一个jqXHR对象
-在Jquery1.4和1.4版本之前返回的是XMLHttpRequest对象
-1.5版本以后则开始使用jqXHR对象，该对象是一个超集，
-就是该对象不仅包括XMLHttpRequest对象，还包含其他更多的详细属性和信息。
-</code></pre><p>主要有4个属性：</p>
-<pre><code>readyState :当前状态,0-未初始化，1-正在载入，2-已经载入，3-数据进行交互，4-完成。
-status  ：返回的HTTP状态码，比如常见的404,500等错误代码。
-statusText ：对应状态码的错误信息，比如404错误信息是not found,500是Internal Server Error。
-responseText ：服务器响应返回的文本信息
-</code></pre><p>第二个参数 String textStatus</p>
-<pre><code>返回的是字符串类型，表示返回的状态，
-根据服务器不同的错误可能返回下面这些信息：
-&quot;timeout&quot;（超时）, &quot;error&quot;（错误）, &quot;abort&quot;(中止), &quot;parsererror&quot;（解析错误），
-还有可能返回空值。
-</code></pre><p>第三个参数 String errorThrown</p>
-<pre><code>也是字符串类型，表示服务器抛出返回的错误信息，
-如果产生的是HTTP错误，那么返回的信息就是HTTP状态码对应的错误信息，
-比如404的Not Found,500错误的Internal Server Error。
-</code></pre><h2 id="error测试"><a href="#error测试" class="headerlink" title="error测试"></a>error测试</h2><pre><code>error: function(xhr,textStatus,errorThrown){
-    console.info(&quot;错误提示： &quot; + xhr.status + 
-                &quot;\n\r&quot; + xhr.statusText+
-                &quot;\n\r&quot;+textStatus+
-                &quot;\n\r&quot;+errorThrown);
-    //把服务端接收方法注释掉
-        输出结果为
-        404 
-        Not Found
-        error
-        Not Found
-}
-</code></pre><h1 id="请求对应node服务器代码"><a href="#请求对应node服务器代码" class="headerlink" title="请求对应node服务器代码"></a>请求对应node服务器代码</h1><pre><code>app.post(&apos;/changePassword&apos;, index.changePassword);
-exports.changePassword = function (req, res) {
-    //服务端通过req的body接收ajax的post数据
-    var data = req.body;//post请求
-    //var data = req.query;//get请求
-    var userID = data.userID;
-    var oldPassword = loginUser.password;
-    //通过res的json方法向客户端发送一个 JSON 格式的响应
-    res.json({status:&apos;success&apos;});
-
-}
-</code></pre>
       
     </div>
     
@@ -431,8 +389,8 @@ exports.changePassword = function (req, res) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/28/npm常用命令/" rel="next" title="npm常用命令">
-                <i class="fa fa-chevron-left"></i> npm常用命令
+              <a href="/2018/04/26/hexo/通过gh-pages创建静态网站/" rel="next" title="通过gh-pages创建静态网站">
+                <i class="fa fa-chevron-left"></i> 通过gh-pages创建静态网站
               </a>
             
           </div>
@@ -441,8 +399,8 @@ exports.changePassword = function (req, res) {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/11/socket/" rel="prev" title="socket">
-                socket <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/26/hexo/使用 Hexo 基于 GitHub Pages 搭建个人博客/" rel="prev" title="使用 Hexo 基于 GitHub Pages 搭建个人博客">
+                使用 Hexo 基于 GitHub Pages 搭建个人博客 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -495,17 +453,8 @@ exports.changePassword = function (req, res) {
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -535,7 +484,7 @@ exports.changePassword = function (req, res) {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -560,22 +509,6 @@ exports.changePassword = function (req, res) {
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#页面ajax"><span class="nav-number">1.</span> <span class="nav-text">页面ajax</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#error参数详解"><span class="nav-number">1.1.</span> <span class="nav-text">error参数详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#error测试"><span class="nav-number">1.2.</span> <span class="nav-text">error测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#请求对应node服务器代码"><span class="nav-number">2.</span> <span class="nav-text">请求对应node服务器代码</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

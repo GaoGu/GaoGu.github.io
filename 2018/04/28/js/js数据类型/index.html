@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="JavaScript输出消息1.window的方法1.1alert()显示带有一条指定消息和一个 确认 按钮的警告框，早期JS调试使用。 1.2confirm()在页面弹出一个对话框, 常配合if判断使用。 如果访问者点击”确定”，此方法返回true，否则返回false。 if(confirm(&amp;quot;你好&amp;quot;)){     alert(&amp;quot;确定&amp;quot;); }else{">
+<meta name="description" content="数据类型在 JavaScript 中有 5 种不同的数据类型： string number boolean object function 3 种对象类型： Object Date Array 2 个不包含任何值的数据类型： null undefined 请注意 NaN 的数据类型是 number 数组(Array)的数据类型是 object 日期(Date)的数据类型为 object null">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS">
-<meta property="og:url" content="http://yoursite.com/2018/05/18/js基础/index.html">
+<meta property="og:title" content="js数据类型">
+<meta property="og:url" content="http://yoursite.com/2018/04/28/js/js数据类型/index.html">
 <meta property="og:site_name" content="Harper&#39;s Blog">
-<meta property="og:description" content="JavaScript输出消息1.window的方法1.1alert()显示带有一条指定消息和一个 确认 按钮的警告框，早期JS调试使用。 1.2confirm()在页面弹出一个对话框, 常配合if判断使用。 如果访问者点击”确定”，此方法返回true，否则返回false。 if(confirm(&amp;quot;你好&amp;quot;)){     alert(&amp;quot;确定&amp;quot;); }else{">
+<meta property="og:description" content="数据类型在 JavaScript 中有 5 种不同的数据类型： string number boolean object function 3 种对象类型： Object Date Array 2 个不包含任何值的数据类型： null undefined 请注意 NaN 的数据类型是 number 数组(Array)的数据类型是 object 日期(Date)的数据类型为 object null">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-05-18T02:16:35.295Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS">
-<meta name="twitter:description" content="JavaScript输出消息1.window的方法1.1alert()显示带有一条指定消息和一个 确认 按钮的警告框，早期JS调试使用。 1.2confirm()在页面弹出一个对话框, 常配合if判断使用。 如果访问者点击”确定”，此方法返回true，否则返回false。 if(confirm(&amp;quot;你好&amp;quot;)){     alert(&amp;quot;确定&amp;quot;); }else{">
+<meta name="twitter:title" content="js数据类型">
+<meta name="twitter:description" content="数据类型在 JavaScript 中有 5 种不同的数据类型： string number boolean object function 3 种对象类型： Object Date Array 2 个不包含任何值的数据类型： null undefined 请注意 NaN 的数据类型是 number 数组(Array)的数据类型是 object 日期(Date)的数据类型为 object null">
 
 
 
@@ -151,13 +151,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/18/js基础/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/28/js/js数据类型/"/>
 
 
 
 
 
-  <title>JS | Harper's Blog</title>
+  <title>js数据类型 | Harper's Blog</title>
   
 
 
@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/js基础/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/js/js数据类型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Harper">
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS</h1>
+          <h1 class="post-title" itemprop="name headline">js数据类型</h1>
         
 
         <div class="post-meta">
@@ -303,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-18T10:17:25+08:00">
-                2018-05-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:23:44+08:00">
+                2018-04-28
               </time>
             
 
@@ -363,19 +363,7 @@
       
 
       
-        <h1 id="JavaScript输出消息"><a href="#JavaScript输出消息" class="headerlink" title="JavaScript输出消息"></a>JavaScript输出消息</h1><h2 id="1-window的方法"><a href="#1-window的方法" class="headerlink" title="1.window的方法"></a>1.window的方法</h2><h3 id="1-1alert"><a href="#1-1alert" class="headerlink" title="1.1alert()"></a>1.1alert()</h3><p>显示带有一条指定消息和一个 确认 按钮的警告框，早期JS调试使用。</p>
-<h3 id="1-2confirm"><a href="#1-2confirm" class="headerlink" title="1.2confirm()"></a>1.2confirm()</h3><p>在页面弹出一个对话框, 常配合if判断使用。</p>
-<p>如果访问者点击”确定”，此方法返回true，否则返回false。</p>
-<pre><code>if(confirm(&quot;你好&quot;)){
-    alert(&quot;确定&quot;);
-}else{
-    alert(&quot;取消&quot;);
-}
-</code></pre><h3 id="1-3prompt"><a href="#1-3prompt" class="headerlink" title="1.3prompt()"></a>1.3prompt()</h3><p>prompt()方法用于显示可提示用户进行输入的对话框。<br>这个方法返回用户输入的字符串。</p>
-<h2 id="2-JavaScript-Console-对象"><a href="#2-JavaScript-Console-对象" class="headerlink" title="2.JavaScript Console 对象"></a>2.JavaScript Console 对象</h2><p>console.log()  </p>
-<p>将信息输入到控制台，用于js调试</p>
-<h2 id="3-HTML-DOM-Document-对象"><a href="#3-HTML-DOM-Document-对象" class="headerlink" title="3.HTML DOM Document 对象"></a>3.HTML DOM Document 对象</h2><p>document.write()<br>在页面输出消息</p>
-<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>在 JavaScript 中有 5 种不同的数据类型：</p>
+        <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>在 JavaScript 中有 5 种不同的数据类型：</p>
 <pre><code>string
 number
 boolean
@@ -464,179 +452,12 @@ typeof 3.14                  // 返回 number
 typeof false                 // 返回 boolean
 typeof [1,2,3,4]             // 返回 object
 typeof {name:&apos;John&apos;, age:34} // 返回 object
-</code></pre><p>在JavaScript中，数组是一种特殊的对象类型。 因此 typeof [1,2,3,4] 返回 object。</p>
+</code></pre><p>在JavaScript中，数组是一种特殊的对象类型。 因此 typeof [1,2,3,4] 返回 object</p>
 <pre><code>typeof undefined             // undefined
 typeof null                  // object
 null === undefined           // false
 null == undefined            // true
-</code></pre><p>null 和 undefined 的值相等，但类型不等：</p>
-<h1 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h1><h2 id="1-if…Else-语句"><a href="#1-if…Else-语句" class="headerlink" title="1. if…Else 语句"></a>1. if…Else 语句</h2><p>语法</p>
-<pre><code>if (condition1)
-{
-    当条件 1 为 true 时执行的代码
-}
-else if (condition2)
-{
-    当条件 2 为 true 时执行的代码
-}
-else
-{
-  当条件 1 和 条件 2 都不为 true 时执行的代码
-}
-</code></pre><p>例子</p>
-<pre><code>if (time&lt;10)
-{
-    document.write(&quot;&lt;b&gt;早上好&lt;/b&gt;&quot;);
-}
-else if (time&gt;=10 &amp;&amp; time&lt;16)
-{
-    document.write(&quot;&lt;b&gt;今天好&lt;/b&gt;&quot;);
-}
-else
-{
-    document.write(&quot;&lt;b&gt;晚上好!&lt;/b&gt;&quot;);
-}
-</code></pre><h2 id="2-switch-语句"><a href="#2-switch-语句" class="headerlink" title="2. switch 语句"></a>2. switch 语句</h2><p>语法</p>
-<pre><code>switch(n)
-{
-    case 1:
-        执行代码块 1
-        break;
-    case 2:
-        执行代码块 2
-        break;
-    default:
-        与 case 1 和 case 2 不同时执行的代码
-}
-</code></pre><p>例子</p>
-<pre><code>var d=new Date().getDay(); 
-switch (d) 
-{ 
-  case 0:x=&quot;今天是星期日&quot;; 
-  break; 
-  case 1:x=&quot;今天是星期一&quot;; 
-  break; 
-  case 2:x=&quot;今天是星期二&quot;; 
-  break; 
-  case 3:x=&quot;今天是星期三&quot;; 
-  break; 
-  case 4:x=&quot;今天是星期四&quot;; 
-  break; 
-  case 5:x=&quot;今天是星期五&quot;; 
-  break; 
-  case 6:x=&quot;今天是星期六&quot;; 
-  break; 
-  default:
-  x=&quot;期待周末&quot;;
-}
-</code></pre><p>swich的比较是绝对比较，值和数据类型都会比较</p>
-<p>switch后边的变量和case后边值的数据类型必须保持一致</p>
-<p>必须带break；如果没有，条件成立后，后面的所以语句顺序执行并且不进行判断</p>
-<pre><code>var a = &quot;nihao&quot;;
-var b = new String(&quot;nihao&quot;);
-switch (a){ 
-  case b:
-    x=&quot;==&quot;; 
-      break;  
-  default:
-      x=&quot;===&quot;;
-}
-console.info(x);
-</code></pre><h2 id="3-JavaScript-for-循环"><a href="#3-JavaScript-for-循环" class="headerlink" title="3.JavaScript for 循环"></a>3.JavaScript for 循环</h2><p>语法</p>
-<pre><code>for (语句 1; 语句 2; 语句 3) 
-{
-    被执行的代码块
-}
-语句 1 （代码块）开始前执行
-语句 2 定义运行循环（代码块）的条件
-语句 3 在循环（代码块）已被执行之后执行
-</code></pre><p>例子</p>
-<pre><code>cars=[&quot;BMW&quot;,&quot;Volvo&quot;,&quot;Saab&quot;,&quot;Ford&quot;];
-
-for (var i=0;i&lt;cars.length;i++){
-    document.write(cars[i] + &quot;&lt;br&gt;&quot;);
-}
-</code></pre><h3 id="3-1语句1"><a href="#3-1语句1" class="headerlink" title="3.1语句1"></a>3.1语句1</h3><p>通常我们会使用语句 1 初始化循环中所用的变量 (var i=0)。</p>
-<pre><code>for (var i=0,len=cars.length; i&lt;len; i++)
-{ 
-    document.write(cars[i] + &quot;&lt;br&gt;&quot;);
-}
-或者
-var i=2,len=cars.length;
-for (; i&lt;len; i++){
-    document.write(cars[i] + &quot;&lt;br&gt;&quot;);
-}
-</code></pre><h3 id="3-2-语句2"><a href="#3-2-语句2" class="headerlink" title="3.2 语句2"></a>3.2 语句2</h3><p>通常语句 2 用于评估初始变量的条件。</p>
-<p>如果您省略了语句 2，那么必须在循环内提供 break。</p>
-<p>否则循环就无法停下来。这样有可能令浏览器崩溃。</p>
-<pre><code>for (var i=0;;i++){
-    document.write(cars[i] + &quot;&lt;br&gt;&quot;);
-    if(i&gt;=cars.length-1){
-        break;
-    }
-}
-</code></pre><h3 id="3-3"><a href="#3-3" class="headerlink" title="3.3"></a>3.3</h3><p>通常语句 3 会增加初始变量的值。</p>
-<p>语句 3 也可以省略（比如当循环内部有相应的代码时）：</p>
-<pre><code>var i=0
-for (;;){
-    document.write(cars[i] + &quot;&lt;br&gt;&quot;);
-    if(i&gt;=cars.length-1){
-        break;
-    }
-    i++;
-}
-</code></pre><h2 id="4-For-In-循环"><a href="#4-For-In-循环" class="headerlink" title="4. For/In 循环"></a>4. For/In 循环</h2><pre><code>var person={fname:&quot;John&quot;,lname:&quot;Doe&quot;,age:25}; 
-
-for (x in person)  // x 为属性名
-{
-    document.write(person[x] + &quot;&lt;br&gt;&quot;);
-}
-</code></pre><h2 id="5-JavaScript-while-循环"><a href="#5-JavaScript-while-循环" class="headerlink" title="5.JavaScript while 循环"></a>5.JavaScript while 循环</h2><h3 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h3><p>语法</p>
-<pre><code>while (条件) 
-{
-    需要执行的代码
-}
-</code></pre><p>先判断条件，为真再执行代码</p>
-<p>例子</p>
-<pre><code>var i=0;
-while (i&lt;5)
-{
-    document.write(i + &quot;&lt;br&gt;&quot;);
-    i++;
-}
-</code></pre><h3 id="do-while-循环"><a href="#do-while-循环" class="headerlink" title="do/while 循环"></a>do/while 循环</h3><p>先执行一次，再进行循环</p>
-<p>语法</p>
-<pre><code>do
-{
-    需要执行的代码
-}
-while (条件);
-</code></pre><p>例子</p>
-<pre><code>do
-{
-    console.info(&quot;我就执行&quot;);
-}
-while (false)
-</code></pre><h2 id="JavaScript-Break-和-Continue-语句"><a href="#JavaScript-Break-和-Continue-语句" class="headerlink" title="JavaScript Break 和 Continue 语句"></a>JavaScript Break 和 Continue 语句</h2><p>break 语句可用于跳出循环</p>
-<p>continue 语句跳出循环后，会继续执行该循环之后的代码（如果有的话）</p>
-<h3 id="JavaScript-标签"><a href="#JavaScript-标签" class="headerlink" title="JavaScript 标签"></a>JavaScript 标签</h3><p>如需标记 JavaScript 语句，请在语句之前加上冒号：</p>
-<pre><code>label:
-statements
-</code></pre><p>continue 语句（带有或不带标签引用）只能用在循环中</p>
-<p>break 语句（不带标签引用），只能用在循环或 switch 中。</p>
-<p>通过标签引用，break 语句可用于跳出任何 JavaScript 代码块：</p>
-<pre><code>cars=[&quot;BMW&quot;,&quot;Volvo&quot;,&quot;Saab&quot;,&quot;Ford&quot;];
-list: 
-{
-    document.write(cars[0] + &quot;&lt;br&gt;&quot;); 
-    document.write(cars[1] + &quot;&lt;br&gt;&quot;); 
-    document.write(cars[2] + &quot;&lt;br&gt;&quot;); 
-    break list;
-    document.write(cars[3] + &quot;&lt;br&gt;&quot;); 
-    document.write(cars[4] + &quot;&lt;br&gt;&quot;); 
-    document.write(cars[5] + &quot;&lt;br&gt;&quot;); 
-}
-</code></pre><p><a href="https://www.runoob.com/js/js-type-conversion.html" target="_blank" rel="noopener">https://www.runoob.com/js/js-type-conversion.html</a></p>
+</code></pre><p>null 和 undefined 的值相等，但类型不等</p>
 
       
     </div>
@@ -661,8 +482,8 @@ list:
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/11/socket/" rel="next" title="socket">
-                <i class="fa fa-chevron-left"></i> socket
+              <a href="/2018/04/28/js/javascript时间戳和日期字符串相互转换/" rel="next" title="javascript时间戳和日期字符串相互转换">
+                <i class="fa fa-chevron-left"></i> javascript时间戳和日期字符串相互转换
               </a>
             
           </div>
@@ -671,8 +492,8 @@ list:
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/18/markdownPad2安装/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/28/node/node学习资料/" rel="prev" title="node学习资料">
+                node学习资料 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -765,7 +586,7 @@ list:
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -800,7 +621,7 @@ list:
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript输出消息"><span class="nav-number">1.</span> <span class="nav-text">JavaScript输出消息</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-window的方法"><span class="nav-number">1.1.</span> <span class="nav-text">1.window的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1alert"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1alert()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2confirm"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2confirm()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3prompt"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3prompt()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-JavaScript-Console-对象"><span class="nav-number">1.2.</span> <span class="nav-text">2.JavaScript Console 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-HTML-DOM-Document-对象"><span class="nav-number">1.3.</span> <span class="nav-text">3.HTML DOM Document 对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据类型"><span class="nav-number">2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-简单数据类型"><span class="nav-number">2.1.</span> <span class="nav-text">1. 简单数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-数字"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.1 数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-字符串"><span class="nav-number">2.1.2.</span> <span class="nav-text">1.2 字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-布尔"><span class="nav-number">2.1.3.</span> <span class="nav-text">1.3 布尔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-undefined"><span class="nav-number">2.1.4.</span> <span class="nav-text">1.4 undefined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-null"><span class="nav-number">2.1.5.</span> <span class="nav-text">1.5 null</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-复杂数据类型"><span class="nav-number">2.2.</span> <span class="nav-text">2. 复杂数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-JavaScript-数组"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.1 JavaScript 数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-JavaScript-对象"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2 JavaScript 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-对象方法属性的调用"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.3 对象方法属性的调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-判断数据类型"><span class="nav-number">2.2.4.</span> <span class="nav-text">3.判断数据类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语句"><span class="nav-number">3.</span> <span class="nav-text">语句</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-if…Else-语句"><span class="nav-number">3.1.</span> <span class="nav-text">1. if…Else 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-switch-语句"><span class="nav-number">3.2.</span> <span class="nav-text">2. switch 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-JavaScript-for-循环"><span class="nav-number">3.3.</span> <span class="nav-text">3.JavaScript for 循环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1语句1"><span class="nav-number">3.3.1.</span> <span class="nav-text">3.1语句1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-语句2"><span class="nav-number">3.3.2.</span> <span class="nav-text">3.2 语句2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3"><span class="nav-number">3.3.3.</span> <span class="nav-text">3.3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-For-In-循环"><span class="nav-number">3.4.</span> <span class="nav-text">4. For/In 循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-JavaScript-while-循环"><span class="nav-number">3.5.</span> <span class="nav-text">5.JavaScript while 循环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#while-循环"><span class="nav-number">3.5.1.</span> <span class="nav-text">while 循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#do-while-循环"><span class="nav-number">3.5.2.</span> <span class="nav-text">do/while 循环</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-Break-和-Continue-语句"><span class="nav-number">3.6.</span> <span class="nav-text">JavaScript Break 和 Continue 语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-标签"><span class="nav-number">3.6.1.</span> <span class="nav-text">JavaScript 标签</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-简单数据类型"><span class="nav-number">1.1.</span> <span class="nav-text">1. 简单数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-数字"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-字符串"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-布尔"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 布尔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-undefined"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.4 undefined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-null"><span class="nav-number">1.1.5.</span> <span class="nav-text">1.5 null</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-复杂数据类型"><span class="nav-number">1.2.</span> <span class="nav-text">2. 复杂数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-JavaScript-数组"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 JavaScript 数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-JavaScript-对象"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 JavaScript 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-对象方法属性的调用"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.3 对象方法属性的调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-判断数据类型"><span class="nav-number">1.2.4.</span> <span class="nav-text">3.判断数据类型</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
